@@ -2,7 +2,7 @@
 # If you want to see the full configuration, please check `full-config.toml` .
 # And see https://gohugo.io/getting-started/configuration/ .
 
-baseURL = "http://localhost:1313/"
+baseURL = "http://prayinforrain.github.io/"
 title = "PrayinForRain.dev"
 enableRobotsTXT = true
 enableEmoji = true
@@ -78,27 +78,27 @@ defaultContentLanguage = "en"           # Default language to use
   customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
 
   [params.social]
-    a-email = "mailto:your@email.com"
-    # b-stack-overflow = "http://localhost:1313"
-    # c-twitter = "http://localhost:1313"
-    # d-facebook = "http://localhost:1313"
-    # e-linkedin = "http://localhost:1313"
-    # f-google = "http://localhost:1313"
-    g-github = "http://localhost:1313"
-    # h-weibo = "http://localhost:1313"
-    # i-zhihu = "http://localhost:1313"
-    # j-douban = "http://localhost:1313"
-    # k-pocket = "http://localhost:1313"
-    # l-tumblr = "http://localhost:1313"
-    # m-instagram = "http://localhost:1313"
-    # n-gitlab = "http://localhost:1313"
-    # o-goodreads = "http://localhost:1313"
-    # p-coding = "http://localhost:1313"
-    # q-bilibili = "http://localhost:1313"
-    # r-codeforces = "http://localhost:1313"
-    # s-mastodon = "http://localhost:1313"
-    # t-youtube = "http://localhost:1313"
-    # u-twitch = "http://localhost:1313"
+    a-email = "mailto:prayinforrain@naver.com"
+    # b-stack-overflow = "https://prayinforrain.github.io/"
+    # c-twitter = "https://prayinforrain.github.io/"
+    # d-facebook = "https://prayinforrain.github.io/"
+    # e-linkedin = "https://prayinforrain.github.io/"
+    # f-google = "https://prayinforrain.github.io/"
+    g-github = "https://github.com/prayinforrain"
+    # h-weibo = "https://prayinforrain.github.io/"
+    # i-zhihu = "https://prayinforrain.github.io/"
+    # j-douban = "https://prayinforrain.github.io/"
+    # k-pocket = "https://prayinforrain.github.io/"
+    # l-tumblr = "https://prayinforrain.github.io/"
+    # m-instagram = "https://prayinforrain.github.io/"
+    # n-gitlab = "https://prayinforrain.github.io/"
+    # o-goodreads = "https://prayinforrain.github.io/"
+    # p-coding = "https://prayinforrain.github.io/"
+    # q-bilibili = "https://prayinforrain.github.io/"
+    # r-codeforces = "https://prayinforrain.github.io/"
+    # s-mastodon = "https://prayinforrain.github.io/"
+    # t-youtube = "https://prayinforrain.github.io/"
+    # u-twitch = "https://prayinforrain.github.io/"
 
     [params.giscus]         # giscus is a comment system based on GitHub Discussions. see https://giscus.app
     enable = true
