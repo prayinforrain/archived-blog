@@ -68,7 +68,7 @@ defaultContentLanguage = "en"           # Default language to use
 
   # front matter archetypes/default.md 
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
-  toc = true
+  toc = false
   photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe
   contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
 
@@ -99,6 +99,21 @@ defaultContentLanguage = "en"           # Default language to use
     # s-mastodon = "http://localhost:1313"
     # t-youtube = "http://localhost:1313"
     # u-twitch = "http://localhost:1313"
+
+    [params.giscus]         # giscus is a comment system based on GitHub Discussions. see https://giscus.app
+    enable = true
+    repo = "prayinforrain/prayinforrain.github.io"
+    repoId = "R_kgDOItUJmA"
+    category = "Announcements"
+    categoryId = "DIC_kwDOItUJmM4CTXa0"
+    mapping = "pathname"  # comment value is the default value
+    strict = 0
+    reactionsEnabled = 1
+    emitMetadata = 0
+    inputPosition = "top"
+    theme = "preferred_color_scheme"
+    lang = "en"
+    # lazyLoading = false
 
 [markup]
   [markup.highlight]
