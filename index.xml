@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>http://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Jan 2023 13:42:55 +0900</lastBuildDate><atom:link href="http://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>http://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>http://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>http://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Dec 2022 13:18:55 +0900</lastBuildDate><atom:link href="http://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>http://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>http://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
 프론트엔드 개발자가 되기 위해 공부하는 &lt;strong>이우재&lt;/strong>입니다.&lt;/p>
 &lt;h2 id="techstacks">Techstacks&lt;/h2>
 &lt;p>&lt;img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&amp;amp;logo=git&amp;amp;logoColor=white" alt="Git"> &lt;img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&amp;amp;logo=figma&amp;amp;logoColor=white" alt="Figma">&lt;br>
@@ -18,7 +18,356 @@
 &lt;ul>
 &lt;li>Email : &lt;a href="mailto:prayinforrain@naver.com">prayinforrain@naver.com&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>마크다운 만들기 - contentEditable</title><link>http://prayinforrain.github.io/post/making-editor-contenteditable/</link><pubDate>Mon, 02 Jan 2023 13:42:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-contenteditable/</guid><description>&lt;p>모헤윰의 핵심 기능 중 하나는 &lt;code>마크다운 서식 지원&lt;/code>입니다. 왜 SNS에 마크다운을 끼얹을 생각을 했나 생각해보면 최초 기획부터 있다가 기능 다이어트를 한 후 살아남았기 때문인데, 아무튼 드디어 때가 왔습니다.&lt;/p>
+&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>마크다운 만들기 - Markdown [3/3]</title><link>http://prayinforrain.github.io/post/making-editor-markdown/</link><pubDate>Mon, 05 Dec 2022 13:18:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-markdown/</guid><description>&lt;p>마지막입니다. 입력하고, 게시할 수 있게 되었으니, 이제 남은 일은 서식을 적용하는 것 뿐입니다. 마크다운 문법을 이용해 어떻게 서식을 적용할 수 있을까요? 그 과정을 정리해 보겠습니다.&lt;/p>
+&lt;h1 id="-어떻게-할까요">🤷 어떻게 할까요?&lt;/h1>
+&lt;p>정말이지 어떻게 하면 좋을까요? 우선 제가 생각하는 가장 사용성이 좋은 마크다운은 깃허브의 그것이였습니다. &lt;a href="https://github.github.com/gfm/">GFM(GitHub Flavored Markdown)&lt;/a>이라고 부르는 스펙이 있는데, 처음에는 이걸 부르는 이름이 있는 것조차 모르고 막무가내로 리버스 엔지니어링 마인드로 작업을 시작했습니다. 아래 사진처럼 아무 이슈나 들어가서 댓글 창에 실험을 하면서요.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_3_01.png" alt="Untitled">&lt;/p>
+&lt;p>원래대로라면 입력을 토큰으로 분해하고, &lt;code>Parse tree&lt;/code>를 구성하여야 겠지만, 마크다운이 느슨한 언어이기 때문에 토큰으로 분해하는 과정이 지나치게 어려울 것이라 판단하여 쉬운 길을 선택하기로 했습니다. 그래서 &lt;code>자주 쓸 법한 마크다운 몇 가지만 적용할 수 있게 하면 되겠지?&lt;/code> 하는 생각으로 깃허브를 열어서 아무 텍스트를 마구 입력해 보기 시작했습니다. 가벼운 마음으로요.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">headers&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>)&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">str&lt;/span>.&lt;span style="color:#a6e22e">replace&lt;/span>(&lt;span style="color:#e6db74">/^### ([\S ]+)$/gm&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;lt;h3&amp;gt;$1&amp;lt;/h3&amp;gt;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>.&lt;span style="color:#a6e22e">replace&lt;/span>(&lt;span style="color:#e6db74">/^## ([\S ]+)$/gm&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;lt;h2&amp;gt;$1&amp;lt;/h2&amp;gt;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>.&lt;span style="color:#a6e22e">replace&lt;/span>(&lt;span style="color:#e6db74">/^# ([\S ]+)$/gm&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;lt;h1&amp;gt;$1&amp;lt;/h1&amp;gt;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">code&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>)&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">str&lt;/span>.&lt;span style="color:#a6e22e">replace&lt;/span>(&lt;span style="color:#e6db74">/`([\S\n][^`\n]+)`/gm&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;lt;code&amp;gt;$1&amp;lt;/code&amp;gt;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">divideLines&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>)&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">str&lt;/span>.&lt;span style="color:#a6e22e">replace&lt;/span>(&lt;span style="color:#e6db74">/^[\n]?([\S ]*)$[\n]?/gm&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;lt;div&amp;gt;$1&amp;lt;/div&amp;gt;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">doParse&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>)&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">str&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">headers&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">code&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">divideLines&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_3_02.png" alt="Untitled">&lt;/p>
+&lt;p>그렇게 만들어진 것이 저번 포스트의 마지막 사진입니다. 대충 이런 느낌으로 replace를 쌓아 나가면 되지 않을까요?&lt;/p>
+&lt;h1 id="-뭐든-계획을-세우자">📝 뭐든 계획을 세우자&lt;/h1>
+&lt;p>하지만 마크다운의 세계는 그렇게 만만하지 않았습니다. &lt;code>replace&lt;/code>를 쌓아 나간다는 생각에는 변함이 없었지만 여러 줄에 걸친 문법이나 같은 식별자를 사용하는 문법을 어떻게 구별할 것인지와 같은 각종 예외 상황들을 어떻게 피해서 설계할 수 있을지 머리가 아파오기 시작했습니다. 특히 인용문은 아래처럼 다양한 경우에 대한 처리가 필요했죠.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_3_03.png" alt="Untitled">&lt;/p>
+&lt;p>이런 복잡한 경우에 대한 해답을 매 번 깃허브에 직접 입력해 보면서 결과를 맞춰 튜닝을 하느니, 차라리 처음부터 체계를 잡고 가자는 생각이 들어 &lt;a href="https://github.github.com/gfm/">GFM 스펙 문서&lt;/a>를 읽으며 문법들을 정리하기 시작했습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_3_04.png" alt="Untitled">&lt;/p>
+&lt;p>결과적으로 마크다운 문법은 크게 아래와 같이 분류할 수 있었습니다.&lt;/p>
+&lt;ul>
+&lt;li>줄 전체에 적용되는 &lt;code>Block&lt;/code> 문법과 줄의 일부분에만 적용되는 &lt;code>Inline&lt;/code> 문법이 존재합니다.&lt;/li>
+&lt;li>&lt;code>Block&lt;/code> 문법은 부분적으로 &lt;code>Inline&lt;/code> 문법을 포함할 수 있습니다.&lt;/li>
+&lt;li>&lt;code>Block&lt;/code> 문법 역시 다른 &lt;code>Block&lt;/code>을 포함할 수 있는 &lt;code>Container Blocks&lt;/code>와 그렇지 않은 &lt;code>Leaf Blocks&lt;/code>로 나뉩니다.&lt;/li>
+&lt;/ul>
+&lt;p>그리고 사진에 보이는 것처럼 각 문법에 대한 간략한 규칙을 정리하고, 지나치게 복잡하거나 자주 사용되지 않는 규칙들을 따로 표시하였습니다. 이제 이것들을 이용해서 각 문법들을 구현하고, Container Blocks → Leaf Blocks → Inlines 순서대로 변환해 주면 될 것 같습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">doParse&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>)&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">str&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">blockQuote&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">emptyLines&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">headers&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">code&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">divideLines&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">codeBlock&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">hr&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">bold&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">italic&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">underline&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">strike&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">link&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="-좀-더-개선해보자">⚒ 좀 더 개선해보자&lt;/h1>
+&lt;p>적용 범위가 큰 문법부터 차례대로 적용해 나감으로써 inline문법 안에 block문법이 적용된다거나 하는 문제를 예방하였고, 각 줄을 &lt;code>div&lt;/code> 태그로 변환하는 시점을 조절해서 정규표현식의 &lt;code>div&lt;/code>가 필요한 부분에만 들어가도록 더 온전한 결과물을 만들 수 있었습니다.&lt;/p>
+&lt;p>그런데 &lt;code>codeBlock&lt;/code>과 &lt;code>link&lt;/code>, &lt;code>image&lt;/code>의 URL은 마크다운의 영향을 받지 않아야 하는데 &lt;code>underline&lt;/code>이나 &lt;code>bold&lt;/code>같은 문법이 적용되고 있습니다. 이를 위해 첫 변환시 placeholder 역할을 하는, 일반적으로 입력할 수 없는 문자로 치환하고, 원본 텍스트를 마지막에 다시 재변환하는 작업을 진행하였습니다. 또 중간에 연속되는 변환 과정을 하나의 pipe 함수로 묶어주면 좋을 것 같네요.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">doParse&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>)&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">str&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">codes&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>[] &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">links&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>[] &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">imgs&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>[] &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">result&lt;/span>, &lt;span style="color:#a6e22e">codes&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">codeBlock&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">result&lt;/span>, &lt;span style="color:#a6e22e">links&lt;/span>, &lt;span style="color:#a6e22e">imgs&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">link&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">pipe&lt;/span>(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">blockQuote&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">unorderedList&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">orderedList&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">emptyLines&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">headers&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">code&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">divideLines&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">hr&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">bold&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">italic&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">underline&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">strike&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )(&lt;span style="color:#a6e22e">result&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">recoverPlaceholders&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>, &lt;span style="color:#a6e22e">codes&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;\u235e&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">recoverPlaceholders&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>, &lt;span style="color:#a6e22e">links&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;\u235f&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">result&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">recoverPlaceholders&lt;/span>(&lt;span style="color:#a6e22e">result&lt;/span>, &lt;span style="color:#a6e22e">imgs&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;\u2360&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">result&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="-마치며">🔥 마치며&lt;/h1>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_3_05.gif" alt="dhkstjd.gif">&lt;/p>
+&lt;p>처음에 시작할 때에는 무척 거창하게 시작했는데, 생각보다 투박한 결과물이 나왔습니다. 그래도 뭔가 라이브러리의 힘을 빌리지 않고 이 정도를 구현했다는 데 의의를 두고 싶습니다. 특히 에디터같은 부분은 찾아 볼수록 더 많은 기능이 필요하다는 것을 알게 되어서 아쉬움이 더 많이 생겼습니다. 나중에 시간이 되면 undo 기능도 구현하고, 이것저것 더 개선해 보고 싶네요.&lt;/p>
+&lt;p>지금까지 &lt;strong>모헤윰&lt;/strong>의 마크다운 에디터를 구현한 과정이였습니다.&lt;/p>
+&lt;h1 id="-refs">📖 Refs.&lt;/h1>
+&lt;p>&lt;a href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec&lt;/a>&lt;br>
+&lt;a href="https://github.com/markedjs/marked/tree/master/src">markedjs/marked&lt;/a>&lt;/p></description></item><item><title>마크다운 만들기 - getSelection</title><link>http://prayinforrain.github.io/post/making-editor-getselection/</link><pubDate>Thu, 24 Nov 2022 00:53:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-getselection/</guid><description>&lt;p>아니???????? 두 번째 글이 파서가 아니였네요. 저는 사실 이 글이 2부작이길 간절히 바랬는데, 1편에서 만든 에디터에 너무 끔찍한 버그가 있어서 이에 대해 정리해 보고자 합니다. 이걸로 3시간을 씨름하고 있었지만 모헤윰의 TIL 문서가 풍성해지고 있으니 긍정적이게 생각해야겠죠?&lt;/p>
+&lt;blockquote>
+&lt;p>💡 이 글은 Window 10, Chrome 107.0.5304.107 버전을 기준으로 작성되었습니다. 일부 환경에 따라 다르게 작동하는 부분이 있을 수 있습니다.&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="-첫-단추가-중요하다">😢 첫 단추가 중요하다&lt;/h1>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_01.png" alt="Untitled">&lt;/p>
+&lt;p>지금 만든 &lt;code>contenteditable div&lt;/code>는 치명적 문제가 있습니다. &lt;code>contenteditable&lt;/code>이 사진처럼 첫 줄의 텍스트를 div 태그로 감싸주지 않는다고 언급한 문제가 기억 나시나요? 사실 저는 처음 글에서 첫 줄 문제가 해결된 척 이야기한 바 있죠. 특정 상황에서는 여전히 &lt;code>contenteditable div&lt;/code>에 직접 텍스트를 입력할 수 있었지만, 솔직하게 그 때는 어차피 syntax highlighting을 지원하지 않을 거라 생각해 쉬쉬하기로 했습니다. 그런데 아니나 다를까, 붙여넣기에서 문제가 발생했습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_02.png" alt="Untitled">&lt;/p>
+&lt;p>아무 입력도 되어 있지 않은 &lt;code>contenteditable div&lt;/code>에 붙여넣기를 하면 위와 같은 오류가 납니다. 이 상태에서 다시 붙여넣기를 하면 그 때부턴 정상적으로 작동하는데, 어차피 이런 에러 쯤이야 콘솔을 열어놓고 웹서핑을 하는 개발자가 아니고서야 무시할 수 있는 수준이니 넘어갈 수 있겠지만, 결정적으로 붙여넣기 후 &lt;strong>커서가 붙여넣기 한 글귀의 끝으로 이동하지 않았습니다&lt;/strong>. 아니나 다를까 탭 키에 대해서 구현했던 코드도 같은 오류가 있네요.&lt;/p>
+&lt;p>오늘은 이 오류의 원인과 해결 과정에 대해 기록하는 글을 써 보겠습니다.&lt;/p>
+&lt;h1 id="-windowsgetselection">🖱️ windows.getSelection()&lt;/h1>
+&lt;h2 id="contenteditable의-문제">contenteditable의 문제&lt;/h2>
+&lt;p>저번 글에서 공부했던 바와 같이, &lt;code>contenteditable div&lt;/code>는 일반적인 입력 동작이 제대로 이루어지지 않습니다. 착한 사용자가 차분히 글을 입력한다고 해도 첫 줄만 &lt;code>div&lt;/code> 태그로 감싸주지 않는다거나, 붙여넣기를 하면 대뜸 원본의 서식이 그대로 적용된 글귀가 입력되기도 합니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_03.png" alt="Untitled">&lt;/p>
+&lt;p>대충 이런 느낌이죠. 그 외에도 수정을 어떻게 하느냐에 따라 결과물이 묘하게 달라지기도 하는 등, 너무나 다양한 문제가 산재해 있습니다. 서론이 너무 길었네요. 그냥 &lt;code>con..어쩌구&lt;/code>에 대해 처음 글을 쓸 때 이런 문제들이 있다고 설명할 걸 그랬어요.&lt;/p>
+&lt;p>아무튼 이런 불쾌한 동작들을 해결하기 위해, &lt;code>keydown&lt;/code>, &lt;code>keyup&lt;/code>, &lt;code>paste&lt;/code> 등 다양한 이벤트 리스너를 바인딩해서 직접 이런 제스쳐를 구현해야만 했습니다. 그 과정에서 소개했던 것이 바로 &lt;code>windows.getSelection()&lt;/code>이였죠.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_04.png" alt="Untitled">&lt;/p>
+&lt;h2 id="type-selection">type Selection&lt;/h2>
+&lt;p>우선 이 녀석이 제공해주는 &lt;code>Selection&lt;/code> 타입 객체의 property를 보겠습니다.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>이름&lt;/th>
+&lt;th>설명&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>anchorNode&lt;/td>
+&lt;td>선택이 시작된 지점(=드래그 시작 지점)의 노드를 참조합니다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>anchorOffset&lt;/td>
+&lt;td>선택이 시작된 지점의 anchorNode상에서의 위치를 나타냅니다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>focusNode&lt;/td>
+&lt;td>선택이 끝난 지점(=드래그 종료 지점)의 노드를 참조합니다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>focusOffset&lt;/td>
+&lt;td>선택이 끝난 지점의 focusNode상에서의 위치를 나타냅니다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>type&lt;/td>
+&lt;td>블록 지정시 Range, 단일 커서는 Caret을 갖습니다.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>큰 의미 없거나 정식 스펙이 아닌 경우는 제외하고 이 정도를 알고 있으면 되겠습니다. 드래그 시작과 종료 지점을 명시한 이유는 저번 글에서 언급했던 것처럼 드래그에는 방향이 있기 때문이죠. Caret의 경우에는 항상 두 프로퍼티가 같은 값을 가질 것입니다.&lt;/p>
+&lt;p>&lt;code>Selection&lt;/code> 타입은 제공하는 method도 있습니다. 한번 알아보겠습니다.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>이름&lt;/th>
+&lt;th>설명&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>getRangeAt(index)&lt;/td>
+&lt;td>현재 선택된 index번째 Range 범위를 반환합니다. 다중 선택이 지원되는 브라우저가 아닌 경우 보통 index는 0이 최대입니다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>addRange(range)&lt;/td>
+&lt;td>현재 선택된 Range에 더해 range를 함께 선택합니다. 다중 선택이 지원되는 브라우저가 아닌 경우 range만이 재선택됩니다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>collapse(node, offset?)&lt;/td>
+&lt;td>node의 offset 위치를 선택합니다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>containsNode(node, partialContainment?)&lt;/td>
+&lt;td>node가 선택 Range 안에 포함되는지 여부를 반환합니다. partialContainment가 true인 경우 일부만 포함되어 있어도 true를 반환합니다.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>훨씬 종류가 많지만 쓰이지 않을 것 같아 길게 적지 않았습니다. 그 외에 &lt;code>Selection&lt;/code> 타입 객체는 각 프로퍼티에 대해 얕은 참조를 제공하기 때문에 같은 이름으로 참조해도 참조 시점에 따라 값이 변할 수 있다는 특성이 있겠네요. 여기서 제가 사용했던 메소드는 &lt;code>collapse&lt;/code>였습니다. 대충 &lt;code>getSelection()&lt;/code>으로 받은 &lt;code>anchorNode&lt;/code>를 그대로 사용하고, &lt;code>anchorOffset + 추가한 문자열 길이&lt;/code>로 위치를 잡는 식이죠.&lt;/p>
+&lt;h2 id="anchornode는-node다">anchorNode는 node다&lt;/h2>
+&lt;p>그런데 이 &lt;code>anchorOffset&lt;/code>은 상황에 따라 다르게 사용해야 합니다. 이게 무슨 소리냐면, 이 녀석을 1로 지정하면 커서가 끝으로 갈 때가 있고, 두 번째 글자로 커서가 이동할 때가 있다는 말이죠.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_05.gif" alt="복사맨2.gif">&lt;/p>
+&lt;p>두 번째 글자로 커서가 가는건 이해가 가는데, 처음엔 왜 끝으로 갔던 걸까요? 그 비밀은 &lt;code>getSelection&lt;/code>이 참조하던 &lt;code>anchorNode&lt;/code>에 있습니다. &lt;strong>첫 번째 붙여넣기와 그 이후의 붙여넣기의 anchorNode가 다르기 때문&lt;/strong>이죠. 첫 번째 붙여넣기는 &lt;code>contenteditable div&lt;/code>를, 그 이후에는 해당 라인의 div..도 아니라 &lt;code>그 div의 **텍스트 노드**&lt;/code>를 참조하고 있습니다.&lt;/p>
+&lt;h3 id="텍스트-노드를-아시나요">텍스트 노드를 아시나요?&lt;/h3>
+&lt;p>위에 제가 &lt;code>console.log&lt;/code>를 찍어본 사진에는 &lt;code>anchorNode&lt;/code>에 &lt;code>text&lt;/code>라고 쓰여 있었습니다. 저는 &lt;code>contenteditable div&lt;/code>의 자식 &lt;code>div&lt;/code>중 하나를 선택하고 있었는데 말이죠. 즉 &lt;code>getSelection&lt;/code>은 선택중인 텍스트 노드까지 따져서 참조한다는 특징을 알 수 있습니다. 텍스트 노드라.. 딱히 어느 태그에 포함되어 있지 않으면서 애매하게 텍스트만 들어있는 바로 그 &lt;code>innerText&lt;/code>를 텍스트 노드라고 부르는 모양입니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_06.png" alt="Untitled">&lt;/p>
+&lt;p>바로 요 녀석인데요, 텍스트 노드는 다른 노드와 다르게 조금 특이한 성질을 갖습니다. 다르다고 하나, 아무튼 Node 인터페이스를 상속하지만 HTML Element는 아니기 때문에 다루기가 굉장히 까다롭습니다.&lt;/p>
+&lt;ul>
+&lt;li>innerText가 비어있는, 즉 &lt;code>‘’&lt;/code>인 Element는 텍스트 노드가 없습니다.&lt;/li>
+&lt;li>부모의 &lt;code>childNodes&lt;/code>같은 프로퍼티로 접근할 수 있지만, 고정된 인덱스에 있지는 않습니다.
+&lt;ul>
+&lt;li>즉 다른 형제 노드와의 순서에 따라 인덱스가 변합니다..&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>다시 돌아와서 &lt;code>collapse&lt;/code>에 제공한 &lt;code>offset&lt;/code>이 어째서 텍스트 상의 위치를 가리키지 않았느냐, 노드상에서의 &lt;strong>offset은 텍스트 노드를 제외하고는 자식 노드의 인덱스를 가리키기 때문&lt;/strong>이죠. 즉 아래 과정과 같습니다.&lt;/p>
+&lt;p>첫 번째 복사했을 때에는 &lt;code>anchorNode&lt;/code>가 &lt;code>contenteditable div&lt;/code>였기 때문에, &lt;code>offset = 1&lt;/code>에 해당하는 위치는 아래와 같습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">contenteditable&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">textNode&lt;/span>&amp;gt;&lt;span style="color:#960050;background-color:#1e0010">복사한&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">글귀입니다&lt;/span>&amp;lt;/&lt;span style="color:#f92672">textNode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">여기&lt;/span>&lt;span style="color:#f92672">!&lt;/span> &lt;span style="color:#f92672">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>이렇게 커서를 이동시키고 나면, &lt;code>div&lt;/code> 태그 안의 입력은 모두 텍스트 노드 안으로 들어가게 되므로 커서는 텍스트 노드가 끝나기 직전 위치로 자동으로 보정되게 됩니다. 표현하자면 아래처럼 되겠군요.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">contenteditable&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">textNode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">복사한&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">글귀입니다&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">여기&lt;/span>&lt;span style="color:#f92672">!&lt;/span> &lt;span style="color:#f92672">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">textNode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>이 상태에서 한번 더 붙여넣기를 한다면 끝에 자연스럽게 붙여넣기가 되지만, 이번에 참조하는 &lt;code>anchorNode&lt;/code>는 텍스트노드로 변경되어 offset이 가리키는 위치는 처음 원했던 바로 그 텍스트에서의 위치가 됩니다. 두 번째 붙여넣기를 완료한 후의 커서 상태는 아래와 같이 됩니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">contenteditable&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">textNode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">복&lt;/span>&lt;span style="color:#75715e">&amp;lt;!--&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">여기&lt;/span>&lt;span style="color:#f92672">!&lt;/span> &lt;span style="color:#f92672">--&amp;gt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">사한&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">글귀입니다복사한&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">글귀입니다&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">textNode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>정말 끔찍하군요. offset이 노드의 타입에 따라 다르게 적용된다니! 아니 그 이전에 왜 &lt;code>anchorNode&lt;/code>는 처음부터 텍스트노드를 잡아 주지 않는거죠?&lt;/p>
+&lt;h2 id="nodenodetype">Node.nodeType&lt;/h2>
+&lt;p>다행히 이 문제를 바로잡을 방법이 있었습니다. 바로 Node 인터페이스가 제공하는 &lt;code>nodeType&lt;/code>인데요, 이 녀석이 1이면 Element, 3이면 Text 노드라고 하네요. 그 말인 즉 &lt;code>anchorNode&lt;/code>가 1이거나 3일 때 다른 한 쪽으로 변환해서 통일해주면 되는데.. 앞에서 언급했듯 텍스트 노드는 참조하는 것 자체가 여간 어려운 일이 아닙니다. 그래서 제가 해결한 방법은 &lt;code>nodeType&lt;/code>에 따라 offset을 다르게 사용하는 것입니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">position&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">anchorNode&lt;/span>.&lt;span style="color:#a6e22e">nodeType&lt;/span> &lt;span style="color:#f92672">===&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span> &lt;span style="color:#f92672">?&lt;/span> &lt;span style="color:#a6e22e">anchorOffset&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">data.length&lt;/span> : &lt;span style="color:#66d9ef">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>window.&lt;span style="color:#a6e22e">getSelection&lt;/span>()&lt;span style="color:#f92672">?&lt;/span>.&lt;span style="color:#a6e22e">collapse&lt;/span>(&lt;span style="color:#a6e22e">anchorNode&lt;/span>, &lt;span style="color:#a6e22e">position&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>텍스트 노드이면 정상적으로 길이를 더해서 끝자리를 잡아주고, 엘리먼트이면 1의 offset을 대입합니다. 이게 가능한 이유는 이 문제가 발생하는 케이스가 빈 칸에 최초 입력 시에만 발생하기 때문인데, 새로운 케이스가 발견되면 저 1을 무척 피곤하고 귀찮은 변수로 바꿔 주어야 겠네요.&lt;/p>
+&lt;h1 id="-오버엔지니어링의-길목에서">🤦 오버엔지니어링의 길목에서&lt;/h1>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_07.gif" alt="고쳤맨.gif">&lt;/p>
+&lt;p>처음에는 아주 간단한 에디터를 생각했는데, 그 &lt;em>간단한&lt;/em> 에디터 뒤에 얼마나 깊은 심연이 있는지 몸소 두들겨 맞게 되는 요즘입니다. &lt;code>input&lt;/code>이나 &lt;code>textarea&lt;/code>를 썼으면 이런 긴 글을 두 개나 쓸 필요가 없었을텐데, 제가 무슨 부귀영화를 누리자고 &lt;code>contenteditable&lt;/code>을 쓰자고 했을까요?&lt;/p>
+&lt;p>그럼에도 불구하고 새로운 경험을 하고 글을 쓸 수 있어서 정말 즐겁습니다. 데모 발표 시간에도 제가 즐거워해야 할텐데요, 다음 글은 드디어 마크다운을 파싱하는 과정에 대해 써볼 예정입니다. 지금 어느 난관에 부딪혀 멈춰 있는데, 여유가 된다면 아마 6주차에 리팩토링을 할 것 같네요. 화이팅!&lt;/p></description></item><item><title>마크다운 만들기 - contentEditable</title><link>http://prayinforrain.github.io/post/making-editor-contenteditable/</link><pubDate>Tue, 22 Nov 2022 20:36:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-contenteditable/</guid><description>&lt;p>모헤윰의 핵심 기능 중 하나는 &lt;code>마크다운 서식 지원&lt;/code>입니다. 왜 SNS에 마크다운을 끼얹을 생각을 했나 생각해보면 최초 기획부터 있다가 기능 다이어트를 한 후 살아남았기 때문인데, 아무튼 드디어 때가 왔습니다.&lt;/p>
 &lt;p>내부적으로 에디터를 외부 라이브러리를 사용하는게 좋지 않겠냐는 이야기가 나왔는데요, 결국 직접 구현해 보기로 했지만 그 과정에서 여러 레퍼런스를 얻을 수 있었습니다. 개인적으로 멋있다고 생각한 사이트 두 가지를 소개합니다.&lt;/p>
 &lt;p>&lt;a href="https://hackmd.io/">https://hackmd.io/&lt;/a>&lt;br>
 &lt;a href="https://ui.toast.com/tui-editor">https://ui.toast.com/tui-editor&lt;/a>&lt;/p>
