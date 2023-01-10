@@ -1,10 +1,17 @@
 ---
-title: "마크다운 만들기 - getSelection"
+title: "마크다운 만들기 - getSelection [2/3]"
 date: 2022-11-24T00:53:55+09:00
 lastmod: 2022-11-24T00:53:55+09:00
 draft: false
 categories: ["moheyum"]
 tags: ["moheyum"]
+---
+
+**모헤윰**의 에디터 만들기 시리즈 모아보기  
+[에디터 만들기 - ContentEditable [1/3]]({{<ref "post/making-editor-contenteditable">}})  
+[에디터 만들기 - getSelection [2/3]]({{<ref "post/making-editor-getselection">}})  
+[에디터 만들기 - Markdown [3/3]]({{<ref "post/making-editor-markdown">}})
+
 ---
 
 아니???????? 두 번째 글이 파서가 아니였네요. 저는 사실 이 글이 2부작이길 간절히 바랬는데, 1편에서 만든 에디터에 너무 끔찍한 버그가 있어서 이에 대해 정리해 보고자 합니다. 이걸로 3시간을 씨름하고 있었지만 모헤윰의 TIL 문서가 풍성해지고 있으니 긍정적이게 생각해야겠죠?

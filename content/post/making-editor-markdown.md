@@ -7,6 +7,13 @@ categories: ["moheyum"]
 tags: ["moheyum"]
 ---
 
+**모헤윰**의 에디터 만들기 시리즈 모아보기  
+[에디터 만들기 - ContentEditable [1/3]]({{<ref "post/making-editor-contenteditable">}})  
+[에디터 만들기 - getSelection [2/3]]({{<ref "post/making-editor-getselection">}})  
+[에디터 만들기 - Markdown [3/3]]({{<ref "post/making-editor-markdown">}})
+
+---
+
 마지막입니다. 입력하고, 게시할 수 있게 되었으니, 이제 남은 일은 서식을 적용하는 것 뿐입니다. 마크다운 문법을 이용해 어떻게 서식을 적용할 수 있을까요? 그 과정을 정리해 보겠습니다.
 
 # 🤷 어떻게 할까요?

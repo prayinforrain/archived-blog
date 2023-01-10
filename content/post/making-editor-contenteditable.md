@@ -1,10 +1,17 @@
 ---
-title: "마크다운 만들기 - contentEditable"
+title: "마크다운 만들기 - contentEditable [1/3]"
 date: 2022-11-22T20:36:55+09:00
 lastmod: 2022-11-22T20:36:55+09:00
 draft: false
 categories: ["moheyum"]
 tags: ["moheyum"]
+---
+
+**모헤윰**의 에디터 만들기 시리즈 모아보기  
+[에디터 만들기 - ContentEditable [1/3]]({{<ref "post/making-editor-contenteditable">}})  
+[에디터 만들기 - getSelection [2/3]]({{<ref "post/making-editor-getselection">}})  
+[에디터 만들기 - Markdown [3/3]]({{<ref "post/making-editor-markdown">}})
+
 ---
 
 모헤윰의 핵심 기능 중 하나는 `마크다운 서식 지원`입니다. 왜 SNS에 마크다운을 끼얹을 생각을 했나 생각해보면 최초 기획부터 있다가 기능 다이어트를 한 후 살아남았기 때문인데, 아무튼 드디어 때가 왔습니다.
