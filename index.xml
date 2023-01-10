@@ -703,7 +703,277 @@
 &lt;h1 id="서식을-어떻게-입힐까요">서식을 어떻게 입힐까요?&lt;/h1>
 &lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_1_09.png" alt="Untitled">&lt;/p>
 &lt;p>정제한 입력값을 가지고, 정규표현식을 이용해 간단하게 &lt;code>#&lt;/code>을 이용한 헤딩 마크다운을 추가했습니다. 그런데 이렇게 모든 규칙에 대해 코드를 하나씩 집어 넣는 방식이 좋은 방식일까요? &lt;code>#&lt;/code>을 이용한 헤딩도 있지만 아랫줄에 &lt;code>-&lt;/code> 또는 &lt;code>=&lt;/code>를 입력해서 헤딩을 하는 것은 어떻게 구현할까요? 만약 헤딩과 코드블럭 마크다운이 중첩되면 어떻게 처리해야 할까요? 표를 그리는 방법은요?&lt;/p>
-&lt;p>생각만 해도 벌써 머리가 얼큰해지네요. 흠.. 갑자기 tokenizer, lexer, parser같은 키워드가 막 떠오르는데.. 다시 차분히 공부해 볼 필요가 있겠습니다. 다음 글의 내용이 벌써 짐작이 가는군요. 지금까지 &lt;code>contenteditable&lt;/code>과 &lt;code>getSelection()&lt;/code>을 활용한 과정에 대해 이야기해 보았습니다.&lt;/p></description></item><item><title>npm vs yarn vs pnpm</title><link>http://prayinforrain.github.io/post/npm-vs-yarn-vs-pnpm/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/npm-vs-yarn-vs-pnpm/</guid><description>&lt;p>지금까지 저는 아무 의심 없이 npm을 사용해왔습니다. 이따금씩 &lt;code>node_modules&lt;/code> 폴더가 저를 고통스럽게 했던 시간들이 있었지만, 프로젝트 초기화에 정말 이상한 행동만 하지 않으면 &lt;code>npm i&lt;/code> 한 줄과 커피 한 잔으로 모든게 문제 없이 동작했으니까요. 하지만 우리는 슬랙의 어떤 분을 통해, npm보다 좋은 방법이 있음을 알고 있습니다. 이번 포스트에서는 &lt;code>yarn&lt;/code>과 &lt;code>pnpm&lt;/code>을 체험해 보도록 하겠습니다.&lt;/p>
+&lt;p>생각만 해도 벌써 머리가 얼큰해지네요. 흠.. 갑자기 tokenizer, lexer, parser같은 키워드가 막 떠오르는데.. 다시 차분히 공부해 볼 필요가 있겠습니다. 다음 글의 내용이 벌써 짐작이 가는군요. 지금까지 &lt;code>contenteditable&lt;/code>과 &lt;code>getSelection()&lt;/code>을 활용한 과정에 대해 이야기해 보았습니다.&lt;/p></description></item><item><title>Emotion</title><link>http://prayinforrain.github.io/post/emotion/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/emotion/</guid><description>&lt;h1 id="tldr">🤷TL;DR&lt;/h1>
+&lt;ul>
+&lt;li>CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다.&lt;/li>
+&lt;li>emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자.&lt;/li>
+&lt;li>적절한 IDE Extension을 잘 활용하자.&lt;/li>
+&lt;li>CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자.&lt;/li>
+&lt;/ul>
+&lt;h1 id="css-in-js">🎨CSS-in-JS&lt;/h1>
+&lt;p>CSS-in-JS는 HTML Element의 스타일을 자바스크립트 파일을 통해서 지정하는 방식입니다. .css 파일이 하던 일을 .js 파일에게 시키는 것이죠. CSS는 CSS이고, JS는 JS입니다. 왜 굳이 둘을 합쳐야만 하는 것일까요? 이 알 수 없는 발상을 이해하려면 우선 기존 css의 단점을 살펴보겠습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_01.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_02.png" alt="Untitled">&lt;/p>
+&lt;p>제가 학습 스프린트때 진행한 프로젝트 파일의 일부입니다. 사용자의 현재 위치를 표시하기 위한 컴포넌트의 스타일을 &lt;code>location-bar&lt;/code>라는 클래스명으로 지정하고 있죠. 단순히 이 부분만 봐서는 크게 문제가 없어 보이지만, 아래와 같은 문제들이 있습니다.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>location-bar&lt;/code> 라는 클래스명은 추상적입니다.
+즉, 사용자의 위치를 표시하기 위한 &lt;code>location-bar&lt;/code>는 장기적으로 다양한 페이지에서, 다양한 컴포넌트에서 활용될 수 있습니다. CSS는 그 적용 범위를 지정하는 것이 상당히 제한적이기 때문에 이런 문제를 해결하려면 클래스명을 더 길고 복잡하게 정할 수 밖에 없습니다.&lt;/li>
+&lt;li>css 파일은 관심사의 분리가 어렵습니다.
+당장 저 파일은 어떤 상품의 정보를 표시하기 위한 컴포넌트의 스타일만이 모여 있습니다. 상품 정보와 사용자 위치는 크게 연관이 없어보임에도 같은 페이지에 있다는 이유로 같은 파일에 있으며, 이를 수정하려면 400줄 가량 되는 파일에서 저 부분을 찾아야만 합니다.&lt;/li>
+&lt;/ul>
+&lt;p>작업할 당시에는 당연한 불편함이라 생각하고 감내해 왔지만, 프로젝트 규모가 커졌을 때를 상상해 보니 머리가 시큰해집니다. 이런 문제를 해결하기 위해 등장한 것이 &lt;strong>CSS-in-JS&lt;/strong>입니다.&lt;/p>
+&lt;h1 id="emotionstyled">😆emotion/styled&lt;/h1>
+&lt;p>React에서 사용하는 CSS-in-JS 라이브러리는 &lt;code>styled-components&lt;/code>와 &lt;code>emotion&lt;/code> 두 가지가 있습니다. 두 라이브러리는 사실 사용하는 입장에서 차이가 거의 없습니다. 어떤 레퍼런스를 보면 &lt;code>emotion&lt;/code>만이 css props를 사용할 수 있다는 차이점을 이야기하지만, 지금 시점에서는 양쪽 다 지원하고 있습니다. 성능 역시 &lt;code>emotion&lt;/code>이 앞선다는 분석이 있지만 &lt;code>styled-components&lt;/code> 역시 최적화가 이루어지고 있고, 애초에 그렇게 큰 폭으로 차이가 나지 않기 때문에, 손에 잡히는 것 아무거나 사용해도 될 것 같습니다. 저는 &lt;code>emotion&lt;/code>이 더 손에 익다는 이유로 &lt;code>emotion&lt;/code>을 골랐습니다. &lt;strong>styled&lt;/strong>라는 단어가 키보드로 잘 안 쳐 지더라구요.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>npm i @emotion/styled @emotion/babel-plugin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>@emotion/babel-plugin&lt;/code>은 babel을 사용하는 경우에만 설치 후 config파일의 plugins에 &lt;code>@emotion&lt;/code>을 추가해 줍니다. 그러면 모든 준비가 끝납니다. 사용 예시를 확인하기 위해 예제 코드를 준비했습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">TestRecoil() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">count&lt;/span>, &lt;span style="color:#a6e22e">setCount&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useRecoilState&lt;/span>(&lt;span style="color:#a6e22e">counterState&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setCount&lt;/span>(&lt;span style="color:#a6e22e">count&lt;/span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;{&lt;span style="color:#a6e22e">count&lt;/span>}&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setCount&lt;/span>(&lt;span style="color:#a6e22e">count&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setCount&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">초기화&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_03.png" alt="Untitled">&lt;/p>
+&lt;p>아주 참을 수 없게 못생긴 컴포넌트군요. 이제 이 컴포넌트에 스타일을 지정해 주겠습니다. 해당 tsx파일에 아래와 같이 코드를 추가하였습니다. &lt;strong>모든 스타일 이름은 대문자로 시작&lt;/strong>해야 하는 점 주의하세요. 왜냐면 이 녀석들이 컴포넌트의 이름으로서 취급될 예정이거든요!&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">styled&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@emotion/styled&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">WrapperDiv&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">styled&lt;/span>.&lt;span style="color:#a6e22e">div&lt;/span>&lt;span style="color:#e6db74">`
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> display: flex;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> width: 100%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> flex-direction: column;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> background-color: #ff0000;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">ButtonContainer&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">styled&lt;/span>.&lt;span style="color:#a6e22e">div&lt;/span>&lt;span style="color:#e6db74">`
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> display: flex;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> flex-direction: row;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> width: 30%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> background-color: #00ff00;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">ResetButton&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">styled&lt;/span>.&lt;span style="color:#a6e22e">button&lt;/span>&lt;span style="color:#e6db74">`
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> width: 50%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">`&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>이제 기존 div와 button 태그들을 바꿔줄 시간입니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">WrapperDiv&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">ButtonContainer&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setCount&lt;/span>(&lt;span style="color:#a6e22e">count&lt;/span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;{&lt;span style="color:#a6e22e">count&lt;/span>}&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setCount&lt;/span>(&lt;span style="color:#a6e22e">count&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">ButtonContainer&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">ResetButton&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setCount&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">초기화&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">ResetButton&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">WrapperDiv&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_04.png" alt="Untitled">&lt;/p>
+&lt;p>짜잔! 스타일이 적용되었습니다. 못생긴 건 똑같지만 어쨌든 제 의도대로 못생겼네요.&lt;/p>
+&lt;h1 id="emotion의-특징">📋emotion의 특징&lt;/h1>
+&lt;p>기본적인 사용법을 알았으니, 알아두어야 할 점을 정리해봅시다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_05.png" alt="Untitled">&lt;/p>
+&lt;ul>
+&lt;li>styled component의 이름은 대문자로 시작해야 합니다. (CamelCase)
+타입스크립트의 규칙이 원인인데, 스타일이 지정된 태그 각각이 하나의 컴포넌트로서 취급되기 때문에 카멜 케이스로 작성할 필요가 있습니다. 그 부분이 일관성 있기도 하구요.&lt;/li>
+&lt;li>스타일을 지정하는 코드를 별도의 style 파일로 분리할 수 있습니다.
+별도의 .ts 파일로 분리하고, 각각의 스타일을 export하고 import하는 것으로 사용이 가능합니다. css 파일과의 차이는 해당 컴포넌트의 스타일 정의를 IDE가 바로 찾아줄 수 있다는 점이 있습니다. VS Code 기준, Ctrl + 클릭으로 바로가기가 가능합니다!&lt;/li>
+&lt;li>scss 문법을 지원합니다.
+scss의 nesting 문법을 지원합니다. backquote 안에서는 완전 scss처럼 사용하면 됩니다!&lt;/li>
+&lt;li>class / id 선택자를 지양합시다!
+기본적으로 scss의 모든 선택자를 지원하지만, 클래스 명을 사용하는 것은 추천되지 않습니다. 애초에 컴포넌트 이름 자체가 하나의 선택자로서의 역할을 하니까요.
+어느 캠퍼분에게 들었던 내용인데 레퍼런스를 찾지 못하고 있습니다.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>❓ &lt;strong>아니 그럼 &lt;code>.selected&lt;/code> 처럼 사용하던 클래스의 역할은 누가 하나요?&lt;/strong>
+emotion은 놀랍게도 CSS props를 지원합니다. 말 그대로 React Component에서 사용하는 Props를 그대로 CSS에서 참조할 수 있다는 뜻입니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_06.png" alt="제목 없음-1.png">&lt;/p>
+&lt;p>위와 같이 props를 참조하여 유동적인 스타일 지정이 가능합니다. 깔끔하죠? 스타일의 props interface에 선언되었는데 실제 사용에서 props 값을 지정해주지 않으면 빨간 줄을 그어 주기도 한답니다.&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="함께-사용하면-좋은-확장">🔨함께 사용하면 좋은 확장&lt;/h1>
+&lt;p>VS Code에는 emotion과 함께 사용하면 좋은 확장들이 있는데요, 짤막하게 몇 가지 소개해 보고자 합니다.&lt;/p>
+&lt;h3 id="auto-rename-tag">Auto Rename Tag&lt;/h3>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_07.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_08.gif" alt="확장1.gif">&lt;/p>
+&lt;p>tsx, jsx를 포함한 파일에서 HTML 태그를 수정할 때 열린 태그와 닫는 태그를 동시에 수정해 주는 확장입니다. 특히 &lt;code>div&lt;/code>같이 여러 번 사용되는 태그를 정확히 짝을 찾아서 자동으로 고쳐주기 때문에 스타일 적용이 매우 편해집니다.&lt;/p>
+&lt;h3 id="highlight-matching-tag">Highlight Matching Tag&lt;/h3>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_09.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_10.png" alt="Untitled">&lt;/p>
+&lt;p>여는 태그와 닫는 태그가 눈에 띄도록 밑줄로 강조해 줍니다. &lt;code>Auto Rename Tag&lt;/code>와 함께 사용하기 좋습니다.&lt;/p>
+&lt;h3 id="vscode-styled-components">vscode-styled-components&lt;/h3>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_11.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_12.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_13.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;code>styled.tag&lt;/code>를 통해 스타일을 지정하면 css 프로퍼티가 단순 문자열로 인식되어 자동완성이 지원되지 않는데요, 이 확장을 사용하면 해당 부분이 css 프로퍼티로 인식되어 css 파일을 작성하듯 사용할 수 있습니다. 무지 좋죠?&lt;/p>
+&lt;h3 id="color-highlight">Color Highlight&lt;/h3>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_14.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/emotion_15.png" alt="Untitled">&lt;/p>
+&lt;p>IDE 차원에서 색상의 hex code에 대한 미리보기를 지원해 줍니다. 기본적으로 미리보기를 지원해주긴 하지만 조금 더 크게 보여주는 점이 마음에 들었습니다. 스크롤을 쭉 내리다가 발견하기가 쉽거든요.&lt;/p>
+&lt;h1 id="쓰시게요">🤔쓰시게요?&lt;/h1>
+&lt;p>CSS-in-JS의 개념과 그 사용법에 대해 알아보았습니다. 그런데 &lt;strong>CSS-in-JS는 과연 정답일까요?&lt;/strong> 얼마 전에 슬랙에서 이에 대한 흥미로운 글을 봤습니다. &lt;a href="https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6">우리가 CSS-in-JS와 헤어지는 이유&lt;/a> 라는 제목의 글인데요, Emotion의 메인 기여자 중 한 명이 이런 글을 썼다는 점에서 고민해 볼 가치는 충분할 것으로 보입니다.&lt;/p>
+&lt;p>성능 측면에서의 단점과 React와의 몇 가지 역시너지 문제가 있다고 하는데, 제 수준에서는 문제 상황을 체감하기도, 이해하기도 어려운 내용이지만 모든 라이브러리나 프레임워크가 그러하듯 CSS-in-JS도 그 장단점을 인지하면 상황에 따라 어느 선택이 최선인지 결정하는 데 도움이 될거라 생각합니다.&lt;/p>
+&lt;p>&lt;a href="https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6">(번역) 우리가 CSS-in-JS와 헤어지는 이유&lt;/a>&lt;/p>
+&lt;h1 id="refs">📖Refs.&lt;/h1>
+&lt;p>&lt;a href="https://github.com/jsjoeio/styled-components-vs-emotion">https://github.com/jsjoeio/styled-components-vs-emotion&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@bepyan/styled-components-%EA%B3%BC-emotion-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AD%94%EA%B0%80#emotion%EC%9D%98-%EC%B0%A8%EB%B3%84%EC%A0%90">styled-components 과 emotion, 도대체 차이가 뭔가?&lt;/a>&lt;br>
+&lt;a href="https://d0gf00t.tistory.com/22">[번역] CSS-in-JS에 관해 알아야 할 모든 것&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@prkyw1206/does-not-exist-on-type-jsx.intrinsicelements-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0">does not exist on type &amp;lsquo;jsx.intrinsicelements&amp;rsquo; 문제 해결&lt;/a>&lt;br>
+&lt;a href="https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6">(번역) 우리가 CSS-in-JS와 헤어지는 이유&lt;/a>&lt;br>
+페어 프로그래밍 기간동안 제가 검색 한 번 없이 emotion을 능숙하게 사용할 수 있도록 인간 레퍼런스가 되어주신 &lt;strong>J154 이정욱&lt;/strong> 캠퍼님께 감사드립니다. 🙇&lt;/p></description></item><item><title>npm vs yarn vs pnpm</title><link>http://prayinforrain.github.io/post/npm-vs-yarn-vs-pnpm/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/npm-vs-yarn-vs-pnpm/</guid><description>&lt;p>지금까지 저는 아무 의심 없이 npm을 사용해왔습니다. 이따금씩 &lt;code>node_modules&lt;/code> 폴더가 저를 고통스럽게 했던 시간들이 있었지만, 프로젝트 초기화에 정말 이상한 행동만 하지 않으면 &lt;code>npm i&lt;/code> 한 줄과 커피 한 잔으로 모든게 문제 없이 동작했으니까요. 하지만 우리는 슬랙의 어떤 분을 통해, npm보다 좋은 방법이 있음을 알고 있습니다. 이번 포스트에서는 &lt;code>yarn&lt;/code>과 &lt;code>pnpm&lt;/code>을 체험해 보도록 하겠습니다.&lt;/p>
 &lt;h1 id="-tldr">🤷 TL;DR&lt;/h1>
 &lt;ul>
 &lt;li>npm의 의존성 관리는 사실 매우 비효율적이다.&lt;/li>
@@ -770,4 +1040,589 @@
 &lt;a href="https://yarnpkg.com/getting-started/install">Installation&lt;/a>&lt;br>
 &lt;a href="https://www.zigae.com/yarn2/">yarn berry(yarn2) 마이그레이션 방법&lt;/a>&lt;br>
 &lt;a href="https://kasterra.github.io/setting-yarn-berry/">yarn berry로 React.js 프로젝트 시작하기 | Kasterra&amp;rsquo;s Archive&lt;/a>&lt;br>
-그리고 부스트 컨퍼런스 테크톡에서 멋진 발표를 해 주신 &lt;strong>J166 이휘찬&lt;/strong> 캠퍼님께 감사드립니다 🙇&lt;/p></description></item></channel></rss>
+그리고 부스트 컨퍼런스 테크톡에서 멋진 발표를 해 주신 &lt;strong>J166 이휘찬&lt;/strong> 캠퍼님께 감사드립니다 🙇&lt;/p></description></item><item><title>Redux vs Recoil</title><link>http://prayinforrain.github.io/post/redux-vs-recoil/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/redux-vs-recoil/</guid><description>&lt;h1 id="-tldr">🤷 TL;DR&lt;/h1>
+&lt;ul>
+&lt;li>Redux는 안정적이지만, 선언과 사용이 복잡하다.&lt;/li>
+&lt;li>Recoil은 사용이 매우 쉽지만 정식 버전이 없다.&lt;/li>
+&lt;li>프로젝트 규모에 따라 마음에 드는 라이브러리를 선택하자&lt;/li>
+&lt;/ul>
+&lt;h1 id="-서론">🚪 서론&lt;/h1>
+&lt;p>우리는 React를 사용할 때 보통 &lt;code>useState&lt;/code>를 통해 상태를 관리합니다. &lt;code>useState&lt;/code>는 정말 섹시하지만, 한 가지 너무 큰 단점이 있습니다. 바로 컴포넌트끼리 데이터를 주고받는 데 사용하기가 힘들다는 점입니다. 그 일을 하기 위해 등장한 것이 바로 &lt;strong>상태 관리 라이브러리&lt;/strong>입니다. 상태 관리 라이브러리의 필요성에 대해 공감하지 못하는 분들을 위해 짧은 토막글을 마련해 보았습니다.&lt;/p>
+&lt;h2 id="-상태-관리-라이브러리는-왜-사용하나요">✅ 상태 관리 라이브러리는 왜 사용하나요?&lt;/h2>
+&lt;p>유저가 로그인해 있는 정보를 담은 state가 있다고 가정하면 Root 컴포넌트를 아래와 같이 작성할 수 있습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">userInfo&lt;/span>, &lt;span style="color:#a6e22e">setUserInfo&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useState&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;not logged in&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Login&lt;/span> &lt;span style="color:#a6e22e">setUserInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">setUserInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>여기까진 그렇게 어렵지 않네요. 단순히 로그인 페이지에 setState 함수를 빌려줘서 userInfo를 갱신할 수 있게 하면 되니까요.&lt;/p>
+&lt;p>하지만 로그인 페이지가 여러 컴포넌트로 분리된다면 어떨까요? 이를테면, 로그인 화면에서 내 서비스에 대한 광고 카피와 짧은 영상같은 미디어를 첨부한 &lt;strong>아주&lt;/strong> &lt;strong>이쁜&lt;/strong> &lt;strong>로그인 페이지&lt;/strong>를 만들고 싶습니다. 그럼 관심사 분리를 위해 실제 로그인의 기능을 하는 부분을 별도의 하위 컴포넌트로 분리해야 할 것 같습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">Login&lt;/span>({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setUserInfo&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;span style="color:#f92672">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setUserInfo&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Dispatch&lt;/span>&amp;lt;&lt;span style="color:#f92672">React.SetStateAction&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">string&lt;/span>&amp;gt;&lt;span style="color:#f92672">&amp;gt;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">우리&lt;/span> &lt;span style="color:#a6e22e">서비스&lt;/span> &lt;span style="color:#a6e22e">리얼굿&lt;/span> &lt;span style="color:#a6e22e">당장바로지금&lt;/span> &lt;span style="color:#a6e22e">로그인&lt;/span> &lt;span style="color:#a6e22e">끼얏호우&lt;/span>&lt;span style="color:#f92672">~!~!&lt;/span>&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">LoginForm&lt;/span> &lt;span style="color:#a6e22e">setUserInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">setUserInfo&lt;/span>} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>받은 &lt;code>setUserInfo&lt;/code>를 &lt;code>LoginForm&lt;/code> 컴포넌트에 한번 더 내려주었습니다. 음.. 아직까지는 참을 만 하네요. 하지만 더 큰 문제가 기다리고 있습니다. 이제 로그인한 정보를 &lt;strong>모든 컴포넌트에서 사용한다고 하면&lt;/strong> 어떻게 될까요? 모든 라우터에 대해 루트 컴포넌트가 가진 &lt;code>userInfo&lt;/code>를 전달해 주겠습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">userInfo&lt;/span>, &lt;span style="color:#a6e22e">setUserInfo&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useState&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;not logged in&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Login&lt;/span> &lt;span style="color:#a6e22e">setUserInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">setUserInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service1&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service1&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service2&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service2&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service3&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service3&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service4&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service4&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service5&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service5&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service6&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service6&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service7&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service7&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service8&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service8&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>라우터니까 이정도 더러움은 괜찮을 것 같다구요? 그렇다면 &lt;strong>여러 컴포넌트에서 필요로 하는 정보가 로그인 정보만이 아니라면&lt;/strong>요? &lt;code>**newInfo&lt;/code>를 불특정 다수의 컴포넌트가 참조한다면**요?&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">userInfo&lt;/span>, &lt;span style="color:#a6e22e">setUserInfo&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useState&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;not logged in&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">newInfo&lt;/span>, &lt;span style="color:#a6e22e">setNewInfo&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useState&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Login&lt;/span> &lt;span style="color:#a6e22e">setUserInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">setUserInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service1&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service1&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service2&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} &lt;span style="color:#a6e22e">newInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">newInfo&lt;/span>} /&amp;gt;}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service3&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service3&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service4&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service4&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service5&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service5&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} &lt;span style="color:#a6e22e">newInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">newInfo&lt;/span>} /&amp;gt;}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service6&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service6&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service7&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service7&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} &lt;span style="color:#a6e22e">newInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">newInfo&lt;/span>} /&amp;gt;}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/service8&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Service8&lt;/span> &lt;span style="color:#a6e22e">userInfo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">userInfo&lt;/span>} /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>아직도 버틸 만 하신가요? 그럼 마지막으로 &lt;code>**Service3&lt;/code>의 하위 컴포넌트인 &lt;code>ChildComponent1&lt;/code>에서 변경한 데이터 값을 &lt;code>Service1&lt;/code>의 하위 컴포넌트인 &lt;code>ChildComponent2&lt;/code>로 전달해 주려면 어떻게 해야 할까요?**&lt;/p>
+&lt;p>그래서 우리 팀은 상태 관리 라이브러리를 어떤 것을 사용할지 고민했습니다. 당장 회의에서 거론되었던 라이브러리는 Redux, Recoil, Context API, Mobx 정도가 있는데요, 오늘은 그 중에 Redux와 Recoil에 대해 가볍게 알아보고 비교해 보는 시간을 가졌습니다. 이 글에서는 작동 원리보다는 사용상의 장단점을 중심으로 정리해보겠습니다.&lt;/p>
+&lt;h1 id="-redux">🏬 Redux&lt;/h1>
+&lt;h2 id="redux에-대해araboja">Redux에 대해.araboja&lt;/h2>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/redux_vs_recoil_01.png" alt="Untitled">&lt;/p>
+&lt;p>Redux는 상태 관리 라이브러리 중에서도 가장 대중적인 친구입니다. 아마 recoil처럼 리액트에 종속적이지도 않고, mobx보다 오래되었기 때문이 아닐까요? 아무튼 npm trends에서 확인할 수 있는 것처럼 압도적인 커뮤니티 크기를 자랑합니다. 레퍼런스가 무척 많고, 음.. 레퍼런스가 무척 많습니다. 한글로 검색해도 당장 이 글을 쓸 이유가 있나 싶을 정도로 지나치게 많은 정리글이 나오네요.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/redux_vs_recoil_02.png" alt="Untitled">&lt;/p>
+&lt;p>Redux는 Flux 아키텍쳐를 개선한 구조로 상태를 관리합니다. &lt;strong>1) 읽기 전용인 상태를 2) 하나의 store가 3) 순수함수를 이용해 갱신한다&lt;/strong>는 세 가지 메인 컨셉이 있다고 하네요. 더 자세한 설명은 &lt;a href="https://labs.tadigital.com/index.php/2020/04/20/getting-started-with-redux/">위 사진의 출처 링크&lt;/a>에 잘 설명이 되어 있습니다.&lt;/p>
+&lt;h2 id="사용해-봅시다">사용해 봅시다&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>npm i redux react-redux @reduxjs/toolkit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>우선 세 가지 패키지를 설치하겠습니다. &lt;code>@reduxjs/toolkit&lt;/code> 이라는 패키지는 redux를 조금 더 편하게 사용할 수 있도록 도와주는 도구인데요, 개인적으로 RTK 없이 리덕스를 처음 시작하기가 굉장히 어려웠기 때문에 사용하는 쪽으로 길을 틀었습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// count.ts
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">createSlice&lt;/span>, &lt;span style="color:#a6e22e">PayloadAction&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;@reduxjs/toolkit&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">CounterState&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// State의 interface 선언
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span>: &lt;span style="color:#66d9ef">number&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">amount&lt;/span>: &lt;span style="color:#66d9ef">number&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">initialState&lt;/span>: &lt;span style="color:#66d9ef">CounterState&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 초기값 선언
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span>: &lt;span style="color:#66d9ef">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">amount&lt;/span>: &lt;span style="color:#66d9ef">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">counterSlice&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createSlice&lt;/span>({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;counter&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">initialState&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">reducers&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">increase&lt;/span>&lt;span style="color:#f92672">:&lt;/span> (&lt;span style="color:#a6e22e">state&lt;/span>) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">amount&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">decrease&lt;/span>&lt;span style="color:#f92672">:&lt;/span> (&lt;span style="color:#a6e22e">state&lt;/span>) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span> &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">amount&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">init&lt;/span>&lt;span style="color:#f92672">:&lt;/span> (&lt;span style="color:#a6e22e">state&lt;/span>, &lt;span style="color:#a6e22e">action&lt;/span>: &lt;span style="color:#66d9ef">PayloadAction&lt;/span>&amp;lt;&lt;span style="color:#f92672">number&lt;/span>&amp;gt;) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// value값을 직접 설정하는 action
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">action&lt;/span>.&lt;span style="color:#a6e22e">payload&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">increase&lt;/span>, &lt;span style="color:#a6e22e">decrease&lt;/span>, &lt;span style="color:#a6e22e">init&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">counterSlice&lt;/span>.&lt;span style="color:#a6e22e">actions&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#a6e22e">counterSlice&lt;/span>.&lt;span style="color:#a6e22e">reducer&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>전역 상태마다 위와 같이 reducer를 선언해주면 됩니다. 대부분의 경우에는 &lt;code>init&lt;/code> action처럼 &lt;code>setState&lt;/code>의 역할을 하는 녀석만 선언해 주면 문제 없이 사용할 수 있을 것으로 보이네요. 그럼에도 여러 개의 action을 선언할 수 있다는 부분은 매력적으로 보입니다. 만약 전역 상태가 Object처럼 복잡한 타입으로 되어 있다면 관리하는 로직을 action에 선언해 두고 재사용하면 되니까요.&lt;/p>
+&lt;blockquote>
+&lt;p>💡 &lt;strong>ESLint airbnb rule과의 충돌&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>createSlice로 리듀서를 만들다 보면 아래 사진과 같이 패러미터로 들어온 state가 가진 값을 조작해선 안된다는 경고 메시지를 마주치게 됩니다. airbnb 룰에 포함되어 있는 규칙인데, &lt;a href="https://github.com/reduxjs/redux-toolkit/issues/521">redux-toolkit Issue #521&lt;/a>에서 이에 대한 설명을 확인할 수 있었습니다. 여기 사람들은 airbnb 룰을 그닥 좋아하지 않는군요!&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/redux_vs_recoil_03.png" alt="Untitled">&lt;/p>
+&lt;p>해당 Rule을 비활성화 하는 것 외에 약간의 예외 처리를 해주는 방법도 있는데요, &lt;a href="https://stackoverflow.com/questions/61570021/typescript-and-redux-tool-kit-createslice-assignment-to-property-of-function">이 링크&lt;/a>를 참고하시면 되겠습니다.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// store.ts
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">configureStore&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;@reduxjs/toolkit&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">counterReducer&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;./count&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">store&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">configureStore&lt;/span>({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">reducer&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">counter&lt;/span>: &lt;span style="color:#66d9ef">counterReducer&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">RootState&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">ReturnType&lt;/span>&amp;lt;&lt;span style="color:#f92672">typeof&lt;/span> &lt;span style="color:#a6e22e">store.getState&lt;/span>&amp;gt;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">AppDispatch&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">typeof&lt;/span> &lt;span style="color:#a6e22e">store&lt;/span>.&lt;span style="color:#a6e22e">dispatch&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>만든 reducer들을 관리하는 &lt;code>store&lt;/code>를 선언합니다. 흔히 알고 계시는 store의 개념과 같으며, 전역 상태가 더 필요할 때 마다 만든 reducer들을 &lt;code>configureStore&lt;/code> 안에 추가해주면 되겠습니다. 사용할 전역 상태 수만큼 import해서 사용한다는 생각으로 작성하면 될 것 같습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// App.tsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>, { &lt;span style="color:#a6e22e">useState&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">Provider&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react-redux&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">BrowserRouter&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#a6e22e">Router&lt;/span>, &lt;span style="color:#a6e22e">Routes&lt;/span>, &lt;span style="color:#a6e22e">Route&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react-router-dom&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#e6db74">&amp;#34;./App.scss&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">Login&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;./Login&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">store&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;./redux/store&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;./Test&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Provider&lt;/span> &lt;span style="color:#a6e22e">store&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">store&lt;/span>}&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Test&lt;/span> /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Login&lt;/span> /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Provider&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>이제 만든 store를 &lt;code>Provider&lt;/code>를 통해 연결해 줍니다. &lt;code>Router&lt;/code>와 비슷하게 사용할 수 있는데, &lt;code>Provider&lt;/code>로 묶여 있는 컴포넌트들은 모두 store의 상태들을 참조하고 사용할 수 있게 됩니다. 상태를 사용할 수 있는 scope를 지정하는 느낌으로 이해하면 되겠네요.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// Test.tsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">useDispatch&lt;/span>, &lt;span style="color:#a6e22e">useSelector&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react-redux&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">decrease&lt;/span>, &lt;span style="color:#a6e22e">increase&lt;/span>, &lt;span style="color:#a6e22e">init&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./redux/count&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">RootState&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./redux/store&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">Test() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">count&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useSelector&lt;/span>((&lt;span style="color:#a6e22e">state&lt;/span>: &lt;span style="color:#66d9ef">RootState&lt;/span>) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">counter&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">dispatch&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useDispatch&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">dispatch&lt;/span>(&lt;span style="color:#a6e22e">decrease&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;&lt;span style="color:#f92672">-&lt;/span>&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>실제 사용은 위와 같이 합니다. 참조할 상태는 &lt;code>useSelector&lt;/code>로, action은 &lt;code>useDispatch&lt;/code>를 이용해 발생시킵니다. 개인적으로는 action 메소드를 import해왔는데 그걸 바로 사용하지 못하고 &lt;code>useDispatch&lt;/code>를 통해 사용해야 한다는 점이 조금 이상하게 느껴졌습니다. 또 타입 오류가 있었는데, 이를 위해 &lt;code>RootState&lt;/code>라는 반환 타입을 선언해서 사용해야 합니다. &lt;code>store.ts&lt;/code> 코드에 보이는 것처럼 아무데나 사용해도 될 만큼 추상화가 되어있는 타입인데 기본으로 지원해주지 않는 것은 조금 아쉽습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/redux_vs_recoil_04.gif" alt="리덕스.gif">&lt;/p>
+&lt;p>아주 무쌩긴 컴포넌트를 통해 제대로 작동함을 확인할 수 있었습니다.&lt;/p>
+&lt;h2 id="그래서-redux-쓰나요">그래서 Redux 쓰나요?&lt;/h2>
+&lt;h3 id="장점">장점&lt;/h3>
+&lt;ul>
+&lt;li>레퍼런스가 매우 많습니다.&lt;/li>
+&lt;li>글에는 언급하지 않았지만 Redux Devtools를 통해 디버깅을 지원해 준다고 합니다.&lt;/li>
+&lt;li>(Recoil과 비교해서) 안정적이고, 믿을 수 있습니다. 저만 잘 사용한다면요.&lt;/li>
+&lt;/ul>
+&lt;h3 id="단점">단점&lt;/h3>
+&lt;ul>
+&lt;li>reducer, store, type 등등 상태 하나를 추가하기 위한 코드가 정말 깁니다.&lt;/li>
+&lt;li>레퍼런스가 &lt;strong>너무&lt;/strong> 많습니다.&lt;/li>
+&lt;li>위의 두 문제점으로 인해 진입장벽이 굉장히 높았습니다.&lt;/li>
+&lt;/ul>
+&lt;p>Redux에 대한 첫 인상은 굉장히 불친절했습니다. 커뮤니티가 큰 것은 좋은데, 진짜 너무 대박 크다보니 레퍼런스들이 서로 반대 방향으로 저를 이끄는 경우가 꽤 많았습니다. 실제로 저도 대학교 프로젝트를 하면서 이런 점 때문에 Redux를 포기하고 props를 마구 내렸다 올렸다 하는 원시적인 방법을 선택하기도 했구요.&lt;/p>
+&lt;p>그럼에도 불구하고 Redux를 사용할 줄 아는 것은 중요합니다. 커뮤니티가 크니까요. 기회가 될 때마다 상태 관리 라이브러리에 대한 질문을 해 보면, 큰 프로젝트에서는 아직 Redux를 사용하는 경우가 많다는 답변을 듣곤 합니다. 또 주변의 Redux맨들에게 물어보면 몇 번 겪어보면 금방 익숙해진다고 하니, 첫 고비를 넘기고 나면 잘 사용할 수 있지 않을까.. 그런 기대를 해 봅니다.&lt;/p>
+&lt;h1 id="-recoil">🔋 Recoil&lt;/h1>
+&lt;h2 id="리-하리코일-하이라는-뜻">리-하(리코일 하이라는 뜻)&lt;/h2>
+&lt;p>이번엔 Recoil을 체험해 볼 차례입니다. Recoil로 말할 것 같으면 리액트를 만든 페이스북이 직접 공개한 상태 관리 라이브러리입니다.&lt;/p>
+&lt;p>우리 모두가 React가 자바스크립트로 동작한다는 것을 알고 있지만, 리액트와 자바스크립트가 조금 다른 세계처럼 느껴지는 분들이 있을 것입니다. 이를테면, React를 위해 만들어진 패키지는 React에서 사용하고, VanilaJS를 위해 만들어진 패키지는 VanilaJS에서밖에 쓸 수 없는 것처럼 생각하는 분들이 있죠.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/redux_vs_recoil_05.png" alt="Untitled">&lt;/p>
+&lt;p>이런 거리감때문에 많은 라이브러리에서 직접 &lt;strong>‘React스러운’&lt;/strong> 방식으로 사용할 수 있도록 지원하기도 합니다. 위 사진은 저번 프로젝트에서 사용했던 캔버스 라이브러리 &lt;code>konva&lt;/code>의 리액트 버전, &lt;code>react-konva&lt;/code> 코드 일부입니다.&lt;/p>
+&lt;p>제가 이 이야기를 왜 하는 것일까요? &lt;code>Recoil&lt;/code>은, 오직 &lt;strong>React만을 위해 만들어진 React 상태 관리 라이브러리&lt;/strong>이기 때문입니다. 이 점을 가장 큰 특징으로 말씀드릴 수 있겠네요. 그 외에도 atom 구조를 통해서 상태를 관리 어쩌구.. 하는 작동 방식에 대한 내용이 있습니다. 이 글에서 하지 않기로 한 이야기네요.&lt;/p>
+&lt;h2 id="사용해-봅시다-1">사용해 봅시다&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">npm&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#a6e22e">recoil&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>설치해 줍니다. redux와 비교했을 때 별다른 설치를 요구하지 않긴 한데, 흠.. 별 생각은 들지 않습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// atom.ts
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">atom&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;recoil&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">counterState&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">atom&lt;/span>({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">key&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;count&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">default&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#a6e22e">counterState&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>redux의 reducer와 비슷한 역할을 하는 &lt;code>atom&lt;/code>을 선언해 줍니다. reducer는 초기 값과 action까지 모두 정의했지만, &lt;code>atom&lt;/code>은 &lt;code>key&lt;/code>와 &lt;code>default value&lt;/code>만 지정해서 export해주면 됩니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// App.tsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">RecoilRoot&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Test&lt;/span> /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Route&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&amp;lt;&lt;span style="color:#f92672">Login&lt;/span> /&amp;gt;} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Routes&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Router&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">RecoilRoot&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>redux의 Provider처럼 역시 &lt;code>RecoilRoot&lt;/code>를 통해 atom을 사용할 영역을 묶어 줍니다. 별다른 store를 지정하지 않도록 되어 있는데, 각각의 &lt;code>RecoilRoot&lt;/code>는 모든 atom을 사용할 수 있는 모양입니다. 하지만 여러 &lt;code>RecoilRoot&lt;/code>는 서로 atom 값을 공유하지 않기 때문에, 여러 개를 사용하는 경우 해당 컴포넌트가 어느 영역에 있는지를 잘 체크할 필요가 있겠네요. 꼭 멀티버스..같습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// TestRecoil.tsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">useRecoilState&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;recoil&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">counterState&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./recoil/atom&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">Test() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">count&lt;/span>, &lt;span style="color:#a6e22e">setCount&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useRecoilState&lt;/span>(&lt;span style="color:#a6e22e">counterState&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">setCount&lt;/span>(&lt;span style="color:#a6e22e">count&lt;/span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;&lt;span style="color:#f92672">-&lt;/span>&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Recoil은 &lt;code>useState&lt;/code> 훅과 같은 사용법을 갖습니다. import만 잘 해줬다면, &lt;code>useRecoilState&lt;/code>를 통해 atom을 사용하겠다 선언하고 바로 사용할 수 있습니다. Recoil의 강점이 드러나는 부분이네요. 참조만 하는 경우에는 &lt;code>useRecoilValue&lt;/code>, 할당만 하는 경우에는 &lt;code>useSetRecoilState&lt;/code> 를 통해 한 쪽만 사용할 수도 있습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/redux_vs_recoil_06.gif" alt="리코일.gif">&lt;/p>
+&lt;p>결과물은 Redux와 똑같이 동작합니다.&lt;/p>
+&lt;h2 id="그래서-recoil-쓰나요">그래서 Recoil 쓰나요?&lt;/h2>
+&lt;h3 id="장점-1">장점&lt;/h3>
+&lt;ul>
+&lt;li>React스러움&lt;/li>
+&lt;li>atom의 선언이 간단하다&lt;/li>
+&lt;/ul>
+&lt;h3 id="단점-1">단점&lt;/h3>
+&lt;ul>
+&lt;li>아직 실험적 기능(experimental feature)이다&lt;/li>
+&lt;li>메모리 누수 문제&lt;/li>
+&lt;li>React에 종속적이다.&lt;/li>
+&lt;/ul>
+&lt;p>그렇습니다. 요약만 봐도 느껴지지만 Recoil은 그렇게 &lt;strong>안정적인 라이브러리가 아닙니다.&lt;/strong> 우선 레포지토리 자체가 facebookexperimental에 있고, &lt;a href="https://github.com/facebookexperimental/Recoil/issues?q=is%3Aissue+is%3Aopen+memory">issue에 검색&lt;/a>해보면 메모리 누수에 대한 레포트가 꽤 많습니다. 이런 문제 때문에 Recoil은 아직까지도 ‘리액트스럽다’는 압도적인 강점을 가지고도 그렇게 좋은 성적을 내지 못하고 있습니다. 실제 서비스를 구현하는데 ‘실험적 기능’에 상태 관리를 믿고 맡길 수 있을까요? React를 위한 라이브러리이다 보니 React 생태계에서 벗어난다면 또 다른 라이브러리를 공부해야 한다는 점도 문제가 될 것 같네요. 메모리 누수 문제에 대해 더 자세히 알고 싶으시면 &lt;a href="https://medium.com/@altoo/recoil%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EB%88%84%EC%88%98-%EB%AC%B8%EC%A0%9C-fb709973acf2">이 링크&lt;/a>를 참고하세요.&lt;/p>
+&lt;p>하지만 Recoil은 분명 매력적입니다. 특히 React를 통해 구현한다면 Recoil의 매력을 뿌리치기란 쉽지 않습니다. 왜냐면 Recoil은 &lt;strong>React스러우니까요.&lt;/strong> useState를 쓰는 것과 완전 똑같이 전역 상태를 관리한다니, 이 특성 하나만으로도 선택할 이유는 충분해 보입니다.&lt;/p>
+&lt;h1 id="-그래서-뭐-쓰나요">❓ 그래서 뭐 쓰나요?&lt;/h1>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/redux_vs_recoil_07.png" alt="Untitled">&lt;/p>
+&lt;p>Redux와 Recoil에 대해 알아봤습니다. 사실 우리 프로젝트에 적용할 라이브러리를 선택하기 위해 공부했는데, 공부하고 나니 더 복잡해지네요. 하지만 어느 한 쪽이 ‘좋다’고 결론지을 수 있는 문제는 아니고 팥붕을 먹을지 슈붕을 먹을지, 그 날의 기분에 따라 달라지는 그런 선택일 것 같습니다. 참고로 저는 팥을 싫어합니다.&lt;/p>
+&lt;p>앞으로의 프로젝트에서 제가 라이브러리를 고른다면 어떤 기준으로 정할 수 있을까요? 저는 프로젝트의 규모를 기준으로 결정할 것 같습니다. 사실 Redux는 안정적이지만 토이 프로젝트에 적용하기에는 너무 많은 밑작업을 필요로 하거든요. 반면 커다란 프로젝트를 해야 한다면 Redux를 사용해야 할 날이 올 수도 있겠죠. 덧붙이자면 컴퍼니데이 때 어떤 기업에서는 Redux와 Recoil을 함께 사용한다는 답변을 주시기도 했습니다.&lt;/p>
+&lt;h1 id="-refs">📖 Refs.&lt;/h1>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/61570021/typescript-and-redux-tool-kit-createslice-assignment-to-property-of-function">TypeScript and redux tool kit , createSlice: Assignment to property of function parameter &amp;lsquo;state&amp;rsquo;&lt;/a>&lt;br>
+&lt;a href="https://labs.tadigital.com/index.php/2020/04/20/getting-started-with-redux/">Getting Started with Redux&lt;/a>&lt;br>
+&lt;a href="https://mong-blog.tistory.com/entry/%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%9E%AC%ED%95%A0%EB%8B%B9%EC%9D%84-%EC%A7%80%EC%96%91%ED%95%98%EC%9E%90no-param-reassign">매개변수 재할당을 지양하자(no-param-reassign)&lt;/a>&lt;br>
+&lt;a href="https://bluelight.co/blog/redux-toolkit-with-typescript">Redux Toolkit with Typescript: How to Get Started&lt;/a>&lt;br>
+&lt;a href="https://recoiljs.org/docs/api-reference/core/RecoilRoot/">RecoilRoot | Recoil&lt;/a>&lt;br>
+&lt;a href="https://leego.tistory.com/entry/React-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC%EC%9D%98-%EB%AF%B8%EB%9E%98-Recoil%EC%9D%84-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90">React스러운 상태관리 라이브러리, Recoil을 알아보자&lt;/a>&lt;br>
+&lt;a href="https://medium.com/@altoo/recoil%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EB%88%84%EC%88%98-%EB%AC%B8%EC%A0%9C-fb709973acf2">Recoil의 메모리 누수 문제&lt;/a>&lt;br>
+그리고 부스트캠프 컨퍼런스를 통해 Recoil에 대해 설명해 주신 &lt;strong>J039 김성은&lt;/strong> 캠퍼님께 감사의 인사를 올립니다. 🙇&lt;/p></description></item></channel></rss>
