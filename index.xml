@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>http://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Dec 2022 13:18:55 +0900</lastBuildDate><atom:link href="http://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>http://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>http://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>http://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 06 Dec 2022 02:11:55 +0900</lastBuildDate><atom:link href="http://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>http://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>http://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
 프론트엔드 개발자가 되기 위해 공부하는 &lt;strong>이우재&lt;/strong>입니다.&lt;/p>
 &lt;h2 id="techstacks">Techstacks&lt;/h2>
 &lt;p>&lt;img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&amp;amp;logo=git&amp;amp;logoColor=white" alt="Git"> &lt;img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&amp;amp;logo=figma&amp;amp;logoColor=white" alt="Figma">&lt;br>
@@ -18,7 +18,177 @@
 &lt;ul>
 &lt;li>Email : &lt;a href="mailto:prayinforrain@naver.com">prayinforrain@naver.com&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>마크다운 만들기 - Markdown [3/3]</title><link>http://prayinforrain.github.io/post/making-editor-markdown/</link><pubDate>Mon, 05 Dec 2022 13:18:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-markdown/</guid><description>&lt;p>마지막입니다. 입력하고, 게시할 수 있게 되었으니, 이제 남은 일은 서식을 적용하는 것 뿐입니다. 마크다운 문법을 이용해 어떻게 서식을 적용할 수 있을까요? 그 과정을 정리해 보겠습니다.&lt;/p>
+&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>사이드바야 그만 깜빡여라</title><link>http://prayinforrain.github.io/post/prevent-sidebar-blinking/</link><pubDate>Tue, 06 Dec 2022 02:11:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/prevent-sidebar-blinking/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 프론트엔드 앱은 &lt;code>Next.js&lt;/code>로 만들어져 있습니다. 팀원 그 누구도 사용해 본 적이 없음에도 굳이 선택한 이유는 &lt;code>NestJS&lt;/code>를 써 보니 프레임워크를 사용하는 것이 협업 환경에서 코드 일관성을 지키는 데 도움을 줄 것이라는 막연한 기대와, &lt;code>SSR&lt;/code>을 체험해 보고 싶은 학습적인 욕심이 있었습니다. 지금 돌아보니 ‘너와 함께 하길 잘 했어!’ 하는 감상은 없네요.&lt;/p>
+&lt;p>기왕 SSR을 체험한다고 시작한 프로젝트인 만큼, 성능에 신경을 쓰지 않을 수 없게 되었습니다. 그러다 제가 좋아하는 어떤 팀의 노션에서 &lt;code>memoization&lt;/code>을 통한 컴포넌트 중복 렌더링 방지에 대한 글을 읽었는데요, 이 부분이 때 마침 &lt;a href="https://www.notion.so/next-js-13-app-dir-11191a66a5564a25ba882c8a835afd13">Next.js 13을 적용하지 못해 포기해야만 했던&lt;/a> 아픈 상처를 자극하고 있어서 모헤윰에도 시도해 보기로 하였습니다.&lt;/p>
+&lt;h1 id="-tldr">🤷 TL;DR&lt;/h1>
+&lt;ul>
+&lt;li>&lt;code>useMemo&lt;/code>로 &lt;code>memoization&lt;/code>하여도 context 값을 참조하면 리렌더링이 이루어진다.&lt;/li>
+&lt;li>크롬 개발자 도구나 React DevTools를 통해 리렌더링 정보를 확인할 수 있다.&lt;/li>
+&lt;li>&lt;code>Next.js&lt;/code>에서 &lt;code>/pages/_app.tsx&lt;/code>에 들어간 컴포넌트는 리렌더링이 방지된다.&lt;/li>
+&lt;/ul>
+&lt;h1 id="-사이드바의-현재-상황">🤔 사이드바의 현재 상황&lt;/h1>
+&lt;p>모헤윰은 Next.js가 요구하는 대로 pages 디렉토리에 각 페이지의 레이아웃을 컴포넌트의 조합으로 구성하고 있습니다. 아래 코드처럼요.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// index.tsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">Home() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">AuthGuard&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Frame&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">SideBar&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">MainSection&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Frame&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">AuthGuard&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>하지만 이런 식의 구현은 한 가지 결함이 있습니다. 아래 구현 결과를 보면..&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/01-sidebar-blinking.gif" alt="befe.gif">&lt;/p>
+&lt;p>바로 사이드바가 각 페이지마다 하위 컴포넌트로 삽입되어 &lt;strong>라우팅이 일어날 때 마다 새롭게 렌더링&lt;/strong>이 되고 있다는 문제인데요, 어차피 똑같이 생긴 사이드바인데 몇 번이고 다시 렌더링 하게 되는 것은 비효율 적일 뿐 아니라, 움짤에서 보이듯이 순간적인 깜빡임이 계속되고 있는 상황입니다. 아직 기능이 많지 않아 렌더링 몇 번 더 한다고 억울할 문제는 아니지만 깜빡임은 조금 참기가 힘들군요.&lt;/p>
+&lt;h1 id="-메모야-도와줘">📝 메모야 도와줘&lt;/h1>
+&lt;p>무엇이 문제일까요? 일단 저는 앞에서 언급한 글이 설명한 대로 &lt;code>useMemo&lt;/code>를 통해 사이드바를 &lt;code>memoize&lt;/code>하면 리렌더링을 멈추지 않을까 하는 생각에 사이드바 컴포넌트를 모조리 Memo로 변경하였습니다.&lt;/p>
+&lt;p>그러고 보니 리렌더링이 이루어지는 지를 조금 더 정확하게 확인할 방법이 없을까요? 리액트에서 제공하는 &lt;code>React Devtools&lt;/code>를 사용하면 렌더링이 이루어지는 컴포넌트를 표시할 수 있다고 합니다. 한번 적용해서 같이 확인해 보겠습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/02-sidebar-blinking.gif" alt="memo.gif">&lt;/p>
+&lt;p>음.. 초록 선이 마구 그어 지는 걸 보니 렌더링도 이루어지고 있고, 실제로도 깜빡임이 발생하고 있습니다. 우리는 결국 2022년에 사이드바가 깜빡이는 웹을 만드는 개발자가 될 수 밖에 없는 걸까요? 정말 속상하군요.&lt;/p>
+&lt;p>그런데 제가 봤던 글에는 이런 내용이 있었습니다.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>Context&lt;/code>의 값을 참조하고 있다면 &lt;code>React.memo&lt;/code>로 컴포넌트를 &lt;code>memoizaton&lt;/code>해도 리렌더링이 발생해요.&lt;/p>
+&lt;/blockquote>
+&lt;p>사이드바에서 &lt;code>Recoil&lt;/code>을 통해 전역 변수를 참조하는 부분이 있었지만 이를 제거하고 테스트해봐도 여전히 결과는 똑같았고, 저는 결국 &lt;code>Next.js 13&lt;/code>때 &lt;code>CSS-in-JS&lt;/code>가 &lt;code>Context API&lt;/code>를 사용한다는 이야기를 들었던 기억이 떠올라, 결국 우리는 또 &lt;code>Emotion&lt;/code>때문에 하나의 희망을 포기하게 되는구나, 하고 체념을 하게 되었습니다. 이모션 요놈 하나 때문에 잃게 되는 것이 정말 많군요.&lt;/p>
+&lt;h1 id="-next야-나는-너를-믿었어">➡️ Next야 나는 너를 믿었어&lt;/h1>
+&lt;p>하지만 여기서 포기하면 여태 쓴 글과 시간이 너무 아까웠습니다. 새 이슈를 처리하기엔 시간이 너무 애매했고 아쉬운 마음에 검색을 하던 중 몇 가지 글들을 발견했습니다.&lt;/p>
+&lt;blockquote>
+&lt;p>You can wrap your page component with your &lt;code>Layout&lt;/code> component inside &lt;code>_app.js&lt;/code>
+, it should prevent it from re-mounting.&lt;/p>
+&lt;/blockquote>
+&lt;p>정답은 &lt;code>Next.js&lt;/code>가 가지고 있었군요. 모든 페이지를 렌더링 할때 사용되는 &lt;code>_app.tsx&lt;/code>에 달아 놓은 컴포넌트는 리렌더링이 이루어지지 않는다는 내용인 것 같습니다. 이를 적용하기 위해서는 모든 페이지에 각각 달려있는 &lt;code>Frame&lt;/code>과 &lt;code>SideBar&lt;/code> 컴포넌트를 제거하고 &lt;code>_app.tsx&lt;/code>로 이전하는 작업이 필요한데요, 이렇게 하면 &lt;strong>공통된 레이아웃을 적용하기 위해 불필요하게 반복되는 코드의 양을 줄일 수 있는 이점&lt;/strong>까지 챙길 수 있습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// _app.tsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>({ &lt;span style="color:#a6e22e">Component&lt;/span>, &lt;span style="color:#a6e22e">pageProps&lt;/span> }&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">AppProps&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">ThemeProvider&lt;/span> &lt;span style="color:#a6e22e">theme&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">theme&lt;/span>}&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">RecoilRoot&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Global&lt;/span> &lt;span style="color:#a6e22e">styles&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">globalStyle&lt;/span>} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">AppStyle&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Moheyum&lt;/span>&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Component&lt;/span> {&lt;span style="color:#a6e22e">...pageProps&lt;/span>} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">AppStyle&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">RecoilRoot&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">ThemeProvider&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>바로 수정해 보겠습니다. 지금 &lt;code>_app.tsx&lt;/code>는 위와 같은 상태입니다. 여기에 레이아웃의 영역을 제한하는 &lt;code>Frame&lt;/code>과 오늘의 주인공인 &lt;code>SideBar&lt;/code> 컴포넌트를 추가하되, 로그인과 회원가입 등 일부 컴포넌트에서는 사이드바가 보여서는 안됩니다. 이 부분은 &lt;code>Router.pathname&lt;/code>으로 대조하여 예외 처리를 하도록 하겠습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// _app.tsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">NoSideBar&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/signup&amp;#34;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>({ &lt;span style="color:#a6e22e">Component&lt;/span>, &lt;span style="color:#a6e22e">pageProps&lt;/span> }&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">AppProps&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">router&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useRouter&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">ThemeProvider&lt;/span> &lt;span style="color:#a6e22e">theme&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">theme&lt;/span>}&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">RecoilRoot&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Global&lt;/span> &lt;span style="color:#a6e22e">styles&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">globalStyle&lt;/span>} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">AppStyle&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Moheyum&lt;/span>&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Frame&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">NoSideBar&lt;/span>.&lt;span style="color:#a6e22e">includes&lt;/span>(&lt;span style="color:#a6e22e">router&lt;/span>.&lt;span style="color:#a6e22e">pathname&lt;/span>) &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> &amp;lt;&lt;span style="color:#f92672">SideBar&lt;/span> /&amp;gt;}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">ComponentWrapper&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">Component&lt;/span> {&lt;span style="color:#a6e22e">...pageProps&lt;/span>} /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">ComponentWrapper&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">Frame&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">AppStyle&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">RecoilRoot&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">ThemeProvider&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>_app.tsx&lt;/code>를 수정하고, &lt;code>pages&lt;/code> 디렉토리 안의 모든 &lt;code>SideBar&lt;/code>를 import하는 부분을 제거했습니다. 페이지 수가 더 많아지고 나서 했으면 손목에 무리가 왔을 것 같다는 생각이 들었습니다.&lt;/p>
+&lt;blockquote>
+&lt;p>💡 &lt;strong>CSS-in-JS는 React DevTools에서 렌더링 정보를 잘못 보여준다?&lt;/strong>&lt;br>
+정확하지는 않은 정보이지만, React DevTools가 보여주는 리렌더링 정보가 실제 브라우저의 리렌더링과 다를 수 있다는 글을 봤습니다. 실제 리렌더링 상황을 보기 위해서는 크롬 개발자 도구의 &lt;code>렌더링 → 페인트 플래시&lt;/code>를 체크해서 확인하라고 하네요.&lt;br>
+리액트 데브툴과의 차이는 리액트의 virtual render와 브라우저의 native rerender를 보여주는 차이라고 하는데, 좀 더 알아볼 필요가 있어 보입니다.&lt;br>
+&lt;img src="http://prayinforrain.github.io/image/03-sidebar-blinking.png" alt="Untitled">&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/04-sidebar-blinking.gif" alt="aftr.gif">&lt;/p>
+&lt;p>브라우저의 페인트 플래시를 체크하고 확인해 보았습니다. gif 파일을 계속 하이라이트해서 정신이 사납지만, 아무튼 우측의 메인 섹션이 계속 리렌더링 되는 동안 사이드바 만큼은 한 번의 깜빡거림 없이 깔끔하게 작동함을 확인하였습니다. 이제 좀 낫네요!&lt;/p>
+&lt;h1 id="-refs">📖 Refs.&lt;/h1>
+&lt;p>&lt;a href="https://velog.io/@gth1123/re-rendering-conditions">re rendering conditions&lt;/a>&lt;br>
+&lt;a href="https://stackoverflow.com/questions/70531347/next-js-how-to-avoid-re-rendering-of-common-components-between-routed-pages">Next js how to avoid re-rendering of common components between routed pages?&lt;/a>&lt;br>
+&lt;a href="https://stackoverflow.com/questions/59519286/next-js-how-to-prevent-layout-get-re-mounted">NEXT JS - How to prevent layout get re-mounted?&lt;/a>&lt;br>
+&lt;a href="https://stackoverflow.com/questions/58987174/how-to-prevent-parent-component-from-re-rendering-with-react-next-js-ssr-two-p">How to prevent parent component from re-rendering with React (next.js) SSR two-pass rendering?&lt;/a>&lt;br>
+&lt;a href="https://www.notion.so/Component-memoization-feat-context-a4a73e27d15343e6b518a77c0c9d92b3">네?? Component를 memoization해도 리렌더링이 발생한다구요..?? 💦 (feat. context)&lt;/a>&lt;/p></description></item><item><title>마크다운 만들기 - Markdown [3/3]</title><link>http://prayinforrain.github.io/post/making-editor-markdown/</link><pubDate>Mon, 05 Dec 2022 13:18:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-markdown/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 에디터 만들기 시리즈 모아보기&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-contenteditable/">에디터 만들기 - ContentEditable [1/3]&lt;/a>&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-getselection/">에디터 만들기 - getSelection [2/3]&lt;/a>&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-markdown/">에디터 만들기 - Markdown [3/3]&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>마지막입니다. 입력하고, 게시할 수 있게 되었으니, 이제 남은 일은 서식을 적용하는 것 뿐입니다. 마크다운 문법을 이용해 어떻게 서식을 적용할 수 있을까요? 그 과정을 정리해 보겠습니다.&lt;/p>
 &lt;h1 id="-어떻게-할까요">🤷 어떻게 할까요?&lt;/h1>
 &lt;p>정말이지 어떻게 하면 좋을까요? 우선 제가 생각하는 가장 사용성이 좋은 마크다운은 깃허브의 그것이였습니다. &lt;a href="https://github.github.com/gfm/">GFM(GitHub Flavored Markdown)&lt;/a>이라고 부르는 스펙이 있는데, 처음에는 이걸 부르는 이름이 있는 것조차 모르고 막무가내로 리버스 엔지니어링 마인드로 작업을 시작했습니다. 아래 사진처럼 아무 이슈나 들어가서 댓글 창에 실험을 하면서요.&lt;/p>
 &lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_3_01.png" alt="Untitled">&lt;/p>
@@ -204,7 +374,12 @@
 &lt;p>지금까지 &lt;strong>모헤윰&lt;/strong>의 마크다운 에디터를 구현한 과정이였습니다.&lt;/p>
 &lt;h1 id="-refs">📖 Refs.&lt;/h1>
 &lt;p>&lt;a href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec&lt;/a>&lt;br>
-&lt;a href="https://github.com/markedjs/marked/tree/master/src">markedjs/marked&lt;/a>&lt;/p></description></item><item><title>마크다운 만들기 - getSelection</title><link>http://prayinforrain.github.io/post/making-editor-getselection/</link><pubDate>Thu, 24 Nov 2022 00:53:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-getselection/</guid><description>&lt;p>아니???????? 두 번째 글이 파서가 아니였네요. 저는 사실 이 글이 2부작이길 간절히 바랬는데, 1편에서 만든 에디터에 너무 끔찍한 버그가 있어서 이에 대해 정리해 보고자 합니다. 이걸로 3시간을 씨름하고 있었지만 모헤윰의 TIL 문서가 풍성해지고 있으니 긍정적이게 생각해야겠죠?&lt;/p>
+&lt;a href="https://github.com/markedjs/marked/tree/master/src">markedjs/marked&lt;/a>&lt;/p></description></item><item><title>마크다운 만들기 - getSelection [2/3]</title><link>http://prayinforrain.github.io/post/making-editor-getselection/</link><pubDate>Thu, 24 Nov 2022 00:53:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-getselection/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 에디터 만들기 시리즈 모아보기&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-contenteditable/">에디터 만들기 - ContentEditable [1/3]&lt;/a>&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-getselection/">에디터 만들기 - getSelection [2/3]&lt;/a>&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-markdown/">에디터 만들기 - Markdown [3/3]&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>아니???????? 두 번째 글이 파서가 아니였네요. 저는 사실 이 글이 2부작이길 간절히 바랬는데, 1편에서 만든 에디터에 너무 끔찍한 버그가 있어서 이에 대해 정리해 보고자 합니다. 이걸로 3시간을 씨름하고 있었지만 모헤윰의 TIL 문서가 풍성해지고 있으니 긍정적이게 생각해야겠죠?&lt;/p>
 &lt;blockquote>
 &lt;p>💡 이 글은 Window 10, Chrome 107.0.5304.107 버전을 기준으로 작성되었습니다. 일부 환경에 따라 다르게 작동하는 부분이 있을 수 있습니다.&lt;/p>
 &lt;/blockquote>
@@ -367,7 +542,12 @@
 &lt;h1 id="-오버엔지니어링의-길목에서">🤦 오버엔지니어링의 길목에서&lt;/h1>
 &lt;p>&lt;img src="http://prayinforrain.github.io/image/md_editor_2_07.gif" alt="고쳤맨.gif">&lt;/p>
 &lt;p>처음에는 아주 간단한 에디터를 생각했는데, 그 &lt;em>간단한&lt;/em> 에디터 뒤에 얼마나 깊은 심연이 있는지 몸소 두들겨 맞게 되는 요즘입니다. &lt;code>input&lt;/code>이나 &lt;code>textarea&lt;/code>를 썼으면 이런 긴 글을 두 개나 쓸 필요가 없었을텐데, 제가 무슨 부귀영화를 누리자고 &lt;code>contenteditable&lt;/code>을 쓰자고 했을까요?&lt;/p>
-&lt;p>그럼에도 불구하고 새로운 경험을 하고 글을 쓸 수 있어서 정말 즐겁습니다. 데모 발표 시간에도 제가 즐거워해야 할텐데요, 다음 글은 드디어 마크다운을 파싱하는 과정에 대해 써볼 예정입니다. 지금 어느 난관에 부딪혀 멈춰 있는데, 여유가 된다면 아마 6주차에 리팩토링을 할 것 같네요. 화이팅!&lt;/p></description></item><item><title>마크다운 만들기 - contentEditable</title><link>http://prayinforrain.github.io/post/making-editor-contenteditable/</link><pubDate>Tue, 22 Nov 2022 20:36:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-contenteditable/</guid><description>&lt;p>모헤윰의 핵심 기능 중 하나는 &lt;code>마크다운 서식 지원&lt;/code>입니다. 왜 SNS에 마크다운을 끼얹을 생각을 했나 생각해보면 최초 기획부터 있다가 기능 다이어트를 한 후 살아남았기 때문인데, 아무튼 드디어 때가 왔습니다.&lt;/p>
+&lt;p>그럼에도 불구하고 새로운 경험을 하고 글을 쓸 수 있어서 정말 즐겁습니다. 데모 발표 시간에도 제가 즐거워해야 할텐데요, 다음 글은 드디어 마크다운을 파싱하는 과정에 대해 써볼 예정입니다. 지금 어느 난관에 부딪혀 멈춰 있는데, 여유가 된다면 아마 6주차에 리팩토링을 할 것 같네요. 화이팅!&lt;/p></description></item><item><title>마크다운 만들기 - contentEditable [1/3]</title><link>http://prayinforrain.github.io/post/making-editor-contenteditable/</link><pubDate>Tue, 22 Nov 2022 20:36:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/making-editor-contenteditable/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 에디터 만들기 시리즈 모아보기&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-contenteditable/">에디터 만들기 - ContentEditable [1/3]&lt;/a>&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-getselection/">에디터 만들기 - getSelection [2/3]&lt;/a>&lt;br>
+&lt;a href="http://prayinforrain.github.io/post/making-editor-markdown/">에디터 만들기 - Markdown [3/3]&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>모헤윰의 핵심 기능 중 하나는 &lt;code>마크다운 서식 지원&lt;/code>입니다. 왜 SNS에 마크다운을 끼얹을 생각을 했나 생각해보면 최초 기획부터 있다가 기능 다이어트를 한 후 살아남았기 때문인데, 아무튼 드디어 때가 왔습니다.&lt;/p>
 &lt;p>내부적으로 에디터를 외부 라이브러리를 사용하는게 좋지 않겠냐는 이야기가 나왔는데요, 결국 직접 구현해 보기로 했지만 그 과정에서 여러 레퍼런스를 얻을 수 있었습니다. 개인적으로 멋있다고 생각한 사이트 두 가지를 소개합니다.&lt;/p>
 &lt;p>&lt;a href="https://hackmd.io/">https://hackmd.io/&lt;/a>&lt;br>
 &lt;a href="https://ui.toast.com/tui-editor">https://ui.toast.com/tui-editor&lt;/a>&lt;/p>
