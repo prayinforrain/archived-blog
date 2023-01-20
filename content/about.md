@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2023-01-02T21:38:52+09:00
-lastmod: 2023-01-02T21:41:52+09:00
+lastmod: 2023-01-21T03:21:16+09:00
 menu: "main"
 weight: 50
 
@@ -11,7 +11,8 @@ mathjax: false
 ---
 
 ![header](https://capsule-render.vercel.app/api?type=waving&color=4D55B7&height=300&section=header&text=안녕하세요!&fontColor=eef&desc=@PrayinForRain&descAlignY=65&descAlign=65)  
-프론트엔드 개발자가 되기 위해 공부하는 **이우재**입니다.
+프론트엔드 개발자가 되기 위해 공부하는 **이우재**입니다.  
+저에 대한 자세한 소개는 [[이 링크]](https://lily-muenster-f8b.notion.site/7943060576f748d485b4e24488d742a8)에서 확인해 주세요!
 
 ## Techstacks
 
