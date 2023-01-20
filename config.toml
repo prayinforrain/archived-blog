@@ -54,7 +54,7 @@ defaultContentLanguage = "en"           # Default language to use
 
 
 [params]
-  since = "2017"            # Site creation time
+  since = "2023"            # Site creation time
   homeFullContent = false   # if false, show post summaries on home page. Otherwise show full content.
   rssFullContent = true     # if false, Rss feed instead of the summary
 
@@ -71,6 +71,7 @@ defaultContentLanguage = "en"           # Default language to use
   toc = false
   photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe
   contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
+  moreMeta = true
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
