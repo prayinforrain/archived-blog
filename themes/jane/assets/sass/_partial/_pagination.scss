@@ -11,9 +11,10 @@
     display: inline-block;
 
     a {
+      transition: all 0.1s ease;
       background-color: #fff;
-      margin-left: .1em;
-      margin-right: .1em;
+      margin-left: 0.1em;
+      margin-right: 0.1em;
       border: 1px solid #222;
       color: #222;
       float: left;
@@ -22,6 +23,16 @@
       position: relative;
       text-decoration: none;
       margin-bottom: 0.2em;
+    }
+
+    &:hover {
+      a {
+        background-color: #222;
+        border-color: #222;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2;
+      }
     }
   }
 
@@ -50,7 +61,7 @@
 
     &:hover {
       color: $theme-color;
-      transform: translateX(-4px); 
+      transform: translateX(-4px);
     }
   }
 
@@ -59,7 +70,7 @@
 
     &:hover {
       color: $theme-color;
-      transform: translateX(4px); 
+      transform: translateX(4px);
     }
   }
 }

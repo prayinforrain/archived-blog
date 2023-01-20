@@ -50,6 +50,9 @@
 
   .post-summary {
     margin-bottom: 1em;
+    &::after {
+      content: "...";
+    }
   }
 
   .read-more {

@@ -38,6 +38,10 @@
     .post-meta-author {
       a {
         color: $theme-color;
+        transition: border-color 0.2s ease;
+        &:hover {
+          border-bottom: 1px solid $theme-color;
+        }
       }
     }
 
