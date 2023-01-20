@@ -7,6 +7,10 @@
   text-align: center;
   @include clearfix;
 
+  ul {
+    padding-inline-start: 0;
+  }
+
   li {
     display: inline-block;
 
