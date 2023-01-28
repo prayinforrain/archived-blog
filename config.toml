@@ -131,3 +131,5 @@ defaultContentLanguage = "en"           # Default language to use
     noHl = false
     style = 'monokai'
     tabWidth = 4
+  [markup.goldmark.renderer]
+    unsafe = true
