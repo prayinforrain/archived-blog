@@ -6,13 +6,13 @@
   .logo {
     font-size: $logo-font-size;
     font-family: $logo-font-family;
-    transition: all 0.3s ease, border-radius 0.3s linear;
+    transition: all 0.1s ease;
     background-color: $white;
     padding: 0.1em 0.3em;
+    border-radius: 0.2em;
+    font-weight: 600;
     &:hover {
-      border-radius: 0.2em;
-      background-color: $theme-color;
-      color: $white;
+      filter: brightness(0.8);
     }
   }
 }

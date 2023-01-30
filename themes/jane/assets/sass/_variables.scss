@@ -54,17 +54,15 @@ $global-lineheight: 1.8 !default;
 
 // Font family of the site.
 // $global-font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !default;
-$global-font-family: Pretendard, -apple-system, BlinkMacSystemFont,
-  "Apple SD Gothic Neo", "Pretendard Variable", Roboto, "Noto Sans KR",
-  "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol", sans-serif;
+$global-font-family: Pretendard, "Pretendard Variable", "Noto Sans KR",
+  "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  sans-serif;
 
 // Serif font family of the site.
 // $global-serif-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
-$global-serif-font-family: Pretendard, -apple-system, BlinkMacSystemFont,
-  "Apple SD Gothic Neo", "Pretendard Variable", Roboto, "Noto Sans KR",
-  "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol", sans-serif !default;
+$global-serif-font-family: Pretendard, "Pretendard Variable", "Noto Sans KR",
+  "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  sans-serif !default;
 
 // Background color of the site.
 $global-background: $white !default;
@@ -84,7 +82,7 @@ $global-headings: (
 $logo-font-size: 36px !default;
 
 // Font family of the logo.
-$logo-font-family: cursive, LiSu, sans-serif !default;
+$logo-font-family: LiSu, sans-serif !default;
 
 // Margin of menu item.
 $menu-item-margin-left: 10px !default;
