@@ -16,9 +16,9 @@ googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        
 
 # language support # en / zh-cn / other... translations present in i18n/
-defaultContentLanguage = "en"           # Default language to use
-[languages.ko-kr]
-  languageCode = "ko-kr"
+defaultContentLanguage = "ko"           # Default language to use
+[languages.ko]
+  languageCode = "ko"
 [languages.en]
   languageCode = "en"
 
@@ -68,7 +68,7 @@ defaultContentLanguage = "en"           # Default language to use
 
   # front matter archetypes/default.md 
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
-  toc = false
+  toc = true
   photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe
   contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
   moreMeta = true
