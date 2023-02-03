@@ -10,6 +10,7 @@
   @import "content/image";
   @import "content/blockquote";
   @import "content/table";
+  @import "content/aside";
 
   @for $i from 1 through 6 {
     h#{$i} {
