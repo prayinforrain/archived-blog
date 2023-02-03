@@ -35,7 +35,7 @@ tags: ["Web", "browser"]
 
 `DocumentFragment`은 렌더링 자체가 이루어지지 않기 때문에 Reflow 걱정 없이 변경이 가능합니다. 따라서 `DocumentFragment` 내부에서 레이아웃을 변경하고, 최종 결과물을 HTML DOM에 삽입하면 불필요한 Reflow 발생을 막을 수 있습니다. 아래는 간단한 사용 예시입니다.
 
-```jsx
+```javascript
 const documentFragment = new DocumentFragment();
 // const documentFragment = document.createDocumentFragment();
 

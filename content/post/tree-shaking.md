@@ -41,7 +41,7 @@ tags: ["Web", "javascript", "tree-shaking"]
 
 따라서 import문을 아래와 같이 변경하겠습니다.
 
-```tsx
+```javascript
 // FilterablePedalList.js
 // ...
 import * as utils from "../../utils/utils"; // before
@@ -51,7 +51,7 @@ import { simpleSort } from "../../utils/utils"; // after
 
 하지만 이렇게 해서는 번들 파일의 크기는 줄어들지 않습니다. 이는 Babel이 `import`문을 `require`문으로 트랜스파일링 하기 때문인데요, `CommonJS`에서 사용되는 require는 지정된 파일의 코드 전체를 가져오기 때문에 import문처럼 특정 함수만을 지정해서 가져올 수 없는 상황입니다. 따라서 `.babelrc`에서 Babel의 설정을 변경해 주어야 합니다.
 
-```tsx
+```json
 "presets": [
     ["env",{
       "modules": false
