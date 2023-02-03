@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>http://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>ko</language><lastBuildDate>Mon, 30 Jan 2023 19:17:55 +0900</lastBuildDate><atom:link href="http://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>http://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>http://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>http://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>ko</language><lastBuildDate>Wed, 01 Feb 2023 02:01:15 +0900</lastBuildDate><atom:link href="http://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>http://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>http://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
 프론트엔드 개발자가 되기 위해 공부하는 &lt;strong>이우재&lt;/strong>입니다.&lt;br>
 저에 대한 자세한 소개는 &lt;a href="https://lily-muenster-f8b.notion.site/7943060576f748d485b4e24488d742a8">[이 링크]&lt;/a>에서 확인해 주세요!&lt;/p>
 &lt;h2 id="techstacks">Techstacks&lt;/h2>
@@ -19,7 +19,226 @@
 &lt;ul>
 &lt;li>Email : &lt;a href="mailto:prayinforrain@naver.com">prayinforrain@naver.com&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>Hugo로 블로그를 옮기자</title><link>http://prayinforrain.github.io/post/migrating-to-hugo/</link><pubDate>Mon, 30 Jan 2023 19:17:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/migrating-to-hugo/</guid><description>&lt;p>알음알음 티스푼 공사로 티스토리에서 이 곳으로 블로그를 옮겼습니다. 티스토리에 있던 컨텐츠 대부분은 옮기지 않았습니다. 별 의미도 없고 너무 사적인 내용이 많았기 때문입니다. 또 티스토리만의 감성이라고 해야 하나.. 약간 그 곳에 더 맞는 포인트들이 있어서 아카이브같은 느낌으로 그냥 티스토리에 두기로 했습니다. 곳곳에 티스토리 링크가 있으니 시간을 효율적으로 버리고 싶은 분이 있다면 읽어주셔도 감사할 것 같습니다.
+&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>Typescript Generic</title><link>http://prayinforrain.github.io/post/typescript-generic/</link><pubDate>Wed, 01 Feb 2023 02:01:15 +0900</pubDate><guid>http://prayinforrain.github.io/post/typescript-generic/</guid><description>&lt;p>타입스크립트와 리액트를 같이 사용할 때, 우리는 &lt;code>useState&lt;/code> 훅을 아래와 같이 사용합니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">name&lt;/span>, &lt;span style="color:#a6e22e">setName&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useState&lt;/span>&amp;lt;&lt;span style="color:#f92672">string&lt;/span>&amp;gt;(&lt;span style="color:#e6db74">&amp;#34;지상렬&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>뭔진 몰라도, 저 꺽쇠 괄호를 사용해서 state가 다룰 상태의 타입을 지정할 수가 있습니다. 사실 적지 않아도 알아서 추론해 주지만, 아무튼 &lt;code>name.split('')&lt;/code>처럼 string 타입이 제공하는 메소드나 프로퍼티도 자동완성해주고, 아주 편하게 사용할 수 있습니다. 오늘은 저 꺽쇠괄호에 대해 알아볼거에요.&lt;/p>
+&lt;h1 id="any-타입의-문제">any 타입의 문제&lt;/h1>
+&lt;p>아무튼 이번에 가져온 예제는 스택(Stack) 자료구조입니다. 그냥 대충 만들게요.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">arr&lt;/span>: &lt;span style="color:#66d9ef">any&lt;/span>[] &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>: &lt;span style="color:#66d9ef">any&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">arr&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">arr&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pop() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">arr&lt;/span>.&lt;span style="color:#a6e22e">pop&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">stringStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">stringStack&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;크와앙&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">stringStack&lt;/span>.&lt;span style="color:#a6e22e">pop&lt;/span>().&lt;span style="color:#a6e22e">slice&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">numberStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">numberStack&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">numberStack&lt;/span>.&lt;span style="color:#a6e22e">pop&lt;/span>().&lt;span style="color:#a6e22e">slice&lt;/span>()); &lt;span style="color:#75715e">// TypeError: numberStack.pop(...).slice is not a function
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>당연히 &lt;code>numberStack&lt;/code> 부분에서 에러가 나지만, 이 문제를 &lt;strong>코드를 실행하기 전까진 알 수 없습니다&lt;/strong>. &lt;code>Stack&lt;/code>이 관리하는 것은 &lt;code>any&lt;/code> 타입의 배열이니까요.&lt;/p>
+&lt;p>또 지금의 &lt;code>Stack&lt;/code>에서는 배열에 들어가는 원소의 타입에 상관 없이 해당 &lt;strong>타입에 대한 메소드의 자동완성을 전혀 지원해주지 못합니다.&lt;/strong> 왜냐하면 스택의 원소들은 &lt;code>any&lt;/code> 타입이기 때문이죠.&lt;/p>
+&lt;p>이 문제들을 해결하기 위해 &lt;code>numberStack&lt;/code>이 관리하는 값을 &lt;code>number[]&lt;/code>처럼 타입을 지정해주면 되겠지만, 그럼 &lt;code>stringStack&lt;/code>을 사용하기 위해 &lt;code>string[]&lt;/code> 타입의 &lt;code>Stack&lt;/code>을 별도로 선언해야만 합니다. 그냥 &lt;code>useState&lt;/code>처럼 &lt;code>any&lt;/code>여도 알아서 타입을 추론해 주면 안되는 걸까요? 알잘딱깔센 해주면 되잖아요.&lt;/p>
+&lt;p>위의 문제들은 &lt;code>any&lt;/code> 타입의 사용을 지양해야 하는 이유이기도 한데요, 이를 해결하기 위해 타입스크립트에서는 **제네릭(Generic)**의 개념을 지원합니다.&lt;/p>
+&lt;h1 id="제네릭이란">제네릭이란?&lt;/h1>
+&lt;p>제네릭은 다른 프로그래밍 언어(자바, C# 등)에서 사용되는 개념입니다. 자바를 위한 튜토리얼이긴 하지만, &lt;strong>TCPSchool&lt;/strong>에 개념 설명이 잘 되어 있어 가져왔습니다.&lt;/p>
+&lt;blockquote>
+&lt;p>자바에서 제네릭(generic)이란 데이터의 타입(data type)을 일반화한다(generalize)는 것을 의미합니다.&lt;/p>
+&lt;p>제네릭은 클래스나 메소드에서 사용할 내부 데이터 타입을 컴파일 시에 미리 지정하는 방법입니다.&lt;/p>
+&lt;p>이렇게 컴파일 시에 미리 타입 검사(type check)를 수행하면 다음과 같은 장점을 가집니다.&lt;/p>
+&lt;ol>
+&lt;li>클래스나 메소드 내부에서 사용되는 객체의 타입 안정성을 높일 수 있습니다.&lt;/li>
+&lt;li>반환값에 대한 타입 변환 및 타입 검사에 들어가는 노력을 줄일 수 있습니다.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;em>Java - 제네릭의 개념, TCPSchool.com&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;p>즉 제네릭은 우리가 여러 타입에 활용할 수 있는 함수나 클래스를 사용할 때 ‘&lt;em>이번에는 이런 타입을 사용할거야&lt;/em>’라고 알려줄 수 있는 수단인 셈입니다. 그리고 맨 앞에서 들었던 &lt;code>useState&lt;/code> 예시에 나온 꺽쇠가 바로 제네릭입니다.&lt;/p>
+&lt;h2 id="사용해-보자">사용해 보자&lt;/h2>
+&lt;p>제네릭은 다음과 같은 형태로 사용합니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">대충&lt;/span>&lt;span style="color:#a6e22e">_&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">함수이름&lt;/span>&amp;lt;&lt;span style="color:#f92672">T&lt;/span>&amp;gt;(&lt;span style="color:#a6e22e">arg&lt;/span>: &lt;span style="color:#66d9ef">T&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">대충&lt;/span>&lt;span style="color:#a6e22e">_&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">함수이름&lt;/span>&amp;lt;&lt;span style="color:#f92672">string&lt;/span>&amp;gt;(&lt;span style="color:#e6db74">&amp;#34;아잉&amp;#34;&lt;/span>); &lt;span style="color:#75715e">// T = string
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>제네릭에 사용되는 타입명인 T는 아무 문자열로 대체 가능합니다. 한글로도 되고, 대소문자 상관 없지만 보통 &lt;code>T&lt;/code>로 시작해서 알파벳 순으로 &lt;code>U, V…&lt;/code>로 사용하는 것이 관행이에요. 이렇게 되면 새로운 타입의 인자를 사용할 때 마다 같은 함수를 다시 선언해야 할 필요도 없고, IDE의 자동완성 기능도 아주 잘 작동할 것입니다.&lt;/p>
+&lt;p>그럼 이를 이용해 앞서 만들었던 스택 클래스를 개선해 보겠습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>&amp;lt;&lt;span style="color:#f92672">T&lt;/span>&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">arr&lt;/span>: &lt;span style="color:#66d9ef">T&lt;/span>[] &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>: &lt;span style="color:#66d9ef">T&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">arr&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">arr&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pop() {&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">arr&lt;/span>.&lt;span style="color:#a6e22e">pop&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">stringStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>&amp;lt;&lt;span style="color:#f92672">string&lt;/span>&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">stringStack&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;크와앙&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">stringStack&lt;/span>.&lt;span style="color:#a6e22e">pop&lt;/span>()&lt;span style="color:#f92672">?&lt;/span>.&lt;span style="color:#a6e22e">slice&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">numberStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>&amp;lt;&lt;span style="color:#f92672">number&lt;/span>&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">numberStack&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">numberStack&lt;/span>.&lt;span style="color:#a6e22e">pop&lt;/span>()&lt;span style="color:#f92672">?&lt;/span>.&lt;span style="color:#a6e22e">slice&lt;/span>()); &lt;span style="color:#75715e">// Property &amp;#39;slice&amp;#39; does not exist on type &amp;#39;number&amp;#39;.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>제대로 자동완성도 지원하고, &lt;code>numberStack&lt;/code>의 &lt;code>slice&lt;/code> 역시 실행 전에 오류를 표시해 줍니다. 또 &lt;code>Array.pop()&lt;/code> 함수가 &lt;code>undefined&lt;/code>를 반환할 수 있기 때문에 오류를 뱉어 옵셔널 체이닝을 붙여 주었습니다. 이제 런타임에서 오류가 발생할 일은 없겠네요.&lt;/p>
+&lt;aside>
+&lt;p>💡 &lt;strong>useState는 왜 제네릭으로 타입을 명시하지 않아도 추론이 될까요?&lt;/strong>&lt;br>
+useState는 &lt;code>useState('하이룽');&lt;/code>처럼 타입을 명시하지 않아도 알아서 상태의 타입을 인식합니다. 그런데 방금 만든 스택 클래스는 제네릭으로 타입을 명시하지 않으면 에러를 뱉습니다. 둘의 차이는 무엇일까요?&lt;br>
+바로 &lt;strong>호출할 때 제네릭 &lt;code>T&lt;/code>를 추론할 수 있냐의 차이&lt;/strong>가 있습니다. &lt;code>useState&lt;/code>를 호출할 때에는 상태의 초기값에 따라 상태의 타입을 추론합니다. 우리가 만든 스택 클래스 역시 생성자 함수를 통해 초기값을 입력받으면 똑같이 타입 명시 없어도 추론이 가능합니다.&lt;br>
+반대로 &lt;code>useState&lt;/code>도 &lt;code>useState()&lt;/code>와 같이 초기값을 호출 시 지정해주지 않으면 undefined 타입으로 인식하여 추론이 제대로 이뤄지지 않습니다.&lt;/p>
+&lt;/aside>
+&lt;h2 id="더-써-보자">더 써 보자&lt;/h2>
+&lt;p>제네릭은 이게 끝일까요? 다음 사례를 통해 더 고민해봅시다.&lt;/p>
+&lt;p>&lt;code>string&lt;/code>과 &lt;code>Array&lt;/code>는 &lt;code>length&lt;/code> 공통적으로 프로퍼티를 갖습니다. 이렇게 타입은 다르지만 length 프로퍼티를 갖는 타입만을 인자로 받고 싶을 때는 어떻게 해야 할까요? 이를 위해서는 제네릭과 함께 &lt;code>extends&lt;/code> 구문을 사용해야 합니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">hasLength&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">length&lt;/span>: &lt;span style="color:#66d9ef">number&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">getLength&lt;/span>&amp;lt;&lt;span style="color:#f92672">T&lt;/span> &lt;span style="color:#a6e22e">extends&lt;/span> &lt;span style="color:#a6e22e">hasLength&lt;/span>&amp;gt;(&lt;span style="color:#a6e22e">stringOrArray&lt;/span>: &lt;span style="color:#66d9ef">T&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">stringOrArray&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">getLength&lt;/span>([&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>]));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">getLength&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;12&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">getLength&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>)); &lt;span style="color:#75715e">// Argument of type &amp;#39;number&amp;#39; is not assignable to parameter of type &amp;#39;hasLength&amp;#39;.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>이런 식으로 함수를 구성하면 제네릭 타입 &lt;code>T&lt;/code>는 &lt;code>hasLength&lt;/code>의 특성을 갖는 타입만이 인자로 통과될 수 있습니다.&lt;/p>
+&lt;h2 id="더-더-써보자">더… 더 써보자&lt;/h2>
+&lt;p>조금 더 깊이 들어가 보겠습니다. length 프로퍼티를 갖는 타입의 &lt;strong>스택에서 마지막 요소의 길이&lt;/strong>를 반환하는 함수를 만들어 보겠습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">getLengthOfLastElement&lt;/span>&amp;lt;&lt;span style="color:#f92672">T&lt;/span> &lt;span style="color:#a6e22e">extends&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">U&lt;/span>&amp;gt;, &lt;span style="color:#a6e22e">U&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">hasLength&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stack&lt;/span>: &lt;span style="color:#66d9ef">T&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">stack&lt;/span>.&lt;span style="color:#a6e22e">pop&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">element&lt;/span>) &lt;span style="color:#66d9ef">return&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">stack&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">stringStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>&amp;lt;&lt;span style="color:#f92672">string&lt;/span>&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">stringStack&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;크와앙&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">getLengthOfLastElement&lt;/span>(&lt;span style="color:#a6e22e">stringStack&lt;/span>); &lt;span style="color:#75715e">// 3
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">numberStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Stack&lt;/span>&amp;lt;&lt;span style="color:#f92672">number&lt;/span>&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">numberStack&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">getLengthOfLastElement&lt;/span>(&lt;span style="color:#a6e22e">numberStack&lt;/span>); &lt;span style="color:#75715e">// TypeError
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>위와 같이 제네릭을 이용해 선언된 타입이 사용하는 제네릭 타입을 다시 참조하는 것이 가능합니다.&lt;/p>
+&lt;h1 id="refs">Refs.&lt;/h1>
+&lt;p>&lt;a href="http://www.tcpschool.com/java/java_generic_concept">코딩교육 티씨피스쿨&lt;/a>&lt;br>
+&lt;a href="https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/types/generics">제네릭 클래스 및 메서드&lt;/a>&lt;br>
+&lt;a href="https://www.typescriptlang.org/ko/docs/handbook/2/generics.html">Documentation - Generics&lt;/a>&lt;br>
+&lt;a href="https://joshua1988.github.io/ts/guide/generics.html">제네릭 | 타입스크립트 핸드북&lt;/a>&lt;/p></description></item><item><title>Hugo로 블로그를 옮기자</title><link>http://prayinforrain.github.io/post/migrating-to-hugo/</link><pubDate>Mon, 30 Jan 2023 19:17:55 +0900</pubDate><guid>http://prayinforrain.github.io/post/migrating-to-hugo/</guid><description>&lt;p>알음알음 티스푼 공사로 티스토리에서 이 곳으로 블로그를 옮겼습니다. 티스토리에 있던 컨텐츠 대부분은 옮기지 않았습니다. 별 의미도 없고 너무 사적인 내용이 많았기 때문입니다. 또 티스토리만의 감성이라고 해야 하나.. 약간 그 곳에 더 맞는 포인트들이 있어서 아카이브같은 느낌으로 그냥 티스토리에 두기로 했습니다. 곳곳에 티스토리 링크가 있으니 시간을 효율적으로 버리고 싶은 분이 있다면 읽어주셔도 감사할 것 같습니다.
 아무튼 옮겨야 하는 컨텐츠도 없으면서 정말 오랜 기간 삽질을 했는데, 그 과정에 대해 이야기해보려고 합니다.&lt;/p>
 &lt;h1 id="블로그를-이전하게-된-계기">블로그를 이전하게 된 계기&lt;/h1>
 &lt;p>
@@ -140,7 +359,499 @@ itemscope itemtype="http://schema.org/ImageObject" >
 &lt;p>&lt;a href="https://jamstack.org/generators/">Site Generators - A List of Static Site Generators for Jamstack Sites&lt;/a>&lt;br>
 &lt;a href="https://wcho21.github.io/2022/08/30/how-to-create-a-hugo-blog/">휴고 블로그 만들기&lt;/a>&lt;br>
 &lt;a href="https://www.inflearn.com/course/gatsby-%EA%B8%B0%EC%88%A0%EB%B8%94%EB%A1%9C%EA%B7%B8">React 기반 Gatsby로 기술 블로그 개발하기&lt;/a>&lt;br>
-그리고.. 저의 뜬금없고 깐깐한 질문에 친절하게 답해주신 &lt;code>@wcho21&lt;/code>님, 언제나 블로그에 있어서 프로 마인드이신 &lt;code>@kasterra&lt;/code>님께 감사 인사 드립니다.&lt;/p></description></item><item><title>모헤윰 mo:heyum - 프로젝트 회고</title><link>http://prayinforrain.github.io/post/finishing-moheyum/</link><pubDate>Wed, 21 Dec 2022 03:30:25 +0900</pubDate><guid>http://prayinforrain.github.io/post/finishing-moheyum/</guid><description>&lt;blockquote>
+그리고.. 저의 뜬금없고 깐깐한 질문에 친절하게 답해주신 &lt;code>@wcho21&lt;/code>님, 언제나 블로그에 있어서 프로 마인드이신 &lt;code>@kasterra&lt;/code>님께 감사 인사 드립니다.&lt;/p></description></item><item><title>Tree Shaking</title><link>http://prayinforrain.github.io/post/tree-shaking/</link><pubDate>Wed, 25 Jan 2023 17:17:15 +0900</pubDate><guid>http://prayinforrain.github.io/post/tree-shaking/</guid><description>&lt;h1 id="용량을-절약하는-방법">용량을 절약하는 방법&lt;/h1>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/tree-shaking/01.png" alt="untitled">&lt;/p>
+&lt;p>웹페이지의 성능을 이야기하는 가장 직관적인 지표는 아마 페이지에 사용되는 &lt;strong>파일의 크기&lt;/strong>일 것입니다. 파일의 크기가 무겁다면 파일을 다운받는 데 시간이 오래 걸리고, 다운로드한 파일을 읽고 렌더링 하는데도 시간이 오래 걸릴 것입니다. 따라서 번들 파일의 용량을 다이어트 하는 것은 사이트 성능에 꽤 중요한 역할을 합니다.&lt;/p>
+&lt;p>위 사진은 팀 프로젝트를 하던 중 &lt;code>@next/bundle-analyzer&lt;/code> 패키지를 이용해 번들 맵을 그렸던 것입니다. 클수록 번들 용량이 크다는 뜻이니 커다란 청크 위주로 최적화를 시도하면 될 것 같습니다. 그런데 어떻게 용량을 줄일 수 있을까요? gzip을 통해 파일을 압축해서 보내는 방법도 있겠지만, 코드적으로 최적화할 수 있는 방법은 &lt;code>Tree-shaking&lt;/code>입니다.&lt;/p>
+&lt;h1 id="트리-쉐이킹">트리 쉐이킹&lt;/h1>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/tree-shaking/02.gif" alt="untitled">&lt;/p>
+&lt;p>나무를 마구마구 흔들면 어떻게 나뭇잎이나 열매같은 것들이 조금씩 떨어지면서 나무가 점점 앙상해 질 것입니다. 트리 쉐이킹은 이와 비슷하게 &lt;strong>사용하지 않는 코드들이 번들에 포함되는 것들을 지워서 파일 크기를 줄이는 일&lt;/strong>입니다. 말 그대로 &lt;strong>나무(파일)를 마구 흔들어서 나뭇잎(미사용 코드)을 덜어내는 개념&lt;/strong>이죠. 어떤 과정을 통해 이루어 질까요? 아래 예제를 통해 알아보겠습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/tree-shaking/03.png" alt="untitled">&lt;/p>
+&lt;p>&lt;a href="https://github.com/malchata/webpack-tree-shaking-example">https://github.com/malchata/webpack-tree-shaking-example&lt;/a>&lt;/p>
+&lt;h2 id="실행해보기">실행해보기&lt;/h2>
+&lt;p>우선 &lt;code>npm run build&lt;/code>후 &lt;code>npm run start&lt;/code>를 통해 실행해 보겠습니다. 아래와 같은 결과물이 보입니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/tree-shaking/04.png" alt="untitled">&lt;/p>
+&lt;p>번들된 파일 두개를 다운받았고, 38.4KB, 21.6KB의 크기를 갖습니다. 객관적으로 가볍긴 하지만 여기서 굳이 트리 쉐이킹을 통해 용량을 더 줄여 보겠습니다.&lt;/p>
+&lt;h2 id="필요한-것만-import하기">필요한 것만 import하기&lt;/h2>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/tree-shaking/05.png" alt="untitled">&lt;/p>
+&lt;p>이 앱의 컴포넌트인 &lt;code>FilterablePedalList.js&lt;/code>를 보면 &lt;code>utils.js&lt;/code> 파일을 import해오는 것을 알 수 있습니다. 그런데 &lt;code>utils.js&lt;/code> 파일은 1300여 줄이 되는 아주 긴 코드입니다. 각종 정렬과, 배열을 다루는 유틸리티 함수를 포함하고 있는데, 정작 컴포넌트에서는 &lt;code>simpleSort&lt;/code>만을 사용하고 있습니다. 첫 13줄 아래로는 모두 사용하지 않는 함수들인데도 불러오고 있는 것이죠. 실제로 번들 파일에서도 &lt;code>simpleSort&lt;/code> 외에 &lt;code>uasort&lt;/code>, &lt;code>uksort&lt;/code> 등 여러 함수들이 같이 번들링된 것을 알 수 있습니다.&lt;/p>
+&lt;p>따라서 import문을 아래와 같이 변경하겠습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// FilterablePedalList.js
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">as&lt;/span> &lt;span style="color:#a6e22e">utils&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;../../utils/utils&amp;#34;&lt;/span>; &lt;span style="color:#75715e">// before
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">simpleSort&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;../../utils/utils&amp;#34;&lt;/span>; &lt;span style="color:#75715e">// after
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>하지만 이렇게 해서는 번들 파일의 크기는 줄어들지 않습니다. 이는 Babel이 &lt;code>import&lt;/code>문을 &lt;code>require&lt;/code>문으로 트랜스파일링 하기 때문인데요, &lt;code>CommonJS&lt;/code>에서 사용되는 require는 지정된 파일의 코드 전체를 가져오기 때문에 import문처럼 특정 함수만을 지정해서 가져올 수 없는 상황입니다. 따라서 &lt;code>.babelrc&lt;/code>에서 Babel의 설정을 변경해 주어야 합니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;presets&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#e6db74">&amp;#34;env&amp;#34;&lt;/span>,{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;modules&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>modules 옵션은 ES Modules 문법을 다른 문법으로 트랜스파일링 할 것인지에 대한 옵션입니다. 그렇다고 CommonJS 환경에서 사용이 불가능해 지는 것은 아닙니다. 왜냐면 webpack이 한번 더 트랜스파일 과정을 거치거든요!&lt;/p>
+&lt;h2 id="결과물-확인하기">결과물 확인하기&lt;/h2>
+&lt;p>그럼 이제 앱을 다시 빌드하고 결과물을 확인해 보겠습니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/tree-shaking/06.png" alt="untitled">&lt;/p>
+&lt;p>&lt;code>main.js&lt;/code> 청크가 &lt;code>21.6KB → 9KB&lt;/code>로 크게 줄어들었습니다. 큰 의미는 없지만 로드 시간도 줄어들었네요. 트리 쉐이킹이 어떤 과정을 거쳐 이루어 지는지 알아봤습니다. 굿..&lt;/p>
+&lt;h1 id="궁금증들">궁금증들&lt;/h1>
+&lt;h2 id="특정-패키지의-트리-쉐이킹이-되지-않는-이유는">특정 패키지의 트리 쉐이킹이 되지 않는 이유는?&lt;/h2>
+&lt;p>대부분은 위의 과정을 통해 트리 쉐이킹이 가능하나, 일부 패키지에서 &lt;code>import&lt;/code>해오는 경우에는 트리 쉐이킹이 일어나지 않습니다. 배열이나 Date 등을 다룰 때 유틸리티 함수를 제공해 주는 &lt;code>lodash&lt;/code> 패키지가 그런 경우인데요, 패키지 자체가 CommonJS 모듈 문법으로 작성되어 있어서 그렇습니다. lodash는 이런 문제를 해결하기 위해 다양한 문법에 맞추어 작성된 빌드를 제공합니다. &lt;a href="https://github.com/lodash/lodash#module-formats">[링크]&lt;/a>&lt;/p>
+&lt;p>만약 이런 식으로도 지원하지 않는 라이브러리라면 &lt;a href="https://github.com/indutny/webpack-common-shake">webpack-common-shake&lt;/a>같은 플러그인을 활용해야 합니다. &lt;code>webpack-common-shake&lt;/code>는 CommonJS의 문법으로 &lt;code>module.export&lt;/code>를 사용한 패키지를 트리쉐이킹 해주는 플러그인인데요, README에 나와 있듯이 결국 완전한 해결책은 아닙니다.&lt;/p>
+&lt;h2 id="babel의-modules-false란-무엇일까">Babel의 &lt;code>“modules”: false&lt;/code>란 무엇일까?&lt;/h2>
+&lt;p>babel의 &lt;code>modules&lt;/code> 옵션은 ES modules 문법을 다른 문법에 맞추어 트랜스파일하는 옵션인데요, &lt;code>false&lt;/code>를 지정할 경우 트랜스파일이 이루어지지 않습니다. 그런데 앞서 말했듯이 &lt;code>babel&lt;/code>에서 굳이 변환하지 않더라도 &lt;code>webpack&lt;/code>이 해주는데, 이걸 굳이 &lt;code>false&lt;/code>로 지정해야 할 이유가 있을까요?&lt;/p>
+&lt;p>Babel의 &lt;a href="https://babeljs.io/docs/en/babel-preset-env#modules">documentation&lt;/a>을 보면 modules 옵션은 아래와 같이 설명되어 있습니다.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>&amp;quot;amd&amp;quot; | &amp;quot;umd&amp;quot; | &amp;quot;systemjs&amp;quot; | &amp;quot;commonjs&amp;quot; | &amp;quot;cjs&amp;quot; | &amp;quot;auto&amp;quot; | false&lt;/code>, defaults to &lt;code>&amp;quot;auto&amp;quot;&lt;/code>.&lt;/p>
+&lt;p>Enable transformation of ES module syntax to another module type. Note that &lt;code>cjs&lt;/code> is just an alias for &lt;code>commonjs&lt;/code>.
+&lt;em>ES 모듈 문법을 다른 모듈 타입으로 트랜스파일하도록 합니다. &lt;code>cjs&lt;/code>는 &lt;code>CommonJS&lt;/code>를 의미합니다.&lt;/em>&lt;/p>
+&lt;p>Setting this to &lt;code>false&lt;/code> will preserve ES modules. Use this only if you intend to ship native ES Modules to browsers. If you are using a bundler with Babel, the default &lt;code>modules: &amp;quot;auto&amp;quot;&lt;/code> is always preferred.
+&lt;code>*false&lt;/code>로 지정하면 ES 모듈의 문법을 유지합니다. 앱을 ES 모듈로만 제공하고 싶은 경우에만 사용하세요. Babel에 번들러를 추가로 사용하는 경우, &lt;code>modules: “auto”&lt;/code>를 사용할 것을 추천합니다.*&lt;/p>
+&lt;/blockquote>
+&lt;p>사실 &lt;code>modules&lt;/code>에는 &lt;code>auto&lt;/code>라는 값이 존재합니다. 이는 &lt;code>Babel 7.x&lt;/code> 버전부터 생긴 &lt;code>caller&lt;/code> 옵션을 활용하여 추가된 값인데요, &lt;code>auto&lt;/code>로 설정할 경우 바벨은 callerData를 이용하여 ES 모듈 문법이 사용 가능한지 판단하고, 이에 맞추어 트랜스파일 할 지를 자동으로 판단합니다. 사용한 예제에서는 낮은 버전의 바벨을 사용하고 있었기 때문에 &lt;code>false&lt;/code>를 지정했지만, 지금은 기본값이 &lt;code>auto&lt;/code>로 되어 있어 &lt;code>import&lt;/code> 범위만 조절하면 알아서 트리 쉐이킹이 이루어질 것으로 보입니다.&lt;/p>
+&lt;h1 id="refs">Refs.&lt;/h1>
+&lt;p>&lt;a href="https://darrengwon.tistory.com/833">Next 배포를 위한 준비(bundle-analyzer, tree shaking, gzip)&lt;/a>&lt;br>
+&lt;a href="https://helloinyong.tistory.com/305">웹 성능 최적화를 위한 Tree Shaking 소개&lt;/a>&lt;br>
+&lt;a href="https://web.dev/reduce-javascript-payloads-with-tree-shaking/#go_shake_some_trees">Reduce JavaScript payloads with tree shaking&lt;/a>&lt;br>
+&lt;a href="https://webpack.kr/guides/tree-shaking/">Tree Shaking | 웹팩&lt;/a>&lt;br>
+&lt;a href="https://babeljs.io/docs/en/babel-preset-env#modules">@babel/preset-env · Babel&lt;/a>&lt;br>
+&lt;a href="https://github.com/babel/babel-loader/issues/521">https://github.com/babel/babel-loader/issues/521&lt;/a>&lt;br>
+&lt;a href="https://github.com/babel/babel-loader/pull/660">https://github.com/babel/babel-loader/pull/660&lt;/a>&lt;/p></description></item><item><title>ECMAScript</title><link>http://prayinforrain.github.io/post/ecmascript/</link><pubDate>Wed, 25 Jan 2023 16:35:01 +0900</pubDate><guid>http://prayinforrain.github.io/post/ecmascript/</guid><description>&lt;p>&lt;img src="http://prayinforrain.github.io/image/ecmascript/01.png" alt="untitled">&lt;/p>
+&lt;h1 id="ecma-international">Ecma international&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;strong>Ecma International&lt;/strong> is an industry association dedicated to the standardization of information and communication systems
+&lt;em>Emca International은 정보통신 시스템의 표준화를 위한 국제 표준화 기구입니다.&lt;/em> &amp;gt; &lt;a href="https://www.ecma-international.org/">https://www.ecma-international.org/&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Ecma International은 Ecma 사이트에서 소개하듯, 정보통신 시스템의 표준을 만들기 위한 국제 기구입니다. C#, JSON, .u3d 확장자 등 여러 방면에서의 표준안을 제시하였으며, 개발자를 위한 IEEE같은 존재로 이해하면 될 것 같습니다.(제 생각)&lt;/p>
+&lt;p>유럽에서 컴퓨터 시스템을 표준화하기 위해 설립되어서 &lt;strong>ECMA&lt;/strong>(&lt;em>European Computer Manufacturers Association&lt;/em>)라는 이름을 가지고 있으나 유럽국가 뿐 아니라 전세계의 표준으로 활용되기 위해 &lt;strong>Ecma International&lt;/strong>로 이름을 변경하였습니다. &lt;strong>ECMA&lt;/strong> 자체는 두문자어이지만 지금의 이름은 하나의 고유명사로 사용되는 셈이죠. 따라서 &lt;strong>Ecma&lt;/strong>로 표기하는 것이 맞습니다.&lt;/p>
+&lt;p>Ecma가 정의한 표준에 대해서는 아래 링크에서 볼 수 있습니다.&lt;/p>
+&lt;p>&lt;a href="https://www.ecma-international.org/publications-and-standards/standards/">Standards - Ecma International&lt;/a>&lt;/p>
+&lt;h1 id="ecmascript">ECMAScript&lt;/h1>
+&lt;p>ECMA스크립트란 앞에서 설명한 Ecma 인터내셔널이 정의하는 &lt;strong>스크립트 프로그래밍 언어&lt;/strong>(≒인터프리터 언어) 중 하나입니다. 그리고 이 언어는 곧 자바스크립트를 가리킵니다. 즉 &lt;strong>ECMAScript(&lt;em>ECMA-262&lt;/em>)에 의해 표준화된 자바스크립트의 이름&lt;/strong>입니다.&lt;/p>
+&lt;p>얼마 전에 면접에서 &lt;em>자바스크립트가 ECMAScript의 표준을 준수한 언어&lt;/em>라고 이야기했는데, 이는 틀린 표현입니다. 이를 이해하기 위해서는 자바스크립트의 역사에 대해 이해할 필요가 있습니다.&lt;/p>
+&lt;h2 id="자바스크립트의-탄생">자바스크립트의 탄생&lt;/h2>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/ecmascript/02.png" alt="untitled">&lt;/p>
+&lt;p>&lt;code>넷스케이프&lt;/code>를 아시나요? Internet Explorer가 세상을 지배하기 전에 주로 사용되었던 인터넷 브라우저입니다. 지금은 파이어폭스가 넷스케이프의 역사를 이어가고 있는데요, 당시 유료였던 넷스케이프는 무료로 마구마구 배포되는 IE에게 밀려나게 됩니다.&lt;/p>
+&lt;p>우리가 알고 있는 바와 같이 HTML과 CSS만으로 웹페이지를 표현하는 데에는 명확한 제한이 있습니다. 동적인 페이지를 만들 수 없다는 점이죠. 이러한 한계를 극복하기 위해 넷스케이프는 1995년, 간단한 프로그래밍 언어를 도입하기로 했고, 이 것이 &lt;strong>브렌던 아이크&lt;/strong>가 개발한 자바스크립트의 전신, &lt;code>모카(Mocha)&lt;/code>입니다. 모카의 이름은 LiveScript를 거쳐 지금의 &lt;code>JavaScript&lt;/code>가 되었습니다. 당시 유행한 Java와 문법이 비슷하다는 점을 강조하여 마케팅 전략을 세운 것이죠.&lt;/p>
+&lt;h2 id="jscript의-등장과-자바스크립트의-파편화">JScript의 등장과 자바스크립트의 파편화&lt;/h2>
+&lt;p>그 이후 1996년에 마이크로소프트 역시 IE에서 자바스크립트를 지원하기 시작했습니다. 단순 지원 뿐 아니라 IE만의 독자적인 기능을 추가해서 비슷하지만 차이가 있는 언어를 구현했죠. 이 언어는 &lt;code>JScript&lt;/code>라고 부르고, 가장 큰 특징으로는 윈도우에 종속적이며 악명높은 &lt;code>ActiveX&lt;/code>를 사용할 수 있는 기반이 된다는 점이 있습니다. JavaScript와 호환이 되지 않는 것은 아니지만 그렇다고 완전하게 지원하는 것은 또 아니였습니다.&lt;/p>
+&lt;p>JavaScript와 JScript의 차이가 생기면서, 사용자는 환경에 따라 다른 페이지를 보게 되었습니다. &lt;strong>크로스 브라우징 이슈&lt;/strong>가 생겨난 것이죠. 더군다나 마이크로소프트의 공격적인 마케팅 전략으로 인해 JScript의 점유율은 점점 높아지고 있었습니다. 파편화 문제가 점점 심화되자 모든 브라우저에서 같은 결과물을 보여주는 자바스크립트 표준이 필요해졌습니다. 이에 따라 넷스케이프는 Ecma International(당시 ECMA)에 자바스크립트 표준화를 요청하였고, 그렇게 &lt;code>ECMA-262&lt;/code>라는 표준이 탄생했습니다.&lt;/p>
+&lt;p>즉, &lt;strong>JavaScript가 생겨나고, 파편화 현상이 일어나자 이를 표준화하기 위해 ECMAScript가 등장한 것&lt;/strong>이라고 요약할 수 있겠습니다.&lt;/p>
+&lt;h2 id="ecmascript-변천사">ECMAScript 변천사&lt;/h2>
+&lt;p>ECMAScript는 지금에 와서는 거의 매 년 새 버전이 배포되고 있습니다. 2015년까지는 ES6와 같은 네이밍을 사용했지만, 배포 주기가 연단위로 빨라지는 상황에 맞추어 ES2020과 같은 네이밍을 사용하게 되었습니다. 넘버링은 대충 &lt;code>ES6 = ES2015&lt;/code>이후로 1년에 1씩 버전이 오른다고 알고 계시면 되겠습니다.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>판&lt;/th>
+&lt;th>출판일&lt;/th>
+&lt;th>이름&lt;/th>
+&lt;th>이전 판과의 차이점&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>1997년 6월&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>초판&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>1998년 6월&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>ISO/IEC 16262 국제 표준과 완전히 동일한 규격을 적용하기 위한 변경.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>1999년 12월&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>강력한 정규 표현식, 향상된 문자열 처리, 새로운 제어문 , try/catch 예외 처리, 엄격한 오류 정의, 수치형 출력의 포매팅 등.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>버려짐&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>4번째 판은 언어에 얽힌 정치적 차이로 인해 버려졌다. 이 판을 작업 가운데 일부는 5번째 판을 이루는 기본이 되고 다른 일부는 ECMA스크립트의 기본을 이루고 있다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>2009년 12월&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>더 철저한 오류 검사를 제공하고 오류 경향이 있는 구조를 피하는 하부집합인 &amp;ldquo;strict mode&amp;quot;를 추가한다. 3번째 판의 규격에 있던 수많은 애매한 부분을 명확히 한다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5.1&lt;/td>
+&lt;td>2011년 6월&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>ECMA스크립트 표준의 제 5.1판은 ISO/IEC 16262:2011 국제 표준 제3판과 함께 한다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>2015년 6월&lt;/td>
+&lt;td>ECMAScript 2015 (ES2015)&lt;/td>
+&lt;td>6판에는 클래스와 모듈 같은 복잡한 응용 프로그램을 작성하기 위한 새로운 문법이 추가되었다. 하지만 이러한 문법의 의미는 5판의 strict mode와 같은 방법으로 정의된다. 이 판은 &amp;ldquo;ECMAScript Harmony&amp;rdquo; 혹은 &amp;ldquo;ES6 Harmony&amp;rdquo; 등으로 불리기도 한다.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>2016년 6월&lt;/td>
+&lt;td>ECMAScript 2016 (ES2016)&lt;/td>
+&lt;td>제곱연산자 추가, Array.prototype.includes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>2017년 6월&lt;/td>
+&lt;td>ECMAScript 2017 (ES2017)&lt;/td>
+&lt;td>함수 표현식의 인자에서 trailing commas 허용, Object values/entries 메소드, async/await 등.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>2018년 6월&lt;/td>
+&lt;td>ECMAScript 2018 (ES2018)&lt;/td>
+&lt;td>Promise.finally, Async iteration, object rest/spread property 등.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>2019년 6월&lt;/td>
+&lt;td>ECMAScript 2019 (ES2019)&lt;/td>
+&lt;td>Object.fromEntries, flat, flatMap, Symbol.description, optional catch 등.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="궁금증들">궁금증들&lt;/h1>
+&lt;h3 id="commonjs는-무엇일까">CommonJS는 무엇일까?&lt;/h3>
+&lt;p>지금까지 이야기한 자바스크립트는 모두 브라우저에서 사용하기 위한 표준이였습니다. 하지만 우리는 지금 브라우저 없이도 자바스크립트를 사용하고 있습니다. 자바스크립트를 브라우저 밖에서 사용하기 위한 논의가 계속해서 이루어졌고, 이를 위해 &lt;strong>자바스크립트를 모듈화&lt;/strong>할 수 있는 표준이 제시되었습니다. 이 것이 &lt;code>CommonJS&lt;/code>이고, 이를 이용해 만들어진 것이 &lt;code>Node.js&lt;/code>입니다.&lt;/p>
+&lt;p>아.. 복잡해요 아래 글 좋은 것 같아요.. 나중에 더 찾아보고 정리할게요.. 근데 사실 이게 다라서 더 정리해야 할 내용이 있는지 모르겠어요. ES도 모듈화를 챙기기 위해 ESM이라는 표준이 있다는 것 정도?&lt;/p>
+&lt;p>&lt;a href="https://velog.io/@jjunyjjuny/ES-Modules-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0">[ JavaScript ] ES Modules 정리하기&lt;/a>&lt;/p>
+&lt;h1 id="refs">Refs.&lt;/h1>
+&lt;p>&lt;a href="https://ko.wikipedia.org/wiki/Ecma_%EC%9D%B8%ED%84%B0%EB%82%B4%EC%85%94%EB%84%90">Ecma 인터내셔널 - 위키백과&lt;/a>&lt;br>
+&lt;a href="https://www.ecma-international.org/">Ecma International&lt;/a>&lt;br>
+&lt;a href="https://poiemaweb.com/js-introduction">Introduction | PoiemaWeb&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@leobit/CommonJS">CommonJS&lt;/a>&lt;br>
+&lt;a href="https://ui.toast.com/fe-guide/ko_ES5-TO-ES6">ES5 to ES6+&lt;/a>&lt;br>
+&lt;a href="https://www.howdy-mj.me/javascript/how-to-read-ecmascript">ECMAScript 스펙 읽는법&lt;/a>&lt;/p></description></item><item><title>CSS의 display 속성</title><link>http://prayinforrain.github.io/post/css-display/</link><pubDate>Mon, 16 Jan 2023 16:38:15 +0900</pubDate><guid>http://prayinforrain.github.io/post/css-display/</guid><description>&lt;p>CSS의 &lt;code>display&lt;/code> 속성은 HTML element가 block인지, inline인지, 그리고 자식 element들을 어떤 식으로 표시할지를 정하는 속성입니다. 다시 말해 요소 자체가 형제 요소와 배치되는 방법과, 자식 요소를 배치하는 방법을 함께 정의하기 때문에 ‘&lt;strong>안쪽&lt;/strong>’과 ‘&lt;strong>바깥쪽&lt;/strong>’으로 속성을 나눌 수 있습니다.&lt;/p>
+&lt;h1 id="display">display:&lt;/h1>
+&lt;h2 id="바깥쪽">바깥쪽&lt;/h2>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/css-display/01.png" alt="Untitled">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>block&lt;/code>
+&lt;ul>
+&lt;li>한 줄에는 한 요소만 올 수 있게 하는 속성입니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>inline&lt;/code>
+&lt;ul>
+&lt;li>요소가 한 줄에 여러 개 표시 될 수 있음을 의미합니다. 만약 &lt;code>inline&lt;/code>이 적용된 요소의 전후에 &lt;code>inline&lt;/code> 요소를 표시할 공간이 있다면 한 줄에 표시됩니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>사진의 div들은 각각 &lt;code>inline&lt;/code>, &lt;code>block&lt;/code> 속성을 지정하였습니다. 보이는 것과 같이 &lt;code>block&lt;/code> 속성의 요소는 한 줄에 하나만 존재할 수 있으며, &lt;code>inline&lt;/code> 속성은 충분한 공간이 있으면 한 줄에 표시됩니다. &lt;code>span&lt;/code>과 &lt;code>p&lt;/code>태그의 차이와 비슷합니다.&lt;/p>
+&lt;p>또 &lt;code>inline&lt;/code>의 경우에는 크기가 항상 포함하는 내용의 크기만큼만을 갖기 때문에, 따로 &lt;code>width&lt;/code>나 &lt;code>height&lt;/code>를 지정해도 제어가 불가능합니다. 예제의 &lt;code>inline div&lt;/code>는 &lt;code>width: 500%;&lt;/code>를 지정한 상태이지만 포함한 텍스트의 크기만큼만을 가집니다. 크기를 조절할 수 있으면서 inline 속성의 특성을 갖도록 하는 &lt;code>inline-block&lt;/code> 속성이 존재했으나, 이는 현재 레거시로 분류되어 &lt;code>inline flow-root&lt;/code>로 대체할 수 있다고 합니다.&lt;/p>
+&lt;h2 id="안쪽">안쪽&lt;/h2>
+&lt;p>요소가 포함하는 자식 요소들의 배치 방법을 정하는 속성입니다. 이 외에도 실험적 기능으로 &lt;code>flow&lt;/code>, &lt;code>ruby&lt;/code>가 존재합니다.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>flow-root&lt;/code>
+&lt;ul>
+&lt;li>외부에 &lt;code>block&lt;/code>, 내부에 &lt;code>float&lt;/code>이 적용된 것과 같이 동작합니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>table&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>&amp;lt;table&amp;gt;&lt;/code> 태그의 내부인 것처럼 동작합니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>flex&lt;/code>
+&lt;ul>
+&lt;li>Flexbox model에 따라서 &lt;code>block&lt;/code> 요소처럼 동작합니다. 단방향 레이아웃에 적합합니다.&lt;br>
+&lt;a href="https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout">CSS Flexible Box Layout - CSS: Cascading Style Sheets | MDN&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>grid&lt;/code>
+&lt;ul>
+&lt;li>Grid layout을 형성합니다.&lt;br>
+&lt;a href="https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Grid_Layout/Basic_concepts_of_grid_layout">Basic concepts of grid layout - CSS: Cascading Style Sheets | MDN&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="궁금증들">궁금증들&lt;/h1>
+&lt;h2 id="inline-block은-왜-레거시가-되었을까">inline-block은 왜 레거시가 되었을까?&lt;/h2>
+&lt;p>앞에서 언급했던 바와 같이 &lt;code>inline-block&lt;/code>은 &lt;code>inline flow-root&lt;/code>로 대체되어 레거시로 분류되었습니다. 그렇지만 &lt;code>inline flow-root&lt;/code>라는 속성은 굉장히 생소합니다. 왜 이런 식으로 변경되었을까요?&lt;/p>
+&lt;p>&lt;code>CSS2&lt;/code>까지의 스펙에서는 &lt;code>display&lt;/code>에 두 개 이상의 값을 지정할 수 없었습니다. 그래서 바깥쪽에 &lt;code>inline&lt;/code>, 안쪽에 &lt;code>flex&lt;/code>를 지정하기 위해서 &lt;code>inline-flex&lt;/code>같은 값을 따로 정해 두고 사용해야 했는데요, &lt;code>inline-block&lt;/code> 역시 그런 케이스입니다. 그러다가 &lt;code>CSS3&lt;/code>이 나오면서 &lt;code>display&lt;/code>에 두 개 이상의 값을 지정할 수 있게 되면서 이런 값들이 사라진 것이죠.&lt;/p>
+&lt;p>그렇다고 해서 이제 &lt;strong>inline-block을 사용하지 않는 것이 좋은 것은 아니&lt;/strong>라고 합니다. MDN에서는 &lt;code>display&lt;/code>에 여러 개의 값을 지정하는 &lt;code>CSS3&lt;/code>의 스펙에 대해 아래와 같은 언급을 추가하고 있습니다.&lt;/p>
+&lt;blockquote>
+&lt;p>The Level 3 specification details two values for the &lt;code>display&lt;/code> property — enabling the specification of the outer and inner display type explicitly — but this is not yet well-supported by browsers.&lt;/p>
+&lt;/blockquote>
+&lt;p>즉, 아직 모든 브라우저에서 완전히 호환되고 있지 않기 때문에 &lt;strong>deprecated가 아닌 legacy&lt;/strong>로 분류된 것이라고 할 수 있겠네요.&lt;/p>
+&lt;h2 id="visibility-hidden과-display-none의-차이는">&lt;code>visibility: hidden;&lt;/code>과 &lt;code>display: none;&lt;/code>의 차이는?&lt;/h2>
+&lt;p>&lt;code>visibility: hidden;&lt;/code>과 &lt;code>display: none;&lt;/code>은 둘 다 사용자의 브라우저에서 요소를 보이지 않게 하는 방법입니다. 같은 동작을 하는 속성이 두 개 씩이나 필요할까요? 둘의 차이점은 크게 두 가지가 있습니다.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>visibility: hidden;&lt;/code>은 요소가 차지하는 공간은 보존된다.
+&lt;ul>
+&lt;li>display: none;은 아예 페이지 내에서 요소가 없는 것처럼 간주합니다. 따라서 레이아웃을 구성할 때에도 해당 요소는 고려하지 않는데요, 반면 &lt;code>visibility: hidden&lt;/code>은 해당 요소가 차지하는 공간은 그대로 둔 채 레이아웃을 구성하므로, 해당 부분은 빈 공간으로 남게 됩니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>innerText&lt;/code>로 접근했을 때의 차이&lt;br>
+&lt;img src="http://prayinforrain.github.io/image/css-display/02.png" alt="Untitled">
+&lt;ul>
+&lt;li>&lt;code>innerText&lt;/code>로 텍스트를 가져오면 위 사진과 같이 차이가 있습니다. 첫 번째는 일반적인(보이는) 상태에서, 두 번째는 &lt;code>display: none;&lt;/code>, 세 번째는 &lt;code>visibility: hidden;&lt;/code>을 적용한 상태입니다. 반면 &lt;code>innerHTML&lt;/code>은 셋 다 같은 결과를 냅니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>두 방법 외에도 브라우저에서 요소를 숨기는 방법은 여러 가지가 있는데요, 관심이 있으신 분은 접근성 문제도 엮여 있기 때문에 &lt;a href="https://mulder21c.github.io/2019/03/22/screen-hide-text/">[이 포스트]&lt;/a>를 참고해 보시길 추천합니다.&lt;/p>
+&lt;h1 id="refs">Refs.&lt;/h1>
+&lt;p>&lt;a href="https://developer.mozilla.org/ko/docs/Web/CSS/display">display - CSS: Cascading Style Sheets | MDN&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.w3.org/TR/css-display-3/">CSS Display Module Level 3&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://mulder21c.github.io/2019/03/22/screen-hide-text/">접근 가능한 숨김 텍스트&lt;/a>&lt;/p></description></item><item><title>브라우저 렌더링과 성능</title><link>http://prayinforrain.github.io/post/browser-rendering-performance/</link><pubDate>Mon, 16 Jan 2023 16:38:15 +0900</pubDate><guid>http://prayinforrain.github.io/post/browser-rendering-performance/</guid><description>&lt;h1 id="브라우저-렌더링">브라우저 렌더링&lt;/h1>
+&lt;p>성능 최적화를 위해, 브라우저가 어떻게 HTML 문서를 화면에 그리는지 과정에 대해 이해할 필요가 있습니다. 브라우저 렌더링은 아래 사진과 같은 흐름으로 이루어집니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/browser-rendering-performance/01.png" alt="Untitled">&lt;/p>
+&lt;ul>
+&lt;li>서버로부터 HTML, CSS, JavaScript 파일을 받아와 HTML → DOM, CSS → CSSOM으로 변환하고 Render Tree를 구성합니다.&lt;/li>
+&lt;li>Render Tree의 노드들에 대한 위치와 크기를 계산합니다. Render Tree의 루트부터 시작하여 모든 노드에 대해 계산을 수행합니다. (Layout)&lt;/li>
+&lt;li>계산된 결과물을 기반으로 화면에 실제 노드들을 그립니다. (Paint)&lt;/li>
+&lt;li>사용자의 상호작용이나 스크립트를 통한 제어 등으로 HTML 요소의 크기나 위치의 변경이 일어나면 &lt;code>Reflow&lt;/code>라는 과정을 수행합니다.
+&lt;ul>
+&lt;li>Reflow는 Render Tree 구성부터 &lt;strong>모든 작업을 다시 수행&lt;/strong>합니다.&lt;/li>
+&lt;li>만약 레이아웃 자체에는 변화가 없고, 색상이나 visibility 등의 변경만 있는 경우에는 Paint 과정만을 다시 수행합니다. (Repaint)&lt;/li>
+&lt;li>따라서 비용이 큰 &lt;strong>Reflow의 발생을 최대한 줄이는 것이 중요&lt;/strong>합니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/TZz9VHjJzMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe>
+&lt;p>이거 되게 좋은 내용인 것 같아요 CSS의 &lt;code>will-change&lt;/code>를 통헤 불필요한 GPU 점유를 줄이는 방법도 소개하고 있네요!&lt;/p>
+&lt;h1 id="성능을-최적화하는-방법">성능을 최적화하는 방법&lt;/h1>
+&lt;h2 id="documentfragment를-사용">DocumentFragment를 사용&lt;/h2>
+&lt;p>앞에 정리한 내용과 같이 브라우저 성능에 가장 영향을 미치는 부분은 &lt;code>Reflow&lt;/code> 과정입니다. 즉 Reflow의 발생을 줄이면 큰 성능 향상을 노릴 수 있는 것이다. 보통은 스크립트를 통해 요소의 레이아웃을 제어하는 코드는 한 번에 실행되지 않습니다. 즉 여러 줄에 걸쳐 레이아웃을 수정하는 경우 각 행에 대해 Reflow가 발생합니다. - &lt;em>브라우저에 따라 일부 최적화가 이루어지는 경우가 있음&lt;/em>&lt;/p>
+&lt;p>따라서 모든 수정이 완료된 후에 최종 결과물에 대해서만 Reflow를 수행할 필요가 있습니다. &lt;code>DocumentFragment&lt;/code>가 그 해결책 중 하나인데, &lt;code>DocumentFragment&lt;/code>란 React의 버추얼 DOM과 비슷한 개념으로, DOM과 비슷하게 동작하지만 실제 HTML DOM에는 영향을 주지 않는 &lt;strong>Document의 가벼운 버전&lt;/strong>입니다.&lt;/p>
+&lt;p>&lt;code>DocumentFragment&lt;/code>은 렌더링 자체가 이루어지지 않기 때문에 Reflow 걱정 없이 변경이 가능합니다. 따라서 &lt;code>DocumentFragment&lt;/code> 내부에서 레이아웃을 변경하고, 최종 결과물을 HTML DOM에 삽입하면 불필요한 Reflow 발생을 막을 수 있습니다. 아래는 간단한 사용 예시입니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">documentFragment&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">DocumentFragment&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// const documentFragment = document.createDocumentFragment();
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">div&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">createElement&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;div&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// do something...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;parent-to-append&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">appendChild&lt;/span>(&lt;span style="color:#a6e22e">documentFragment&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="canvas-사용">Canvas 사용&lt;/h2>
+&lt;p>일반적으로 &lt;strong>페이지 내의 요소가 많아질수록 레이아웃 계산 과정에서의 계산량이 많아집니다.&lt;/strong> 9개의 &lt;code>div&lt;/code>가 3*3으로 나열되어 있다고 하면, 그 중 하나의 &lt;code>div&lt;/code>의 크기가 변경됨에 따라 나머지 8개의 &lt;code>div&lt;/code>도 레이아웃 재계산이 일어납니다. 크기가 고정된 부모 요소로 분리되어 있다면 그 내부의 요소들만 재계산이 일어나지만, 만약 그렇지 않은 경우 문서 전체를 다시 계산해야 할 가능성도 있습니다.&lt;/p>
+&lt;p>따라서 복잡한 시각 효과를 연출하거나, 많은 Element를 가진 요소들을 제어해야 하는 경우에는 &lt;code>canvas&lt;/code>를 이용하여 렌더링하는 것이 효과적일 수 있습니다. &lt;code>canvas&lt;/code>는 정해진 캔버스 영역 안에서만 렌더링이 일어나기 때문에 Reflow를 방지할 수 있기 때문이죠.&lt;/p>
+&lt;aside>
+&lt;p>💡 &lt;strong>DOM과 canvas의 성능 차이&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/browser-rendering-performance/02.png" alt="Untitled">&lt;/p>
+&lt;p>캔버스는 페인팅 영역이 정해져 있습니다.(&lt;code>&amp;lt;canvas&amp;gt;&lt;/code> 태그의 영역이 정해져 있다) 따라서 &lt;strong>그 안의 요소들 끼리만 계산이 이루어지고, 그 바깥의 HTML 요소들과는 상호작용하지 않기 때문&lt;/strong>에, 캔버스의 제어는 Reflow를 발생시키지 않습니다. 따라서 DOM에 직접 렌더링 하는 것보다 비용이 적습니다.&lt;/p>
+&lt;/aside>
+&lt;h1 id="refs">Refs.&lt;/h1>
+&lt;p>&lt;a href="https://www.nextree.co.kr/p2081/">JavaScript 최적화: DOM 핸들링 속도 개선&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@zaman17/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91%EB%8C%80%EB%B9%84-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%88%9C%EC%84%9C%EC%99%80-%EC%9B%90%EB%A6%AC">브라우저 렌더링 순서와 원리&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@hoo00nn/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81">브라우저 렌더링&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@tnehd1998/%EC%A3%BC%EC%86%8C%EC%B0%BD%EC%97%90-www.google.com%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%96%88%EC%9D%84-%EB%95%8C-%EC%9D%BC%EC%96%B4%EB%82%98%EB%8A%94-%EA%B3%BC%EC%A0%95#-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81-%EA%B3%BC%EC%A0%95">주소창에 www.google.com을 입력했을 때 일어나는 과정&lt;/a>&lt;br>
+&lt;a href="https://developer.mozilla.org/ko/docs/Web/API/DocumentFragment">DocumentFragment - Web API | MDN&lt;/a>&lt;br>
+&lt;a href="https://7942yongdae.tistory.com/70">Javascript - DocumentFragment를 사용해보자 [성능 최적화]&lt;/a>&lt;/p>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ZTnIxIA5KGw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/rm756h1Pr6Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ZHxbs5WEQzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe></description></item><item><title>CSS의 크기 단위</title><link>http://prayinforrain.github.io/post/size-units-in-css/</link><pubDate>Fri, 13 Jan 2023 23:39:15 +0900</pubDate><guid>http://prayinforrain.github.io/post/size-units-in-css/</guid><description>&lt;h1 id="css의-크기-단위">CSS의 크기 단위&lt;/h1>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/size-units-in-css/01.png" alt="Untitled">&lt;/p>
+&lt;p>CSS에는 다양한 단위가 존재합니다. 우리가 잘 아는 &lt;code>px&lt;/code>와 &lt;code>%&lt;/code>부터, &lt;code>em&lt;/code>, &lt;code>rem&lt;/code>, &lt;code>pt&lt;/code>, &lt;code>vh&lt;/code>, &lt;code>vw&lt;/code> 등등 다양한 단위가 존재하는데요, 이 크기 단위들을 언제 어떻게 사용하면 좋을지에 대해 정리해 보았습니다.&lt;/p>
+&lt;h1 id="상대-단위와-절대-단위">상대 단위와 절대 단위&lt;/h1>
+&lt;p>&lt;code>px&lt;/code>과 &lt;code>%&lt;/code>를 먼저 비교해 보면, &lt;code>px&lt;/code>은 우리가 알고 있는 컴퓨터 화면의 1픽셀을 의미합니다. 이는 어느 화면에서나 같은 크기를 나타내므로 &lt;strong>절대 단위&lt;/strong>에 해당합니다. 반면 &lt;code>%&lt;/code>는 보통 부모 element의 크기를 상속받아 그의 정해진 비율만큼을 나타냅니다. 즉 &lt;code>width: 10px;&lt;/code>인 부모를 가진 element에 &lt;code>width: 50%;&lt;/code>를 주면 5px이 되겠죠. 이렇게 상황에 따라서 다른 값을 갖는 단위를 &lt;strong>상대 단위&lt;/strong>라고 부릅니다.&lt;/p>
+&lt;h2 id="절대-단위">절대 단위&lt;/h2>
+&lt;p>절대 단위는 인치에 해당하는 &lt;code>in&lt;/code>을 기준으로 MDN에 정의되어 있으며, 편의상 웹에서 가장 자주 사용하는 단위인 &lt;code>px&lt;/code>을 기준으로 다시 계산하였습니다.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>단위&lt;/th>
+&lt;th>이름&lt;/th>
+&lt;th>크기&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>in&lt;/td>
+&lt;td>인치&lt;/td>
+&lt;td>1in = 2.54cm = 96px&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>px&lt;/td>
+&lt;td>픽셀&lt;/td>
+&lt;td>96px = 1in&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>pt&lt;/td>
+&lt;td>포인트&lt;/td>
+&lt;td>3pt = 4px&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1pt = 1.33px&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cm&lt;/td>
+&lt;td>센티미터&lt;/td>
+&lt;td>1cm = 96px/2.54 = 37.795…px&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mm&lt;/td>
+&lt;td>밀리미터&lt;/td>
+&lt;td>1mm = 96px/25.4 = 3.7795…px&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Q&lt;/td>
+&lt;td>1/4 mm(quater)&lt;/td>
+&lt;td>1Q = 96px/25.4/4 = 0.94488..px&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>pc&lt;/td>
+&lt;td>Picas&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>(파이카 라고 부르는 단위)&lt;/td>
+&lt;td>1pc = 16px&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="상대-단위">상대 단위&lt;/h2>
+&lt;p>상대 단위는 부모 요소나 viewport 크기 등에 비례한 길이를 나타내는 단위로, 화면 크기에 맞추어 각 요소가 비율을 맞추어 공간을 차지하도록 조절할 수 있는 유용한 단위입니다.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>단위&lt;/th>
+&lt;th>설명&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>em&lt;/td>
+&lt;td>요소의 글꼴 크기&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ex&lt;/td>
+&lt;td>요소 글꼴의 x-height(대충 소문자가 차지하는 높이)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ch&lt;/td>
+&lt;td>요소 글꼴의 glyph “0”의 사전 길이(너비); 즉 요소의 글꼴에서 0이 차지하는 width&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>rem&lt;/td>
+&lt;td>루트 요소의 글꼴 크기&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>lh&lt;/td>
+&lt;td>요소의 라인 높이&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>vw&lt;/td>
+&lt;td>viewport width의 퍼센트 비율&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>vh&lt;/td>
+&lt;td>viewport height의 퍼센트 비율&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>vmax&lt;/td>
+&lt;td>vw, vh 중 큰 쪽&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>vmin&lt;/td>
+&lt;td>vw, vh 중 작은 쪽&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>em&lt;/code>, &lt;code>rem&lt;/code>, &lt;code>vw&lt;/code>, &lt;code>vh&lt;/code>는 자주 사용되는 단위이니 감각을 익혀 두는 것이 좋아 보입니다.&lt;/p>
+&lt;h3 id="em과-rem">&lt;code>em&lt;/code>과 &lt;code>rem&lt;/code>&lt;/h3>
+&lt;p>&lt;code>em&lt;/code>은 현재 요소의 글꼴 크기를 참조한다. 즉 현재 요소의 글꼴 크기가 &lt;code>10px&lt;/code>인 요소의 &lt;code>1em&lt;/code>은 &lt;code>10px&lt;/code>이 됩니다. 이를 이용해 &lt;code>h&lt;/code>나 &lt;code>em&lt;/code>태그같은 강조 태그의 글꼴 크기를 상대적으로 조절할 수 있습니다.&lt;/p>
+&lt;p>&lt;code>rem&lt;/code>은 문서의 최상위 노드의 &lt;code>font-size&lt;/code> 값을 참조합니다. 그 외에는 &lt;code>em&lt;/code>과 같은 식으로 동작합니다. HTML 문서에서의 최상위 노드는 &lt;code>&amp;lt;html&amp;gt;&lt;/code> 태그이므로 이 요소의 &lt;code>font-size&lt;/code> 값이 되겠습니다.&lt;/p>
+&lt;h1 id="궁금증들">궁금증들&lt;/h1>
+&lt;h2 id="1cm는-정말-1-센티미터일까">1&lt;em>cm&lt;/em>는 정말 1 &lt;em>센티미터&lt;/em>일까?&lt;/h2>
+&lt;p>모니터에는 해상도 말고도 PPI*(Pixel per Inch)*라는 스펙이 있습니다. 이 스펙에 따라, 1px을 실제 길이로 치환하면 디스플레이의 DPI에 따라 다른 실제 길이를 가질 수 있게 됩니다. 그럼 1cm 역시 상대 단위인 것이 아닐까요? 실험을 위해 &lt;code>height: 6.8cm;&lt;/code>를 준 div에 지폐를 갖다 대 보았습니다. 참고로 우리나라 모든 지폐의 높이는 &lt;em>6.8cm&lt;/em>입니다.&lt;/p>
+&lt;p>&lt;img src="http://prayinforrain.github.io/image/size-units-in-css/02.png" alt="Untitled">&lt;/p>
+&lt;p>24” FHD 모니터와 15” FHD 모니터에서 실험해 보았습니다. 24”에서는 정확하게 지폐의 크기와 일치했지만 15”에서는 한참 작음을 확인할 수 있었습니다. 즉 &lt;strong>1cm가 정확히 1센티미터를 의미하지는 않음&lt;/strong>을 의미합니다. 그럼 &lt;code>cm&lt;/code>라는 단위는 왜 존재하는 것일까? 답은 &lt;a href="https://www.w3.org/Style/Examples/007/units.en.html#units">이 링크&lt;/a>에서 찾을 수 있었습니다.&lt;/p>
+&lt;aside>
+&lt;p>The so-called &lt;em>absolute&lt;/em> units (&lt;strong>&lt;code>cm&lt;/code>&lt;/strong>, &lt;strong>&lt;code>mm&lt;/code>&lt;/strong>, &lt;strong>&lt;code>in&lt;/code>&lt;/strong>, &lt;strong>&lt;code>pt&lt;/code>&lt;/strong> and &lt;strong>&lt;code>pc&lt;/code>&lt;/strong>) mean the same in CSS as everywhere else, &lt;em>but only if your output device has a high enough resolution.&lt;/em> On a laser printer, 1cm should be exactly 1 centimeter. But on low-resolution devices, such as computer screens, CSS doesn&amp;rsquo;t require that. And indeed, the result tends to be different from one device to another and from one CSS implementation to another. It&amp;rsquo;s better to reserve these units for high-resolution devices and in particular for printed output. On computer screens and handheld devices, you&amp;rsquo;ll probably not get what you expect.&lt;/p>
+&lt;hr>
+&lt;p>In the past, CSS required that implementations display absolute units correctly even on computer screens. But as the number of incorrect implementations outnumbered correct ones and the situation didn&amp;rsquo;t seem to improve, CSS abandoned that requirement in 2011. Currently, absolute units must work correctly only on printed output and on high-resolution devices.&lt;/p>
+&lt;p>CSS doesn&amp;rsquo;t define what “high resolution” means. But as low-end printers nowadays start at 300 dpi and high-end screens are at 200 dpi, the cut-off is probably somewhere in between.&lt;/p>
+&lt;/aside>
+&lt;p>요약하자면 현재는 인쇄물과 같이 높은 해상도에서는 cm, in같은 단위가 정확한 실제 길이를 갖도록 출력되지만, 디스플레이와 같이 상대적으로 &lt;strong>낮은 해상도의 출력에서는 이것이 보장되지 않는다&lt;/strong>는 내용입니다. 과거에는 디스플레이에서도 이 부분이 보장되도록 요구되었지만 2011년에 이런 요구사항이 삭제되었다고 합니다.&lt;/p>
+&lt;p>따라서 이런 실제 길이 단위는 인쇄를 목적으로 작성되는 문서에서만 사용하고, 디스플레이에 출력하기 위한 목적의 페이지가 사용하는 절대 단위는 &lt;code>px&lt;/code>만 사용할 것을 권장하고 있습니다. &lt;code>pt&lt;/code> 역시 스프레드시트나 워드에서 사용하는 단위로 실제 길이 단위에 기반하므로 인쇄물에 적합한 단위입니다.&lt;/p>
+&lt;h2 id="em과-의-차이는-무엇일까">&lt;code>em&lt;/code>과 &lt;code>%&lt;/code>의 차이는 무엇일까?&lt;/h2>
+&lt;p>아래 예제에서 두 child 요소들은 모두 같은 글자 크기를 갖습니다.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// html
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;parent&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">parent&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">p&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;child1&amp;#34;&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Hello&lt;/span> &lt;span style="color:#a6e22e">World&lt;/span>&lt;span style="color:#f92672">!&lt;/span>&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">p&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;child2&amp;#34;&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Hello&lt;/span> &lt;span style="color:#a6e22e">World&lt;/span>&lt;span style="color:#f92672">!&lt;/span>&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// css
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">child1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">font&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1.5&lt;/span>&lt;span style="color:#a6e22e">em&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">child2&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">font&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">150&lt;/span>&lt;span style="color:#f92672">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>기본적으로 &lt;code>font-size&lt;/code>는 부모 요소의 값을 상속받으므로, 현재 요소의 &lt;code>font-size&lt;/code>를 참조하는 &lt;code>em&lt;/code>이나, 부모 요소의 값을 참조하는 &lt;code>%&lt;/code>나 같은 기준 값을 갖는 것이죠. 즉 두 요소는 대부분의 경우 같은 결과값을 갖습니다. 그럼 이 둘의 차이는 무엇일까요?&lt;/p>
+&lt;p>가장 큰 차이는, &lt;code>em&lt;/code>은 항상 &lt;code>font-size&lt;/code>를 참조한다는 것입니다. 모든 단위는 모든 요소에 적용할 수 있습니다. 만약 &lt;code>width&lt;/code>나 &lt;code>height&lt;/code>같은 요소에 &lt;code>em&lt;/code>을 사용하더라도, &lt;code>em&lt;/code>은 항상 &lt;code>font-size&lt;/code>를 기준으로 값을 계산합니다. 반면 &lt;code>%&lt;/code>는 부모 요소의 해당 property 값을 참조하기 때문에, &lt;code>width&lt;/code>에 &lt;code>%&lt;/code>를 사용하면 언제나 부모 요소의 &lt;code>width&lt;/code>에 대한 비율을 나타냅니다.&lt;/p>
+&lt;h1 id="refs">Refs.&lt;/h1>
+&lt;p>&lt;a href="https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Values_and_units">CSS 값 과 단위 - Web 개발 학습하기 | MDN&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.w3.org/Style/Examples/007/units.en.html#units">CSS: em, px, pt, cm, in&amp;hellip;&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/609517/why-em-instead-of-px">Why em instead of px?&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/16990608/when-to-use-ems-instead-of-percentage-in-css">When to use ems instead of percentage in CSS?&lt;/a>&lt;/p></description></item><item><title>모헤윰 mo:heyum - 프로젝트 회고</title><link>http://prayinforrain.github.io/post/finishing-moheyum/</link><pubDate>Wed, 21 Dec 2022 03:30:25 +0900</pubDate><guid>http://prayinforrain.github.io/post/finishing-moheyum/</guid><description>&lt;blockquote>
 &lt;p>티스토리 블로그에 작성했던 부스트캠프 팀 프로젝트의 회고 글이다. &lt;a href="https://prayinforrain.tistory.com/80">[원본 링크]&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;link rel="stylesheet" href="http://prayinforrain.github.io/css/hugo-easy-gallery.css" />
@@ -1423,7 +2134,7 @@ emotion은 놀랍게도 CSS props를 지원합니다. 말 그대로 React Compon
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>라우터니까 이정도 더러움은 괜찮을 것 같다구요? 그렇다면 &lt;strong>여러 컴포넌트에서 필요로 하는 정보가 로그인 정보만이 아니라면&lt;/strong>요? &lt;code>**newInfo&lt;/code>를 불특정 다수의 컴포넌트가 참조한다면**요?&lt;/p>
+&lt;/div>&lt;p>라우터니까 이정도 더러움은 괜찮을 것 같다구요? 그렇다면 &lt;strong>여러 컴포넌트에서 필요로 하는 정보가 로그인 정보만이 아니라면&lt;/strong>요? &lt;strong>&lt;code>newInfo&lt;/code>를 불특정 다수의 컴포넌트가 참조한다면&lt;/strong>요?&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
