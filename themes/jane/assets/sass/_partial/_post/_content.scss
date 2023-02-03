@@ -48,6 +48,10 @@
     display: block;
   }
 
+  summary {
+    cursor: pointer;
+  }
+
   .post-summary {
     margin-bottom: 1em;
     &::after {
