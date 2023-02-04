@@ -1,0 +1,21 @@
+.about {
+  padding: 0;
+  margin: -4em 0 0 0;
+  @media screen and (max-width: 504px) {
+    padding: 1em 1em;
+    margin: 0 0 2em;
+  }
+
+  @media screen and (min-width: 900px) and (max-width: 1080px) {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 504px) and (max-width: 899px) {
+    padding: 1em 1em;
+    margin: 0 1em 2em;
+  }
+}
+
+.about-banner {
+  width: 100%;
+}

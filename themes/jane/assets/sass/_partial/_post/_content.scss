@@ -54,6 +54,12 @@
 
   .post-summary {
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    & > img {
+      max-width: 20%;
+      aspect-ratio: 1;
+    }
     &::after {
       content: "...";
     }

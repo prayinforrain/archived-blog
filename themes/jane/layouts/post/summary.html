@@ -19,7 +19,12 @@
       </div>
     {{ else }}
       <div class="post-summary">
-        {{ .Summary }}
+        <div>
+          {{ .Summary }}
+        </div>
+        {{ if .Params.thumbnail }}
+          <img src="{{ .Params.thumbnail }}"/>
+        {{ end }}
       </div>
       <div class="read-more">
         <a href="{{ .RelPermalink }}" class="read-more-link"

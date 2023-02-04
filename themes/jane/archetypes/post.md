@@ -8,6 +8,7 @@ description: ""
 tags: []
 categories: []
 author: ""
+thumbnail: ""
 
 # Uncomment to pin article to front page
 # weight: 1
