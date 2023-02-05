@@ -60,8 +60,11 @@
       max-width: 20%;
       aspect-ratio: 1;
     }
-    &::after {
-      content: "...";
+    & > div {
+      flex: 1;
+      &::after {
+        content: "...";
+      }
     }
   }
 
