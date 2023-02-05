@@ -5,11 +5,12 @@ lastmod: 2023-01-25T17:17:15+09:00
 draft: false
 categories: ["Web", "javascript"]
 tags: ["Web", "javascript", "tree-shaking"]
+thumbnail: "/image/tree-shaking/01.png"
 ---
 
 # 용량을 절약하는 방법
 
-![untitled](/image/tree-shaking/01.png)
+![bundle_map](/image/tree-shaking/01.png)
 
 웹페이지의 성능을 이야기하는 가장 직관적인 지표는 아마 페이지에 사용되는 **파일의 크기**일 것입니다. 파일의 크기가 무겁다면 파일을 다운받는 데 시간이 오래 걸리고, 다운로드한 파일을 읽고 렌더링 하는데도 시간이 오래 걸릴 것입니다. 따라서 번들 파일의 용량을 다이어트 하는 것은 사이트 성능에 꽤 중요한 역할을 합니다.
 
@@ -17,11 +18,11 @@ tags: ["Web", "javascript", "tree-shaking"]
 
 # 트리 쉐이킹
 
-![untitled](/image/tree-shaking/02.gif)
+![tree-shaking](/image/tree-shaking/02.gif)
 
 나무를 마구마구 흔들면 어떻게 나뭇잎이나 열매같은 것들이 조금씩 떨어지면서 나무가 점점 앙상해 질 것입니다. 트리 쉐이킹은 이와 비슷하게 **사용하지 않는 코드들이 번들에 포함되는 것들을 지워서 파일 크기를 줄이는 일**입니다. 말 그대로 **나무(파일)를 마구 흔들어서 나뭇잎(미사용 코드)을 덜어내는 개념**이죠. 어떤 과정을 통해 이루어 질까요? 아래 예제를 통해 알아보겠습니다.
 
-![untitled](/image/tree-shaking/03.png)
+![example-app](/image/tree-shaking/03.png)
 
 [https://github.com/malchata/webpack-tree-shaking-example](https://github.com/malchata/webpack-tree-shaking-example)
 
@@ -29,13 +30,13 @@ tags: ["Web", "javascript", "tree-shaking"]
 
 우선 `npm run build`후 `npm run start`를 통해 실행해 보겠습니다. 아래와 같은 결과물이 보입니다.
 
-![untitled](/image/tree-shaking/04.png)
+![bundle size before tree shaking](/image/tree-shaking/04.png)
 
 번들된 파일 두개를 다운받았고, 38.4KB, 21.6KB의 크기를 갖습니다. 객관적으로 가볍긴 하지만 여기서 굳이 트리 쉐이킹을 통해 용량을 더 줄여 보겠습니다.
 
 ## 필요한 것만 import하기
 
-![untitled](/image/tree-shaking/05.png)
+![analyzing scripts](/image/tree-shaking/05.png)
 
 이 앱의 컴포넌트인 `FilterablePedalList.js`를 보면 `utils.js` 파일을 import해오는 것을 알 수 있습니다. 그런데 `utils.js` 파일은 1300여 줄이 되는 아주 긴 코드입니다. 각종 정렬과, 배열을 다루는 유틸리티 함수를 포함하고 있는데, 정작 컴포넌트에서는 `simpleSort`만을 사용하고 있습니다. 첫 13줄 아래로는 모두 사용하지 않는 함수들인데도 불러오고 있는 것이죠. 실제로 번들 파일에서도 `simpleSort` 외에 `uasort`, `uksort` 등 여러 함수들이 같이 번들링된 것을 알 수 있습니다.
 
@@ -66,7 +67,7 @@ modules 옵션은 ES Modules 문법을 다른 문법으로 트랜스파일링 �
 
 그럼 이제 앱을 다시 빌드하고 결과물을 확인해 보겠습니다.
 
-![untitled](/image/tree-shaking/06.png)
+![after tree shaking](/image/tree-shaking/06.png)
 
 `main.js` 청크가 `21.6KB → 9KB`로 크게 줄어들었습니다. 큰 의미는 없지만 로드 시간도 줄어들었네요. 트리 쉐이킹이 어떤 과정을 거쳐 이루어 지는지 알아봤습니다. 굿..
 

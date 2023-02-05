@@ -5,6 +5,7 @@ lastmod: 2023-01-25T16:35:01+09:00
 draft: false
 categories: ["Web", "javascript"]
 tags: ["Web", "javascript", "ECMAScript"]
+thumbnail: "/image/ecmascript/01.png"
 ---
 
 ![untitled](/image/ecmascript/01.png)

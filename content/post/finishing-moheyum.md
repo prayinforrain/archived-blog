@@ -5,6 +5,7 @@ lastmod: 2022-12-21T03:30:25+09:00
 draft: false
 categories: ["moheyum"]
 tags: ["moheyum"]
+thumbnail: "/image/moheyum_01.png"
 ---
 
 > 티스토리 블로그에 작성했던 부스트캠프 팀 프로젝트의 회고 글이다. [[원본 링크]](https://prayinforrain.tistory.com/80)
