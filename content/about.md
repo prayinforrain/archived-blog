@@ -12,7 +12,7 @@ mathjax: false
 
 ![header](https://capsule-render.vercel.app/api?type=waving&color=4D55B7&height=300&section=header&text=안녕하세요!&fontColor=eef&desc=@PrayinForRain&descAlignY=65&descAlign=65)  
 프론트엔드 개발자가 되기 위해 공부하는 **이우재**입니다.  
-저에 대한 자세한 소개는 [[이 링크]](https://lily-muenster-f8b.notion.site/7943060576f748d485b4e24488d742a8)에서 확인해 주세요!
+저에 대한 자세한 소개는 [[이 링크]](https://lily-muenster-f8b.notion.site/8e59068da9114724977496e76bb529f3)에서 확인해 주세요!
 
 ## Techstacks
 
