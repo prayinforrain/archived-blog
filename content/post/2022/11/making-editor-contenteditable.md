@@ -8,9 +8,9 @@ tags: ["moheyum"]
 ---
 
 **모헤윰**의 에디터 만들기 시리즈 모아보기  
-[에디터 만들기 - ContentEditable [1/3]]({{<ref "post/making-editor-contenteditable">}})  
-[에디터 만들기 - getSelection [2/3]]({{<ref "post/making-editor-getselection">}})  
-[에디터 만들기 - Markdown [3/3]]({{<ref "post/making-editor-markdown">}})
+[에디터 만들기 - ContentEditable [1/3]]({{<ref "post/2022/11/making-editor-contenteditable">}})  
+[에디터 만들기 - getSelection [2/3]]({{<ref "post/2022/11/making-editor-getselection">}})  
+[에디터 만들기 - Markdown [3/3]]({{<ref "post/2022/12/making-editor-markdown">}})
 
 ---
 
