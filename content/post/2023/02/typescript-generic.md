@@ -3,8 +3,8 @@ title: "Typescript Generic"
 date: 2023-02-01T02:01:15+09:00
 lastmod: 2023-02-01T02:01:15+09:00
 draft: false
-categories: ["Web", "Typescript"]
-tags: ["Web", "Typescript", "Generic"]
+categories: ["Web", "TypeScript"]
+tags: ["Web", "TypeScript", "Generic"]
 ---
 
 타입스크립트와 리액트를 같이 사용할 때, 우리는 `useState` 훅을 아래와 같이 사용합니다.
