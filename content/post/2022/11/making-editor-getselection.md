@@ -20,11 +20,11 @@ tags: ["moheyum"]
 
 # 😢 첫 단추가 중요하다
 
-![Untitled](/image/md_editor_2_01.png)
+![Untitled](/image/post/2022/11/making-editor-getselection/md_editor_2_01.png)
 
 지금 만든 `contenteditable div`는 치명적 문제가 있습니다. `contenteditable`이 사진처럼 첫 줄의 텍스트를 div 태그로 감싸주지 않는다고 언급한 문제가 기억 나시나요? 사실 저는 처음 글에서 첫 줄 문제가 해결된 척 이야기한 바 있죠. 특정 상황에서는 여전히 `contenteditable div`에 직접 텍스트를 입력할 수 있었지만, 솔직하게 그 때는 어차피 syntax highlighting을 지원하지 않을 거라 생각해 쉬쉬하기로 했습니다. 그런데 아니나 다를까, 붙여넣기에서 문제가 발생했습니다.
 
-![Untitled](/image/md_editor_2_02.png)
+![Untitled](/image/post/2022/11/making-editor-getselection/md_editor_2_02.png)
 
 아무 입력도 되어 있지 않은 `contenteditable div`에 붙여넣기를 하면 위와 같은 오류가 납니다. 이 상태에서 다시 붙여넣기를 하면 그 때부턴 정상적으로 작동하는데, 어차피 이런 에러 쯤이야 콘솔을 열어놓고 웹서핑을 하는 개발자가 아니고서야 무시할 수 있는 수준이니 넘어갈 수 있겠지만, 결정적으로 붙여넣기 후 **커서가 붙여넣기 한 글귀의 끝으로 이동하지 않았습니다**. 아니나 다를까 탭 키에 대해서 구현했던 코드도 같은 오류가 있네요.
 
@@ -36,13 +36,13 @@ tags: ["moheyum"]
 
 저번 글에서 공부했던 바와 같이, `contenteditable div`는 일반적인 입력 동작이 제대로 이루어지지 않습니다. 착한 사용자가 차분히 글을 입력한다고 해도 첫 줄만 `div` 태그로 감싸주지 않는다거나, 붙여넣기를 하면 대뜸 원본의 서식이 그대로 적용된 글귀가 입력되기도 합니다.
 
-![Untitled](/image/md_editor_2_03.png)
+![Untitled](/image/post/2022/11/making-editor-getselection/md_editor_2_03.png)
 
 대충 이런 느낌이죠. 그 외에도 수정을 어떻게 하느냐에 따라 결과물이 묘하게 달라지기도 하는 등, 너무나 다양한 문제가 산재해 있습니다. 서론이 너무 길었네요. 그냥 `con..어쩌구`에 대해 처음 글을 쓸 때 이런 문제들이 있다고 설명할 걸 그랬어요.
 
 아무튼 이런 불쾌한 동작들을 해결하기 위해, `keydown`, `keyup`, `paste` 등 다양한 이벤트 리스너를 바인딩해서 직접 이런 제스쳐를 구현해야만 했습니다. 그 과정에서 소개했던 것이 바로 `windows.getSelection()`이였죠.
 
-![Untitled](/image/md_editor_2_04.png)
+![Untitled](/image/post/2022/11/making-editor-getselection/md_editor_2_04.png)
 
 ## type Selection
 
@@ -73,7 +73,7 @@ tags: ["moheyum"]
 
 그런데 이 `anchorOffset`은 상황에 따라 다르게 사용해야 합니다. 이게 무슨 소리냐면, 이 녀석을 1로 지정하면 커서가 끝으로 갈 때가 있고, 두 번째 글자로 커서가 이동할 때가 있다는 말이죠.
 
-![복사맨2.gif](/image/md_editor_2_05.gif)
+![복사맨2.gif](/image/post/2022/11/making-editor-getselection/md_editor_2_05.gif)
 
 두 번째 글자로 커서가 가는건 이해가 가는데, 처음엔 왜 끝으로 갔던 걸까요? 그 비밀은 `getSelection`이 참조하던 `anchorNode`에 있습니다. **첫 번째 붙여넣기와 그 이후의 붙여넣기의 anchorNode가 다르기 때문**이죠. 첫 번째 붙여넣기는 `contenteditable div`를, 그 이후에는 해당 라인의 div..도 아니라 `그 div의 **텍스트 노드**`를 참조하고 있습니다.
 
@@ -81,7 +81,7 @@ tags: ["moheyum"]
 
 위에 제가 `console.log`를 찍어본 사진에는 `anchorNode`에 `text`라고 쓰여 있었습니다. 저는 `contenteditable div`의 자식 `div`중 하나를 선택하고 있었는데 말이죠. 즉 `getSelection`은 선택중인 텍스트 노드까지 따져서 참조한다는 특징을 알 수 있습니다. 텍스트 노드라.. 딱히 어느 태그에 포함되어 있지 않으면서 애매하게 텍스트만 들어있는 바로 그 `innerText`를 텍스트 노드라고 부르는 모양입니다.
 
-![Untitled](/image/md_editor_2_06.png)
+![Untitled](/image/post/2022/11/making-editor-getselection/md_editor_2_06.png)
 
 바로 요 녀석인데요, 텍스트 노드는 다른 노드와 다르게 조금 특이한 성질을 갖습니다. 다르다고 하나, 아무튼 Node 인터페이스를 상속하지만 HTML Element는 아니기 때문에 다루기가 굉장히 까다롭습니다.
 
@@ -136,7 +136,7 @@ window.getSelection()?.collapse(anchorNode, position);
 
 # 🤦 오버엔지니어링의 길목에서
 
-![고쳤맨.gif](/image/md_editor_2_07.gif)
+![고쳤맨.gif](/image/post/2022/11/making-editor-getselection/md_editor_2_07.gif)
 
 처음에는 아주 간단한 에디터를 생각했는데, 그 _간단한_ 에디터 뒤에 얼마나 깊은 심연이 있는지 몸소 두들겨 맞게 되는 요즘입니다. `input`이나 `textarea`를 썼으면 이런 긴 글을 두 개나 쓸 필요가 없었을텐데, 제가 무슨 부귀영화를 누리자고 `contenteditable`을 쓰자고 했을까요?
 
