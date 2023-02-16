@@ -1,4 +1,4 @@
-<!doctype html><html lang=ko itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Emotion - PrayinForRain.dev</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=yes"><meta name=MobileOptimized content="width"><meta name=HandheldFriendly content="true"><meta name=applicable-device content="pc,mobile"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=mobile-web-app-capable content="yes"><meta name=author content="prayinforrain"><meta name=description content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><meta name=keywords content="Hugo,Frontend,React"><meta name=generator content="Hugo 0.110.0"><link rel=canonical href=http://prayinforrain.github.io/post/2022/11/emotion/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.897d92389f0ce1e35b310001ef69b9e4fdb4e35b484031f5475d67850ce02fd9.css integrity="sha256-iX2SOJ8M4eNbMQAB72m55P2041tIQDH1R11nhQzgL9k=" media=screen crossorigin=anonymous><meta property="og:title" content="Emotion"><meta property="og:description" content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><meta property="og:type" content="article"><meta property="og:url" content="http://prayinforrain.github.io/post/2022/11/emotion/"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-11-18T16:42:55+09:00"><meta property="article:modified_time" content="2022-11-18T16:42:55+09:00"><meta itemprop=name content="Emotion"><meta itemprop=description content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><meta itemprop=datePublished content="2022-11-18T16:42:55+09:00"><meta itemprop=dateModified content="2022-11-18T16:42:55+09:00"><meta itemprop=wordCount content="2984"><meta itemprop=keywords content="moheyum,Emotion,CSS-in-JS,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Emotion"><meta name=twitter:description content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<!doctype html><html lang=ko itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Emotion - PrayinForRain.dev</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=yes"><meta name=MobileOptimized content="width"><meta name=HandheldFriendly content="true"><meta name=applicable-device content="pc,mobile"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=mobile-web-app-capable content="yes"><meta name=author content="prayinforrain"><meta name=description content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><meta name=keywords content="Hugo,Frontend,React"><meta name=generator content="Hugo 0.110.0"><link rel=canonical href=http://prayinforrain.github.io/post/2022/11/emotion/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.85609cbe130dc007c0c0474026d883712607c37544355cfee735439e1b9de398.css integrity="sha256-hWCcvhMNwAfAwEdAJtiDcSYHw3VENVz+5zVDnhud45g=" media=screen crossorigin=anonymous><meta property="og:title" content="Emotion"><meta property="og:description" content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><meta property="og:type" content="article"><meta property="og:url" content="http://prayinforrain.github.io/post/2022/11/emotion/"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-11-18T16:42:55+09:00"><meta property="article:modified_time" content="2022-11-18T16:42:55+09:00"><meta itemprop=name content="Emotion"><meta itemprop=description content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><meta itemprop=datePublished content="2022-11-18T16:42:55+09:00"><meta itemprop=dateModified content="2022-11-18T16:42:55+09:00"><meta itemprop=wordCount content="2899"><meta itemprop=keywords content="moheyum,Emotion,CSS-in-JS,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Emotion"><meta name=twitter:description content="🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>prayinforrain.dev</a></div><div class=mobile-navbar-icon><span></span>
 <span></span>
 <span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=http://prayinforrain.github.io/>Home</a></li><li class=mobile-menu-item><a class=menu-item-link href=http://prayinforrain.github.io/post/>Archives</a></li><li class=mobile-menu-item><a class=menu-item-link href=http://prayinforrain.github.io/tags/>Tags</a></li><li class=mobile-menu-item><a class=menu-item-link href=http://prayinforrain.github.io/categories/>Categories</a></li><li class=mobile-menu-item><a class=menu-item-link href=http://prayinforrain.github.io/about/>About</a></li></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
@@ -9,177 +9,92 @@
 <a href=/about><span class=post-meta-author-name>prayinforrain</span></a></div><div class=post-meta-time title="2022-11-18 16:42:55"><time datetime=2022-11-18>2022-11-18</time></div><div class=post-meta__right><span class=post-meta-more>6 min read</span><div class=post-meta-category><a href=http://prayinforrain.github.io/categories/moheyum/>moheyum</a>
 <a href=http://prayinforrain.github.io/categories/react/>React</a></div></div></div></header><div class=post-content><h1 id=tldr>🤷TL;DR</h1><ul><li>CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다.</li><li>emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자.</li><li>적절한 IDE Extension을 잘 활용하자.</li><li>CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자.</li></ul><h1 id=css-in-js>🎨CSS-in-JS</h1><p>CSS-in-JS는 HTML Element의 스타일을 자바스크립트 파일을 통해서 지정하는 방식입니다. .css 파일이 하던 일을 .js 파일에게 시키는 것이죠. CSS는 CSS이고, JS는 JS입니다. 왜 굳이 둘을 합쳐야만 하는 것일까요? 이 알 수 없는 발상을 이해하려면 우선 기존 css의 단점을 살펴보겠습니다.</p><p><img src=/image/post/2022/11/emotion/emotion_01.png alt=Untitled></p><p><img src=/image/post/2022/11/emotion/emotion_02.png alt=Untitled></p><p>제가 학습 스프린트때 진행한 프로젝트 파일의 일부입니다. 사용자의 현재 위치를 표시하기 위한 컴포넌트의 스타일을 <code>location-bar</code>라는 클래스명으로 지정하고 있죠. 단순히 이 부분만 봐서는 크게 문제가 없어 보이지만, 아래와 같은 문제들이 있습니다.</p><ul><li><code>location-bar</code> 라는 클래스명은 추상적입니다.
 즉, 사용자의 위치를 표시하기 위한 <code>location-bar</code>는 장기적으로 다양한 페이지에서, 다양한 컴포넌트에서 활용될 수 있습니다. CSS는 그 적용 범위를 지정하는 것이 상당히 제한적이기 때문에 이런 문제를 해결하려면 클래스명을 더 길고 복잡하게 정할 수 밖에 없습니다.</li><li>css 파일은 관심사의 분리가 어렵습니다.
-당장 저 파일은 어떤 상품의 정보를 표시하기 위한 컴포넌트의 스타일만이 모여 있습니다. 상품 정보와 사용자 위치는 크게 연관이 없어보임에도 같은 페이지에 있다는 이유로 같은 파일에 있으며, 이를 수정하려면 400줄 가량 되는 파일에서 저 부분을 찾아야만 합니다.</li></ul><p>작업할 당시에는 당연한 불편함이라 생각하고 감내해 왔지만, 프로젝트 규모가 커졌을 때를 상상해 보니 머리가 시큰해집니다. 이런 문제를 해결하기 위해 등장한 것이 <strong>CSS-in-JS</strong>입니다.</p><h1 id=emotionstyled>😆emotion/styled</h1><p>React에서 사용하는 CSS-in-JS 라이브러리는 <code>styled-components</code>와 <code>emotion</code> 두 가지가 있습니다. 두 라이브러리는 사실 사용하는 입장에서 차이가 거의 없습니다. 어떤 레퍼런스를 보면 <code>emotion</code>만이 css props를 사용할 수 있다는 차이점을 이야기하지만, 지금 시점에서는 양쪽 다 지원하고 있습니다. 성능 역시 <code>emotion</code>이 앞선다는 분석이 있지만 <code>styled-components</code> 역시 최적화가 이루어지고 있고, 애초에 그렇게 큰 폭으로 차이가 나지 않기 때문에, 손에 잡히는 것 아무거나 사용해도 될 것 같습니다. 저는 <code>emotion</code>이 더 손에 익다는 이유로 <code>emotion</code>을 골랐습니다. <strong>styled</strong>라는 단어가 키보드로 잘 안 쳐 지더라구요.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>npm i @emotion/styled @emotion/babel-plugin
-</span></span></code></pre></td></tr></table></div></div><p><code>@emotion/babel-plugin</code>은 babel을 사용하는 경우에만 설치 후 config파일의 plugins에 <code>@emotion</code>을 추가해 줍니다. 그러면 모든 준비가 끝납니다. 사용 예시를 확인하기 위해 예제 코드를 준비했습니다.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>TestRecoil() {</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> [<span style=color:#a6e22e>count</span>, <span style=color:#a6e22e>setCount</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>useRecoilState</span>(<span style=color:#a6e22e>counterState</span>);
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> (
-</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span>&gt;
-</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span>&gt;
-</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>button</span>
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span>
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>setCount</span>(<span style=color:#a6e22e>count</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>);
-</span></span><span style=display:flex><span>          }}
-</span></span><span style=display:flex><span>        &gt;
-</span></span><span style=display:flex><span>          <span style=color:#f92672>-</span>
-</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>button</span>&gt;
-</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>div</span>&gt;{<span style=color:#a6e22e>count</span>}&lt;/<span style=color:#f92672>div</span>&gt;
-</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>button</span>
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span>
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>setCount</span>(<span style=color:#a6e22e>count</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
-</span></span><span style=display:flex><span>          }}
-</span></span><span style=display:flex><span>        &gt;
-</span></span><span style=display:flex><span>          <span style=color:#f92672>+</span>
-</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>button</span>&gt;
-</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
-</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>button</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>setCount</span>(<span style=color:#ae81ff>0</span>);
-</span></span><span style=display:flex><span>        }}
-</span></span><span style=display:flex><span>      &gt;
-</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>초기화</span>
-</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>button</span>&gt;
-</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>div</span>&gt;
-</span></span><span style=display:flex><span>  );
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></td></tr></table></div></div><p><img src=/image/post/2022/11/emotion/emotion_03.png alt=Untitled></p><p>아주 참을 수 없게 못생긴 컴포넌트군요. 이제 이 컴포넌트에 스타일을 지정해 주겠습니다. 해당 tsx파일에 아래와 같이 코드를 추가하였습니다. <strong>모든 스타일 이름은 대문자로 시작</strong>해야 하는 점 주의하세요. 왜냐면 이 녀석들이 컴포넌트의 이름으로서 취급될 예정이거든요!</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>styled</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#39;@emotion/styled&#39;</span>;
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>WrapperDiv</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>styled</span>.<span style=color:#a6e22e>div</span><span style=color:#e6db74>`
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  display: flex;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  width: 100%;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  flex-direction: column;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  background-color: #ff0000;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ButtonContainer</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>styled</span>.<span style=color:#a6e22e>div</span><span style=color:#e6db74>`
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  display: flex;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  flex-direction: row;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  width: 30%;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  background-color: #00ff00;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ResetButton</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>styled</span>.<span style=color:#a6e22e>button</span><span style=color:#e6db74>`
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  width: 50%;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>;
-</span></span></code></pre></td></tr></table></div></div><p>이제 기존 div와 button 태그들을 바꿔줄 시간입니다.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>return</span> (
-</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>WrapperDiv</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>ButtonContainer</span>&gt;
-</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>button</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>setCount</span>(<span style=color:#a6e22e>count</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>);
-</span></span><span style=display:flex><span>        }}
-</span></span><span style=display:flex><span>      &gt;
-</span></span><span style=display:flex><span>        <span style=color:#f92672>-</span>
-</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>button</span>&gt;
-</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span>&gt;{<span style=color:#a6e22e>count</span>}&lt;/<span style=color:#f92672>div</span>&gt;
-</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>button</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span>
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>          <span style=color:#a6e22e>setCount</span>(<span style=color:#a6e22e>count</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
-</span></span><span style=display:flex><span>        }}
-</span></span><span style=display:flex><span>      &gt;
-</span></span><span style=display:flex><span>        <span style=color:#f92672>+</span>
-</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>button</span>&gt;
-</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>ButtonContainer</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>ResetButton</span>
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span>
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>setCount</span>(<span style=color:#ae81ff>0</span>);
-</span></span><span style=display:flex><span>      }}
-</span></span><span style=display:flex><span>    &gt;
-</span></span><span style=display:flex><span>      <span style=color:#960050;background-color:#1e0010>초기화</span>
-</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>ResetButton</span>&gt;
-</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>WrapperDiv</span>&gt;
-</span></span><span style=display:flex><span>);
-</span></span></code></pre></td></tr></table></div></div><p><img src=/image/post/2022/11/emotion/emotion_04.png alt=Untitled></p><p>짜잔! 스타일이 적용되었습니다. 못생긴 건 똑같지만 어쨌든 제 의도대로 못생겼네요.</p><h1 id=emotion의-특징>📋emotion의 특징</h1><p>기본적인 사용법을 알았으니, 알아두어야 할 점을 정리해봅시다.</p><p><img src=/image/post/2022/11/emotion/emotion_05.png alt=Untitled></p><ul><li>styled component의 이름은 대문자로 시작해야 합니다. (CamelCase)
+당장 저 파일은 어떤 상품의 정보를 표시하기 위한 컴포넌트의 스타일만이 모여 있습니다. 상품 정보와 사용자 위치는 크게 연관이 없어보임에도 같은 페이지에 있다는 이유로 같은 파일에 있으며, 이를 수정하려면 400줄 가량 되는 파일에서 저 부분을 찾아야만 합니다.</li></ul><p>작업할 당시에는 당연한 불편함이라 생각하고 감내해 왔지만, 프로젝트 규모가 커졌을 때를 상상해 보니 머리가 시큰해집니다. 이런 문제를 해결하기 위해 등장한 것이 <strong>CSS-in-JS</strong>입니다.</p><h1 id=emotionstyled>😆emotion/styled</h1><p>React에서 사용하는 CSS-in-JS 라이브러리는 <code>styled-components</code>와 <code>emotion</code> 두 가지가 있습니다. 두 라이브러리는 사실 사용하는 입장에서 차이가 거의 없습니다. 어떤 레퍼런스를 보면 <code>emotion</code>만이 css props를 사용할 수 있다는 차이점을 이야기하지만, 지금 시점에서는 양쪽 다 지원하고 있습니다. 성능 역시 <code>emotion</code>이 앞선다는 분석이 있지만 <code>styled-components</code> 역시 최적화가 이루어지고 있고, 애초에 그렇게 큰 폭으로 차이가 나지 않기 때문에, 손에 잡히는 것 아무거나 사용해도 될 것 같습니다. 저는 <code>emotion</code>이 더 손에 익다는 이유로 <code>emotion</code>을 골랐습니다. <strong>styled</strong>라는 단어가 키보드로 잘 안 쳐 지더라구요.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>npm</span> <span class=n>i</span> <span class=nv>@emotion</span><span class=p>/</span><span class=n>styled</span> <span class=nv>@emotion</span><span class=p>/</span><span class=nb>babel-plugin</span>
+</span></span></code></pre></div><p><code>@emotion/babel-plugin</code>은 babel을 사용하는 경우에만 설치 후 config파일의 plugins에 <code>@emotion</code>을 추가해 줍니다. 그러면 모든 준비가 끝납니다. 사용 예시를 확인하기 위해 예제 코드를 준비했습니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=kd>function</span> <span class=nx>TestRecoil() {</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=p>[</span><span class=nx>count</span><span class=p>,</span> <span class=nx>setCount</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useRecoilState</span><span class=p>(</span><span class=nx>counterState</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>button</span>
+</span></span><span class=line><span class=cl>          <span class=na>type</span><span class=o>=</span><span class=s>&#34;button&#34;</span>
+</span></span><span class=line><span class=cl>          <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>setCount</span><span class=p>(</span><span class=nx>count</span> <span class=o>-</span> <span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=p>}}</span>
+</span></span><span class=line><span class=cl>        <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=o>-</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;{</span><span class=nx>count</span><span class=p>}&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>button</span>
+</span></span><span class=line><span class=cl>          <span class=na>type</span><span class=o>=</span><span class=s>&#34;button&#34;</span>
+</span></span><span class=line><span class=cl>          <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>setCount</span><span class=p>(</span><span class=nx>count</span> <span class=o>+</span> <span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=p>}}</span>
+</span></span><span class=line><span class=cl>        <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=o>+</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>button</span>
+</span></span><span class=line><span class=cl>        <span class=na>type</span><span class=o>=</span><span class=s>&#34;button&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=nx>setCount</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}}</span>
+</span></span><span class=line><span class=cl>      <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=err>초기화</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p><img src=/image/post/2022/11/emotion/emotion_03.png alt=Untitled></p><p>아주 참을 수 없게 못생긴 컴포넌트군요. 이제 이 컴포넌트에 스타일을 지정해 주겠습니다. 해당 tsx파일에 아래와 같이 코드를 추가하였습니다. <strong>모든 스타일 이름은 대문자로 시작</strong>해야 하는 점 주의하세요. 왜냐면 이 녀석들이 컴포넌트의 이름으로서 취급될 예정이거든요!</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=kr>import</span> <span class=nx>styled</span> <span class=kr>from</span> <span class=s1>&#39;@emotion/styled&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>...</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>WrapperDiv</span> <span class=o>=</span> <span class=nx>styled</span><span class=p>.</span><span class=nx>div</span><span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>  display: flex;
+</span></span></span><span class=line><span class=cl><span class=sb>  width: 100%;
+</span></span></span><span class=line><span class=cl><span class=sb>  flex-direction: column;
+</span></span></span><span class=line><span class=cl><span class=sb>  background-color: #ff0000;
+</span></span></span><span class=line><span class=cl><span class=sb>`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>ButtonContainer</span> <span class=o>=</span> <span class=nx>styled</span><span class=p>.</span><span class=nx>div</span><span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>  display: flex;
+</span></span></span><span class=line><span class=cl><span class=sb>  flex-direction: row;
+</span></span></span><span class=line><span class=cl><span class=sb>  width: 30%;
+</span></span></span><span class=line><span class=cl><span class=sb>  background-color: #00ff00;
+</span></span></span><span class=line><span class=cl><span class=sb>`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>ResetButton</span> <span class=o>=</span> <span class=nx>styled</span><span class=p>.</span><span class=nx>button</span><span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>  width: 50%;
+</span></span></span><span class=line><span class=cl><span class=sb>`</span><span class=p>;</span>
+</span></span></code></pre></div><p>이제 기존 div와 button 태그들을 바꿔줄 시간입니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tsx data-lang=tsx><span class=line><span class=cl><span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>WrapperDiv</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>ButtonContainer</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>button</span>
+</span></span><span class=line><span class=cl>        <span class=na>type</span><span class=o>=</span><span class=s>&#34;button&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=nx>setCount</span><span class=p>(</span><span class=nx>count</span> <span class=o>-</span> <span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}}</span>
+</span></span><span class=line><span class=cl>      <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=o>-</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;{</span><span class=nx>count</span><span class=p>}&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>button</span>
+</span></span><span class=line><span class=cl>        <span class=na>type</span><span class=o>=</span><span class=s>&#34;button&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=nx>setCount</span><span class=p>(</span><span class=nx>count</span> <span class=o>+</span> <span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}}</span>
+</span></span><span class=line><span class=cl>      <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=o>+</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>ButtonContainer</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>ResetButton</span>
+</span></span><span class=line><span class=cl>      <span class=na>type</span><span class=o>=</span><span class=s>&#34;button&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=na>onClick</span><span class=o>=</span><span class=p>{()</span> <span class=o>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>setCount</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=p>}}</span>
+</span></span><span class=line><span class=cl>    <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=err>초기화</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>ResetButton</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>WrapperDiv</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span></code></pre></div><p><img src=/image/post/2022/11/emotion/emotion_04.png alt=Untitled></p><p>짜잔! 스타일이 적용되었습니다. 못생긴 건 똑같지만 어쨌든 제 의도대로 못생겼네요.</p><h1 id=emotion의-특징>📋emotion의 특징</h1><p>기본적인 사용법을 알았으니, 알아두어야 할 점을 정리해봅시다.</p><p><img src=/image/post/2022/11/emotion/emotion_05.png alt=Untitled></p><ul><li>styled component의 이름은 대문자로 시작해야 합니다. (CamelCase)
 타입스크립트의 규칙이 원인인데, 스타일이 지정된 태그 각각이 하나의 컴포넌트로서 취급되기 때문에 카멜 케이스로 작성할 필요가 있습니다. 그 부분이 일관성 있기도 하구요.</li><li>스타일을 지정하는 코드를 별도의 style 파일로 분리할 수 있습니다.
 별도의 .ts 파일로 분리하고, 각각의 스타일을 export하고 import하는 것으로 사용이 가능합니다. css 파일과의 차이는 해당 컴포넌트의 스타일 정의를 IDE가 바로 찾아줄 수 있다는 점이 있습니다. VS Code 기준, Ctrl + 클릭으로 바로가기가 가능합니다!</li><li>scss 문법을 지원합니다.
 scss의 nesting 문법을 지원합니다. backquote 안에서는 완전 scss처럼 사용하면 됩니다!</li><li>class / id 선택자를 지양합시다!
