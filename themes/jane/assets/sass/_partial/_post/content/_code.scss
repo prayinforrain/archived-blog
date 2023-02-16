@@ -10,14 +10,19 @@ code {
   color: $code-color;
 }
 
-code, pre {
+code {
   overflow-x: auto;
   font-size: $code-font-size;
   font-family: $code-font-family;
 }
 
+pre {
+  overflow-x: auto;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  font-family: $code-font-family;
+}
 
 // chroma code block style
 
-
-// @import '_chroma_highlight';
+@import "_chroma_highlight";

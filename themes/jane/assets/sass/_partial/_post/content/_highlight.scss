@@ -11,18 +11,19 @@
 
   pre {
     margin: 0; /* remove normal pre margin */
+    padding: 0.75rem;
   }
 
   table {
     padding: 1em 0.3em !important;
 
-    td:nth-child(2) code{
+    td:nth-child(2) code {
       &::after {
         position: absolute;
         top: 0;
         right: 0.5em;
         font-weight: bold;
-        content: attr(data-lang);
+        // content: attr(data-lang);
       }
     }
   }
