@@ -2,7 +2,7 @@
 # If you want to see the full configuration, please check `full-config.toml` .
 # And see https://gohugo.io/getting-started/configuration/ .
 
-baseURL = "http://prayinforrain.github.io/"
+baseURL = "https://prayinforrain.github.io/"
 title = "PrayinForRain.dev"
 enableRobotsTXT = true
 enableEmoji = true
@@ -12,7 +12,6 @@ hasCJKLanguage = true     # has chinese/japanese/korean ?
 paginate = 3              # Number of articles displayed on the homepage
 rssLimit = 20             # Limit Entry Count to Rss file
 disqusShortname = ""      # disqus_shortname
-googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        
 summaryLength = 150
 
@@ -58,6 +57,10 @@ defaultContentLanguage = "ko"           # Default language to use
   since = "2023"            # Site creation time
   homeFullContent = false   # if false, show post summaries on home page. Otherwise show full content.
   rssFullContent = true     # if false, Rss feed instead of the summary
+  [params.analytics] # for Analytics
+    host = "prayinforrain.github.io"
+    googleId = "G-63GYNX3VF5"
+    naverId = "1940c9395811670"
 
   # site info (optional)
   logoTitle = "prayinforrain.dev"        # default: the title value

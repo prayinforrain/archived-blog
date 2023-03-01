@@ -286,19 +286,23 @@
 <!-- naver analytics -->
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <script type="text/javascript">
-if(!wcs_add) var wcs_add = {};
-wcs_add["wa"] = "1940c9395811670";
-if(window.wcs) {
-wcs_do();
-}
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "{{ .Site.Params.analytics.naverId }}";
+  if(window.wcs && location.host === '{{ .Site.Params.host }}') {
+    wcs_do();
+  }
 </script>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-63GYNX3VF5"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.analytics.googleId }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){
+    if(location.host !== '{{ .Site.Params.host }}') return;
+    
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
 
-  gtag('config', 'G-63GYNX3VF5');
+  gtag('config', '{{ .Site.Params.analytics.googleId }}');
 </script>
