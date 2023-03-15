@@ -1,9 +1,10 @@
 ---
 title: "About"
 date: 2023-01-02T21:38:52+09:00
-lastmod: 2023-01-21T03:21:16+09:00
+lastmod: 2023-03-16T02:33:16+09:00
 menu: "main"
 weight: 50
+toc: false
 
 # you can close something for this content if you open it in config.toml.
 comment: false

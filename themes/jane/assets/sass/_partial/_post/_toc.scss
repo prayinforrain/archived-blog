@@ -1,72 +1,106 @@
 .post-toc {
-
   .post-toc-title {
-    font-size: 1em;
-    max-width: 9em;
+    // font-size: 1.5rem;
     border: 0;
-    font-weight: normal;
+    font-weight: bold;
     padding: 0.05em 0.5em;
-    line-height: 1em;
+    line-height: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0.3em 0 0 0;
+
+    &::after {
+      content: "Table of Contents";
+      color: $gray;
+      font-weight: normal;
+      font-family: $custom-serif-font-family;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1px;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+  }
+
+  hr {
+    background: $gray;
+    height: 1px;
+    border: 0;
   }
 
   .post-toc-content {
     display: block;
     padding: 0.5em 2em 0.5em 0.5em;
     margin-top: -1.5em;
-    line-height: 1.3em;
+    line-height: 1.4em;
 
     /* Hugo Table of Contents have extra dot in front */
     ul {
-      padding-left: 20px;
+      padding-left: 10px;
       list-style-type: none;
 
-      ul {
-        list-style: disc;
+      li > a:hover {
+        color: #139;
+        text-decoration: underline;
+      }
 
-        ul {
-          list-style: circle;
-        }
+      li {
+        padding-left: 15px;
+        // li:last-of-type {
+        //   &::marker {
+        //     content: "└ ";
+        //   }
+        //   margin-bottom: 5px;
+        // }
+        // li::marker {
+        //   content: "├ ";
+        // }
 
-        li > a {
-          color: #139;
-        }
+        // li {
+        //   border-left: 1px solid blue;
+        //   padding-left: 10px;
+        // }
 
-        li > a:hover{
-          color: #900;
-        }
+        // li:last-of-type {
+        //   border-left: 1px solid red;
+        //   padding-left: 10px;
+        // }
+      }
+
+      code {
+        padding: 3px 4px;
+        background: $light-gray;
+        font-family: $code-font-family;
+        border-radius: 4px;
+        color: $code-color;
+        font-size: 0.8em;
       }
     }
   }
-
 }
 
-@include min-screen() {
+@media screen and (min-width: 1750px) {
   .post-toc {
-    display: none;
-    border: 1px solid #CCC;
-    background: white;
-    box-shadow: 0 0 1em #777777;
+    display: block;
     position: fixed;
-    top: 0;
-    right: 0;
+    left: 0;
+    top: 110px;
     max-height: 80%;
     overflow: auto;
     z-index: 99;
-
-    .post-toc-content {
-      display: none;
-    }
-
-    &:hover .post-toc-content {
-      display: block;
-    }
+    max-width: 360px;
   }
 }
 
-@include max-screen() {
+@media screen and (max-width: 1750px) {
   .post-toc {
     padding: 10px;
-    border-bottom: 2px LightGrey solid;
     word-wrap: break-word;
+  }
+
+  .post-toc-content {
+    li {
+      line-height: 1.6rem;
+    }
   }
 }

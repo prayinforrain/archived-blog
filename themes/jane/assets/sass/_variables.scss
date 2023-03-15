@@ -66,6 +66,9 @@ $global-serif-font-family: Pretendard, -apple-system, BlinkMacSystemFont,
   "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol", sans-serif !default;
 
+@import url(https://cdn.rawgit.com/kattergil/NotoSerifKR-Web/76eb9ebf/stylesheet/NotoSerif-Web.css);
+$custom-serif-font-family: Athelas, "Noto Serif KR", serif !default;
+
 // Background color of the site.
 $global-background: $white !default;
 
