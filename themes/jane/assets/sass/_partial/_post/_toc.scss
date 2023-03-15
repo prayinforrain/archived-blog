@@ -16,16 +16,20 @@
       font-family: $custom-serif-font-family;
       font-style: italic;
       font-size: 1.2rem;
-      line-height: 1px;
       white-space: nowrap;
-      margin-left: 10px;
+      float: right;
+      vertical-align: bottom;
     }
   }
 
-  hr {
-    background: $gray;
-    height: 1px;
-    border: 0;
+  .post-toc-hr {
+    padding-left: 10px;
+    hr {
+      background: $gray;
+      height: 1px;
+      border: 0;
+      margin-top: 0;
+    }
   }
 
   .post-toc-content {
@@ -36,7 +40,7 @@
 
     /* Hugo Table of Contents have extra dot in front */
     ul {
-      padding-left: 10px;
+      padding-left: 0px;
       list-style-type: none;
 
       li > a:hover {
