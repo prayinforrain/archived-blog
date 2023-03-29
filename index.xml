@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>https://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>ko</language><lastBuildDate>Wed, 15 Feb 2023 15:17:00 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>https://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrayinForRain.dev</title><link>https://prayinforrain.github.io/</link><description>Recent content on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>ko</language><lastBuildDate>Wed, 29 Mar 2023 15:17:00 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://prayinforrain.github.io/about/</link><pubDate>Mon, 02 Jan 2023 21:38:52 +0900</pubDate><guid>https://prayinforrain.github.io/about/</guid><description>&lt;p>&lt;img src="https://capsule-render.vercel.app/api?type=waving&amp;amp;color=4D55B7&amp;amp;height=300&amp;amp;section=header&amp;amp;text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!&amp;amp;fontColor=eef&amp;amp;desc=@PrayinForRain&amp;amp;descAlignY=65&amp;amp;descAlign=65" alt="header">&lt;br>
 프론트엔드 개발자가 되기 위해 공부하는 &lt;strong>이우재&lt;/strong>입니다.&lt;br>
 저에 대한 자세한 소개는 &lt;a href="https://lily-muenster-f8b.notion.site/8e59068da9114724977496e76bb529f3">[이 링크]&lt;/a>에서 확인해 주세요!&lt;/p>
 &lt;h2 id="techstacks">Techstacks&lt;/h2>
@@ -19,7 +19,46 @@
 &lt;ul>
 &lt;li>Email : &lt;a href="mailto:prayinforrain@naver.com">prayinforrain@naver.com&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>Firebase를 TypeScript에서 사용하기</title><link>https://prayinforrain.github.io/post/2023/02/firebase-with-typescript/</link><pubDate>Wed, 15 Feb 2023 15:17:00 +0900</pubDate><guid>https://prayinforrain.github.io/post/2023/02/firebase-with-typescript/</guid><description>&lt;p>최근에 들어서 Firebase가 필요한 일이 있었다. 대학교에서 써본 경험은 있었는데, 오랜만에 만난 Firebase는 예전같지 않았다. 가장 큰 문제는 Firebase가 제공하는 데이터베이스인 Firestore는 문서를 가져와도 타입을 제대로 정의할 수 없다는 것.&lt;/p>
+&lt;p>&lt;img src="https://github-readme-stats.vercel.app/api?username=prayinforrain&amp;amp;show_icons=true" alt="PrayinForRain&amp;amp;rsquo;s github stats">&lt;/p></description></item><item><title>VSCode의 NPM Scripts가 작동하지 않는 사람</title><link>https://prayinforrain.github.io/post/2023/03/npm-scripts-doesnt-work/</link><pubDate>Wed, 29 Mar 2023 15:17:00 +0900</pubDate><guid>https://prayinforrain.github.io/post/2023/03/npm-scripts-doesnt-work/</guid><description>
+&lt;link rel="stylesheet" href="https://prayinforrain.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="https://prayinforrain.github.io/image/post/2023/03/npm-scripts-doesnt-work/01.jpeg" alt="image"/>
+&lt;/div>
+&lt;a href="https://prayinforrain.github.io/image/post/2023/03/npm-scripts-doesnt-work/01.jpeg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>
+&lt;p>늦잠자고 갓생사는 척 하는 삶이란...&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
+&lt;p>맥북과 친해지기 시작한지 2달이 되었다. 윈도우 노트북을 사용하다가 갈아 탄 이유는, &lt;em>맥에서 되는 것이 윈도우에서 되고, 윈도우에서 되는 것은 맥에서 안되는&lt;/em> 문제를 너무 많이 겪었기 때문이다. 주변의 맥 유저에게 계속해서 테스트를 요청하기도 눈치보이고, 언젠가는 마주해야겠다고 생각했던 녀석이기 때문에 과감한 투자를 했다. 그 과정에서 내가 윈도우에 지나치게 강결합(?) 되어 있다는 것을 깨달았고, 지금은 맥도 윈도우도 못 쓰는 그 어딘가의 지점에 있다.&lt;/p>
+&lt;p>그리고 최근에는 프로젝트를 하고 있다. 부스트캠프에서 만난 사람들과 스터디를 하다가, 디자인 시스템을 만들어 보자는 이야기가 나와서 다같이 티스푼 공사 중이다. 이 것에 대해서도 글을 써야 하는데 오늘 포스팅할 내용은 이 것도 아니다. 회고를 안 쓰니 이야기가 많이 밀려 횡설수설 하는구나..&lt;/p>
+&lt;p>아무튼&amp;hellip; 프로젝트 환경 설정을 하면서 겪었던 문제를 기록하고자 한다.&lt;/p>
+&lt;h1 id="npm-scripts가-안-된다">NPM Scripts가 안 된다&lt;/h1>
+&lt;p>&lt;img src="https://prayinforrain.github.io/image/post/2023/03/npm-scripts-doesnt-work/02.png" alt="NPM Scripts">&lt;/p>
+&lt;p>VSCode는 레포지토리를 열었을 때 &lt;code>package.json&lt;/code> 파일을 파싱하여 실행할 수 있는 스크립트들을 하단에 보여준다. 이게 원래는 익스텐션의 기능이었다가, 언젠가 익스텐션이 deprecated가 되고 기본 기능이 된 모양이다. 아무튼 저걸 사용하면 굳이 터미널을 열어서 명령어를 투닥투닥 입력하지 않아도 알아서 새 터미널을 열어서 명령어를 실행해 준다. 특히 FE와 BE를 같이 실행할 때 너무너무 편하다.&lt;/p>
+&lt;p>그런데 맥북에서 요놈이 실행이 안된다.&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/image/post/2023/03/npm-scripts-doesnt-work/03.png" alt="Error message">&lt;/p>
+&lt;p>다른 프로젝트도 안 된다. 이 프로젝트는 더더욱 안된다. 원래 그렇게 인식하지 못하고 사용하던 기능인데, 안 된다고 생각하니 갑자기 뭔가 족쇄를 찬 기분이고.. 어쩌고 저쩌고..&lt;br>
+아무튼 메시지를 읽어 보고 처음에는 프로젝트가 yarn 1.22.19 버전을 사용하는데 내 글로벌에 yarn berry만 설치되어 있어서 그런가 하고 기본 버전을 바꿀 방법을 찾아 다녔다. 물론 정답이 아니었다.&lt;/p>
+&lt;h1 id="해결-과정">해결 과정&lt;/h1>
+&lt;p>나는 처음에 node와 yarn을 설치할 때, &lt;code>~/.zshrc&lt;/code> 파일에 아래와 같이 설정을 넣었었다. 그 때는 하도 깔아야 하는 것이 많다보니 이것저것 찾아서 묻지도 따지지도 않고 마구 따라했었는데,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">NVM_DIR&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOME&lt;/span>&lt;span class="s2">/.nvm&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span> -s &lt;span class="s2">&amp;#34;/usr/local/opt/nvm/nvm.sh&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> . &lt;span class="s2">&amp;#34;/usr/local/opt/nvm/nvm.sh&amp;#34;&lt;/span> &lt;span class="c1"># This loads nvm&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span> -s &lt;span class="s2">&amp;#34;/usr/local/opt/nvm/etc/bash_completion.d/nvm&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> . &lt;span class="s2">&amp;#34;/usr/local/opt/nvm/etc/bash_completion.d/nvm&amp;#34;&lt;/span> &lt;span class="c1"># This loads nvm bash_completion&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>NVM_DIR&lt;/code>라는 변수를 정의해 놓고 사용하지 않고 있었다. 왜일까? 싶어 아래와 같이 변경했더니 해결되었다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">NVM_DIR&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOME&lt;/span>&lt;span class="s2">/.nvm&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span> -s &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$NVM_DIR&lt;/span>&lt;span class="s2">/nvm.sh&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\.&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$NVM_DIR&lt;/span>&lt;span class="s2">/nvm.sh&amp;#34;&lt;/span> &lt;span class="c1"># This loads nvm&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span> -s &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$NVM_DIR&lt;/span>&lt;span class="s2">/bash_completion&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\.&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$NVM_DIR&lt;/span>&lt;span class="s2">/bash_completion&amp;#34;&lt;/span> &lt;span class="c1"># This loads nvm bash_completion&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>음&amp;hellip; 그 외에도 &lt;code>~/.zshenv&lt;/code> 내용을 &lt;code>source ~/.zshrc&lt;/code>로 변경해서 zshrc 파일의 내용을 참조하도록 수정했다.&lt;/p>
+&lt;p>그런데 저 설정 파일은 대체 어디서 작성된 것일까? &lt;a href="https://github.com/nvm-sh/nvm/commit/e10705b896ee417e03512403df82e22d7a9b25ca">nvm의 공식 문서&lt;/a>에도 &lt;code>$NVM_DIR&lt;/code>를 참조하도록 쓰여 있었고, 저 코드가 처음 나온 커밋을 찾아 보니 &lt;a href="https://github.com/nvm-sh/nvm/commit/e10705b896ee417e03512403df82e22d7a9b25ca">역시 처음부터 NVM_DIR를 사용하게 되어 있었다.&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/image/post/2023/03/npm-scripts-doesnt-work/04.png" alt="Finding origin">&lt;br>
+기원을 찾고 싶었으나 검색되는 가장 오래된 결과는 어느 gist에 저장된 bash_profile 코드였다. 내가 쉘에 대해 깊이 알고 있지 않아서 더 이상 깊이 원인을 찾으려면 많은 시간이 필요해 보인다. 2달만에 되찾은 NPM Scripts 메뉴에 무척 기분이 좋다.&lt;/p>
+&lt;h1 id="refs">Refs.&lt;/h1>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/63502253/vscode-build-error-the-terminal-process-bin-zsh-c-yarn-run-watch-extensi">VSCODE build error `The terminal process &amp;ldquo;/bin/zsh &amp;lsquo;-c&amp;rsquo;, &amp;hellip; - stack overflow&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@palette/zsh-command-not-found-nvm-%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0%EB%B2%95">zsh: command not found: nvm 오류해결법&lt;/a>&lt;/p></description></item><item><title>Firebase를 TypeScript에서 사용하기</title><link>https://prayinforrain.github.io/post/2023/02/firebase-with-typescript/</link><pubDate>Wed, 15 Feb 2023 15:17:00 +0900</pubDate><guid>https://prayinforrain.github.io/post/2023/02/firebase-with-typescript/</guid><description>&lt;p>최근에 들어서 Firebase가 필요한 일이 있었다. 대학교에서 써본 경험은 있었는데, 오랜만에 만난 Firebase는 예전같지 않았다. 가장 큰 문제는 Firebase가 제공하는 데이터베이스인 Firestore는 문서를 가져와도 타입을 제대로 정의할 수 없다는 것.&lt;/p>
 &lt;link rel="stylesheet" href="https://prayinforrain.github.io/css/hugo-easy-gallery.css" />
 &lt;div class="box">
 &lt;figure itemprop="associatedMedia"
