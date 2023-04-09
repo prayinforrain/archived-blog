@@ -82,6 +82,21 @@ enableEmoji = true
   url = "index.xml"
 
 [params.analytics] # for Analytics
-    host = "prayinforrain.github.io"
-    googleId = "G-63GYNX3VF5"
-    naverId = "1940c9395811670"
+  host = "prayinforrain.github.io"
+  googleId = "G-63GYNX3VF5"
+  naverId = "1940c9395811670"
+
+[params.giscus]         # giscus is a comment system based on GitHub Discussions. see https://giscus.app
+  enable = true
+  repo = "prayinforrain/prayinforrain.github.io"
+  repoId = "R_kgDOItUJmA"
+  category = "Announcements"
+  categoryId = "DIC_kwDOItUJmM4CTXa0"
+  mapping = "pathname"  # comment value is the default value
+  strict = 0
+  reactionsEnabled = 1
+  emitMetadata = 0
+  inputPosition = "top"
+  theme = "preferred_color_scheme"
+  lang = "en"
+  loading = "lazy"

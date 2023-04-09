@@ -13,6 +13,9 @@
                 {{ .Content }}
             </div>
         </article>
+        <footer>
+            {{ partial "giscus.html" . }}
+        </footer>
     </main>
 </div>
 {{ end }}
