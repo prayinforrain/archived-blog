@@ -1,129 +1,26 @@
-# This is a simple configuration.
-# If you want to see the full configuration, please check `full-config.toml` .
-# And see https://gohugo.io/getting-started/configuration/ .
-
-baseURL = "https://prayinforrain.github.io/"
 title = "PrayinForRain.dev"
-enableRobotsTXT = true
+baseURL = "https://prayinforrain.github.io/"
+
+# This is what goes in <html lang="">
+languageCode = 'ko'
+
+theme = "hugo-blog-awesome"
+
+# This defines how dates are formatted
+defaultContentLanguage = "ko"
+
+# To enable Google Analytics 4 (gtag.js) provide G-MEASUREMENT_ID below.
+# To disable  Google Analytics, simply leave the field empty or remove the next line
+googleAnalytics = '' # G-MEASUREMENT_ID
+
+
+# Enable emojis globally
 enableEmoji = true
-theme = "jane"
 
-hasCJKLanguage = true     # has chinese/japanese/korean ? 
-paginate = 3              # Number of articles displayed on the homepage
-rssLimit = 20             # Limit Entry Count to Rss file
-disqusShortname = ""      # disqus_shortname
-copyright = ""            # default: author.name ↓        
-summaryLength = 150
-
-# language support # en / zh-cn / other... translations present in i18n/
-defaultContentLanguage = "ko"           # Default language to use
-[languages.ko]
-  languageCode = "ko"
-[languages.en]
-  languageCode = "en"
-
-[author]
-  name = "prayinforrain"        # essential
-  url = "/about"          # optional
-
-[sitemap]                 # essential
-  changefreq = "weekly"
-  priority = 0.5
-  filename = "sitemap.xml"
-
-[[menu.main]]             # config your menu
-  name = "Home"
-  weight = 10
-  identifier = "home"
-  pageref = "/"
-[[menu.main]]
-  name = "Archives"
-  weight = 20
-  identifier = "archives"
-  pageref = "/post/"
-[[menu.main]]
-  name = "Tags"
-  weight = 30
-  identifier = "tags"
-  pageref = "/tags/"
-[[menu.main]]
-  name = "Categories"
-  weight = 40
-  identifier = "categories"
-  pageref = "/categories/"
-
-
-[params]
-  since = "2023"            # Site creation time
-  homeFullContent = false   # if false, show post summaries on home page. Otherwise show full content.
-  rssFullContent = true     # if false, Rss feed instead of the summary
-
-  # site info (optional)
-  logoTitle = "prayinforrain.dev"        # default: the title value
-  keywords = ["Hugo", "Frontend", "React"]
-  description = "Dev blog of PrayinForRain, a KR frontend engineer"
-
-  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
-  dateFormatToUse = "2006-01-02"
-
-  # front matter archetypes/default.md 
-  # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
-  toc = true
-  photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe
-  # contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
-  contentCopyright = false
-  moreMeta = true
-
-  # Link custom CSS and JS assets
-  #   (relative to /static/css and /static/js respectively)
-  customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
-  customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
-
-  [params.analytics] # for Analytics
-    host = "prayinforrain.github.io"
-    googleId = "G-63GYNX3VF5"
-    naverId = "1940c9395811670"
-
-  [params.social]
-    a-email = "mailto:prayinforrain@naver.com"
-    # b-stack-overflow = "https://prayinforrain.github.io/"
-    # c-twitter = "https://prayinforrain.github.io/"
-    # d-facebook = "https://prayinforrain.github.io/"
-    # e-linkedin = "https://prayinforrain.github.io/"
-    # f-google = "https://prayinforrain.github.io/"
-    g-github = "https://github.com/prayinforrain"
-    # h-weibo = "https://prayinforrain.github.io/"
-    # i-zhihu = "https://prayinforrain.github.io/"
-    # j-douban = "https://prayinforrain.github.io/"
-    # k-pocket = "https://prayinforrain.github.io/"
-    # l-tumblr = "https://prayinforrain.github.io/"
-    # m-instagram = "https://prayinforrain.github.io/"
-    # n-gitlab = "https://prayinforrain.github.io/"
-    # o-goodreads = "https://prayinforrain.github.io/"
-    # p-coding = "https://prayinforrain.github.io/"
-    # q-bilibili = "https://prayinforrain.github.io/"
-    # r-codeforces = "https://prayinforrain.github.io/"
-    # s-mastodon = "https://prayinforrain.github.io/"
-    # t-youtube = "https://prayinforrain.github.io/"
-    # u-twitch = "https://prayinforrain.github.io/"
-
-    [params.giscus]         # giscus is a comment system based on GitHub Discussions. see https://giscus.app
-    enable = true
-    repo = "prayinforrain/prayinforrain.github.io"
-    repoId = "R_kgDOItUJmA"
-    category = "Announcements"
-    categoryId = "DIC_kwDOItUJmM4CTXa0"
-    mapping = "pathname"  # comment value is the default value
-    strict = 0
-    reactionsEnabled = 1
-    emitMetadata = 0
-    inputPosition = "top"
-    theme = "preferred_color_scheme"
-    lang = "en"
-    # lazyLoading = false
-
+# set markup.highlight.noClasses=false to enable code highlight
 [markup]
   [markup.highlight]
+    noClasses = false
     anchorLineNos = true
     codeFences = true
     guessSyntax = true
@@ -133,11 +30,63 @@ defaultContentLanguage = "ko"           # Default language to use
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = true
-    noClasses = false
     noHl = false
     style = 'monokai'
     tabWidth = 4
-  [markup.tableOfContents]
-  startLevel = 1
   [markup.goldmark.renderer]
     unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+
+[menu]
+  [[menu.main]] 
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="tags"
+    name = 'Tags'
+    url = '/tags/'
+    weight = 30
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 40
+
+[params]
+  sitename = "PrayinforRain.dev"
+  defaultColor = "light" # set default color mode: dark or light
+  description = "Dev blog of PrayinForRain, a KR frontend engineer"
+
+[params.author]
+  avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "PrayinforRain"
+  name = "Profile picture"
+  description = "Frontend Developer"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/prayinforrain"
+
+[[params.socialIcons]]
+  name = "email"
+  url = "mailto:prayinforrain@naver.com"
+
+[[params.socialIcons]]
+  name = "Rss"
+  url = "index.xml"
+
+[params.analytics] # for Analytics
+    host = "prayinforrain.github.io"
+    googleId = "G-63GYNX3VF5"
+    naverId = "1940c9395811670"
