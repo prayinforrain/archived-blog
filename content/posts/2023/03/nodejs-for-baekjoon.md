@@ -5,12 +5,12 @@ lastmod: 2023-03-30T15:17:00+09:00
 draft: false
 categories: ["algorithm"]
 tags: ["javascript", "nodejs", "algorithm", "ps", "baekjoon"]
-thumbnail: "/image/post/2023/03/nodejs-for-baekjoon/01.png"
+thumbnail: "/images/posts/2023/03/nodejs-for-baekjoon/01.png"
 ---
 
 ## JS라도 백준이 하고싶어
 
-![Programmers IDE](/image/post/2023/03/nodejs-for-baekjoon/01.png)
+![Programmers IDE](/images/posts/2023/03/nodejs-for-baekjoon/01.png)
 
 공채 시즌이다. 개인적으로 코딩 테스트를 정말정말 자신 없어했는데, 더 이상 미룰 수 없어 야금야금 공부를 시작했다.  
 불편한 점이 있다면, 백준은 자바스크립트에 아주 불친절하다는 점이다. 내가 학부생 때 잘 하지도 못하는 C++로 꾸역꾸역 문제를 풀었던 이유 중 하나이기도 했다. 그 때는 아는 PS 플랫폼이 백준 뿐이니, 자바스크립트의 어쩔 수 없는 한계인가보다 했다.

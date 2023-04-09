@@ -5,10 +5,10 @@ lastmod: 2023-01-25T16:35:01+09:00
 draft: false
 categories: ["Web", "javascript"]
 tags: ["Web", "javascript", "ECMAScript"]
-thumbnail: "/image/post/2023/01/ecmascript/01.png"
+thumbnail: "/images/posts/2023/01/ecmascript/01.png"
 ---
 
-![untitled](/image/post/2023/01/ecmascript/01.png)
+![untitled](/images/posts/2023/01/ecmascript/01.png)
 
 # Ecma international
 
@@ -31,7 +31,7 @@ ECMA스크립트란 앞에서 설명한 Ecma 인터내셔널이 정의하는 **�
 
 ## 자바스크립트의 탄생
 
-![untitled](/image/post/2023/01/ecmascript/02.png)
+![untitled](/images/posts/2023/01/ecmascript/02.png)
 
 `넷스케이프`를 아시나요? Internet Explorer가 세상을 지배하기 전에 주로 사용되었던 인터넷 브라우저입니다. 지금은 파이어폭스가 넷스케이프의 역사를 이어가고 있는데요, 당시 유료였던 넷스케이프는 무료로 마구마구 배포되는 IE에게 밀려나게 됩니다.
 

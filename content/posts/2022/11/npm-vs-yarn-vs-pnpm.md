@@ -17,15 +17,15 @@ tags: ["moheyum", "yarn", "npm", "pnpm"]
 
 # 🎁 npm
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_01.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_01.png)
 
 우선 npm입니다. npm에 대해 더 할 이야기는 없지만, 우선 비교를 하기 위해 기준이 될 프로젝트의 의존성을 설치하고 실행까지 진행해 보겠습니다. 이번 글에서 실험할 프로젝트는 제가 개인적으로 사용하는 React boilerplate입니다. 어떤 것들을 포함하는지는 [레포지토리의 README.md](https://github.com/prayinforrain/ReactTS_Boilerplate_v2)를 참고해 주세요.
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_02.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_02.png)
 
 설치가 되었습니다. 이대로 `package.json`에 정의된 dev 명령어를 실행하면 리액트 서버에 접속할 수 있게 됩니다.
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_03.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_03.png)
 
 무난하게 진행이 되었습니다.
 
@@ -47,35 +47,35 @@ yarn init -2
 
 npm으로 했던 것처럼 boilerplate 파일을 방금 초기화한 yarn 디렉토리에 복사하고 `yarn install`을 실행합니다.
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_04.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_04.png)
 
 뭔가 여러 단계를 거치는 듯한 메시지를 보여주다가 설치가 완료되었습니다. `.yarn/cache` 디렉토리에 패키지들이 .zip 파일로 압축되어 들어있네요.
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_05.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_05.png)
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_06.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_06.png)
 
 음, 그런데 이 상태로 바로 서버를 실행시킬 수가 없습니다. ESLint 플러그인도 어디가 불편한지 비명을 지르고 있구요. 이유는 모르겠지만 `package.json`에는 명시되지 않은 peer-dependency 패키지들이 빠져 있어서 그런 것 같습니다. 다행히도 `package.json`에서 자동완성과 함께 버전까지 알아서 채워주어서 적당히 적어서 `yarn install`을 다시 진행했습니다. [이 문제](https://github.com/yarnpkg/yarn/issues/1503)에 대한 이슈를 발견했지만 답을 구하지 못하고 결국 직접 하나씩 설치하는 식으로 해결했습니다.
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_07.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_07.png)
 
 # 🧊 pnpm
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_08.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_08.png)
 
 [공식 문서](https://pnpm.io/ko/installation)를 참고하였고, yarn과 별 차이 없이 corepack을 통해 설치했습니다. 명령어만 보면서 했는데 문득 보니 공식 문서가 영어가 반, 한국어가 반으로 되어 있었네요. 위 사진은 글을 읽지 않고 무작정 명령어 실행하면서 찍은 사진인데, Powershell이 뭔가 해해킹킹이이 되되ㄴ는 기분이 들어서 올렸습니다.
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_09.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_09.png)
 
 `pnpm install`을 실행하니, peer dependency 이슈에 대한 메시지를 띄워줍니다. yarn을 사용했을 때와 같은 문제가 있네요. [이 링크](https://stackoverflow.com/questions/70597494/pnpm-does-not-resolve-dependencies)에서 답을 찾아 `pnpm i --shamefully-hoist=true`로 설치하니 알아서 피어 의존성 패키지를 같이 설치해 줍니다.
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_10.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_10.png)
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_11.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_11.png)
 
 # 🤨 뭐가 다를까요..?
 
-![Untitled](/image/post/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_12.png)
+![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_12.png)
 
 사실 이 정도 테스트로 차이를 느끼기는 어렵습니다. 그래도 짧은 시간동안 각 패키지 매니저를 체험해 봤으니, 그나마 눈에 띄는 차이를 정리해보겠습니다.
 

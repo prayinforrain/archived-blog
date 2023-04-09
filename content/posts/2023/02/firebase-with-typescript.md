@@ -5,12 +5,12 @@ lastmod: 2023-02-15T15:17:00+09:00
 draft: false
 categories: ["TypeScript"]
 tags: ["Web", "TypeScript", "Firebase"]
-thumbnail: "/image/post/2023/02/firebase-with-typescript/01.png"
+thumbnail: "/images/posts/2023/02/firebase-with-typescript/01.png"
 ---
 
 최근에 들어서 Firebase가 필요한 일이 있었다. 대학교에서 써본 경험은 있었는데, 오랜만에 만난 Firebase는 예전같지 않았다. 가장 큰 문제는 Firebase가 제공하는 데이터베이스인 Firestore는 문서를 가져와도 타입을 제대로 정의할 수 없다는 것.
 
-{{< figure src="/image/post/2023/02/firebase-with-typescript/01.png" alt="image" caption="자동완성이 안되는 타입스크립트는.. 그.. 왜..?" >}}
+{{< figure src="/images/posts/2023/02/firebase-with-typescript/01.png" alt="image" caption="자동완성이 안되는 타입스크립트는.. 그.. 왜..?" >}}
 
 물론 데이터스키마를 따로 정의하지 않기 때문에 Firebase 라이브러리가 `DocumentData` 타입을 개발자에게 맞춰줄 의무는 없지만, 적어도 `React.useState`처럼 제네릭으로 타입을 받아 어느정도 약속해 주기를 바랐다. 아니 바라는게 아니라 되어야 하는 거 아닌가..?
 

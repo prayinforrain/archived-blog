@@ -9,7 +9,7 @@ tags: ["CSS", "Web"]
 
 # CSS의 크기 단위
 
-![Untitled](/image/post/2023/01/size-units-in-css/01.png)
+![Untitled](/images/posts/2023/01/size-units-in-css/01.png)
 
 CSS에는 다양한 단위가 존재합니다. 우리가 잘 아는 `px`와 `%`부터, `em`, `rem`, `pt`, `vh`, `vw` 등등 다양한 단위가 존재하는데요, 이 크기 단위들을 언제 어떻게 사용하면 좋을지에 대해 정리해 보았습니다.
 
@@ -63,7 +63,7 @@ CSS에는 다양한 단위가 존재합니다. 우리가 잘 아는 `px`와 `%`�
 
 모니터에는 해상도 말고도 PPI*(Pixel per Inch)*라는 스펙이 있습니다. 이 스펙에 따라, 1px을 실제 길이로 치환하면 디스플레이의 DPI에 따라 다른 실제 길이를 가질 수 있게 됩니다. 그럼 1cm 역시 상대 단위인 것이 아닐까요? 실험을 위해 `height: 6.8cm;`를 준 div에 지폐를 갖다 대 보았습니다. 참고로 우리나라 모든 지폐의 높이는 *6.8cm*입니다.
 
-![Untitled](/image/post/2023/01/size-units-in-css/02.png)
+![Untitled](/images/posts/2023/01/size-units-in-css/02.png)
 
 24” FHD 모니터와 15” FHD 모니터에서 실험해 보았습니다. 24”에서는 정확하게 지폐의 크기와 일치했지만 15”에서는 한참 작음을 확인할 수 있었습니다. 즉 **1cm가 정확히 1센티미터를 의미하지는 않음**을 의미합니다. 그럼 `cm`라는 단위는 왜 존재하는 것일까? 답은 [이 링크](https://www.w3.org/Style/Examples/007/units.en.html#units)에서 찾을 수 있었습니다.
 

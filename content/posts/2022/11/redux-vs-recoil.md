@@ -123,11 +123,11 @@ export default function App() {
 
 ## Redux에 대해.araboja
 
-![Untitled](/image/post/2022/11/redux-vs-recoil/redux_vs_recoil_01.png)
+![Untitled](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_01.png)
 
 Redux는 상태 관리 라이브러리 중에서도 가장 대중적인 친구입니다. 아마 recoil처럼 리액트에 종속적이지도 않고, mobx보다 오래되었기 때문이 아닐까요? 아무튼 npm trends에서 확인할 수 있는 것처럼 압도적인 커뮤니티 크기를 자랑합니다. 레퍼런스가 무척 많고, 음.. 레퍼런스가 무척 많습니다. 한글로 검색해도 당장 이 글을 쓸 이유가 있나 싶을 정도로 지나치게 많은 정리글이 나오네요.
 
-![Untitled](/image/post/2022/11/redux-vs-recoil/redux_vs_recoil_02.png)
+![Untitled](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_02.png)
 
 Redux는 Flux 아키텍쳐를 개선한 구조로 상태를 관리합니다. **1) 읽기 전용인 상태를 2) 하나의 store가 3) 순수함수를 이용해 갱신한다**는 세 가지 메인 컨셉이 있다고 하네요. 더 자세한 설명은 [위 사진의 출처 링크](https://labs.tadigital.com/index.php/2020/04/20/getting-started-with-redux/)에 잘 설명이 되어 있습니다.
 
@@ -183,7 +183,7 @@ export default counterSlice.reducer;
 
 createSlice로 리듀서를 만들다 보면 아래 사진과 같이 패러미터로 들어온 state가 가진 값을 조작해선 안된다는 경고 메시지를 마주치게 됩니다. airbnb 룰에 포함되어 있는 규칙인데, [redux-toolkit Issue #521](https://github.com/reduxjs/redux-toolkit/issues/521)에서 이에 대한 설명을 확인할 수 있었습니다. 여기 사람들은 airbnb 룰을 그닥 좋아하지 않는군요!
 
-> ![Untitled](/image/post/2022/11/redux-vs-recoil/redux_vs_recoil_03.png)
+> ![Untitled](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_03.png)
 >
 > 해당 Rule을 비활성화 하는 것 외에 약간의 예외 처리를 해주는 방법도 있는데요, [이 링크](https://stackoverflow.com/questions/61570021/typescript-and-redux-tool-kit-createslice-assignment-to-property-of-function)를 참고하시면 되겠습니다.
 
@@ -256,7 +256,7 @@ export default function Test() {
 
 실제 사용은 위와 같이 합니다. 참조할 상태는 `useSelector`로, action은 `useDispatch`를 이용해 발생시킵니다. 개인적으로는 action 메소드를 import해왔는데 그걸 바로 사용하지 못하고 `useDispatch`를 통해 사용해야 한다는 점이 조금 이상하게 느껴졌습니다. 또 타입 오류가 있었는데, 이를 위해 `RootState`라는 반환 타입을 선언해서 사용해야 합니다. `store.ts` 코드에 보이는 것처럼 아무데나 사용해도 될 만큼 추상화가 되어있는 타입인데 기본으로 지원해주지 않는 것은 조금 아쉽습니다.
 
-![리덕스.gif](/image/post/2022/11/redux-vs-recoil/redux_vs_recoil_04.gif)
+![리덕스.gif](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_04.gif)
 
 아주 무쌩긴 컴포넌트를 통해 제대로 작동함을 확인할 수 있었습니다.
 
@@ -286,7 +286,7 @@ Redux에 대한 첫 인상은 굉장히 불친절했습니다. 커뮤니티가 �
 
 우리 모두가 React가 자바스크립트로 동작한다는 것을 알고 있지만, 리액트와 자바스크립트가 조금 다른 세계처럼 느껴지는 분들이 있을 것입니다. 이를테면, React를 위해 만들어진 패키지는 React에서 사용하고, VanilaJS를 위해 만들어진 패키지는 VanilaJS에서밖에 쓸 수 없는 것처럼 생각하는 분들이 있죠.
 
-![Untitled](/image/post/2022/11/redux-vs-recoil/redux_vs_recoil_05.png)
+![Untitled](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_05.png)
 
 이런 거리감때문에 많은 라이브러리에서 직접 **‘React스러운’** 방식으로 사용할 수 있도록 지원하기도 합니다. 위 사진은 저번 프로젝트에서 사용했던 캔버스 라이브러리 `konva`의 리액트 버전, `react-konva` 코드 일부입니다.
 
@@ -357,7 +357,7 @@ export default function Test() {
 
 Recoil은 `useState` 훅과 같은 사용법을 갖습니다. import만 잘 해줬다면, `useRecoilState`를 통해 atom을 사용하겠다 선언하고 바로 사용할 수 있습니다. Recoil의 강점이 드러나는 부분이네요. 참조만 하는 경우에는 `useRecoilValue`, 할당만 하는 경우에는 `useSetRecoilState` 를 통해 한 쪽만 사용할 수도 있습니다.
 
-![리코일.gif](/image/post/2022/11/redux-vs-recoil/redux_vs_recoil_06.gif)
+![리코일.gif](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_06.gif)
 
 결과물은 Redux와 똑같이 동작합니다.
 
@@ -380,7 +380,7 @@ Recoil은 `useState` 훅과 같은 사용법을 갖습니다. import만 잘 해�
 
 # ❓ 그래서 뭐 쓰나요?
 
-![Untitled](/image/post/2022/11/redux-vs-recoil/redux_vs_recoil_07.png)
+![Untitled](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_07.png)
 
 Redux와 Recoil에 대해 알아봤습니다. 사실 우리 프로젝트에 적용할 라이브러리를 선택하기 위해 공부했는데, 공부하고 나니 더 복잡해지네요. 하지만 어느 한 쪽이 ‘좋다’고 결론지을 수 있는 문제는 아니고 팥붕을 먹을지 슈붕을 먹을지, 그 날의 기분에 따라 달라지는 그런 선택일 것 같습니다. 참고로 저는 팥을 싫어합니다.
 

@@ -8,9 +8,9 @@ tags: ["moheyum"]
 ---
 
 **모헤윰**의 에디터 만들기 시리즈 모아보기  
-[에디터 만들기 - ContentEditable [1/3]]({{<ref "post/2022/11/making-editor-contenteditable">}})  
-[에디터 만들기 - getSelection [2/3]]({{<ref "post/2022/11/making-editor-getselection">}})  
-[에디터 만들기 - Markdown [3/3]]({{<ref "post/2022/12/making-editor-markdown">}})
+[에디터 만들기 - ContentEditable [1/3]]({{<ref "posts/2022/11/making-editor-contenteditable">}})  
+[에디터 만들기 - getSelection [2/3]]({{<ref "posts/2022/11/making-editor-getselection">}})  
+[에디터 만들기 - Markdown [3/3]]({{<ref "posts/2022/12/making-editor-markdown">}})
 
 ---
 
@@ -23,7 +23,7 @@ https://ui.toast.com/tui-editor
 
 # 레퍼런스 살펴보기
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_01.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_01.png)
 
 놀랍게도 우리가 사용하는 에디터 중 `textarea`나 `input` 태그를 사용하는 경우는 거의 없습니다. 기껏해야 깃허브의 에디터가 `textarea`로 되어 있던 기억이 나네요. `textarea`의 가장 큰 문제는 입력 칸 안에 서식을 적용할 수 없다는 점이 되겠습니다. 다시 말해, **syntax highlighting**이 불가능합니다. 제가 아는 한에서는요.
 
@@ -51,8 +51,8 @@ https://ui.toast.com/tui-editor
 </div>
 ```
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_02.png)
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_03.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_02.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_03.png)
 
 오.. 잘 됩니다. 왜 될까요?
 
@@ -64,7 +64,7 @@ https://ui.toast.com/tui-editor
 
 여기서 마주친 첫 번째 문제가 있었습니다. 위의 사진에서는 이쁘게 모든 행이 div태그에 감싸져 있었지만, 사실 모든 내용을 지우고 백스페이스를 한 번 더 누르면 첫 줄이 `contenteditable div` 자체의 innerText로 들어갈 수 있습니다. 무슨 소리냐면 아래 사진처럼 되는 것이죠.
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_04.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_04.png)
 
 이것은 큰 문제입니다. 우선 첫 줄만 저런 형태로 나오면 심리적인 불편함이 있고, 두번째로 나중에 `syntax-highlight`를 구현하게 된다면 첫 줄에 한정된 버그가 쏟아져 나올 위험이 있습니다. 그래서 delete나 백스페이스 입력으로 인해 내용이 없어지면 `<div><br/></div>`로 초기화 되도록 `onChange` 리스너를 추가해야겠습니다. `<br/>`이 포함된 이유는 비어있는 `div` 태그로 초기화하면 입력할 때 그 안으로 입력이 되지 않기 때문입니다.
 
@@ -86,7 +86,7 @@ const handleKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
 };
 ```
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_05.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_05.png)
 
 잠깐의 테스트 끝에 문제가 해결되었음을 확인할 수 있었습니다.
 
@@ -96,7 +96,7 @@ const handleKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
 
 여기서 `window.getSelection()` 함수를 사용합니다. getSelection은 사용자의 커서가 어디에 있는지를 알려주는 함수인데요, 블록 지정을 했을 때, 단일 위치에 커서가 있을 때 각각 나누어서 위치 정보를 반환해 줍니다.
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_06.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_06.png)
 
 여기서 사용할 요소는 `anchorOffset`과 `focusOffset`입니다. `type`이 **Caret**일 경우 두 값은 똑같이 현재 커서 위치를 가리키며, `type`이 **Range**인, 즉 사용자가 드래그로 블록 지정을 한 경우에는 `anchorOffset`이 드래그 시작 지점, `focusOffset`이 드래그 종료 지점을 나타냅니다. 이걸 이용해서, 사용자의 커서 위치를 알아내서, 해당 위치의 node의 innerText를 제어하면 되겠습니다. 삽입 후에 `window.getSelection().collapse()`를 이용해 입력된 문자의 바로 뒤로 커서를 옮겨주면 더 좋겠네요!
 
@@ -122,7 +122,7 @@ const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
 
 `\t` 문자를 입력하도록 했더니 탭을 연달아 입력하면 한 번만 입력이 처리되는 문제가 있어 공백 두 칸으로 대체하였습니다.
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_07.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_07.png)
 
 제대로 작동하는군요. 마음에 듭니다!
 
@@ -130,7 +130,7 @@ const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
 
 이제 마크다운을 변환하는 작업을 하는 함수에 사용자가 입력한 결과물을 넘겨주려고 합니다. 앞서 말했던 것처럼 `innerText`를 가져와서 보내면 될 것 같아요. 그런데 문제가 생겼습니다.
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_08.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_08.png)
 
 위 입력 결과의 innerText는 어떤 모습일까요?
 
@@ -148,7 +148,7 @@ setContent(contentRef.current.innerText.replace(/\n\n/g, "\n"));
 
 # 서식을 어떻게 입힐까요?
 
-![Untitled](/image/post/2022/11/making-editor-contenteditable/md_editor_1_09.png)
+![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_09.png)
 
 정제한 입력값을 가지고, 정규표현식을 이용해 간단하게 `#`을 이용한 헤딩 마크다운을 추가했습니다. 그런데 이렇게 모든 규칙에 대해 코드를 하나씩 집어 넣는 방식이 좋은 방식일까요? `#`을 이용한 헤딩도 있지만 아랫줄에 `-` 또는 `=`를 입력해서 헤딩을 하는 것은 어떻게 구현할까요? 만약 헤딩과 코드블럭 마크다운이 중첩되면 어떻게 처리해야 할까요? 표를 그리는 방법은요?
 

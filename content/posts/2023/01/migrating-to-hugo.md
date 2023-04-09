@@ -12,11 +12,11 @@ tags: ["hugo", "blog"]
 
 # 블로그를 이전하게 된 계기
 
-{{< figure src="/image/post/2023/01/migrating-to-hugo/01.png" alt="image" caption="아직도 저 Main Page라는 글자의 의미를 모르겠습니다.." >}}
+{{< figure src="/images/posts/2023/01/migrating-to-hugo/01.png" alt="image" caption="아직도 저 Main Page라는 글자의 의미를 모르겠습니다.." >}}
 사실 저는 티스토리를 무척 잘 쓰고 있었습니다. 적당한 커스터마이징이 되면서, 어릴 때 사용하던 네이버 블로그와 거의 유사하고, 각종 분석 기능까지 알아서 제공해 주었기 때문이죠. 그런데 부스트캠프를 겪으면서 많은 것들이 달라졌습니다. 가장 큰 문제는 **마크다운**이었습니다.
 
 사실 처음 부스트캠프를 시작할 때 각종 문서를 마크다운으로 작성해야 하는 상황이었어서 자바스크립트보다도 마크다운을 먼저 배워야 했습니다. 개인적으로는 마크다운의 첫 인상이 너무 투박하고 별로였는데.. 반년동안 지독하게 엮이고 `hackmd`나 `Notion`같은 툴에 익숙해 지면서 마크다운과 사랑에 빠지기 시작했습니다. 생각해 보니 노션도 정말 별로였는데 지금은 용케 잘 쓰고 있네요.
-{{< figure src="/image/post/2023/01/migrating-to-hugo/02.png" alt="image" caption="결국 제 부스트캠프는 마크다운에서 시작해서 마크다운으로 끝났습니다." >}}
+{{< figure src="/images/posts/2023/01/migrating-to-hugo/02.png" alt="image" caption="결국 제 부스트캠프는 마크다운에서 시작해서 마크다운으로 끝났습니다." >}}
 하다하다 저는 마지막 팀 프로젝트 주제를 마크다운 에디터로 잡기에 이릅니다. 이유는 적당히 어려웠고, 적당히 도전적이었고, GitHub PR과 노션을 활용하면서 마크다운 뽕(?)에 취해 있었기 때문입니다. 하다 보니, 대충 써도 일관성 있는 서식으로 가독성을 보장해 주는 점도 너무 마음에 들었습니다.
 
 여기까지 오니 문제가 있었습니다. 제가 학습정리를 위해 활용하던 노션은 마크다운 기반이었고, 그 외에 다른 툴들도 마크다운에 반쯤 걸쳐 있었는데, 네이버, 다음을 필두로 하는 한국형 블로그들은 그렇지 않았습니다. [노션으로 작성했던 TIL 문서를 티스토리로 옮기는 시도](https://prayinforrain.tistory.com/68)를 해 보았지만 초안 작성과 비슷한 만큼의 시간이 걸렸습니다. 티스토리에서도 마크다운 에디터를 지원하고 있었지만 티스토리 스스로가 일부 지원하지 않는 기능이 있음을 경고하고 있어서 마음에 들지 않았습니다. 아마 기본 에디터와의 변환이 원활하지 않음을 의미하는 문구겠지만, 그 외에도 마크다운으로 작성한 글을 미리보기 하는 과정이 너무 번거로운 문제도 있었습니다.
@@ -36,13 +36,13 @@ tags: ["hugo", "blog"]
 
 대충 이 정도까지 정리하고 나서, 문서들을 쭉 읽어본 후에 Hugo를 사용중인 지인분께 이런저런 질문을 드렸습니다.
 
-{{< figure src="/image/post/2023/01/migrating-to-hugo/03.png" alt="image" caption="제가 사람 복 하나는.. 끝내줍니다." >}}
+{{< figure src="/images/posts/2023/01/migrating-to-hugo/03.png" alt="image" caption="제가 사람 복 하나는.. 끝내줍니다." >}}
 
 아무튼 이런 과정을 거쳐 `Hugo`로 블로그를 만들었습니다. 그 과정에 대한 내용은 나중에 또 따로 쓸 수도 있겠네요. 안 쓸 확률이 조금 더 클 것 같아요.
 
 # 그래서 좋은가요?
 
-{{< figure src="/image/post/2023/01/migrating-to-hugo/04.png" alt="image" caption="아니 이걸 뭘 한 달 씩이나.." >}}
+{{< figure src="/images/posts/2023/01/migrating-to-hugo/04.png" alt="image" caption="아니 이걸 뭘 한 달 씩이나.." >}}
 사실 1월 초에 레포지토리를 만들어서.. 지금은 나름 많은 부분을 고치고 어쩌고 하고 있습니다. 그렇지만 마음에 들지 않는 부분이 너무 많습니다.
 
 ## 익명 댓글이 불가능합니다.
@@ -56,19 +56,19 @@ tags: ["hugo", "blog"]
 
 ## TOC의 문제
 
-{{< figure src="/image/post/2023/01/migrating-to-hugo/05.png" alt="image" caption="왜 특정 depth만 파랗게 칠하는지.." >}}
+{{< figure src="/images/posts/2023/01/migrating-to-hugo/05.png" alt="image" caption="왜 특정 depth만 파랗게 칠하는지.." >}}
 스크롤을 내리면 우측에 Floating TOC(Table of Contents)가 표시되는데, 이 녀석이 문제가 많습니다. 생긴 것도 조금 문제고, `h2` 내지는 `h3` 태그만 파싱하는 모양입니다. `h1`도 안되고, 더 깊어도 목차에 나오지 않습니다. `h1`은 찾아보니 Hugo 엔진이 고의적으로 그렇게 구현한 모양인데, 더 깊이는 왜 안되는지 잘 모르겠습니다. 꼭 넣고 싶은 기능이었는데 너무 못생기고 작동방식이 별로여서 눈물을 머금고 하루의 수정사항을 모두 날렸습니다.
 
 <aside>
 
 (23/03/19 수정) 이 부분은 해결되었습니다. [Hugo v0.60.0](https://github.com/gohugoio/hugo/releases/tag/v0.60.0)에 이 부분을 커스터마이징할 수 있는 옵션들을 제공하고 있다고 하네요. 덕분에 지금과 같은 멋★진 TOC를 만들 수 있었습니다.  
-![untitled](/image/post/2023/01/migrating-to-hugo/07.png)
+![untitled](/images/posts/2023/01/migrating-to-hugo/07.png)
 
 </aside>
 
 # 앞으로의 계획
 
-{{< figure src="/image/post/2023/01/migrating-to-hugo/06.png" alt="image" caption="음흉한 야망이 담긴 요구사항 리스트" >}}
+{{< figure src="/images/posts/2023/01/migrating-to-hugo/06.png" alt="image" caption="음흉한 야망이 담긴 요구사항 리스트" >}}
 우선은 지금까지 수정한 테마가 아깝기도 하고, 엄청 흉악한 수준의 못생김은 아니기 때문에, 일단 이대로 사용하기로 했습니다. 그렇지만 다음 블로그로 갈아탈 준비가 되면 주저하지 않을 것 같습니다. Gatsby를 쓸 것인지는 잘 모르겠고, 언젠가 직접 블로그 엔진을 만들어 볼 생각은 있습니다. 앞서 말한 익명 댓글 문제를 해결하기 위해서라두요. 그러려면 엄청 공부를 많이 해야 할 것 같네요.. 주변 분들에겐 5년 계획이라고 말했는데 좀 더 길게 부를 걸 그랬습니다.
 
 # Refs.
