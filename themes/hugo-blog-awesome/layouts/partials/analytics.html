@@ -1,0 +1,23 @@
+<!-- naver analytics -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "{{ .Site.Params.analytics.naverId }}";
+  if(window.wcs && location.host === '{{ .Site.Params.analytics.host }}') {
+    wcs_do();
+  }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.analytics.googleId }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){
+    if(location.host !== '{{ .Site.Params.analytics.host }}') return;
+    
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', '{{ .Site.Params.analytics.googleId }}');
+</script>
