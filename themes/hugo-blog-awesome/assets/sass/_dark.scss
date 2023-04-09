@@ -62,7 +62,7 @@ body[data-theme="dark"] {
     color: $dark-inline-code-text;
     background-color: $dark-inline-code-bg;
     border-radius: 2px;
-    border: 1px solid rgba(128,128,128,0.1);
+    border: 1px solid rgba(128, 128, 128, 0.1);
   }
 
   // kbd tag
@@ -232,13 +232,30 @@ body[data-theme="dark"] {
     .solution:hover {
       color: $dark-text-link-blue-active;
     }
-  }  
+  }
 
   .search-article {
     input[type="search"] {
       color: $dark-text-base-color;
       &::-webkit-input-placeholder {
-        color: rgba(128,128,128,0.8);
+        color: rgba(128, 128, 128, 0.8);
+      }
+    }
+  }
+
+  // badges
+  .badge-list {
+    & .badge-item {
+      & a {
+        border: 1px solid $dark-text-link-blue;
+        color: $dark-text-base-color;
+        &:hover {
+          background-color: $dark-text-link-blue;
+          color: $dark-light;
+        }
+        &:active {
+          background-color: $dark-text-link-blue-active;
+        }
       }
     }
   }
