@@ -247,7 +247,7 @@ body[data-theme="dark"] {
   .badge-list {
     & .badge-item {
       & a {
-        border: 1px solid $dark-text-link-blue;
+        border: 1px solid $dark-text-base-color;
         color: $dark-text-base-color;
         &:hover {
           background-color: $dark-text-link-blue;
