@@ -237,6 +237,7 @@
 .badge-list {
   list-style: none;
   line-height: 2.5rem;
+  overflow-wrap: break-word;
 
   & .badge-item {
     display: inline;
