@@ -1,13 +1,19 @@
 const body = document.body;
-const data = body.getAttribute("data-theme");
 
 const initTheme = (state) => {
+  let defaultTheme = "light";
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    defaultTheme = "dark";
+  }
   if (state === "dark") {
     body.setAttribute("data-theme", "dark");
   } else if (state === "light") {
     body.removeAttribute("data-theme");
   } else {
-    localStorage.setItem("theme", data);
+    localStorage.setItem("theme", defaultTheme);
   }
 };
 
