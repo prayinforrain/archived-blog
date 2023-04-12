@@ -37,7 +37,7 @@
 
 // Content
 .posts-item-note {
-  padding-bottom: .3rem;
+  padding-bottom: 0.3rem;
   font-weight: 500;
   color: $black;
 }
@@ -116,15 +116,14 @@
     display: block;
     color: $gray;
     opacity: 0.8;
-    margin-top: .7rem;
-    padding: .3rem .95rem;
+    margin-top: 0.7rem;
+    padding: 0.3rem 0.95rem;
   }
 
   &_social-icons {
     a {
       text-decoration: none;
-      margin-right: .31rem;
-      
+      margin-right: 0.31rem;
     }
     svg {
       color: #888a90;
@@ -134,16 +133,10 @@
         color: rgb(221, 221, 221);
       }
     }
-
   }
 }
 
 .not-found {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 75vh;
   .title {
     font-size: 5em;
     font-weight: $bold-weight;
@@ -162,7 +155,6 @@
     color: $text-link-blue-active;
   }
 }
-
 
 .search-article {
   position: relative;
@@ -216,10 +208,10 @@
   }
 }
 
-
 /* Add styles for sub, sup, kbd, mark */
 
-sub, sup {
+sub,
+sup {
   font-size: 79%;
   line-height: 0;
   position: relative;

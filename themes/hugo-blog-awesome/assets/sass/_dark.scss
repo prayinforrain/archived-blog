@@ -259,4 +259,42 @@ body[data-theme="dark"] {
       }
     }
   }
+
+  .not-found {
+    .error-emoji {
+      color: $dark-inline-code-text;
+    }
+
+    .error-text {
+      color: $dark-blockquote-text;
+    }
+
+    .error-link {
+      a {
+        color: $dark-text-link-blue;
+
+        &:hover {
+          color: $dark-text-link-blue-active;
+        }
+      }
+    }
+    .error-notice {
+      border: 1px solid $dark-bloquote-border;
+      & a {
+        color: $dark-text-link-blue;
+      }
+    }
+    .error-article-list {
+      & li {
+        & a {
+          border-color: $dark-inline-code-bg;
+          color: $dark-text-base-color;
+
+          &:hover {
+            color: $dark-text-link-blue;
+          }
+        }
+      }
+    }
+  }
 }

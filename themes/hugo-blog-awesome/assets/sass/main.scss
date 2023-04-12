@@ -57,13 +57,13 @@ $on-desktop: 1024px;
 $on-widescreen: 1152px;
 
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+  @media screen and (max-width: $device) {
+    @content;
+  }
 }
 
 @mixin relative-font-size($ratio) {
-    font-size: $base-font-size * $ratio;
+  font-size: $base-font-size * $ratio;
 }
 
 //////////////// 5. Import all sass files /////////////////
@@ -77,3 +77,4 @@ $on-widescreen: 1152px;
 @import "miscellaneous";
 @import "dark";
 @import "listpage";
+@import "404";
