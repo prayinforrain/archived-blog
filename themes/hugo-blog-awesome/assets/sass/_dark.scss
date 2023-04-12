@@ -115,7 +115,7 @@ body[data-theme="dark"] {
   // Blockquote
   blockquote {
     color: $dark-blockquote-text;
-    border-color: $dark-bloquote-border;
+    border-color: $dark-blockquote-border;
   }
 
   // Strong, Bold
@@ -279,7 +279,7 @@ body[data-theme="dark"] {
       }
     }
     .error-notice {
-      border: 1px solid $dark-bloquote-border;
+      border: 1px solid $dark-blockquote-border;
       & a {
         color: $dark-text-link-blue;
       }

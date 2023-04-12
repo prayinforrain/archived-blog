@@ -9,7 +9,7 @@
 
 .notransition {
   -webkit-transition: none;
-  -moz-transition: none; 
+  -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
   transition: none;
@@ -216,10 +216,10 @@ em {
 blockquote {
   color: $blockquote-text;
   opacity: 0.9;
-  border-left: 5px solid $bloquote-border;
+  border-left: 5px solid $blockquote-border;
   padding: 0 0 0 1rem;
-  margin-left: .3rem;
-  margin-right: .3rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
   font-size: 1em;
 
   > :last-child {
