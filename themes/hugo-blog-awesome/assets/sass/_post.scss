@@ -163,6 +163,12 @@
   h6 {
     @include relative-font-size(0.875);
   }
+
+  aside {
+    background-color: $light;
+    padding: 0.2em 1em;
+    border-radius: 5px;
+  }
 }
 
 .post-nav {

@@ -51,6 +51,11 @@ body[data-theme="dark"] {
         color: $dark-text-link-blue;
       }
     }
+
+    // aside
+    aside {
+      background-color: $dark-light;
+    }
   }
 
   // Inline code
