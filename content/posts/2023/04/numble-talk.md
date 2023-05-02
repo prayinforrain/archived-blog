@@ -27,6 +27,12 @@ categories: ["life"]
 
 꽤 많은 레퍼런스를 찾아다니며 해결을 시도했지만 결국 Yarn PnP를 포기하는 것으로 해결되었다. PnP를 쓰지 않으면 지금 데스크탑이 꽤 느린 상태여서 조금 속상한 부분이 있었다. 이 내용은 나중에 정리가 된다면 다른 글로 정리하고 싶다.
 
+<aside>
+
+[Next.js Storybook에 Yarn PnP 적용하기]({{<ref "posts/2023/04/nextjs-storybook-with-pnp">}})
+
+</aside>
+
 ## OpenAI와 친해지자
 
 ![결과물 사진](/images/posts/2023/04/numble-talk/02.png)
