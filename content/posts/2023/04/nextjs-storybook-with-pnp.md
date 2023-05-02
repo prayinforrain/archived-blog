@@ -12,7 +12,7 @@ tags: ["storybook", "yarn", "pnp", "nextjs"]
 
 그런데 문제는 내 작업 환경에 있었다. 꽤 연식이 된 윈도우 데스크탑에 수십가지 개발 환경을 섞어 놓고, 요새는 게임에도 못 쓰는 처참한 성능의 HDD에 레포를 두고 쓰니 종속성 패키지 설치도 커피 한 잔 타와야 하는 시간이 걸리니 Yarn Berry의 사용이 반필수가 되어버렸다. 넘블 챌린지 때 Yarn Berry를 사용하고 싶었지만 애석하게도 수 많은 문제에 시달려 포기했는데, 여유가 생긴 지금 마음을 다잡고 다시 시도해 보기로 했다.
 
-> Yarn Berry의 가장 큰 변화는 Plug n Play 방식의 패키지 관리 방식을 지원한다는 점이지, `Yarn Berry = PnP`인 것은 아니다. Yarn Berry도 nodeLinker 옵션을 `node-modules`로 지정한다면 node*modules 디렉토리를 사용할 수 있기 때문에, 아래부터는 \_Berry* 대신 _PnP_ 라는 표현을 사용하였다.
+> Yarn Berry의 가장 큰 변화는 Plug n Play 방식의 패키지 관리 방식을 지원한다는 점이지, `Yarn Berry = PnP`인 것은 아니다. Yarn Berry도 nodeLinker 옵션을 `node-modules`로 지정한다면 node_modules 디렉토리를 사용할 수 있기 때문에, 아래부터는 _Berry_ 대신 _PnP_ 라는 표현을 사용하였다.
 
 # 그럼 쓰세요
 
