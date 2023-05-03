@@ -64,7 +64,7 @@
 
   a {
     color: $text-link-blue;
-    text-decoration: none;
+    text-decoration-color: $text-link-blue;
     &[target="_blank"]::after {
       content: " \2197";
       font-size: $small-font-size;
