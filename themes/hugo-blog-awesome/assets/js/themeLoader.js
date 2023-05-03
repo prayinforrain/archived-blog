@@ -8,12 +8,14 @@ const initTheme = (state) => {
   ) {
     defaultTheme = "dark";
   }
+
   if (state === "dark") {
     body.setAttribute("data-theme", "dark");
   } else if (state === "light") {
     body.removeAttribute("data-theme");
   } else {
     localStorage.setItem("theme", defaultTheme);
+    body.setAttribute("data-theme", defaultTheme);
   }
 };
 
