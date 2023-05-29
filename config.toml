@@ -9,6 +9,8 @@ theme = "hugo-blog-awesome"
 # This defines how dates are formatted
 defaultContentLanguage = "ko"
 
+googleAnalytics = 'G-63GYNX3VF5' # G-MEASUREMENT_ID
+
 # Enable emojis globally
 enableEmoji = true
 
@@ -59,8 +61,12 @@ enableEmoji = true
 
 [params]
   sitename = "PrayinforRain.dev"
-  defaultColor = "light" # set default color mode: dark or light
+  defaultColor = "auto" # set default color mode: dark or light
   description = "Dev blog of PrayinForRain, a KR frontend engineer"
+  mainSections = ['posts']
+  toc = true # set to false to disable table of contents 'globally'
+  goToTop = true # set to false to disable 'go to top' button
+  ogimage = "avatar.png"
 
 [params.author]
   avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
@@ -68,6 +74,14 @@ enableEmoji = true
   intro = "PrayinforRain"
   name = "PrayinforRain"
   description = "Frontend Developer"
+
+[params.webmanifest]
+  name = "PrayinforRain" # will use "params.sitename" or "title" by default
+  short_name = "PrayinforRain" # same as name
+  start_url = "/" # will use homepage url by default
+  theme_color = "#434648" # default is "#434648" (base color of text). Also will override html `<meta name="theme-color" />`
+  background_color = "#fff" # by default depend on "params.defaultColor" for "light" or "auto" will be set to "#fff" for dark will be "#131418" (color of dark mode background)
+  display = "standalone"
 
 [[params.socialIcons]]
   name = "github"
@@ -100,3 +114,8 @@ enableEmoji = true
   theme = ""
   lang = "en"
   loading = "lazy"
+
+[tableOfContents]
+  startLevel = 1 # ToC starts from H2
+  endLevel = 4 # ToC ends at H4
+  ordered = false # generates <ul> instead of <ol>
