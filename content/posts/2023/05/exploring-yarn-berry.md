@@ -237,9 +237,7 @@ npm은 패키지를 설치할 때 peer dependency로 명시된 패키지를 같�
 
 ## 부록1 - yarn dlx와 pnpify
 
-Yarn PnP 환경에서 `npx`와 같은 명령어를 사용해야 할 때가 있고, 이에 대응하는 명령어가 `yarn dlx`이다. 예를 들어 `yarn dlx storybook init`을 실행하면 `npx storybook init`을 실행한 것과 같은 결과를, Yarn의 환경에 맞게 만들어 준다. `npx` 자체가 yarn과 npm 중 알맞은 패키지 매니저로 연결해 주지만, Yarn PnP는 그 외에도 추가적인 작업을 필요로 하기 때문에 제대로 작동하지 않기도 한다. Storybook에 Yarn PnP를 적용할 때가 대표적인 예시인데..
-
-[https://prayinforrain.github.io/posts/2023/04/nextjs-storybook-with-pnp/#내가-이겼다-스토리북아](https://prayinforrain.github.io/posts/2023/04/nextjs-storybook-with-pnp/#%EB%82%B4%EA%B0%80-%EC%9D%B4%EA%B2%BC%EB%8B%A4-%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B6%81%EC%95%84)
+Yarn PnP 환경에서 `npx`와 같은 명령어를 사용해야 할 때가 있고, 이에 대응하는 명령어가 `yarn dlx`이다. 예를 들어 `yarn dlx storybook init`을 실행하면 `npx storybook init`을 실행한 것과 같은 결과를, Yarn의 환경에 맞게 만들어 준다. `npx` 자체가 yarn과 npm 중 알맞은 패키지 매니저로 연결해 주지만, Yarn PnP는 그 외에도 추가적인 작업을 필요로 하기 때문에 제대로 작동하지 않기도 한다. Storybook에 Yarn PnP를 적용할 때가 대표적인 예시인데.. [이 내용도 아주아주 간단하게 언급한 적이 있다.]({{<ref "posts/2023/04/nextjs-storybook-with-pnp">}}#내가-이겼다-스토리북아)
 
 반면 Yarn에는 pnpify라는 패키지가 존재한다. 보통 `package.json`에 정의되는 명령어들은(tsc나 vite build같은..) 여전이 로컬 파일 기반으로 패키지를 resolve하려 시도하는데, 압축된 패키지들을 사용하는 PnP 환경에서 제대로 작동하지 않는다. 이 문제를 해결하기 위해 위에 나온 방식으로 **패키지를 resolve하는 로직을 교체해 주는 것**이 `pnpify`이다.
 
