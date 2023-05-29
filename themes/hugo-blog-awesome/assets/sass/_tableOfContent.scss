@@ -1,0 +1,42 @@
+/* Table of contents */
+details {
+    cursor: pointer;
+}
+
+.toc {
+    margin: 1.1rem 0 1rem 0;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.3rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $toc-border;
+    background-color: $toc-bg;
+
+    #TableOfContents {
+        transition: 0.3s ease;
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+
+    &[open] > #TableOfContents {
+        margin-top: 0;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    ul,
+    ol {
+        padding-top: 1rem;
+        margin-left: 1rem;
+        padding-left: 1rem;
+
+        li {
+            margin-bottom: 0.5em;
+            line-height: 1.4;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
