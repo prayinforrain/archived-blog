@@ -141,11 +141,11 @@
     }
 
     h1 {
-        @include relative-font-size(1.5);
+        @include relative-font-size(1.75);
     }
 
     h2 {
-        @include relative-font-size(1.375);
+        @include relative-font-size(1.5);
     }
 
     h3 {
@@ -168,6 +168,13 @@
         background-color: $light;
         padding: 0.2em 1em;
         border-radius: 5px;
+    }
+}
+
+article .page-content {
+    h1,
+    h2 {
+        border-bottom: 1px solid $blockquote-border;
     }
 }
 
