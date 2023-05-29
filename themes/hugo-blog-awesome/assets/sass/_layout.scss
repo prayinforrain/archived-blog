@@ -56,6 +56,16 @@
         border-top: 1px solid $light;
     }
 
+    a {
+        color: $text-base-color;
+        text-decoration: none;
+
+        &:hover,
+        &focus {
+            color: $black;
+        }
+    }
+
     .post-item-date {
         min-width: 96px;
         color: $black;
@@ -76,14 +86,24 @@
         overflow-x: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+    }
 
-        a {
-            color: $text-base-color;
+    .post-item-content {
+        overflow-x: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 
-            &:hover,
-            &focus {
-                color: $black;
-            }
+    .post-item-summary {
+        font-size: 0.7em;
+        padding: 0 1em;
+        overflow-x: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: $black;
+
+        @include media-query($on-mobile) {
+            display: none;
         }
     }
 }
