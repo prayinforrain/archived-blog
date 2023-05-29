@@ -287,6 +287,14 @@ const INCLUDE_CANDIDATES = [
 
 이게 `@storybook/builder-vite@0.4.2` 버전의 코드인데, Storybook 7의 릴리즈 이후로 builder 플러그인들이 스토리북 메인 레포지토리에 모노레포 형태로 통합되던 시기 근처로 의존성 역시 제대로 명시되었다. [[관련 커밋]](https://github.com/storybookjs/storybook/commit/f80ef5f40ab5ecaf29e83f1435809de4c724d2fc) 따라서 **지금은 해당되지 않는 이슈**이며, 빌더의 버전 역시 다른 addon과 마찬가지로 스토리북의 버전과 통일되었다.
 
+# 마치며..
+
+![cds issue](/images/posts/2023/05/exploring-yarn-berry/03.png)
+
+사실 조금 뜬금없이 준비한 발표 자료인데, 가볍게만 해야지.. 하고 시작했다가 어렴풋이 예상했던 내용이 틀리고 틀리고를 반복해서 검증을 반복하다가 글이 태산으로 가버렸다. 마지막에는 내가 왜 이걸 보고 있었는지를 까먹어서 손을 놓고 다시 컨텍스트를 따라가기도 했다. 그러니까 음.. 매끄러운 글은 아닌 것 같다. 내용 없이 주제만 정하고 시작한 글이라 그런가..
+
+이 글을 끝으로 더 이상 얀베리를 붙들고 씨름하는 일은 없었으면 좋겠지만 아마 그렇진 못할 것 같고.. 다음 프로젝트를 한다면 반드시 pnpm을 써 보고 싶다는 생각을 하고 있다. CDS를 하면서 pnpm을 사용하는 레퍼런스가 꽤 많다는 것을 알았고, Yarn에서도 [pnpm 링커를 지원](https://github.com/yarnpkg/berry/pull/3338)하고 있으니 pnpm도 그만의 장점이 있겠구나 하는 막연한 생각 중.
+
 # Refs.
 
 [GitHub - yarnpkg/berry: 📦🐈 Active development trunk for Yarn ⚒](https://github.com/yarnpkg/berry)  
