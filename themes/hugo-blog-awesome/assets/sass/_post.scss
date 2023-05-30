@@ -122,21 +122,20 @@
             .anchor-head {
                 color: $text-link-blue;
                 opacity: 1;
+                fill: currentColor;
+
+                &:hover {
+                    text-decoration: underline;
+                    border-bottom: 1px solid currentColor;
+                }
             }
         }
 
         .anchor-head {
             position: relative;
+            margin-left: 5px;
             opacity: 0;
             outline: none;
-
-            &::before {
-                content: "#";
-                position: absolute;
-                right: -3px;
-                width: 1em;
-                font-weight: $bold-weight;
-            }
         }
     }
 

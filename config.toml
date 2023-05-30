@@ -67,6 +67,7 @@ enableEmoji = true
   toc = true # set to false to disable table of contents 'globally'
   goToTop = true # set to false to disable 'go to top' button
   ogimage = "avatar.png"
+  additionalScripts = ["js/postAnchor.js"]
 
 [params.author]
   avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
