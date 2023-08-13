@@ -175,6 +175,10 @@ article .page-content {
     h2 {
         border-bottom: 1px solid $blockquote-border;
     }
+
+    img[src$="#block"] {
+        display: block;
+    }
 }
 
 .post-nav {
