@@ -1,21 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Moheyum on PrayinForRain.dev</title><link>https://prayinforrain.github.io/tags/moheyum/</link><description>Recent content in Moheyum on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>ko</language><lastBuildDate>Wed, 21 Dec 2022 03:30:25 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/tags/moheyum/index.xml" rel="self" type="application/rss+xml"/><item><title>모헤윰 mo:heyum - 프로젝트 회고</title><link>https://prayinforrain.github.io/posts/2022/12/finishing-moheyum/</link><pubDate>Wed, 21 Dec 2022 03:30:25 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/12/finishing-moheyum/</guid><description>티스토리 블로그에 작성했던 부스트캠프 팀 프로젝트의 회고 글이다. [원본 링크]
-내가 팀원들한테 이 얘길 했나 모르겠는데.. 이 페이지 좀 이쁘다. 잘만드셨다..
-부스트캠프의 최종 팀 프로젝트로 나는 모헤윰이라는 SNS를 만들었다. 결과물은 꽤 괜찮다. [여기]에 간단한 시연 영상이 있다. 사실 팀 구인을 하던 때부터 나는 무엇을 만드는지는 크게 중요하지 않았다. 여태까지의 학습 스프린트로 이미 개발이라는 과정은 어느정도 감을 익혔고, 내가 성장함에 따라 이 과정에서 사용하는 기술만 조금씩 변화할 뿐이라고 생각했다. 따라서 내가 팀 프로젝트에서 가장 중요하게 생각했던 포인트는 협업이었다.</description></item><item><title>사이드바야 그만 깜빡여라</title><link>https://prayinforrain.github.io/posts/2022/12/prevent-sidebar-blinking/</link><pubDate>Tue, 06 Dec 2022 02:11:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/12/prevent-sidebar-blinking/</guid><description>모헤윰의 프론트엔드 앱은 Next.js로 만들어져 있습니다. 팀원 그 누구도 사용해 본 적이 없음에도 굳이 선택한 이유는 NestJS를 써 보니 프레임워크를 사용하는 것이 협업 환경에서 코드 일관성을 지키는 데 도움을 줄 것이라는 막연한 기대와, SSR을 체험해 보고 싶은 학습적인 욕심이 있었습니다. 지금 돌아보니 ‘너와 함께 하길 잘 했어!’ 하는 감상은 없네요.
-기왕 SSR을 체험한다고 시작한 프로젝트인 만큼, 성능에 신경을 쓰지 않을 수 없게 되었습니다. 그러다 제가 좋아하는 어떤 팀의 노션에서 memoization을 통한 컴포넌트 중복 렌더링 방지에 대한 글을 읽었는데요, 이 부분이 때 마침 Next.</description></item><item><title>마크다운 만들기 - Markdown [3/3]</title><link>https://prayinforrain.github.io/posts/2022/12/making-editor-markdown/</link><pubDate>Mon, 05 Dec 2022 13:18:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/12/making-editor-markdown/</guid><description>모헤윰의 에디터 만들기 시리즈 모아보기
-에디터 만들기 - ContentEditable [1/3]
-에디터 만들기 - getSelection [2/3]
-에디터 만들기 - Markdown [3/3]
-마지막입니다. 입력하고, 게시할 수 있게 되었으니, 이제 남은 일은 서식을 적용하는 것 뿐입니다. 마크다운 문법을 이용해 어떻게 서식을 적용할 수 있을까요? 그 과정을 정리해 보겠습니다.
-🤷 어떻게 할까요? 정말이지 어떻게 하면 좋을까요? 우선 제가 생각하는 가장 사용성이 좋은 마크다운은 깃허브의 그것이였습니다. GFM(GitHub Flavored Markdown)이라고 부르는 스펙이 있는데, 처음에는 이걸 부르는 이름이 있는 것조차 모르고 막무가내로 리버스 엔지니어링 마인드로 작업을 시작했습니다.</description></item><item><title>마크다운 만들기 - getSelection [2/3]</title><link>https://prayinforrain.github.io/posts/2022/11/making-editor-getselection/</link><pubDate>Thu, 24 Nov 2022 00:53:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/making-editor-getselection/</guid><description>모헤윰의 에디터 만들기 시리즈 모아보기
-에디터 만들기 - ContentEditable [1/3]
-에디터 만들기 - getSelection [2/3]
-에디터 만들기 - Markdown [3/3]
-아니???????? 두 번째 글이 파서가 아니였네요. 저는 사실 이 글이 2부작이길 간절히 바랬는데, 1편에서 만든 에디터에 너무 끔찍한 버그가 있어서 이에 대해 정리해 보고자 합니다. 이걸로 3시간을 씨름하고 있었지만 모헤윰의 TIL 문서가 풍성해지고 있으니 긍정적이게 생각해야겠죠?
-💡 이 글은 Window 10, Chrome 107.0.5304.107 버전을 기준으로 작성되었습니다. 일부 환경에 따라 다르게 작동하는 부분이 있을 수 있습니다.</description></item><item><title>마크다운 만들기 - contentEditable [1/3]</title><link>https://prayinforrain.github.io/posts/2022/11/making-editor-contenteditable/</link><pubDate>Tue, 22 Nov 2022 20:36:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/making-editor-contenteditable/</guid><description>모헤윰의 에디터 만들기 시리즈 모아보기
-에디터 만들기 - ContentEditable [1/3]
-에디터 만들기 - getSelection [2/3]
-에디터 만들기 - Markdown [3/3]
-모헤윰의 핵심 기능 중 하나는 마크다운 서식 지원입니다. 왜 SNS에 마크다운을 끼얹을 생각을 했나 생각해보면 최초 기획부터 있다가 기능 다이어트를 한 후 살아남았기 때문인데, 아무튼 드디어 때가 왔습니다.
-내부적으로 에디터를 외부 라이브러리를 사용하는게 좋지 않겠냐는 이야기가 나왔는데요, 결국 직접 구현해 보기로 했지만 그 과정에서 여러 레퍼런스를 얻을 수 있었습니다. 개인적으로 멋있다고 생각한 사이트 두 가지를 소개합니다.</description></item><item><title>Emotion</title><link>https://prayinforrain.github.io/posts/2022/11/emotion/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/emotion/</guid><description>🤷TL;DR CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다. emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자. 적절한 IDE Extension을 잘 활용하자. CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자. 🎨CSS-in-JS CSS-in-JS는 HTML Element의 스타일을 자바스크립트 파일을 통해서 지정하는 방식입니다. .css 파일이 하던 일을 .js 파일에게 시키는 것이죠. CSS는 CSS이고, JS는 JS입니다. 왜 굳이 둘을 합쳐야만 하는 것일까요? 이 알 수 없는 발상을 이해하려면 우선 기존 css의 단점을 살펴보겠습니다.
-제가 학습 스프린트때 진행한 프로젝트 파일의 일부입니다.</description></item><item><title>npm vs yarn vs pnpm</title><link>https://prayinforrain.github.io/posts/2022/11/npm-vs-yarn-vs-pnpm/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/npm-vs-yarn-vs-pnpm/</guid><description>지금까지 저는 아무 의심 없이 npm을 사용해왔습니다. 이따금씩 node_modules 폴더가 저를 고통스럽게 했던 시간들이 있었지만, 프로젝트 초기화에 정말 이상한 행동만 하지 않으면 npm i 한 줄과 커피 한 잔으로 모든게 문제 없이 동작했으니까요. 하지만 우리는 슬랙의 어떤 분을 통해, npm보다 좋은 방법이 있음을 알고 있습니다. 이번 포스트에서는 yarn과 pnpm을 체험해 보도록 하겠습니다.
-🤷 TL;DR npm의 의존성 관리는 사실 매우 비효율적이다. 이 문제를 보완한 패키지 매니저가 yarn, pnpm이다. 각 패키지 매니저로의 마이그레이션은 매우 쉽다.</description></item><item><title>Redux vs Recoil</title><link>https://prayinforrain.github.io/posts/2022/11/redux-vs-recoil/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/redux-vs-recoil/</guid><description>🤷 TL;DR Redux는 안정적이지만, 선언과 사용이 복잡하다. Recoil은 사용이 매우 쉽지만 정식 버전이 없다. 프로젝트 규모에 따라 마음에 드는 라이브러리를 선택하자 🚪 서론 우리는 React를 사용할 때 보통 useState를 통해 상태를 관리합니다. useState는 정말 섹시하지만, 한 가지 너무 큰 단점이 있습니다. 바로 컴포넌트끼리 데이터를 주고받는 데 사용하기가 힘들다는 점입니다. 그 일을 하기 위해 등장한 것이 바로 상태 관리 라이브러리입니다. 상태 관리 라이브러리의 필요성에 대해 공감하지 못하는 분들을 위해 짧은 토막글을 마련해 보았습니다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Moheyum on PrayinForRain.dev</title><link>https://prayinforrain.github.io/tags/moheyum/</link><description>Recent content in Moheyum on PrayinForRain.dev</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Wed, 21 Dec 2022 03:30:25 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/tags/moheyum/index.xml" rel="self" type="application/rss+xml"/><item><title>모헤윰 mo:heyum - 프로젝트 회고</title><link>https://prayinforrain.github.io/posts/2022/12/finishing-moheyum/</link><pubDate>Wed, 21 Dec 2022 03:30:25 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/12/finishing-moheyum/</guid><description>&lt;blockquote>
+&lt;p>티스토리 블로그에 작성했던 부스트캠프 팀 프로젝트의 회고 글이다. &lt;a href="https://prayinforrain.tistory.com/80">[원본 링크]&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;figure>&lt;img src="https://prayinforrain.github.io/images/posts/2022/12/finishing-moheyum/moheyum_01.png"
+ alt="image">&lt;figcaption>
+ &lt;p>내가 팀원들한테 이 얘길 했나 모르겠는데.. 이 페이지 좀 이쁘다. 잘만드셨다..&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>부스트캠프의 최종 팀 프로젝트로 나는 &lt;strong>모헤윰&lt;/strong>이라는 SNS를 만들었다. 결과물은 꽤 괜찮다. &lt;a href="https://youtu.be/9mVinynuUTw">[여기]&lt;/a>에 간단한 시연 영상이 있다. 사실 팀 구인을 하던 때부터 나는 무엇을 만드는지는 크게 중요하지 않았다. 여태까지의 학습 스프린트로 이미 개발이라는 과정은 어느정도 감을 익혔고, 내가 성장함에 따라 이 과정에서 사용하는 기술만 조금씩 변화할 뿐이라고 생각했다. 따라서 내가 팀 프로젝트에서 가장 중요하게 생각했던 포인트는 협업이었다.&lt;/p></description></item><item><title>사이드바야 그만 깜빡여라</title><link>https://prayinforrain.github.io/posts/2022/12/prevent-sidebar-blinking/</link><pubDate>Tue, 06 Dec 2022 02:11:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/12/prevent-sidebar-blinking/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 프론트엔드 앱은 &lt;code>Next.js&lt;/code>로 만들어져 있습니다. 팀원 그 누구도 사용해 본 적이 없음에도 굳이 선택한 이유는 &lt;code>NestJS&lt;/code>를 써 보니 프레임워크를 사용하는 것이 협업 환경에서 코드 일관성을 지키는 데 도움을 줄 것이라는 막연한 기대와, &lt;code>SSR&lt;/code>을 체험해 보고 싶은 학습적인 욕심이 있었습니다. 지금 돌아보니 ‘너와 함께 하길 잘 했어!’ 하는 감상은 없네요.&lt;/p>
+&lt;p>기왕 SSR을 체험한다고 시작한 프로젝트인 만큼, 성능에 신경을 쓰지 않을 수 없게 되었습니다. 그러다 제가 좋아하는 어떤 팀의 노션에서 &lt;code>memoization&lt;/code>을 통한 컴포넌트 중복 렌더링 방지에 대한 글을 읽었는데요, 이 부분이 때 마침 &lt;a href="https://www.notion.so/next-js-13-app-dir-11191a66a5564a25ba882c8a835afd13">Next.js 13을 적용하지 못해 포기해야만 했던&lt;/a> 아픈 상처를 자극하고 있어서 모헤윰에도 시도해 보기로 하였습니다.&lt;/p></description></item><item><title>마크다운 만들기 - Markdown [3/3]</title><link>https://prayinforrain.github.io/posts/2022/12/making-editor-markdown/</link><pubDate>Mon, 05 Dec 2022 13:18:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/12/making-editor-markdown/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 에디터 만들기 시리즈 모아보기&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/11/making-editor-contenteditable/">에디터 만들기 - ContentEditable [1/3]&lt;/a>&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/11/making-editor-getselection/">에디터 만들기 - getSelection [2/3]&lt;/a>&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/12/making-editor-markdown/">에디터 만들기 - Markdown [3/3]&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>마지막입니다. 입력하고, 게시할 수 있게 되었으니, 이제 남은 일은 서식을 적용하는 것 뿐입니다. 마크다운 문법을 이용해 어떻게 서식을 적용할 수 있을까요? 그 과정을 정리해 보겠습니다.&lt;/p>
+&lt;h2 id="-어떻게-할까요">🤷 어떻게 할까요?&lt;/h2>
+&lt;p>정말이지 어떻게 하면 좋을까요? 우선 제가 생각하는 가장 사용성이 좋은 마크다운은 깃허브의 그것이였습니다. &lt;a href="https://github.github.com/gfm/">GFM(GitHub Flavored Markdown)&lt;/a>이라고 부르는 스펙이 있는데, 처음에는 이걸 부르는 이름이 있는 것조차 모르고 막무가내로 리버스 엔지니어링 마인드로 작업을 시작했습니다. 아래 사진처럼 아무 이슈나 들어가서 댓글 창에 실험을 하면서요.&lt;/p></description></item><item><title>마크다운 만들기 - getSelection [2/3]</title><link>https://prayinforrain.github.io/posts/2022/11/making-editor-getselection/</link><pubDate>Thu, 24 Nov 2022 00:53:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/making-editor-getselection/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 에디터 만들기 시리즈 모아보기&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/11/making-editor-contenteditable/">에디터 만들기 - ContentEditable [1/3]&lt;/a>&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/11/making-editor-getselection/">에디터 만들기 - getSelection [2/3]&lt;/a>&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/12/making-editor-markdown/">에디터 만들기 - Markdown [3/3]&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>아니???????? 두 번째 글이 파서가 아니였네요. 저는 사실 이 글이 2부작이길 간절히 바랬는데, 1편에서 만든 에디터에 너무 끔찍한 버그가 있어서 이에 대해 정리해 보고자 합니다. 이걸로 3시간을 씨름하고 있었지만 모헤윰의 TIL 문서가 풍성해지고 있으니 긍정적이게 생각해야겠죠?&lt;/p>
+&lt;blockquote>
+&lt;p>💡 이 글은 Window 10, Chrome 107.0.5304.107 버전을 기준으로 작성되었습니다. 일부 환경에 따라 다르게 작동하는 부분이 있을 수 있습니다.&lt;/p></description></item><item><title>마크다운 만들기 - contentEditable [1/3]</title><link>https://prayinforrain.github.io/posts/2022/11/making-editor-contenteditable/</link><pubDate>Tue, 22 Nov 2022 20:36:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/making-editor-contenteditable/</guid><description>&lt;p>&lt;strong>모헤윰&lt;/strong>의 에디터 만들기 시리즈 모아보기&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/11/making-editor-contenteditable/">에디터 만들기 - ContentEditable [1/3]&lt;/a>&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/11/making-editor-getselection/">에디터 만들기 - getSelection [2/3]&lt;/a>&lt;br>
+&lt;a href="https://prayinforrain.github.io/posts/2022/12/making-editor-markdown/">에디터 만들기 - Markdown [3/3]&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>모헤윰의 핵심 기능 중 하나는 &lt;code>마크다운 서식 지원&lt;/code>입니다. 왜 SNS에 마크다운을 끼얹을 생각을 했나 생각해보면 최초 기획부터 있다가 기능 다이어트를 한 후 살아남았기 때문인데, 아무튼 드디어 때가 왔습니다.&lt;/p>
+&lt;p>내부적으로 에디터를 외부 라이브러리를 사용하는게 좋지 않겠냐는 이야기가 나왔는데요, 결국 직접 구현해 보기로 했지만 그 과정에서 여러 레퍼런스를 얻을 수 있었습니다. 개인적으로 멋있다고 생각한 사이트 두 가지를 소개합니다.&lt;/p></description></item><item><title>Emotion</title><link>https://prayinforrain.github.io/posts/2022/11/emotion/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/emotion/</guid><description>&lt;h2 id="tldr">🤷TL;DR&lt;/h2>
+&lt;ul>
+&lt;li>CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다.&lt;/li>
+&lt;li>emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자.&lt;/li>
+&lt;li>적절한 IDE Extension을 잘 활용하자.&lt;/li>
+&lt;li>CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자.&lt;/li>
+&lt;/ul>
+&lt;h2 id="css-in-js">🎨CSS-in-JS&lt;/h2>
+&lt;p>CSS-in-JS는 HTML Element의 스타일을 자바스크립트 파일을 통해서 지정하는 방식입니다. .css 파일이 하던 일을 .js 파일에게 시키는 것이죠. CSS는 CSS이고, JS는 JS입니다. 왜 굳이 둘을 합쳐야만 하는 것일까요? 이 알 수 없는 발상을 이해하려면 우선 기존 css의 단점을 살펴보겠습니다.&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/images/posts/2022/11/emotion/emotion_01.png" alt="Untitled">&lt;/p></description></item><item><title>npm vs yarn vs pnpm</title><link>https://prayinforrain.github.io/posts/2022/11/npm-vs-yarn-vs-pnpm/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/npm-vs-yarn-vs-pnpm/</guid><description>&lt;p>지금까지 저는 아무 의심 없이 npm을 사용해왔습니다. 이따금씩 &lt;code>node_modules&lt;/code> 폴더가 저를 고통스럽게 했던 시간들이 있었지만, 프로젝트 초기화에 정말 이상한 행동만 하지 않으면 &lt;code>npm i&lt;/code> 한 줄과 커피 한 잔으로 모든게 문제 없이 동작했으니까요. 하지만 우리는 슬랙의 어떤 분을 통해, npm보다 좋은 방법이 있음을 알고 있습니다. 이번 포스트에서는 &lt;code>yarn&lt;/code>과 &lt;code>pnpm&lt;/code>을 체험해 보도록 하겠습니다.&lt;/p>
+&lt;h2 id="-tldr">🤷 TL;DR&lt;/h2>
+&lt;ul>
+&lt;li>npm의 의존성 관리는 사실 매우 비효율적이다.&lt;/li>
+&lt;li>이 문제를 보완한 패키지 매니저가 yarn, pnpm이다.&lt;/li>
+&lt;li>각 패키지 매니저로의 마이그레이션은 매우 쉽다. 긍정적으로 고려해보자.&lt;/li>
+&lt;/ul>
+&lt;h2 id="-npm">🎁 npm&lt;/h2>
+&lt;p>&lt;img src="https://prayinforrain.github.io/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_01.png" alt="Untitled">&lt;/p></description></item><item><title>Redux vs Recoil</title><link>https://prayinforrain.github.io/posts/2022/11/redux-vs-recoil/</link><pubDate>Fri, 18 Nov 2022 16:42:55 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2022/11/redux-vs-recoil/</guid><description>&lt;h2 id="-tldr">🤷 TL;DR&lt;/h2>
+&lt;ul>
+&lt;li>Redux는 안정적이지만, 선언과 사용이 복잡하다.&lt;/li>
+&lt;li>Recoil은 사용이 매우 쉽지만 정식 버전이 없다.&lt;/li>
+&lt;li>프로젝트 규모에 따라 마음에 드는 라이브러리를 선택하자&lt;/li>
+&lt;/ul>
+&lt;h2 id="-서론">🚪 서론&lt;/h2>
+&lt;p>우리는 React를 사용할 때 보통 &lt;code>useState&lt;/code>를 통해 상태를 관리합니다. &lt;code>useState&lt;/code>는 정말 섹시하지만, 한 가지 너무 큰 단점이 있습니다. 바로 컴포넌트끼리 데이터를 주고받는 데 사용하기가 힘들다는 점입니다. 그 일을 하기 위해 등장한 것이 바로 &lt;strong>상태 관리 라이브러리&lt;/strong>입니다. 상태 관리 라이브러리의 필요성에 대해 공감하지 못하는 분들을 위해 짧은 토막글을 마련해 보았습니다.&lt;/p></description></item></channel></rss>

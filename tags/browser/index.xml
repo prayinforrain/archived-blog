@@ -1,2 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Browser on PrayinForRain.dev</title><link>https://prayinforrain.github.io/tags/browser/</link><description>Recent content in Browser on PrayinForRain.dev</description><generator>Hugo -- gohugo.io</generator><language>ko</language><lastBuildDate>Mon, 16 Jan 2023 16:38:15 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/tags/browser/index.xml" rel="self" type="application/rss+xml"/><item><title>브라우저 렌더링과 성능</title><link>https://prayinforrain.github.io/posts/2023/01/browser-rendering-performance/</link><pubDate>Mon, 16 Jan 2023 16:38:15 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2023/01/browser-rendering-performance/</guid><description>브라우저 렌더링 성능 최적화를 위해, 브라우저가 어떻게 HTML 문서를 화면에 그리는지 과정에 대해 이해할 필요가 있습니다. 브라우저 렌더링은 아래 사진과 같은 흐름으로 이루어집니다.
-서버로부터 HTML, CSS, JavaScript 파일을 받아와 HTML → DOM, CSS → CSSOM으로 변환하고 Render Tree를 구성합니다. Render Tree의 노드들에 대한 위치와 크기를 계산합니다. Render Tree의 루트부터 시작하여 모든 노드에 대해 계산을 수행합니다. (Layout) 계산된 결과물을 기반으로 화면에 실제 노드들을 그립니다. (Paint) 사용자의 상호작용이나 스크립트를 통한 제어 등으로 HTML 요소의 크기나 위치의 변경이 일어나면 Reflow라는 과정을 수행합니다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Browser on PrayinForRain.dev</title><link>https://prayinforrain.github.io/tags/browser/</link><description>Recent content in Browser on PrayinForRain.dev</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Mon, 16 Jan 2023 16:38:15 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/tags/browser/index.xml" rel="self" type="application/rss+xml"/><item><title>브라우저 렌더링과 성능</title><link>https://prayinforrain.github.io/posts/2023/01/browser-rendering-performance/</link><pubDate>Mon, 16 Jan 2023 16:38:15 +0900</pubDate><guid>https://prayinforrain.github.io/posts/2023/01/browser-rendering-performance/</guid><description>&lt;h2 id="브라우저-렌더링">브라우저 렌더링&lt;/h2>
+&lt;p>성능 최적화를 위해, 브라우저가 어떻게 HTML 문서를 화면에 그리는지 과정에 대해 이해할 필요가 있습니다. 브라우저 렌더링은 아래 사진과 같은 흐름으로 이루어집니다.&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/images/posts/2023/01/browser-rendering-performance/01.png" alt="Untitled">&lt;/p>
+&lt;ul>
+&lt;li>서버로부터 HTML, CSS, JavaScript 파일을 받아와 HTML → DOM, CSS → CSSOM으로 변환하고 Render Tree를 구성합니다.&lt;/li>
+&lt;li>Render Tree의 노드들에 대한 위치와 크기를 계산합니다. Render Tree의 루트부터 시작하여 모든 노드에 대해 계산을 수행합니다. (Layout)&lt;/li>
+&lt;li>계산된 결과물을 기반으로 화면에 실제 노드들을 그립니다. (Paint)&lt;/li>
+&lt;li>사용자의 상호작용이나 스크립트를 통한 제어 등으로 HTML 요소의 크기나 위치의 변경이 일어나면 &lt;code>Reflow&lt;/code>라는 과정을 수행합니다.
+&lt;ul>
+&lt;li>Reflow는 Render Tree 구성부터 &lt;strong>모든 작업을 다시 수행&lt;/strong>합니다.&lt;/li>
+&lt;li>만약 레이아웃 자체에는 변화가 없고, 색상이나 visibility 등의 변경만 있는 경우에는 Paint 과정만을 다시 수행합니다. (Repaint)&lt;/li>
+&lt;li>따라서 비용이 큰 &lt;strong>Reflow의 발생을 최대한 줄이는 것이 중요&lt;/strong>합니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/TZz9VHjJzMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe>
+&lt;p>이거 되게 좋은 내용인 것 같아요 CSS의 &lt;code>will-change&lt;/code>를 통헤 불필요한 GPU 점유를 줄이는 방법도 소개하고 있네요!&lt;/p></description></item></channel></rss>
