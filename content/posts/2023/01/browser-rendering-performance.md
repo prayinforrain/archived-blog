@@ -7,7 +7,7 @@ categories: ["Web"]
 tags: ["Web", "browser"]
 ---
 
-# 브라우저 렌더링
+## 브라우저 렌더링
 
 성능 최적화를 위해, 브라우저가 어떻게 HTML 문서를 화면에 그리는지 과정에 대해 이해할 필요가 있습니다. 브라우저 렌더링은 아래 사진과 같은 흐름으로 이루어집니다.
 
@@ -25,9 +25,9 @@ tags: ["Web", "browser"]
 
 이거 되게 좋은 내용인 것 같아요 CSS의 `will-change`를 통헤 불필요한 GPU 점유를 줄이는 방법도 소개하고 있네요!
 
-# 성능을 최적화하는 방법
+## 성능을 최적화하는 방법
 
-## DocumentFragment를 사용
+### DocumentFragment를 사용
 
 앞에 정리한 내용과 같이 브라우저 성능에 가장 영향을 미치는 부분은 `Reflow` 과정입니다. 즉 Reflow의 발생을 줄이면 큰 성능 향상을 노릴 수 있는 것이다. 보통은 스크립트를 통해 요소의 레이아웃을 제어하는 코드는 한 번에 실행되지 않습니다. 즉 여러 줄에 걸쳐 레이아웃을 수정하는 경우 각 행에 대해 Reflow가 발생합니다. - _브라우저에 따라 일부 최적화가 이루어지는 경우가 있음_
 
@@ -45,7 +45,7 @@ const div = document.createElement("div");
 document.getElementById("parent-to-append").appendChild(documentFragment);
 ```
 
-## Canvas 사용
+### Canvas 사용
 
 일반적으로 **페이지 내의 요소가 많아질수록 레이아웃 계산 과정에서의 계산량이 많아집니다.** 9개의 `div`가 3\*3으로 나열되어 있다고 하면, 그 중 하나의 `div`의 크기가 변경됨에 따라 나머지 8개의 `div`도 레이아웃 재계산이 일어납니다. 크기가 고정된 부모 요소로 분리되어 있다면 그 내부의 요소들만 재계산이 일어나지만, 만약 그렇지 않은 경우 문서 전체를 다시 계산해야 할 가능성도 있습니다.
 
@@ -61,7 +61,7 @@ document.getElementById("parent-to-append").appendChild(documentFragment);
 
 </aside>
 
-# Refs.
+## Refs.
 
 [JavaScript 최적화: DOM 핸들링 속도 개선](https://www.nextree.co.kr/p2081/)  
 [브라우저 렌더링 순서와 원리](https://velog.io/@zaman17/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91%EB%8C%80%EB%B9%84-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%88%9C%EC%84%9C%EC%99%80-%EC%9B%90%EB%A6%AC)  

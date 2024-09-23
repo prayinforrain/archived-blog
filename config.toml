@@ -35,7 +35,7 @@ enableEmoji = true
   [markup.goldmark.renderer]
     unsafe = true
   [markup.tableOfContents]
-    startLevel = 1
+    startLevel = 2
 
 [menu]
   [[menu.main]] 

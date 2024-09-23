@@ -6,42 +6,42 @@ categories: []
 tags: ["storybook", "yarn", "pnp", "nextjs"]
 ---
 
-# Storybook을 쓰려고 했는데
+## Storybook을 쓰려고 했는데
 
 최근 Storybook을 사용할 일이 무척 많았다. 언젠가는 포스팅을 해야 할 CDS 프로젝트부터 [넘블 챌린지]({{<ref "posts/2023/04/numble-talk">}})도 있었고... 처음엔 너무 낯설었지만 공통된 컴포넌트들을 미리 설계해 두고 재사용하는 것이 좀 더 깔끔한 설계가 되는 것 같아 매력을 느꼈다.
 
 그런데 문제는 내 작업 환경에 있었다. 꽤 연식이 된 윈도우 데스크탑에 수십가지 개발 환경을 섞어 놓고, 요새는 게임에도 못 쓰는 처참한 성능의 HDD에 레포를 두고 쓰니 종속성 패키지 설치도 커피 한 잔 타와야 하는 시간이 걸리니 Yarn Berry의 사용이 반필수가 되어버렸다. 넘블 챌린지 때 Yarn Berry를 사용하고 싶었지만 애석하게도 수 많은 문제에 시달려 포기했는데, 여유가 생긴 지금 마음을 다잡고 다시 시도해 보기로 했다.
 
-> Yarn Berry의 가장 큰 변화는 Plug n Play 방식의 패키지 관리 방식을 지원한다는 점이지, `Yarn Berry = PnP`인 것은 아니다. Yarn Berry도 nodeLinker 옵션을 `node-modules`로 지정한다면 node_modules 디렉토리를 사용할 수 있기 때문에, 아래부터는 _Berry_ 대신 _PnP_ 라는 표현을 사용하였다.
+> Yarn Berry의 가장 큰 변화는 Plug n Play 방식의 패키지 관리 방식을 지원한다는 점이지, `Yarn Berry = PnP`인 것은 아니다. Yarn Berry도 nodeLinker 옵션을 `node-modules`로 지정한다면 node*modules 디렉토리를 사용할 수 있기 때문에, 아래부터는 \_Berry* 대신 _PnP_ 라는 표현을 사용하였다.
 
-# 그럼 쓰세요
+## 그럼 쓰세요
 
-## create-next-app으로 프로젝트 준비
+### create-next-app으로 프로젝트 준비
 
 우선 Next.js 앱을 생성하고, Yarn PnP로 패키지 매니저를 변경해 보자.
 
 ```zsh
 yarn create next-app
-yarn set version berry # yarn pnp로 패키지 매니저 변경
+yarn set version berry ## yarn pnp로 패키지 매니저 변경
 ```
 
 PnP를 사용하기 위해 yarn의 설정을 변경해 주어야 한다.
 
 ```zsh
-# .yarnrc.yml
+## .yarnrc.yml
 nodeLinker: pnp
 
-# terminal
-yarn plugin import typescript # @types 패키지를 자동으로 설치해 주는 플러그인
-yarn # 자동으로 node_modules가 삭제되고 패키지가 다시 설치된다.
-yarn dlx @yarnpkg/sdks vscode # VSCode에서 Repository의 Typescript를 사용하기 위한 명령어
+## terminal
+yarn plugin import typescript ## @types 패키지를 자동으로 설치해 주는 플러그인
+yarn ## 자동으로 node_modules가 삭제되고 패키지가 다시 설치된다.
+yarn dlx @yarnpkg/sdks vscode ## VSCode에서 Repository의 Typescript를 사용하기 위한 명령어
 ```
 
 기본적인 환경 설정이 완료되었다.
 
-## Storybook 설치하기
+### Storybook 설치하기
 
-### Initialize
+#### Initialize
 
 [Storybook 공식 문서](https://storybook.js.org/docs/react/migration-guide#automatic-upgrade)를 따라서 설치해 보겠다.
 
@@ -55,10 +55,10 @@ yarn dlx storybook@latest init
 이를 해결하기 위해서는 무한 리트를 하면서 요구하는 종속성을 하나씩 설치하거나, `.yarnrc.yml` 파일에 아래와 같은 설정을 추가하여 엄격 모드를 해제하여 해결할 수 있다.
 
 ```zsh
-# .yarnrc.yml
+## .yarnrc.yml
 pnpMode: loose
 
-# 다시 종속성 패키지 설치
+## 다시 종속성 패키지 설치
 yarn
 ```
 
@@ -68,7 +68,7 @@ yarn
 yarn add -D @babel/core styled-jsx
 ```
 
-### Webpack의 설정을 고치기
+#### Webpack의 설정을 고치기
 
 다시 실행해 보면 스토리북 화면이 나타난다. 하지만 무언가의 오류가 표시되며 스토리북 dev server가 꺼져 버린다.
 
@@ -113,7 +113,7 @@ addons: [
 ![storybook launched](/images/posts/2023/04/nextjs-storybook-with-pnp/03.png)  
 이제 정상적으로 스토리북이 실행될 것이다.
 
-### main.ts의 타입 오류
+#### main.ts의 타입 오류
 
 ![framework name type error](/images/posts/2023/04/nextjs-storybook-with-pnp/01.png)
 
@@ -129,7 +129,7 @@ addons: [
 // ...
 ```
 
-## 하지만 node_modules가 생기잖아요
+### 하지만 node_modules가 생기잖아요
 
 ![node_modules folder](/images/posts/2023/04/nextjs-storybook-with-pnp/04.png)
 
@@ -142,14 +142,14 @@ storybook 뿐 아니라 여러 패키지에서 발생하는 일인데, PnP모드
 
 따라서 이 것이 문제가 되는 _버그_ 는 아니고, **기대된 동작(Expected Behavior)** 으로 생각할 수 있다는 듯 하다. 댓글에 보면 Yarn 레포지토리 이슈에 이 캐시 파일들을 제거하기 위한 내용이 올라와 있는데, 3년이 지난 지금까지 참조 또는 갱신되지 않는 것으로 보아 급한 문제가 아니어서 잠정 보류된 모양이다. 좀 해 주면 좋을텐데..쩝..
 
-# 내가 이겼다 스토리북아
+## 내가 이겼다 스토리북아
 
 앞서 말한 내 상황 때문에 나는 주변에 꽤나 Yarn berry 처돌이(?)로 퍼져 있는데 정작 프로젝트 할 때에는 한정된 시간 안에서 더 이상 지체할 수가 없어 node_modules를 사용해야 하는 것이 너무 아쉬웠다. 이미 프로젝트가 모두 정리된 후지만 그래도 지금에 와서나마 문제를 해결할 수 있어서 그래도 다행이다.
 
 하나 속상한 에피소드가 있는데.. [내가 처음에 봤던 instruction](https://storybook.js.org/recipes/next)에서 `npx` 커맨드만을 이야기하고 있고, 나는 `npx`가 npm과 yarn 중 상황에 맞는 패키지 매니저를 알아서 선택해 준다고 알고 있었기 때문에 의심 없이 사용했다가 에러를 하나 더 만나 조금 더 고생했다.  
 그러다가 바로 얼마 전에 [공식 문서에서 누락된 부분이 수정된 PR](https://github.com/storybookjs/storybook/issues/21895)을 발견했는데.. 스토리북 초기화는 `yarn dlx storybook` 명령어를 사용해야 하는 모양이다. npx로 해도 해결 과정에 큰 차이는 없지만 아이고 속터져
 
-# Refs.
+## Refs.
 
 - [Yarn PnP 의존성 에러 해결기 | 햣 블로그](https://woong-jae.com/projects/220711-pnp-dependency-error)
 - [Integrate Next.js and Storybook | Storybook](https://storybook.js.org/recipes/next)

@@ -9,9 +9,9 @@ tags: ["CSS", "Web"]
 
 CSS의 `display` 속성은 HTML element가 block인지, inline인지, 그리고 자식 element들을 어떤 식으로 표시할지를 정하는 속성입니다. 다시 말해 요소 자체가 형제 요소와 배치되는 방법과, 자식 요소를 배치하는 방법을 함께 정의하기 때문에 ‘**안쪽**’과 ‘**바깥쪽**’으로 속성을 나눌 수 있습니다.
 
-# display:
+## display:
 
-## 바깥쪽
+### 바깥쪽
 
 ![Untitled](/images/posts/2023/01/css-display/01.png)
 
@@ -24,7 +24,7 @@ CSS의 `display` 속성은 HTML element가 block인지, inline인지, 그리고 
 
 또 `inline`의 경우에는 크기가 항상 포함하는 내용의 크기만큼만을 갖기 때문에, 따로 `width`나 `height`를 지정해도 제어가 불가능합니다. 예제의 `inline div`는 `width: 500%;`를 지정한 상태이지만 포함한 텍스트의 크기만큼만을 가집니다. 크기를 조절할 수 있으면서 inline 속성의 특성을 갖도록 하는 `inline-block` 속성이 존재했으나, 이는 현재 레거시로 분류되어 `inline flow-root`로 대체할 수 있다고 합니다.
 
-## 안쪽
+### 안쪽
 
 요소가 포함하는 자식 요소들의 배치 방법을 정하는 속성입니다. 이 외에도 실험적 기능으로 `flow`, `ruby`가 존재합니다.
 
@@ -39,9 +39,9 @@ CSS의 `display` 속성은 HTML element가 block인지, inline인지, 그리고 
   - Grid layout을 형성합니다.  
     [Basic concepts of grid layout - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Grid_Layout/Basic_concepts_of_grid_layout)
 
-# 궁금증들
+## 궁금증들
 
-## inline-block은 왜 레거시가 되었을까?
+### inline-block은 왜 레거시가 되었을까?
 
 앞에서 언급했던 바와 같이 `inline-block`은 `inline flow-root`로 대체되어 레거시로 분류되었습니다. 그렇지만 `inline flow-root`라는 속성은 굉장히 생소합니다. 왜 이런 식으로 변경되었을까요?
 
@@ -53,7 +53,7 @@ CSS의 `display` 속성은 HTML element가 block인지, inline인지, 그리고 
 
 즉, 아직 모든 브라우저에서 완전히 호환되고 있지 않기 때문에 **deprecated가 아닌 legacy**로 분류된 것이라고 할 수 있겠네요.
 
-## `visibility: hidden;`과 `display: none;`의 차이는?
+### `visibility: hidden;`과 `display: none;`의 차이는?
 
 `visibility: hidden;`과 `display: none;`은 둘 다 사용자의 브라우저에서 요소를 보이지 않게 하는 방법입니다. 같은 동작을 하는 속성이 두 개 씩이나 필요할까요? 둘의 차이점은 크게 두 가지가 있습니다.
 
@@ -65,7 +65,7 @@ CSS의 `display` 속성은 HTML element가 block인지, inline인지, 그리고 
 
 두 방법 외에도 브라우저에서 요소를 숨기는 방법은 여러 가지가 있는데요, 관심이 있으신 분은 접근성 문제도 엮여 있기 때문에 [[이 포스트]](https://mulder21c.github.io/2019/03/22/screen-hide-text/)를 참고해 보시길 추천합니다.
 
-# Refs.
+## Refs.
 
 [display - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/ko/docs/Web/CSS/display)
 

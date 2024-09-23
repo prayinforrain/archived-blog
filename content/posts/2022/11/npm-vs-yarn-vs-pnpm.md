@@ -9,13 +9,13 @@ tags: ["moheyum", "yarn", "npm", "pnpm"]
 
 지금까지 저는 아무 의심 없이 npm을 사용해왔습니다. 이따금씩 `node_modules` 폴더가 저를 고통스럽게 했던 시간들이 있었지만, 프로젝트 초기화에 정말 이상한 행동만 하지 않으면 `npm i` 한 줄과 커피 한 잔으로 모든게 문제 없이 동작했으니까요. 하지만 우리는 슬랙의 어떤 분을 통해, npm보다 좋은 방법이 있음을 알고 있습니다. 이번 포스트에서는 `yarn`과 `pnpm`을 체험해 보도록 하겠습니다.
 
-# 🤷 TL;DR
+## 🤷 TL;DR
 
 - npm의 의존성 관리는 사실 매우 비효율적이다.
 - 이 문제를 보완한 패키지 매니저가 yarn, pnpm이다.
 - 각 패키지 매니저로의 마이그레이션은 매우 쉽다. 긍정적으로 고려해보자.
 
-# 🎁 npm
+## 🎁 npm
 
 ![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_01.png)
 
@@ -29,7 +29,7 @@ tags: ["moheyum", "yarn", "npm", "pnpm"]
 
 무난하게 진행이 되었습니다.
 
-# 🐈 Yarn
+## 🐈 Yarn
 
 Yarn의 가장 큰 특징은, 비교적 최근에 나온 버전인 Yarn berry의 PnP 전략을 통한 파일 관리입니다. npm은 기본적으로 패키지 A, B가 C를 참조한다면 프로젝트가 C를 직접 사용하지 않는다고 해도 C를 `node_modules` 디렉토리 최상위로 호이스팅하여 최적화를 진행합니다. 하지만 이 때 A, B가 참조하는 C의 버전이 다르다면 두 버전 중 하나만이 호이스팅되며, 이후 호이스팅되지 않은 버전을 참조하는 패키지가 많아지더라도 이 구조는 변경되지 않습니다. 즉 완전한 최적화는 되지 않습니다.
 
@@ -59,7 +59,7 @@ npm으로 했던 것처럼 boilerplate 파일을 방금 초기화한 yarn 디렉
 
 ![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_07.png)
 
-# 🧊 pnpm
+## 🧊 pnpm
 
 ![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_08.png)
 
@@ -73,7 +73,7 @@ npm으로 했던 것처럼 boilerplate 파일을 방금 초기화한 yarn 디렉
 
 ![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_11.png)
 
-# 🤨 뭐가 다를까요..?
+## 🤨 뭐가 다를까요..?
 
 ![Untitled](/images/posts/2022/11/npm-vs-yarn-vs-pnpm/npm_vs_yarn_12.png)
 
@@ -86,7 +86,7 @@ npm으로 했던 것처럼 boilerplate 파일을 방금 초기화한 yarn 디렉
 
 보안이라던지, 성능이라던지 비교를 할 수 있으면 좋겠지만, 제 실험용 프로젝트에서는 유의미한 차이를 보이지 않았습니다. 다만 `package.json`에 정의된 npm scripts를 문제없이 실행해 준다는 점이 인상 깊었습니다. javascript에서 typescript로 옮겨갈 때보다 훨씬 친절하네요.
 
-# 📖 Refs.
+## 📖 Refs.
 
 [https://github.com/yarnpkg/yarn/issues/1503](https://github.com/yarnpkg/yarn/issues/1503)  
 [node_modules로부터 우리를 구원해 줄 Yarn Berry](https://toss.tech/article/node-modules-and-yarn-berry)  

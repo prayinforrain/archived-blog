@@ -7,17 +7,17 @@ categories: ["moheyum", "React"]
 tags: ["moheyum", "recoil", "redux"]
 ---
 
-# 🤷 TL;DR
+## 🤷 TL;DR
 
 - Redux는 안정적이지만, 선언과 사용이 복잡하다.
 - Recoil은 사용이 매우 쉽지만 정식 버전이 없다.
 - 프로젝트 규모에 따라 마음에 드는 라이브러리를 선택하자
 
-# 🚪 서론
+## 🚪 서론
 
 우리는 React를 사용할 때 보통 `useState`를 통해 상태를 관리합니다. `useState`는 정말 섹시하지만, 한 가지 너무 큰 단점이 있습니다. 바로 컴포넌트끼리 데이터를 주고받는 데 사용하기가 힘들다는 점입니다. 그 일을 하기 위해 등장한 것이 바로 **상태 관리 라이브러리**입니다. 상태 관리 라이브러리의 필요성에 대해 공감하지 못하는 분들을 위해 짧은 토막글을 마련해 보았습니다.
 
-## ✅ 상태 관리 라이브러리는 왜 사용하나요?
+### ✅ 상태 관리 라이브러리는 왜 사용하나요?
 
 유저가 로그인해 있는 정보를 담은 state가 있다고 가정하면 Root 컴포넌트를 아래와 같이 작성할 수 있습니다.
 
@@ -119,9 +119,9 @@ export default function App() {
 
 그래서 우리 팀은 상태 관리 라이브러리를 어떤 것을 사용할지 고민했습니다. 당장 회의에서 거론되었던 라이브러리는 Redux, Recoil, Context API, Mobx 정도가 있는데요, 오늘은 그 중에 Redux와 Recoil에 대해 가볍게 알아보고 비교해 보는 시간을 가졌습니다. 이 글에서는 작동 원리보다는 사용상의 장단점을 중심으로 정리해보겠습니다.
 
-# 🏬 Redux
+## 🏬 Redux
 
-## Redux에 대해.araboja
+### Redux에 대해.araboja
 
 ![Untitled](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_01.png)
 
@@ -131,7 +131,7 @@ Redux는 상태 관리 라이브러리 중에서도 가장 대중적인 친구�
 
 Redux는 Flux 아키텍쳐를 개선한 구조로 상태를 관리합니다. **1) 읽기 전용인 상태를 2) 하나의 store가 3) 순수함수를 이용해 갱신한다**는 세 가지 메인 컨셉이 있다고 하네요. 더 자세한 설명은 [위 사진의 출처 링크](https://labs.tadigital.com/index.php/2020/04/20/getting-started-with-redux/)에 잘 설명이 되어 있습니다.
 
-## 사용해 봅시다
+### 사용해 봅시다
 
 ```powershell
 npm i redux react-redux @reduxjs/toolkit
@@ -260,15 +260,15 @@ export default function Test() {
 
 아주 무쌩긴 컴포넌트를 통해 제대로 작동함을 확인할 수 있었습니다.
 
-## 그래서 Redux 쓰나요?
+### 그래서 Redux 쓰나요?
 
-### 장점
+#### 장점
 
 - 레퍼런스가 매우 많습니다.
 - 글에는 언급하지 않았지만 Redux Devtools를 통해 디버깅을 지원해 준다고 합니다.
 - (Recoil과 비교해서) 안정적이고, 믿을 수 있습니다. 저만 잘 사용한다면요.
 
-### 단점
+#### 단점
 
 - reducer, store, type 등등 상태 하나를 추가하기 위한 코드가 정말 깁니다.
 - 레퍼런스가 **너무** 많습니다.
@@ -278,9 +278,9 @@ Redux에 대한 첫 인상은 굉장히 불친절했습니다. 커뮤니티가 �
 
 그럼에도 불구하고 Redux를 사용할 줄 아는 것은 중요합니다. 커뮤니티가 크니까요. 기회가 될 때마다 상태 관리 라이브러리에 대한 질문을 해 보면, 큰 프로젝트에서는 아직 Redux를 사용하는 경우가 많다는 답변을 듣곤 합니다. 또 주변의 Redux맨들에게 물어보면 몇 번 겪어보면 금방 익숙해진다고 하니, 첫 고비를 넘기고 나면 잘 사용할 수 있지 않을까.. 그런 기대를 해 봅니다.
 
-# 🔋 Recoil
+## 🔋 Recoil
 
-## 리-하(리코일 하이라는 뜻)
+### 리-하(리코일 하이라는 뜻)
 
 이번엔 Recoil을 체험해 볼 차례입니다. Recoil로 말할 것 같으면 리액트를 만든 페이스북이 직접 공개한 상태 관리 라이브러리입니다.
 
@@ -292,7 +292,7 @@ Redux에 대한 첫 인상은 굉장히 불친절했습니다. 커뮤니티가 �
 
 제가 이 이야기를 왜 하는 것일까요? `Recoil`은, 오직 **React만을 위해 만들어진 React 상태 관리 라이브러리**이기 때문입니다. 이 점을 가장 큰 특징으로 말씀드릴 수 있겠네요. 그 외에도 atom 구조를 통해서 상태를 관리 어쩌구.. 하는 작동 방식에 대한 내용이 있습니다. 이 글에서 하지 않기로 한 이야기네요.
 
-## 사용해 봅시다
+### 사용해 봅시다
 
 ```tsx
 npm i recoil
@@ -361,14 +361,14 @@ Recoil은 `useState` 훅과 같은 사용법을 갖습니다. import만 잘 해�
 
 결과물은 Redux와 똑같이 동작합니다.
 
-## 그래서 Recoil 쓰나요?
+### 그래서 Recoil 쓰나요?
 
-### 장점
+#### 장점
 
 - React스러움
 - atom의 선언이 간단하다
 
-### 단점
+#### 단점
 
 - 아직 실험적 기능(experimental feature)이다
 - 메모리 누수 문제
@@ -378,7 +378,7 @@ Recoil은 `useState` 훅과 같은 사용법을 갖습니다. import만 잘 해�
 
 하지만 Recoil은 분명 매력적입니다. 특히 React를 통해 구현한다면 Recoil의 매력을 뿌리치기란 쉽지 않습니다. 왜냐면 Recoil은 **React스러우니까요.** useState를 쓰는 것과 완전 똑같이 전역 상태를 관리한다니, 이 특성 하나만으로도 선택할 이유는 충분해 보입니다.
 
-# ❓ 그래서 뭐 쓰나요?
+## ❓ 그래서 뭐 쓰나요?
 
 ![Untitled](/images/posts/2022/11/redux-vs-recoil/redux_vs_recoil_07.png)
 
@@ -386,7 +386,7 @@ Redux와 Recoil에 대해 알아봤습니다. 사실 우리 프로젝트에 적�
 
 앞으로의 프로젝트에서 제가 라이브러리를 고른다면 어떤 기준으로 정할 수 있을까요? 저는 프로젝트의 규모를 기준으로 결정할 것 같습니다. 사실 Redux는 안정적이지만 토이 프로젝트에 적용하기에는 너무 많은 밑작업을 필요로 하거든요. 반면 커다란 프로젝트를 해야 한다면 Redux를 사용해야 할 날이 올 수도 있겠죠. 덧붙이자면 컴퍼니데이 때 어떤 기업에서는 Redux와 Recoil을 함께 사용한다는 답변을 주시기도 했습니다.
 
-# 📖 Refs.
+## 📖 Refs.
 
 [TypeScript and redux tool kit , createSlice: Assignment to property of function parameter 'state'](https://stackoverflow.com/questions/61570021/typescript-and-redux-tool-kit-createslice-assignment-to-property-of-function)  
 [Getting Started with Redux](https://labs.tadigital.com/index.php/2020/04/20/getting-started-with-redux/)  

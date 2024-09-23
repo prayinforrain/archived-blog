@@ -16,7 +16,7 @@ tags: ["moheyum"]
 
 마지막입니다. 입력하고, 게시할 수 있게 되었으니, 이제 남은 일은 서식을 적용하는 것 뿐입니다. 마크다운 문법을 이용해 어떻게 서식을 적용할 수 있을까요? 그 과정을 정리해 보겠습니다.
 
-# 🤷 어떻게 할까요?
+## 🤷 어떻게 할까요?
 
 정말이지 어떻게 하면 좋을까요? 우선 제가 생각하는 가장 사용성이 좋은 마크다운은 깃허브의 그것이였습니다. [GFM(GitHub Flavored Markdown)](https://github.github.com/gfm/)이라고 부르는 스펙이 있는데, 처음에는 이걸 부르는 이름이 있는 것조차 모르고 막무가내로 리버스 엔지니어링 마인드로 작업을 시작했습니다. 아래 사진처럼 아무 이슈나 들어가서 댓글 창에 실험을 하면서요.
 
@@ -55,7 +55,7 @@ export default function doParse(str: string): string {
 
 그렇게 만들어진 것이 저번 포스트의 마지막 사진입니다. 대충 이런 느낌으로 replace를 쌓아 나가면 되지 않을까요?
 
-# 📝 뭐든 계획을 세우자
+## 📝 뭐든 계획을 세우자
 
 하지만 마크다운의 세계는 그렇게 만만하지 않았습니다. `replace`를 쌓아 나간다는 생각에는 변함이 없었지만 여러 줄에 걸친 문법이나 같은 식별자를 사용하는 문법을 어떻게 구별할 것인지와 같은 각종 예외 상황들을 어떻게 피해서 설계할 수 있을지 머리가 아파오기 시작했습니다. 특히 인용문은 아래처럼 다양한 경우에 대한 처리가 필요했죠.
 
@@ -92,7 +92,7 @@ export function doParse(str: string): string {
 }
 ```
 
-# ⚒ 좀 더 개선해보자
+## ⚒ 좀 더 개선해보자
 
 적용 범위가 큰 문법부터 차례대로 적용해 나감으로써 inline문법 안에 block문법이 적용된다거나 하는 문제를 예방하였고, 각 줄을 `div` 태그로 변환하는 시점을 조절해서 정규표현식의 `div`가 필요한 부분에만 들어가도록 더 온전한 결과물을 만들 수 있었습니다.
 
@@ -131,7 +131,7 @@ export function doParse(str: string): string {
 }
 ```
 
-# 🔥 마치며
+## 🔥 마치며
 
 ![dhkstjd.gif](/images/posts/2022/12/making-editor-markdown/md_editor_3_05.gif)
 
@@ -139,7 +139,7 @@ export function doParse(str: string): string {
 
 지금까지 **모헤윰**의 마크다운 에디터를 구현한 과정이였습니다.
 
-# 📖 Refs.
+## 📖 Refs.
 
 [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)  
 [markedjs/marked](https://github.com/markedjs/marked/tree/master/src)

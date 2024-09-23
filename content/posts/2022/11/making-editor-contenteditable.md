@@ -21,7 +21,7 @@ tags: ["moheyum"]
 https://hackmd.io/  
 https://ui.toast.com/tui-editor
 
-# 레퍼런스 살펴보기
+## 레퍼런스 살펴보기
 
 ![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_01.png)
 
@@ -35,7 +35,7 @@ https://ui.toast.com/tui-editor
 >
 > 이는 `contenteditable`이 적용된 태그는 사용자의 입력에 따라 새 element가 늘기도 하고, 다시 줄어들기도 하기 때문에 React 엔진이 관리할 수 없으니 그로 인한 부작용은 너 알아서 해라 라고 말하는 메시지입니다. 이 element를 더 이상 React가 지켜줄 수 없다는 경고인데요, `contenteditable` 속성이 적용된 태그에 `suppressContentEditableWarning` 속성을 같이 달아주면 비활성화됩니다.
 
-# 시작해보자
+## 시작해보자
 
 그럼 이제 간단하게 contenteditable을 만들어 보겠습니다.
 
@@ -60,7 +60,7 @@ https://ui.toast.com/tui-editor
 
 `contenteditable`이 걸린 `div`에 css로 `display: inline-block;` 속성을 주면 개행이 `br`태그로 나눠진다고 하네요. 지금 저는 syntax highlight 기능까지 욕심을 내고 있기 때문에 부분 스타일 적용이 비교적 편해 보이는 `div`를 선택했습니다.
 
-## ChangeEvent가 없는 Input
+### ChangeEvent가 없는 Input
 
 여기서 마주친 첫 번째 문제가 있었습니다. 위의 사진에서는 이쁘게 모든 행이 div태그에 감싸져 있었지만, 사실 모든 내용을 지우고 백스페이스를 한 번 더 누르면 첫 줄이 `contenteditable div` 자체의 innerText로 들어갈 수 있습니다. 무슨 소리냐면 아래 사진처럼 되는 것이죠.
 
@@ -90,7 +90,7 @@ const handleKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
 
 잠깐의 테스트 끝에 문제가 해결되었음을 확인할 수 있었습니다.
 
-## 커서를 찾고 제어하기
+### 커서를 찾고 제어하기
 
 이제 다 된걸까요? 때마침 게더타운에 있던 팀원분에게 결과를 공유했더니 `\t` 캐릭터 입력이 안되는 점이 아쉽다는 피드백을 주셨습니다. 음.. 마크다운 문법 자체가 개발자 친화적인 요소인데 탭키를 지원하지 않으면 곤란하니 한번 구현해 보겠습니다. 앞에서 했던 것처럼 `onKeyDown`으로 Tab 키를 가로채서 입력을 해주면 되지 않을까요? ..어? 근데 사용자 커서 위치에 탭키를 넣는 과정을 어떻게 구현할까요?
 
@@ -126,7 +126,7 @@ const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
 
 제대로 작동하는군요. 마음에 듭니다!
 
-## 입력 데이터를 만들자
+### 입력 데이터를 만들자
 
 이제 마크다운을 변환하는 작업을 하는 함수에 사용자가 입력한 결과물을 넘겨주려고 합니다. 앞서 말했던 것처럼 `innerText`를 가져와서 보내면 될 것 같아요. 그런데 문제가 생겼습니다.
 
@@ -146,7 +146,7 @@ setContent(contentRef.current.innerText.replace(/\n\n/g, "\n"));
 
 음, 이제 데이터가 잘 정제되었네요! 이대로 데이터를 넘겨주면 되겠습니다.
 
-# 서식을 어떻게 입힐까요?
+## 서식을 어떻게 입힐까요?
 
 ![Untitled](/images/posts/2022/11/making-editor-contenteditable/md_editor_1_09.png)
 

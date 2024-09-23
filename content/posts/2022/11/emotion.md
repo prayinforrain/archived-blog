@@ -7,14 +7,14 @@ categories: ["moheyum", "React"]
 tags: ["moheyum", "Emotion", "CSS-in-JS"]
 ---
 
-# 🤷TL;DR
+## 🤷TL;DR
 
 - CSS-in-JS는 프로젝트 규모가 커질수록 관리하기 어려운 CSS의 문제를 보완한다.
 - emotion과 styled-components는 사용상의 차이가 거의 없으니 골라서 사용하자.
 - 적절한 IDE Extension을 잘 활용하자.
 - CSS-in-JS가 모든 경우에 대한 정답이 아님을 인지하자.
 
-# 🎨CSS-in-JS
+## 🎨CSS-in-JS
 
 CSS-in-JS는 HTML Element의 스타일을 자바스크립트 파일을 통해서 지정하는 방식입니다. .css 파일이 하던 일을 .js 파일에게 시키는 것이죠. CSS는 CSS이고, JS는 JS입니다. 왜 굳이 둘을 합쳐야만 하는 것일까요? 이 알 수 없는 발상을 이해하려면 우선 기존 css의 단점을 살펴보겠습니다.
 
@@ -31,7 +31,7 @@ CSS-in-JS는 HTML Element의 스타일을 자바스크립트 파일을 통해서
 
 작업할 당시에는 당연한 불편함이라 생각하고 감내해 왔지만, 프로젝트 규모가 커졌을 때를 상상해 보니 머리가 시큰해집니다. 이런 문제를 해결하기 위해 등장한 것이 **CSS-in-JS**입니다.
 
-# 😆emotion/styled
+## 😆emotion/styled
 
 React에서 사용하는 CSS-in-JS 라이브러리는 `styled-components`와 `emotion` 두 가지가 있습니다. 두 라이브러리는 사실 사용하는 입장에서 차이가 거의 없습니다. 어떤 레퍼런스를 보면 `emotion`만이 css props를 사용할 수 있다는 차이점을 이야기하지만, 지금 시점에서는 양쪽 다 지원하고 있습니다. 성능 역시 `emotion`이 앞선다는 분석이 있지만 `styled-components` 역시 최적화가 이루어지고 있고, 애초에 그렇게 큰 폭으로 차이가 나지 않기 때문에, 손에 잡히는 것 아무거나 사용해도 될 것 같습니다. 저는 `emotion`이 더 손에 익다는 이유로 `emotion`을 골랐습니다. **styled**라는 단어가 키보드로 잘 안 쳐 지더라구요.
 
@@ -144,7 +144,7 @@ return (
 
 짜잔! 스타일이 적용되었습니다. 못생긴 건 똑같지만 어쨌든 제 의도대로 못생겼네요.
 
-# 📋emotion의 특징
+## 📋emotion의 특징
 
 기본적인 사용법을 알았으니, 알아두어야 할 점을 정리해봅시다.
 
@@ -167,11 +167,11 @@ return (
 >
 > 위와 같이 props를 참조하여 유동적인 스타일 지정이 가능합니다. 깔끔하죠? 스타일의 props interface에 선언되었는데 실제 사용에서 props 값을 지정해주지 않으면 빨간 줄을 그어 주기도 한답니다.
 
-# 🔨함께 사용하면 좋은 확장
+## 🔨함께 사용하면 좋은 확장
 
 VS Code에는 emotion과 함께 사용하면 좋은 확장들이 있는데요, 짤막하게 몇 가지 소개해 보고자 합니다.
 
-### Auto Rename Tag
+#### Auto Rename Tag
 
 ![Untitled](/images/posts/2022/11/emotion/emotion_07.png)
 
@@ -179,7 +179,7 @@ VS Code에는 emotion과 함께 사용하면 좋은 확장들이 있는데요, �
 
 tsx, jsx를 포함한 파일에서 HTML 태그를 수정할 때 열린 태그와 닫는 태그를 동시에 수정해 주는 확장입니다. 특히 `div`같이 여러 번 사용되는 태그를 정확히 짝을 찾아서 자동으로 고쳐주기 때문에 스타일 적용이 매우 편해집니다.
 
-### Highlight Matching Tag
+#### Highlight Matching Tag
 
 ![Untitled](/images/posts/2022/11/emotion/emotion_09.png)
 
@@ -187,7 +187,7 @@ tsx, jsx를 포함한 파일에서 HTML 태그를 수정할 때 열린 태그와
 
 여는 태그와 닫는 태그가 눈에 띄도록 밑줄로 강조해 줍니다. `Auto Rename Tag`와 함께 사용하기 좋습니다.
 
-### vscode-styled-components
+#### vscode-styled-components
 
 ![Untitled](/images/posts/2022/11/emotion/emotion_11.png)
 
@@ -197,7 +197,7 @@ tsx, jsx를 포함한 파일에서 HTML 태그를 수정할 때 열린 태그와
 
 `styled.tag`를 통해 스타일을 지정하면 css 프로퍼티가 단순 문자열로 인식되어 자동완성이 지원되지 않는데요, 이 확장을 사용하면 해당 부분이 css 프로퍼티로 인식되어 css 파일을 작성하듯 사용할 수 있습니다. 무지 좋죠?
 
-### Color Highlight
+#### Color Highlight
 
 ![Untitled](/images/posts/2022/11/emotion/emotion_14.png)
 
@@ -205,7 +205,7 @@ tsx, jsx를 포함한 파일에서 HTML 태그를 수정할 때 열린 태그와
 
 IDE 차원에서 색상의 hex code에 대한 미리보기를 지원해 줍니다. 기본적으로 미리보기를 지원해주긴 하지만 조금 더 크게 보여주는 점이 마음에 들었습니다. 스크롤을 쭉 내리다가 발견하기가 쉽거든요.
 
-# 🤔쓰시게요?
+## 🤔쓰시게요?
 
 CSS-in-JS의 개념과 그 사용법에 대해 알아보았습니다. 그런데 **CSS-in-JS는 과연 정답일까요?** 얼마 전에 슬랙에서 이에 대한 흥미로운 글을 봤습니다. [우리가 CSS-in-JS와 헤어지는 이유](https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6) 라는 제목의 글인데요, Emotion의 메인 기여자 중 한 명이 이런 글을 썼다는 점에서 고민해 볼 가치는 충분할 것으로 보입니다.
 
@@ -213,7 +213,7 @@ CSS-in-JS의 개념과 그 사용법에 대해 알아보았습니다. 그런데 
 
 [(번역) 우리가 CSS-in-JS와 헤어지는 이유](https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6)
 
-# 📖Refs.
+## 📖Refs.
 
 [https://github.com/jsjoeio/styled-components-vs-emotion](https://github.com/jsjoeio/styled-components-vs-emotion)  
 [styled-components 과 emotion, 도대체 차이가 뭔가?](https://velog.io/@bepyan/styled-components-%EA%B3%BC-emotion-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AD%94%EA%B0%80#emotion%EC%9D%98-%EC%B0%A8%EB%B3%84%EC%A0%90)  

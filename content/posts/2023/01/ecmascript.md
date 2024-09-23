@@ -10,7 +10,7 @@ thumbnail: "/images/posts/2023/01/ecmascript/01.png"
 
 ![untitled](/images/posts/2023/01/ecmascript/01.png)
 
-# Ecma international
+## Ecma international
 
 > **Ecma International** is an industry association dedicated to the standardization of information and communication systems
 > _Emca International은 정보통신 시스템의 표준화를 위한 국제 표준화 기구입니다._ > [https://www.ecma-international.org/](https://www.ecma-international.org/)
@@ -23,13 +23,13 @@ Ecma가 정의한 표준에 대해서는 아래 링크에서 볼 수 있습니�
 
 [Standards - Ecma International](https://www.ecma-international.org/publications-and-standards/standards/)
 
-# ECMAScript
+## ECMAScript
 
 ECMA스크립트란 앞에서 설명한 Ecma 인터내셔널이 정의하는 **스크립트 프로그래밍 언어**(≒인터프리터 언어) 중 하나입니다. 그리고 이 언어는 곧 자바스크립트를 가리킵니다. 즉 **ECMAScript(_ECMA-262_)에 의해 표준화된 자바스크립트의 이름**입니다.
 
 얼마 전에 면접에서 *자바스크립트가 ECMAScript의 표준을 준수한 언어*라고 이야기했는데, 이는 틀린 표현입니다. 이를 이해하기 위해서는 자바스크립트의 역사에 대해 이해할 필요가 있습니다.
 
-## 자바스크립트의 탄생
+### 자바스크립트의 탄생
 
 ![untitled](/images/posts/2023/01/ecmascript/02.png)
 
@@ -37,7 +37,7 @@ ECMA스크립트란 앞에서 설명한 Ecma 인터내셔널이 정의하는 **�
 
 우리가 알고 있는 바와 같이 HTML과 CSS만으로 웹페이지를 표현하는 데에는 명확한 제한이 있습니다. 동적인 페이지를 만들 수 없다는 점이죠. 이러한 한계를 극복하기 위해 넷스케이프는 1995년, 간단한 프로그래밍 언어를 도입하기로 했고, 이 것이 **브렌던 아이크**가 개발한 자바스크립트의 전신, `모카(Mocha)`입니다. 모카의 이름은 LiveScript를 거쳐 지금의 `JavaScript`가 되었습니다. 당시 유행한 Java와 문법이 비슷하다는 점을 강조하여 마케팅 전략을 세운 것이죠.
 
-## JScript의 등장과 자바스크립트의 파편화
+### JScript의 등장과 자바스크립트의 파편화
 
 그 이후 1996년에 마이크로소프트 역시 IE에서 자바스크립트를 지원하기 시작했습니다. 단순 지원 뿐 아니라 IE만의 독자적인 기능을 추가해서 비슷하지만 차이가 있는 언어를 구현했죠. 이 언어는 `JScript`라고 부르고, 가장 큰 특징으로는 윈도우에 종속적이며 악명높은 `ActiveX`를 사용할 수 있는 기반이 된다는 점이 있습니다. JavaScript와 호환이 되지 않는 것은 아니지만 그렇다고 완전하게 지원하는 것은 또 아니였습니다.
 
@@ -45,7 +45,7 @@ JavaScript와 JScript의 차이가 생기면서, 사용자는 환경에 따라 �
 
 즉, **JavaScript가 생겨나고, 파편화 현상이 일어나자 이를 표준화하기 위해 ECMAScript가 등장한 것**이라고 요약할 수 있겠습니다.
 
-## ECMAScript 변천사
+### ECMAScript 변천사
 
 ECMAScript는 지금에 와서는 거의 매 년 새 버전이 배포되고 있습니다. 2015년까지는 ES6와 같은 네이밍을 사용했지만, 배포 주기가 연단위로 빨라지는 상황에 맞추어 ES2020과 같은 네이밍을 사용하게 되었습니다. 넘버링은 대충 `ES6 = ES2015`이후로 1년에 1씩 버전이 오른다고 알고 계시면 되겠습니다.
 
@@ -63,9 +63,9 @@ ECMAScript는 지금에 와서는 거의 매 년 새 버전이 배포되고 있�
 | 9   | 2018년 6월  | ECMAScript 2018 (ES2018) | Promise.finally, Async iteration, object rest/spread property 등.                                                                                                                                                                       |
 | 10  | 2019년 6월  | ECMAScript 2019 (ES2019) | Object.fromEntries, flat, flatMap, Symbol.description, optional catch 등.                                                                                                                                                               |
 
-# 궁금증들
+## 궁금증들
 
-## CommonJS는 무엇일까?
+### CommonJS는 무엇일까?
 
 지금까지 이야기한 자바스크립트는 모두 브라우저에서 사용하기 위한 표준이였습니다. 하지만 우리는 지금 브라우저 없이도 자바스크립트를 사용하고 있습니다. 자바스크립트를 브라우저 밖에서 사용하기 위한 논의가 계속해서 이루어졌고, 이를 위해 **자바스크립트를 모듈화**할 수 있는 표준이 제시되었습니다. 이 것이 `CommonJS`이고, 이를 이용해 만들어진 것이 `Node.js`입니다.
 
@@ -73,7 +73,7 @@ ECMAScript는 지금에 와서는 거의 매 년 새 버전이 배포되고 있�
 
 [[ JavaScript ] ES Modules 정리하기](https://velog.io/@jjunyjjuny/ES-Modules-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0)
 
-# Refs.
+## Refs.
 
 [Ecma 인터내셔널 - 위키백과](https://ko.wikipedia.org/wiki/Ecma_%EC%9D%B8%ED%84%B0%EB%82%B4%EC%85%94%EB%84%90)  
 [Ecma International](https://www.ecma-international.org/)  

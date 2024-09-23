@@ -8,7 +8,7 @@ tags: ["Web", "javascript", "tree-shaking"]
 thumbnail: "/images/posts/2023/01/tree-shaking/01.png"
 ---
 
-# 용량을 절약하는 방법
+## 용량을 절약하는 방법
 
 ![bundle_map](/images/posts/2023/01/tree-shaking/01.png)
 
@@ -16,7 +16,7 @@ thumbnail: "/images/posts/2023/01/tree-shaking/01.png"
 
 위 사진은 팀 프로젝트를 하던 중 `@next/bundle-analyzer` 패키지를 이용해 번들 맵을 그렸던 것입니다. 클수록 번들 용량이 크다는 뜻이니 커다란 청크 위주로 최적화를 시도하면 될 것 같습니다. 그런데 어떻게 용량을 줄일 수 있을까요? gzip을 통해 파일을 압축해서 보내는 방법도 있겠지만, 코드적으로 최적화할 수 있는 방법은 `Tree-shaking`입니다.
 
-# 트리 쉐이킹
+## 트리 쉐이킹
 
 ![tree-shaking](/images/posts/2023/01/tree-shaking/02.gif)
 
@@ -26,7 +26,7 @@ thumbnail: "/images/posts/2023/01/tree-shaking/01.png"
 
 [https://github.com/malchata/webpack-tree-shaking-example](https://github.com/malchata/webpack-tree-shaking-example)
 
-## 실행해보기
+### 실행해보기
 
 우선 `npm run build`후 `npm run start`를 통해 실행해 보겠습니다. 아래와 같은 결과물이 보입니다.
 
@@ -34,7 +34,7 @@ thumbnail: "/images/posts/2023/01/tree-shaking/01.png"
 
 번들된 파일 두개를 다운받았고, 38.4KB, 21.6KB의 크기를 갖습니다. 객관적으로 가볍긴 하지만 여기서 굳이 트리 쉐이킹을 통해 용량을 더 줄여 보겠습니다.
 
-## 필요한 것만 import하기
+### 필요한 것만 import하기
 
 ![analyzing scripts](/images/posts/2023/01/tree-shaking/05.png)
 
@@ -63,7 +63,7 @@ import { simpleSort } from "../../utils/utils"; // after
 
 modules 옵션은 ES Modules 문법을 다른 문법으로 트랜스파일링 할 것인지에 대한 옵션입니다. 그렇다고 CommonJS 환경에서 사용이 불가능해 지는 것은 아닙니다. 왜냐면 webpack이 한번 더 트랜스파일 과정을 거치거든요!
 
-## 결과물 확인하기
+### 결과물 확인하기
 
 그럼 이제 앱을 다시 빌드하고 결과물을 확인해 보겠습니다.
 
@@ -71,15 +71,15 @@ modules 옵션은 ES Modules 문법을 다른 문법으로 트랜스파일링 �
 
 `main.js` 청크가 `21.6KB → 9KB`로 크게 줄어들었습니다. 큰 의미는 없지만 로드 시간도 줄어들었네요. 트리 쉐이킹이 어떤 과정을 거쳐 이루어 지는지 알아봤습니다. 굿..
 
-# 궁금증들
+## 궁금증들
 
-## 특정 패키지의 트리 쉐이킹이 되지 않는 이유는?
+### 특정 패키지의 트리 쉐이킹이 되지 않는 이유는?
 
 대부분은 위의 과정을 통해 트리 쉐이킹이 가능하나, 일부 패키지에서 `import`해오는 경우에는 트리 쉐이킹이 일어나지 않습니다. 배열이나 Date 등을 다룰 때 유틸리티 함수를 제공해 주는 `lodash` 패키지가 그런 경우인데요, 패키지 자체가 CommonJS 모듈 문법으로 작성되어 있어서 그렇습니다. lodash는 이런 문제를 해결하기 위해 다양한 문법에 맞추어 작성된 빌드를 제공합니다. [[링크]](https://github.com/lodash/lodash#module-formats)
 
 만약 이런 식으로도 지원하지 않는 라이브러리라면 [webpack-common-shake](https://github.com/indutny/webpack-common-shake)같은 플러그인을 활용해야 합니다. `webpack-common-shake`는 CommonJS의 문법으로 `module.export`를 사용한 패키지를 트리쉐이킹 해주는 플러그인인데요, README에 나와 있듯이 결국 완전한 해결책은 아닙니다.
 
-## Babel의 `“modules”: false`란 무엇일까?
+### Babel의 `“modules”: false`란 무엇일까?
 
 babel의 `modules` 옵션은 ES modules 문법을 다른 문법에 맞추어 트랜스파일하는 옵션인데요, `false`를 지정할 경우 트랜스파일이 이루어지지 않습니다. 그런데 앞서 말했듯이 `babel`에서 굳이 변환하지 않더라도 `webpack`이 해주는데, 이걸 굳이 `false`로 지정해야 할 이유가 있을까요?
 
@@ -95,7 +95,7 @@ Babel의 [documentation](https://babeljs.io/docs/en/babel-preset-env#modules)을
 
 사실 `modules`에는 `auto`라는 값이 존재합니다. 이는 `Babel 7.x` 버전부터 생긴 `caller` 옵션을 활용하여 추가된 값인데요, `auto`로 설정할 경우 바벨은 callerData를 이용하여 ES 모듈 문법이 사용 가능한지 판단하고, 이에 맞추어 트랜스파일 할 지를 자동으로 판단합니다. 사용한 예제에서는 낮은 버전의 바벨을 사용하고 있었기 때문에 `false`를 지정했지만, 지금은 기본값이 `auto`로 되어 있어 `import` 범위만 조절하면 알아서 트리 쉐이킹이 이루어질 것으로 보입니다.
 
-# Refs.
+## Refs.
 
 [Next 배포를 위한 준비(bundle-analyzer, tree shaking, gzip)](https://darrengwon.tistory.com/833)  
 [웹 성능 최적화를 위한 Tree Shaking 소개](https://helloinyong.tistory.com/305)  

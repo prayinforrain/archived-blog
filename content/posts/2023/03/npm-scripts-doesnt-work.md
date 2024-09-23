@@ -16,7 +16,7 @@ thumbnail: "/images/posts/2023/03/npm-scripts-doesnt-work/02.png"
 
 아무튼... 프로젝트 환경 설정을 하면서 겪었던 문제를 기록하고자 한다.
 
-# NPM Scripts가 안 된다
+## NPM Scripts가 안 된다
 
 ![NPM Scripts](/images/posts/2023/03/npm-scripts-doesnt-work/02.png)
 
@@ -29,22 +29,22 @@ VSCode는 레포지토리를 열었을 때 `package.json` 파일을 파싱하여
 다른 프로젝트도 안 된다. 이 프로젝트는 더더욱 안된다. 원래 그렇게 인식하지 못하고 사용하던 기능인데, 안 된다고 생각하니 갑자기 뭔가 족쇄를 찬 기분이고.. 어쩌고 저쩌고..  
 아무튼 메시지를 읽어 보고 처음에는 프로젝트가 yarn 1.22.19 버전을 사용하는데 내 글로벌에 yarn berry만 설치되어 있어서 그런가 하고 기본 버전을 바꿀 방법을 찾아 다녔다. 물론 정답이 아니었다.
 
-# 해결 과정
+## 해결 과정
 
 나는 처음에 node와 yarn을 설치할 때, `~/.zshrc` 파일에 아래와 같이 설정을 넣었었다. 그 때는 하도 깔아야 하는 것이 많다보니 이것저것 찾아서 묻지도 따지지도 않고 마구 따라했었는데,
 
 ```zsh
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+#[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 ```
 
 `NVM_DIR`라는 변수를 정의해 놓고 사용하지 않고 있었다. 왜일까? 싶어 아래와 같이 변경했더니 해결되었다.
 
 ```zsh
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ```
 
 음... 그 외에도 `~/.zshenv` 내용을 `source ~/.zshrc`로 변경해서 zshrc 파일의 내용을 참조하도록 수정했다.
@@ -54,7 +54,7 @@ export NVM_DIR="$HOME/.nvm"
 ![Finding origin](/images/posts/2023/03/npm-scripts-doesnt-work/04.png)  
 기원을 찾고 싶었으나 검색되는 가장 오래된 결과는 어느 gist에 저장된 bash_profile 코드였다. 내가 쉘에 대해 깊이 알고 있지 않아서 더 이상 깊이 원인을 찾으려면 많은 시간이 필요해 보인다. 2달만에 되찾은 NPM Scripts 메뉴에 무척 기분이 좋다.
 
-# Refs.
+## Refs.
 
 [VSCODE build error `The terminal process "/bin/zsh '-c', ... - stack overflow](https://stackoverflow.com/questions/63502253/vscode-build-error-the-terminal-process-bin-zsh-c-yarn-run-watch-extensi)  
 [zsh: command not found: nvm 오류해결법](https://velog.io/@palette/zsh-command-not-found-nvm-%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0%EB%B2%95)

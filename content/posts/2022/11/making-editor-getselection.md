@@ -18,7 +18,7 @@ tags: ["moheyum"]
 
 > 💡 이 글은 Window 10, Chrome 107.0.5304.107 버전을 기준으로 작성되었습니다. 일부 환경에 따라 다르게 작동하는 부분이 있을 수 있습니다.
 
-# 😢 첫 단추가 중요하다
+## 😢 첫 단추가 중요하다
 
 ![Untitled](/images/posts/2022/11/making-editor-getselection/md_editor_2_01.png)
 
@@ -30,9 +30,9 @@ tags: ["moheyum"]
 
 오늘은 이 오류의 원인과 해결 과정에 대해 기록하는 글을 써 보겠습니다.
 
-# 🖱️ windows.getSelection()
+## 🖱️ windows.getSelection()
 
-## contenteditable의 문제
+### contenteditable의 문제
 
 저번 글에서 공부했던 바와 같이, `contenteditable div`는 일반적인 입력 동작이 제대로 이루어지지 않습니다. 착한 사용자가 차분히 글을 입력한다고 해도 첫 줄만 `div` 태그로 감싸주지 않는다거나, 붙여넣기를 하면 대뜸 원본의 서식이 그대로 적용된 글귀가 입력되기도 합니다.
 
@@ -44,7 +44,7 @@ tags: ["moheyum"]
 
 ![Untitled](/images/posts/2022/11/making-editor-getselection/md_editor_2_04.png)
 
-## type Selection
+### type Selection
 
 우선 이 녀석이 제공해주는 `Selection` 타입 객체의 property를 보겠습니다.
 
@@ -69,7 +69,7 @@ tags: ["moheyum"]
 
 훨씬 종류가 많지만 쓰이지 않을 것 같아 길게 적지 않았습니다. 그 외에 `Selection` 타입 객체는 각 프로퍼티에 대해 얕은 참조를 제공하기 때문에 같은 이름으로 참조해도 참조 시점에 따라 값이 변할 수 있다는 특성이 있겠네요. 여기서 제가 사용했던 메소드는 `collapse`였습니다. 대충 `getSelection()`으로 받은 `anchorNode`를 그대로 사용하고, `anchorOffset + 추가한 문자열 길이`로 위치를 잡는 식이죠.
 
-## anchorNode는 node다
+### anchorNode는 node다
 
 그런데 이 `anchorOffset`은 상황에 따라 다르게 사용해야 합니다. 이게 무슨 소리냐면, 이 녀석을 1로 지정하면 커서가 끝으로 갈 때가 있고, 두 번째 글자로 커서가 이동할 때가 있다는 말이죠.
 
@@ -77,7 +77,7 @@ tags: ["moheyum"]
 
 두 번째 글자로 커서가 가는건 이해가 가는데, 처음엔 왜 끝으로 갔던 걸까요? 그 비밀은 `getSelection`이 참조하던 `anchorNode`에 있습니다. **첫 번째 붙여넣기와 그 이후의 붙여넣기의 anchorNode가 다르기 때문**이죠. 첫 번째 붙여넣기는 `contenteditable div`를, 그 이후에는 해당 라인의 div..도 아니라 `그 div의 **텍스트 노드**`를 참조하고 있습니다.
 
-### 텍스트 노드를 아시나요?
+#### 텍스트 노드를 아시나요?
 
 위에 제가 `console.log`를 찍어본 사진에는 `anchorNode`에 `text`라고 쓰여 있었습니다. 저는 `contenteditable div`의 자식 `div`중 하나를 선택하고 있었는데 말이죠. 즉 `getSelection`은 선택중인 텍스트 노드까지 따져서 참조한다는 특징을 알 수 있습니다. 텍스트 노드라.. 딱히 어느 태그에 포함되어 있지 않으면서 애매하게 텍스트만 들어있는 바로 그 `innerText`를 텍스트 노드라고 부르는 모양입니다.
 
@@ -123,7 +123,7 @@ tags: ["moheyum"]
 
 정말 끔찍하군요. offset이 노드의 타입에 따라 다르게 적용된다니! 아니 그 이전에 왜 `anchorNode`는 처음부터 텍스트노드를 잡아 주지 않는거죠?
 
-## Node.nodeType
+### Node.nodeType
 
 다행히 이 문제를 바로잡을 방법이 있었습니다. 바로 Node 인터페이스가 제공하는 `nodeType`인데요, 이 녀석이 1이면 Element, 3이면 Text 노드라고 하네요. 그 말인 즉 `anchorNode`가 1이거나 3일 때 다른 한 쪽으로 변환해서 통일해주면 되는데.. 앞에서 언급했듯 텍스트 노드는 참조하는 것 자체가 여간 어려운 일이 아닙니다. 그래서 제가 해결한 방법은 `nodeType`에 따라 offset을 다르게 사용하는 것입니다.
 
@@ -134,7 +134,7 @@ window.getSelection()?.collapse(anchorNode, position);
 
 텍스트 노드이면 정상적으로 길이를 더해서 끝자리를 잡아주고, 엘리먼트이면 1의 offset을 대입합니다. 이게 가능한 이유는 이 문제가 발생하는 케이스가 빈 칸에 최초 입력 시에만 발생하기 때문인데, 새로운 케이스가 발견되면 저 1을 무척 피곤하고 귀찮은 변수로 바꿔 주어야 겠네요.
 
-# 🤦 오버엔지니어링의 길목에서
+## 🤦 오버엔지니어링의 길목에서
 
 ![고쳤맨.gif](/images/posts/2022/11/making-editor-getselection/md_editor_2_07.gif)
 

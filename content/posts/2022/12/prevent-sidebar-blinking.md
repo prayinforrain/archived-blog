@@ -11,13 +11,13 @@ tags: ["moheyum"]
 
 기왕 SSR을 체험한다고 시작한 프로젝트인 만큼, 성능에 신경을 쓰지 않을 수 없게 되었습니다. 그러다 제가 좋아하는 어떤 팀의 노션에서 `memoization`을 통한 컴포넌트 중복 렌더링 방지에 대한 글을 읽었는데요, 이 부분이 때 마침 [Next.js 13을 적용하지 못해 포기해야만 했던](https://www.notion.so/next-js-13-app-dir-11191a66a5564a25ba882c8a835afd13) 아픈 상처를 자극하고 있어서 모헤윰에도 시도해 보기로 하였습니다.
 
-# 🤷 TL;DR
+## 🤷 TL;DR
 
 - `useMemo`로 `memoization`하여도 context 값을 참조하면 리렌더링이 이루어진다.
 - 크롬 개발자 도구나 React DevTools를 통해 리렌더링 정보를 확인할 수 있다.
 - `Next.js`에서 `/pages/_app.tsx`에 들어간 컴포넌트는 리렌더링이 방지된다.
 
-# 🤔 사이드바의 현재 상황
+## 🤔 사이드바의 현재 상황
 
 모헤윰은 Next.js가 요구하는 대로 pages 디렉토리에 각 페이지의 레이아웃을 컴포넌트의 조합으로 구성하고 있습니다. 아래 코드처럼요.
 
@@ -41,7 +41,7 @@ export default function Home() {
 
 바로 사이드바가 각 페이지마다 하위 컴포넌트로 삽입되어 **라우팅이 일어날 때 마다 새롭게 렌더링**이 되고 있다는 문제인데요, 어차피 똑같이 생긴 사이드바인데 몇 번이고 다시 렌더링 하게 되는 것은 비효율 적일 뿐 아니라, 움짤에서 보이듯이 순간적인 깜빡임이 계속되고 있는 상황입니다. 아직 기능이 많지 않아 렌더링 몇 번 더 한다고 억울할 문제는 아니지만 깜빡임은 조금 참기가 힘들군요.
 
-# 📝 메모야 도와줘
+## 📝 메모야 도와줘
 
 무엇이 문제일까요? 일단 저는 앞에서 언급한 글이 설명한 대로 `useMemo`를 통해 사이드바를 `memoize`하면 리렌더링을 멈추지 않을까 하는 생각에 사이드바 컴포넌트를 모조리 Memo로 변경하였습니다.
 
@@ -57,7 +57,7 @@ export default function Home() {
 
 사이드바에서 `Recoil`을 통해 전역 변수를 참조하는 부분이 있었지만 이를 제거하고 테스트해봐도 여전히 결과는 똑같았고, 저는 결국 `Next.js 13`때 `CSS-in-JS`가 `Context API`를 사용한다는 이야기를 들었던 기억이 떠올라, 결국 우리는 또 `Emotion`때문에 하나의 희망을 포기하게 되는구나, 하고 체념을 하게 되었습니다. 이모션 요놈 하나 때문에 잃게 되는 것이 정말 많군요.
 
-# ➡️ Next야 나는 너를 믿었어
+## ➡️ Next야 나는 너를 믿었어
 
 하지만 여기서 포기하면 여태 쓴 글과 시간이 너무 아까웠습니다. 새 이슈를 처리하기엔 시간이 너무 애매했고 아쉬운 마음에 검색을 하던 중 몇 가지 글들을 발견했습니다.
 
@@ -125,7 +125,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 브라우저의 페인트 플래시를 체크하고 확인해 보았습니다. gif 파일을 계속 하이라이트해서 정신이 사납지만, 아무튼 우측의 메인 섹션이 계속 리렌더링 되는 동안 사이드바 만큼은 한 번의 깜빡거림 없이 깔끔하게 작동함을 확인하였습니다. 이제 좀 낫네요!
 
-# 📖 Refs.
+## 📖 Refs.
 
 [re rendering conditions](https://velog.io/@gth1123/re-rendering-conditions)  
 [Next js how to avoid re-rendering of common components between routed pages?](https://stackoverflow.com/questions/70531347/next-js-how-to-avoid-re-rendering-of-common-components-between-routed-pages)  

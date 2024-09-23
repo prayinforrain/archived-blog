@@ -15,7 +15,7 @@ const [name, setName] = useState<string>("지상렬");
 
 뭔진 몰라도, 저 꺽쇠 괄호를 사용해서 state가 다룰 상태의 타입을 지정할 수가 있습니다. 사실 적지 않아도 알아서 추론해 주지만, 아무튼 `name.split('')`처럼 string 타입이 제공하는 메소드나 프로퍼티도 자동완성해주고, 아주 편하게 사용할 수 있습니다. 오늘은 저 꺽쇠괄호에 대해 알아볼거에요.
 
-# any 타입의 문제
+## any 타입의 문제
 
 아무튼 이번에 가져온 예제는 스택(Stack) 자료구조입니다. 그냥 대충 만들게요.
 
@@ -50,9 +50,9 @@ console.log(numberStack.pop().slice()); // TypeError: numberStack.pop(...).slice
 
 위의 문제들은 `any` 타입의 사용을 지양해야 하는 이유이기도 한데요, 이를 해결하기 위해 타입스크립트에서는 **제네릭(Generic)**의 개념을 지원합니다.
 
-# 제네릭이란?
+## 제네릭이란?
 
-제네릭은 다른 프로그래밍 언어(자바, C# 등)에서 사용되는 개념입니다. 자바를 위한 튜토리얼이긴 하지만, **TCPSchool**에 개념 설명이 잘 되어 있어 가져왔습니다.
+#제네릭은 다른 프로그래밍 언어(자바, C# 등)에서 사용되는 개념입니다. 자바를 위한 튜토리얼이긴 하지만, **TCPSchool**에 개념 설명이 잘 되어 있어 가져왔습니다.
 
 > 자바에서 제네릭(generic)이란 데이터의 타입(data type)을 일반화한다(generalize)는 것을 의미합니다.
 >
@@ -67,7 +67,7 @@ console.log(numberStack.pop().slice()); // TypeError: numberStack.pop(...).slice
 
 즉 제네릭은 우리가 여러 타입에 활용할 수 있는 함수나 클래스를 사용할 때 ‘_이번에는 이런 타입을 사용할거야_’라고 알려줄 수 있는 수단인 셈입니다. 그리고 맨 앞에서 들었던 `useState` 예시에 나온 꺽쇠가 바로 제네릭입니다.
 
-## 사용해 보자
+### 사용해 보자
 
 제네릭은 다음과 같은 형태로 사용합니다.
 
@@ -114,7 +114,7 @@ useState는 `useState('하이룽');`처럼 타입을 명시하지 않아도 알�
 
 </aside>
 
-## 더 써 보자
+### 더 써 보자
 
 제네릭은 이게 끝일까요? 다음 사례를 통해 더 고민해봅시다.
 
@@ -136,7 +136,7 @@ console.log(getLength(1)); // Argument of type 'number' is not assignable to par
 
 이런 식으로 함수를 구성하면 제네릭 타입 `T`는 `hasLength`의 특성을 갖는 타입만이 인자로 통과될 수 있습니다.
 
-## 더… 더 써보자
+### 더… 더 써보자
 
 조금 더 깊이 들어가 보겠습니다. length 프로퍼티를 갖는 타입의 **스택에서 마지막 요소의 길이**를 반환하는 함수를 만들어 보겠습니다.
 
@@ -161,7 +161,7 @@ getLengthOfLastElement(numberStack); // TypeError
 
 위와 같이 제네릭을 이용해 선언된 타입이 사용하는 제네릭 타입을 다시 참조하는 것이 가능합니다.
 
-# Refs.
+## Refs.
 
 [코딩교육 티씨피스쿨](http://www.tcpschool.com/java/java_generic_concept)  
 [제네릭 클래스 및 메서드](https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/types/generics)  
