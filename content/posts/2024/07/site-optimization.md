@@ -64,7 +64,7 @@ Next.js는 내부 링크에 기본 anchor 태그를 사용하지 않을 것을 �
 
 링크와 이미지를 직접 만들었는데, 원래보다 더 성능이 개선되지 않았다면 마음이 많이 아플 것 같았다. 그래서 얼마나 변했는지 한번 측정해 보았다. 측정 방법은 페이지를 강력 새로고침 후, 네트워크 탭에 찍히는 transferred 용량을 확인하였다.
 
-{{< figure src="/images/posts/2024/07/site-optimization/02.PNG" alt="payload 크기 비교" caption="왼쪽이 최적화 전, 오른쪽이 최적화 후 payload이다." >}}
+{{< figure src="/images/posts/2024/07/site-optimization/02.png" alt="payload 크기 비교" caption="왼쪽이 최적화 전, 오른쪽이 최적화 후 payload이다." >}}
 
 우리 프로덕트의 콘텐츠 하나에 대한 비포/애프터를 측정해 보았다. 우선 링크의 preload 기능을 비활성화했기 때문에 불러오는 page props 자체도 많이 줄었고(사실 이 용량 자체가 큰 것도 문제지만), 이미지를 사용처 크기에 맞게 최적화해서 불러오기 때문에 이미지 용량 자체도 확 줄었다. 전반적인 payload 크기 비교 결과는 다음과 같았다.
 
