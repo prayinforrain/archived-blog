@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TypeScript on PrayinForRain.dev</title><link>https://prayinforrain.github.io/archived-blog/categories/typescript/</link><description>Recent content in TypeScript on PrayinForRain.dev</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Wed, 15 Feb 2023 15:17:00 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/archived-blog/categories/typescript/index.xml" rel="self" type="application/rss+xml"/><item><title>Firebase를 TypeScript에서 사용하기</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/02/firebase-with-typescript/</link><pubDate>Wed, 15 Feb 2023 15:17:00 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/02/firebase-with-typescript/</guid><description>&lt;p>최근에 들어서 Firebase가 필요한 일이 있었다. 대학교에서 써본 경험은 있었는데, 오랜만에 만난 Firebase는 예전같지 않았다. 가장 큰 문제는 Firebase가 제공하는 데이터베이스인 Firestore는 문서를 가져와도 타입을 제대로 정의할 수 없다는 것.&lt;/p>
-&lt;figure>&lt;img src="https://prayinforrain.github.io/archived-blog/images/posts/2023/02/firebase-with-typescript/01.png"
+&lt;figure>&lt;img src="archived-blog/images/posts/2023/02/firebase-with-typescript/01.png"
  alt="image">&lt;figcaption>
  &lt;p>자동완성이 안되는 타입스크립트는.. 그.. 왜..?&lt;/p>
  &lt;/figcaption>
