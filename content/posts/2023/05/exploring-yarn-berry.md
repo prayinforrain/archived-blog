@@ -301,7 +301,7 @@ const INCLUDE_CANDIDATES = [
 [package.json에 쌓여있는 개발 부채](https://yceffort.kr/2021/10/debt-of-package-json)  
 [node_modules로부터 우리를 구원해 줄 Yarn Berry](https://toss.tech/article/node-modules-and-yarn-berry)  
 [npm 7 is now generally available!](https://github.blog/2021-02-02-npm-7-is-now-generally-available/#peer-dependencies)  
-[Next.js Storybook에 Yarn PnP 적용하기 | PrayinForRain.dev](https://prayinforrain.github.io/posts/2023/04/nextjs-storybook-with-pnp)  
+[Next.js Storybook에 Yarn PnP 적용하기 | PrayinForRain.dev](https://prayinforrain.github.io/archived-blog/posts/2023/04/nextjs-storybook-with-pnp)  
 [Vite](https://vitejs-kr.github.io/config/dep-optimization-options.html)  
 [Yarn PnP 의존성 에러 해결기](https://woong-jae.com/projects/220711-pnp-dependency-error)  
 [GitHub - nodejs/node: Node.js JavaScript runtime](https://github.com/nodejs/node)  

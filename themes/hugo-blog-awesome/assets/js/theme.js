@@ -46,9 +46,9 @@
     // apply giscus theme
     function setGiscusTheme(newTheme) {
         const giscus_light =
-            "https://cdn.jsdelivr.net/gh/prayinforrain/prayinforrain.github.io@main/static/styles/_giscus.css";
+            "https://cdn.jsdelivr.net/gh/prayinforrain/archived-blog@main/static/styles/_giscus.css";
         const giscus_dark =
-            "https://cdn.jsdelivr.net/gh/prayinforrain/prayinforrain.github.io@main/static/styles/_giscus_dark.css";
+            "https://cdn.jsdelivr.net/gh/prayinforrain/archived-blog@main/static/styles/_giscus_dark.css";
         const iframe = document.querySelector("iframe.giscus-frame");
         if (!iframe) return;
         iframe.contentWindow.postMessage(
