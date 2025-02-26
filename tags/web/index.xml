@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on PrayinForRain.dev</title><link>https://prayinforrain.github.io/archived-blog/tags/web/</link><description>Recent content in Web on PrayinForRain.dev</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Wed, 15 Feb 2023 15:17:00 +0900</lastBuildDate><atom:link href="https://prayinforrain.github.io/archived-blog/tags/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Firebase를 TypeScript에서 사용하기</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/02/firebase-with-typescript/</link><pubDate>Wed, 15 Feb 2023 15:17:00 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/02/firebase-with-typescript/</guid><description>&lt;p>최근에 들어서 Firebase가 필요한 일이 있었다. 대학교에서 써본 경험은 있었는데, 오랜만에 만난 Firebase는 예전같지 않았다. 가장 큰 문제는 Firebase가 제공하는 데이터베이스인 Firestore는 문서를 가져와도 타입을 제대로 정의할 수 없다는 것.&lt;/p>
-&lt;figure>&lt;img src="archived-blog/images/posts/2023/02/firebase-with-typescript/01.png"
+&lt;figure>&lt;img src="https://prayinforrain.github.io/archived-blog/images/posts/2023/02/firebase-with-typescript/01.png"
  alt="image">&lt;figcaption>
  &lt;p>자동완성이 안되는 타입스크립트는.. 그.. 왜..?&lt;/p>
  &lt;/figcaption>
@@ -30,9 +30,9 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">numberStack&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">push&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">numberStack&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">pop&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nx">slice&lt;/span>&lt;span class="p">());&lt;/span> &lt;span class="c1">// TypeError: numberStack.pop(...).slice is not a function
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>당연히 &lt;code>numberStack&lt;/code> 부분에서 에러가 나지만, 이 문제를 &lt;strong>코드를 실행하기 전까진 알 수 없습니다&lt;/strong>. &lt;code>Stack&lt;/code>이 관리하는 것은 &lt;code>any&lt;/code> 타입의 배열이니까요.&lt;/p></description></item><item><title>Tree Shaking</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/01/tree-shaking/</link><pubDate>Wed, 25 Jan 2023 17:17:15 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/01/tree-shaking/</guid><description>&lt;h2 id="용량을-절약하는-방법">용량을 절약하는 방법&lt;/h2>
-&lt;p>&lt;img src="archived-blog/images/posts/2023/01/tree-shaking/01.png" alt="bundle_map">&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/archived-blog/images/posts/2023/01/tree-shaking/01.png" alt="bundle_map">&lt;/p>
 &lt;p>웹페이지의 성능을 이야기하는 가장 직관적인 지표는 아마 페이지에 사용되는 &lt;strong>파일의 크기&lt;/strong>일 것입니다. 파일의 크기가 무겁다면 파일을 다운받는 데 시간이 오래 걸리고, 다운로드한 파일을 읽고 렌더링 하는데도 시간이 오래 걸릴 것입니다. 따라서 번들 파일의 용량을 다이어트 하는 것은 사이트 성능에 꽤 중요한 역할을 합니다.&lt;/p>
-&lt;p>위 사진은 팀 프로젝트를 하던 중 &lt;code>@next/bundle-analyzer&lt;/code> 패키지를 이용해 번들 맵을 그렸던 것입니다. 클수록 번들 용량이 크다는 뜻이니 커다란 청크 위주로 최적화를 시도하면 될 것 같습니다. 그런데 어떻게 용량을 줄일 수 있을까요? gzip을 통해 파일을 압축해서 보내는 방법도 있겠지만, 코드적으로 최적화할 수 있는 방법은 &lt;code>Tree-shaking&lt;/code>입니다.&lt;/p></description></item><item><title>ECMAScript</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/01/ecmascript/</link><pubDate>Wed, 25 Jan 2023 16:35:01 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/01/ecmascript/</guid><description>&lt;p>&lt;img src="archived-blog/images/posts/2023/01/ecmascript/01.png" alt="untitled">&lt;/p>
+&lt;p>위 사진은 팀 프로젝트를 하던 중 &lt;code>@next/bundle-analyzer&lt;/code> 패키지를 이용해 번들 맵을 그렸던 것입니다. 클수록 번들 용량이 크다는 뜻이니 커다란 청크 위주로 최적화를 시도하면 될 것 같습니다. 그런데 어떻게 용량을 줄일 수 있을까요? gzip을 통해 파일을 압축해서 보내는 방법도 있겠지만, 코드적으로 최적화할 수 있는 방법은 &lt;code>Tree-shaking&lt;/code>입니다.&lt;/p></description></item><item><title>ECMAScript</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/01/ecmascript/</link><pubDate>Wed, 25 Jan 2023 16:35:01 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/01/ecmascript/</guid><description>&lt;p>&lt;img src="https://prayinforrain.github.io/archived-blog/images/posts/2023/01/ecmascript/01.png" alt="untitled">&lt;/p>
 &lt;h2 id="ecma-international">Ecma international&lt;/h2>
 &lt;blockquote>
 &lt;p>&lt;strong>Ecma International&lt;/strong> is an industry association dedicated to the standardization of information and communication systems
@@ -41,7 +41,7 @@
 &lt;p>유럽에서 컴퓨터 시스템을 표준화하기 위해 설립되어서 &lt;strong>ECMA&lt;/strong>(&lt;em>European Computer Manufacturers Association&lt;/em>)라는 이름을 가지고 있으나 유럽국가 뿐 아니라 전세계의 표준으로 활용되기 위해 &lt;strong>Ecma International&lt;/strong>로 이름을 변경하였습니다. &lt;strong>ECMA&lt;/strong> 자체는 두문자어이지만 지금의 이름은 하나의 고유명사로 사용되는 셈이죠. 따라서 &lt;strong>Ecma&lt;/strong>로 표기하는 것이 맞습니다.&lt;/p></description></item><item><title>CSS의 display 속성</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/01/css-display/</link><pubDate>Mon, 16 Jan 2023 16:38:15 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/01/css-display/</guid><description>&lt;p>CSS의 &lt;code>display&lt;/code> 속성은 HTML element가 block인지, inline인지, 그리고 자식 element들을 어떤 식으로 표시할지를 정하는 속성입니다. 다시 말해 요소 자체가 형제 요소와 배치되는 방법과, 자식 요소를 배치하는 방법을 함께 정의하기 때문에 ‘&lt;strong>안쪽&lt;/strong>’과 ‘&lt;strong>바깥쪽&lt;/strong>’으로 속성을 나눌 수 있습니다.&lt;/p>
 &lt;h2 id="display">display:&lt;/h2>
 &lt;h3 id="바깥쪽">바깥쪽&lt;/h3>
-&lt;p>&lt;img src="archived-blog/images/posts/2023/01/css-display/01.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/archived-blog/images/posts/2023/01/css-display/01.png" alt="Untitled">&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>block&lt;/code>
 &lt;ul>
@@ -56,7 +56,7 @@
 &lt;/ul>
 &lt;p>사진의 div들은 각각 &lt;code>inline&lt;/code>, &lt;code>block&lt;/code> 속성을 지정하였습니다. 보이는 것과 같이 &lt;code>block&lt;/code> 속성의 요소는 한 줄에 하나만 존재할 수 있으며, &lt;code>inline&lt;/code> 속성은 충분한 공간이 있으면 한 줄에 표시됩니다. &lt;code>span&lt;/code>과 &lt;code>p&lt;/code>태그의 차이와 비슷합니다.&lt;/p></description></item><item><title>브라우저 렌더링과 성능</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/01/browser-rendering-performance/</link><pubDate>Mon, 16 Jan 2023 16:38:15 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/01/browser-rendering-performance/</guid><description>&lt;h2 id="브라우저-렌더링">브라우저 렌더링&lt;/h2>
 &lt;p>성능 최적화를 위해, 브라우저가 어떻게 HTML 문서를 화면에 그리는지 과정에 대해 이해할 필요가 있습니다. 브라우저 렌더링은 아래 사진과 같은 흐름으로 이루어집니다.&lt;/p>
-&lt;p>&lt;img src="archived-blog/images/posts/2023/01/browser-rendering-performance/01.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/archived-blog/images/posts/2023/01/browser-rendering-performance/01.png" alt="Untitled">&lt;/p>
 &lt;ul>
 &lt;li>서버로부터 HTML, CSS, JavaScript 파일을 받아와 HTML → DOM, CSS → CSSOM으로 변환하고 Render Tree를 구성합니다.&lt;/li>
 &lt;li>Render Tree의 노드들에 대한 위치와 크기를 계산합니다. Render Tree의 루트부터 시작하여 모든 노드에 대해 계산을 수행합니다. (Layout)&lt;/li>
@@ -71,7 +71,7 @@
 &lt;/ul>
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/TZz9VHjJzMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe>
 &lt;p>이거 되게 좋은 내용인 것 같아요 CSS의 &lt;code>will-change&lt;/code>를 통헤 불필요한 GPU 점유를 줄이는 방법도 소개하고 있네요!&lt;/p></description></item><item><title>CSS의 크기 단위</title><link>https://prayinforrain.github.io/archived-blog/posts/2023/01/size-units-in-css/</link><pubDate>Fri, 13 Jan 2023 23:39:15 +0900</pubDate><guid>https://prayinforrain.github.io/archived-blog/posts/2023/01/size-units-in-css/</guid><description>&lt;h2 id="css의-크기-단위">CSS의 크기 단위&lt;/h2>
-&lt;p>&lt;img src="archived-blog/images/posts/2023/01/size-units-in-css/01.png" alt="Untitled">&lt;/p>
+&lt;p>&lt;img src="https://prayinforrain.github.io/archived-blog/images/posts/2023/01/size-units-in-css/01.png" alt="Untitled">&lt;/p>
 &lt;p>CSS에는 다양한 단위가 존재합니다. 우리가 잘 아는 &lt;code>px&lt;/code>와 &lt;code>%&lt;/code>부터, &lt;code>em&lt;/code>, &lt;code>rem&lt;/code>, &lt;code>pt&lt;/code>, &lt;code>vh&lt;/code>, &lt;code>vw&lt;/code> 등등 다양한 단위가 존재하는데요, 이 크기 단위들을 언제 어떻게 사용하면 좋을지에 대해 정리해 보았습니다.&lt;/p>
 &lt;h2 id="상대-단위와-절대-단위">상대 단위와 절대 단위&lt;/h2>
 &lt;p>&lt;code>px&lt;/code>과 &lt;code>%&lt;/code>를 먼저 비교해 보면, &lt;code>px&lt;/code>은 우리가 알고 있는 컴퓨터 화면의 1픽셀을 의미합니다. 이는 어느 화면에서나 같은 크기를 나타내므로 &lt;strong>절대 단위&lt;/strong>에 해당합니다. 반면 &lt;code>%&lt;/code>는 보통 부모 element의 크기를 상속받아 그의 정해진 비율만큼을 나타냅니다. 즉 &lt;code>width: 10px;&lt;/code>인 부모를 가진 element에 &lt;code>width: 50%;&lt;/code>를 주면 5px이 되겠죠. 이렇게 상황에 따라서 다른 값을 갖는 단위를 &lt;strong>상대 단위&lt;/strong>라고 부릅니다.&lt;/p></description></item></channel></rss>
