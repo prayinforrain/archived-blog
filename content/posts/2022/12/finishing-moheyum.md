@@ -5,12 +5,12 @@ lastmod: 2022-12-21T03:30:25+09:00
 draft: false
 categories: ["moheyum"]
 tags: ["moheyum"]
-thumbnail: "/images/posts/2022/12/finishing-moheyum/moheyum_01.png"
+thumbnail: "/archived-blog/images/posts/2022/12/finishing-moheyum/moheyum_01.png"
 ---
 
 > 티스토리 블로그에 작성했던 부스트캠프 팀 프로젝트의 회고 글이다. [[원본 링크]](https://prayinforrain.tistory.com/80)
 
-{{< figure src="/images/posts/2022/12/finishing-moheyum/moheyum_01.png" alt="image" caption="내가 팀원들한테 이 얘길 했나 모르겠는데.. 이 페이지 좀 이쁘다. 잘만드셨다.." >}}
+{{< figure src="/archived-blog/images/posts/2022/12/finishing-moheyum/moheyum_01.png" alt="image" caption="내가 팀원들한테 이 얘길 했나 모르겠는데.. 이 페이지 좀 이쁘다. 잘만드셨다.." >}}
 
 부스트캠프의 최종 팀 프로젝트로 나는 **모헤윰**이라는 SNS를 만들었다. 결과물은 꽤 괜찮다. [[여기]](https://youtu.be/9mVinynuUTw)에 간단한 시연 영상이 있다. 사실 팀 구인을 하던 때부터 나는 무엇을 만드는지는 크게 중요하지 않았다. 여태까지의 학습 스프린트로 이미 개발이라는 과정은 어느정도 감을 익혔고, 내가 성장함에 따라 이 과정에서 사용하는 기술만 조금씩 변화할 뿐이라고 생각했다. 따라서 내가 팀 프로젝트에서 가장 중요하게 생각했던 포인트는 협업이었다.
 
@@ -59,7 +59,7 @@ thumbnail: "/images/posts/2022/12/finishing-moheyum/moheyum_01.png"
 
 ### 백로그 자체를 명확하게 하지 않았다.
 
-{{< figure src="/images/posts/2022/12/finishing-moheyum/moheyum_02.png" alt="image" caption="딴소린데, 이거 closed 됐는데 opened로 표시되는 버그 짜증난다" >}}
+{{< figure src="/archived-blog/images/posts/2022/12/finishing-moheyum/moheyum_02.png" alt="image" caption="딴소린데, 이거 closed 됐는데 opened로 표시되는 버그 짜증난다" >}}
 
 딴소린데, 이거 closed 됐는데 opened로 표시되는 버그 짜증난다
 나는 소프트웨어공학 수업을 정말 재미있게 들었다. 실습이라곤 전혀 없던 우리 학교에서 유일하게 실제 결과물을 내는 프로젝트가 있었기 때문인데, 교수님이 (약간은 개발자 친화적인) 비개발자 고객 입장에서의 요구사항을 주시면 그것들을 우리끼리 백로그 문서를 작성하고, 일정을 계획하고 구현하는 식이었다. 나는 그 수업을 들으며 백로그를 어떻게 쓰면 되는지 너무 명확하게 알고 있었다.
@@ -84,7 +84,7 @@ thumbnail: "/images/posts/2022/12/finishing-moheyum/moheyum_01.png"
 
 ### 커밋의 단위 자체가 제대로 나뉘지 않았다.
 
-{{< figure src="/images/posts/2022/12/finishing-moheyum/moheyum_03.png" alt="image" caption="(깊은 한숨)" >}}
+{{< figure src="/archived-blog/images/posts/2022/12/finishing-moheyum/moheyum_03.png" alt="image" caption="(깊은 한숨)" >}}
 우리는 모두 git의 staged 개념을 잘 알고 있었다. 그럼에도 불구하고 여러 수정이나 기능 구현을 하나의 커밋에 섞어서 올리거나, 커밋 컨벤션 자체를 지키지 않은 경우도 많았다. 나의 경우에는 프로젝트 내내 아무 생각 없이 커밋 메시지에 두 가지 이상의 작업내용을 몰아 써서 한 번에 커밋을 날려 오다가 마지막 리팩토링 기간이 문득 이 문제를 깨달았다. 우리 레포지토리의 커밋 내역을 보기 어려운 이유는 그저 **커밋이 커밋의 단위를 갖지 않기 때문**이었다.
 
 ### 이슈나 PR의 템플릿을 명확하게 정하지 않았다.
@@ -103,7 +103,7 @@ thumbnail: "/images/posts/2022/12/finishing-moheyum/moheyum_01.png"
 
 둘째로 이런 환경에서 팀원에게 리뷰요청을 거는 것이 부담이었는지 **리뷰어가 없는 PR**이 쥐도 새도 모르게 올라왔다가, 바로 머지되어 버리는 경우가 많았다. 조금 서운하기도 했고, 리팩토링 기간에 정말 말이 안되는 코드가 있어서 '이게 어떻게 dev 브랜치로 왔지?' 하고 보면 그런 PR이었던 경우가 대부분이었다.
 
-{{< figure src="/images/posts/2022/12/finishing-moheyum/moheyum_04.png" alt="image" caption="벌칙을 같이 정했어야 하는데 ㅇㅇ.." >}}
+{{< figure src="/archived-blog/images/posts/2022/12/finishing-moheyum/moheyum_04.png" alt="image" caption="벌칙을 같이 정했어야 하는데 ㅇㅇ.." >}}
 그리고 룰 얘기를 하는 김에, 후반 갈수록 팀원들이 잠 안자기 대회를 하는 것 같아 보여서 3시 이후 게더타운 커밋 PR 이슈발행 금지라는 룰을 추가했는데, 그 시점부터 3시 이후로 엄청난 커밋과 이슈가 올라오기 시작했다. 님 그러다 죽어요
 
 ### 팀원들의 prettier가 제대로 적용되지 않았다.
@@ -124,7 +124,7 @@ yarn berry를 적용하면서, 또 VS코드의 문제가 중첩되어 만들어�
 
 ### 정작 내가 기록을 많이 하지 않았다.
 
-{{< figure src="/images/posts/2022/12/finishing-moheyum/moheyum_05.png" alt="image" caption="많이도 했다" >}}
+{{< figure src="/archived-blog/images/posts/2022/12/finishing-moheyum/moheyum_05.png" alt="image" caption="많이도 했다" >}}
 우리 팀의 이름은 리코더이다. 처음 기획이 그룹 교환일기 컨셉이었어서, 기록을 하는 서비스라는 점에 착안하여 '기록하는 사람들'이라는 의미로 지은 이름이다. 그래서 우리도 학습정리를 열심히 하자, 기록을 많이 남기자 라는 제안을 했다. 이건 내가 팀에 들어가기 전에 팀장님께 제시한 조건이기도 했다. 제시한 조건이라니까 뭐라도 되는 것 같아 보인다.
 
 아무튼 결과적으로 **내가 정리한 TIL 문서 수는 꼴찌**에 가까웠다. 거의 스스로를 갈아넣는 어떤 천재분이 독보적이었고*(솔직히 이 분 학습량이 말이 안된다)*, 팀장님이 두 번째, 나는 거의 꼴찌에 가까웠다. 나름 새롭게 배운 것들은 거의 썼지만, 내가 아는 범위 내에서 해결하려는 버릇과 느린 작업속도가 원인이라고 핑계를 댄다. 이 결과를 보고 지금도 좀 무안하다. 나는 그냥 회고에 넋두리만 오지게 적었다..
@@ -137,7 +137,7 @@ yarn berry를 적용하면서, 또 VS코드의 문제가 중첩되어 만들어�
 
 ---
 
-{{< figure src="/images/posts/2022/12/finishing-moheyum/moheyum_06.png" alt="image" caption="솔직히 글쓰는 거 재미있었음" >}}
+{{< figure src="/archived-blog/images/posts/2022/12/finishing-moheyum/moheyum_06.png" alt="image" caption="솔직히 글쓰는 거 재미있었음" >}}
 _첫 협업이니까_ 라는 이야기는 좀 그렇다. 왜냐면 다음 협업때는 또 다음 협업의 아쉬움이 이 만큼 쌓일 것이고, 나는 '처음이니까'라는 이유를 정말 싫어하기 때문이다. 이번엔 처음이라고 치고, 다음 번에는 어떤 변명을 할 수 있을까? 그냥 이 문제들로 인해 내가 느낀 슬픔을 머릿속에 새기고 다시는 같은 실수를 반복하지 않도록 감각을 익히는 것이 중요한 것 같다. 이번에 이렇게 힘들었는데 또 같은 실수를 하면 정말 슬플 것 같다.
 
 아쉬움만 적었지만 정작 우리의 협업은 정말 재밌었다. 새벽까지 게더타운에서 잡담을 하기도 하고, 월드컵도 보고, 테트리스를 하면서 놀기도 했다. 어설프던 시절만 기억해서 그렇지 결과물만 놓고 보면 꽤 멋있는 앱이기도 하다. 이 글은 나의 문제를 채찍질 하는 글이 아니라, 그저 내가 부스트캠프 내내 해왔던 것처럼 **'다음에는 이렇게 해야지!'** 계획을 세우는 글이다. 우리 팀은 대단하다. 우리니까 이 정도 한거야 ^^..

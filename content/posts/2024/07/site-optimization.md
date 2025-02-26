@@ -64,7 +64,7 @@ Next.js는 내부 링크에 기본 anchor 태그를 사용하지 않을 것을 �
 
 링크와 이미지를 직접 만들었는데, 원래보다 더 성능이 개선되지 않았다면 마음이 많이 아플 것 같았다. 그래서 얼마나 변했는지 한번 측정해 보았다. 측정 방법은 페이지를 강력 새로고침 후, 네트워크 탭에 찍히는 transferred 용량을 확인하였다.
 
-{{< figure src="/images/posts/2024/07/site-optimization/02.png" alt="payload 크기 비교" caption="왼쪽이 최적화 전, 오른쪽이 최적화 후 payload이다." >}}
+{{< figure src="/archived-blog/images/posts/2024/07/site-optimization/02.png" alt="payload 크기 비교" caption="왼쪽이 최적화 전, 오른쪽이 최적화 후 payload이다." >}}
 
 우리 프로덕트의 콘텐츠 하나에 대한 비포/애프터를 측정해 보았다. 우선 링크의 preload 기능을 비활성화했기 때문에 불러오는 page props 자체도 많이 줄었고(사실 이 용량 자체가 큰 것도 문제지만), 이미지를 사용처 크기에 맞게 최적화해서 불러오기 때문에 이미지 용량 자체도 확 줄었다. 전반적인 payload 크기 비교 결과는 다음과 같았다.
 
@@ -76,7 +76,7 @@ Next.js는 내부 링크에 기본 anchor 태그를 사용하지 않을 것을 �
 
 링크와 이미지가 많이 들어가는 리스트 페이지에서 가장 큰 용량 차이를 보였고, 추가로 lighthouse 성능 지표가 100점이 나오는 부수적인 경사가 있었다. 구글 검색 콘솔에서도 이미지가 있는 콘텐츠들은 개선이 필요하다는 경고가 표시되었는데(전체 페이지의 약 1/3), 개선이 이루어진 후 2달간 이런 경고가 표시되는 페이지가 더 이상 발생하지 않기도 했다. 이정도면 유의미한 개선이었다고 봐도 될 것 같아 안심했다.
 
-{{< figure src="/images/posts/2024/07/site-optimization/01.PNG" alt="lighthouse 성능 지표" caption="반년 전엔 저게 58점이었는데..." >}}
+{{< figure src="/archived-blog/images/posts/2024/07/site-optimization/01.PNG" alt="lighthouse 성능 지표" caption="반년 전엔 저게 58점이었는데..." >}}
 
 ## 만든 것을 쓰도록 강제하자
 

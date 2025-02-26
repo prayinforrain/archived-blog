@@ -11,7 +11,7 @@ tags: ["Web", "browser"]
 
 성능 최적화를 위해, 브라우저가 어떻게 HTML 문서를 화면에 그리는지 과정에 대해 이해할 필요가 있습니다. 브라우저 렌더링은 아래 사진과 같은 흐름으로 이루어집니다.
 
-![Untitled](/images/posts/2023/01/browser-rendering-performance/01.png)
+![Untitled](/archived-blog/images/posts/2023/01/browser-rendering-performance/01.png)
 
 - 서버로부터 HTML, CSS, JavaScript 파일을 받아와 HTML → DOM, CSS → CSSOM으로 변환하고 Render Tree를 구성합니다.
 - Render Tree의 노드들에 대한 위치와 크기를 계산합니다. Render Tree의 루트부터 시작하여 모든 노드에 대해 계산을 수행합니다. (Layout)
@@ -55,7 +55,7 @@ document.getElementById("parent-to-append").appendChild(documentFragment);
 
 💡 **DOM과 canvas의 성능 차이**
 
-![Untitled](/images/posts/2023/01/browser-rendering-performance/02.png)
+![Untitled](/archived-blog/images/posts/2023/01/browser-rendering-performance/02.png)
 
 캔버스는 페인팅 영역이 정해져 있습니다.(`<canvas>` 태그의 영역이 정해져 있다) 따라서 **그 안의 요소들 끼리만 계산이 이루어지고, 그 바깥의 HTML 요소들과는 상호작용하지 않기 때문**에, 캔버스의 제어는 Reflow를 발생시키지 않습니다. 따라서 DOM에 직접 렌더링 하는 것보다 비용이 적습니다.
 

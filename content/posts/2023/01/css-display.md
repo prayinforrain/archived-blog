@@ -13,7 +13,7 @@ CSS의 `display` 속성은 HTML element가 block인지, inline인지, 그리고 
 
 ### 바깥쪽
 
-![Untitled](/images/posts/2023/01/css-display/01.png)
+![Untitled](/archived-blog/images/posts/2023/01/css-display/01.png)
 
 - `block`
   - 한 줄에는 한 요소만 올 수 있게 하는 속성입니다.
@@ -60,7 +60,7 @@ CSS의 `display` 속성은 HTML element가 block인지, inline인지, 그리고 
 - `visibility: hidden;`은 요소가 차지하는 공간은 보존된다.
   - display: none;은 아예 페이지 내에서 요소가 없는 것처럼 간주합니다. 따라서 레이아웃을 구성할 때에도 해당 요소는 고려하지 않는데요, 반면 `visibility: hidden`은 해당 요소가 차지하는 공간은 그대로 둔 채 레이아웃을 구성하므로, 해당 부분은 빈 공간으로 남게 됩니다.
 - `innerText`로 접근했을 때의 차이  
-  ![Untitled](/images/posts/2023/01/css-display/02.png)
+  ![Untitled](/archived-blog/images/posts/2023/01/css-display/02.png)
   - `innerText`로 텍스트를 가져오면 위 사진과 같이 차이가 있습니다. 첫 번째는 일반적인(보이는) 상태에서, 두 번째는 `display: none;`, 세 번째는 `visibility: hidden;`을 적용한 상태입니다. 반면 `innerHTML`은 셋 다 같은 결과를 냅니다.
 
 두 방법 외에도 브라우저에서 요소를 숨기는 방법은 여러 가지가 있는데요, 관심이 있으신 분은 접근성 문제도 엮여 있기 때문에 [[이 포스트]](https://mulder21c.github.io/2019/03/22/screen-hide-text/)를 참고해 보시길 추천합니다.

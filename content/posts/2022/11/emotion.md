@@ -18,9 +18,9 @@ tags: ["moheyum", "Emotion", "CSS-in-JS"]
 
 CSS-in-JS는 HTML Element의 스타일을 자바스크립트 파일을 통해서 지정하는 방식입니다. .css 파일이 하던 일을 .js 파일에게 시키는 것이죠. CSS는 CSS이고, JS는 JS입니다. 왜 굳이 둘을 합쳐야만 하는 것일까요? 이 알 수 없는 발상을 이해하려면 우선 기존 css의 단점을 살펴보겠습니다.
 
-![Untitled](/images/posts/2022/11/emotion/emotion_01.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_01.png)
 
-![Untitled](/images/posts/2022/11/emotion/emotion_02.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_02.png)
 
 제가 학습 스프린트때 진행한 프로젝트 파일의 일부입니다. 사용자의 현재 위치를 표시하기 위한 컴포넌트의 스타일을 `location-bar`라는 클래스명으로 지정하고 있죠. 단순히 이 부분만 봐서는 크게 문제가 없어 보이지만, 아래와 같은 문제들이 있습니다.
 
@@ -78,7 +78,7 @@ export default function TestRecoil() {
 }
 ```
 
-![Untitled](/images/posts/2022/11/emotion/emotion_03.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_03.png)
 
 아주 참을 수 없게 못생긴 컴포넌트군요. 이제 이 컴포넌트에 스타일을 지정해 주겠습니다. 해당 tsx파일에 아래와 같이 코드를 추가하였습니다. **모든 스타일 이름은 대문자로 시작**해야 하는 점 주의하세요. 왜냐면 이 녀석들이 컴포넌트의 이름으로서 취급될 예정이거든요!
 
@@ -140,7 +140,7 @@ return (
 );
 ```
 
-![Untitled](/images/posts/2022/11/emotion/emotion_04.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_04.png)
 
 짜잔! 스타일이 적용되었습니다. 못생긴 건 똑같지만 어쨌든 제 의도대로 못생겼네요.
 
@@ -148,7 +148,7 @@ return (
 
 기본적인 사용법을 알았으니, 알아두어야 할 점을 정리해봅시다.
 
-![Untitled](/images/posts/2022/11/emotion/emotion_05.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_05.png)
 
 - styled component의 이름은 대문자로 시작해야 합니다. (CamelCase)
   타입스크립트의 규칙이 원인인데, 스타일이 지정된 태그 각각이 하나의 컴포넌트로서 취급되기 때문에 카멜 케이스로 작성할 필요가 있습니다. 그 부분이 일관성 있기도 하구요.
@@ -163,7 +163,7 @@ return (
 > ❓ **아니 그럼 `.selected` 처럼 사용하던 클래스의 역할은 누가 하나요?**
 > emotion은 놀랍게도 CSS props를 지원합니다. 말 그대로 React Component에서 사용하는 Props를 그대로 CSS에서 참조할 수 있다는 뜻입니다.
 >
-> ![제목 없음-1.png](/images/posts/2022/11/emotion/emotion_06.png)
+> ![제목 없음-1.png](/archived-blog/images/posts/2022/11/emotion/emotion_06.png)
 >
 > 위와 같이 props를 참조하여 유동적인 스타일 지정이 가능합니다. 깔끔하죠? 스타일의 props interface에 선언되었는데 실제 사용에서 props 값을 지정해주지 않으면 빨간 줄을 그어 주기도 한답니다.
 
@@ -173,35 +173,35 @@ VS Code에는 emotion과 함께 사용하면 좋은 확장들이 있는데요, �
 
 #### Auto Rename Tag
 
-![Untitled](/images/posts/2022/11/emotion/emotion_07.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_07.png)
 
-![확장1.gif](/images/posts/2022/11/emotion/emotion_08.gif)
+![확장1.gif](/archived-blog/images/posts/2022/11/emotion/emotion_08.gif)
 
 tsx, jsx를 포함한 파일에서 HTML 태그를 수정할 때 열린 태그와 닫는 태그를 동시에 수정해 주는 확장입니다. 특히 `div`같이 여러 번 사용되는 태그를 정확히 짝을 찾아서 자동으로 고쳐주기 때문에 스타일 적용이 매우 편해집니다.
 
 #### Highlight Matching Tag
 
-![Untitled](/images/posts/2022/11/emotion/emotion_09.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_09.png)
 
-![Untitled](/images/posts/2022/11/emotion/emotion_10.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_10.png)
 
 여는 태그와 닫는 태그가 눈에 띄도록 밑줄로 강조해 줍니다. `Auto Rename Tag`와 함께 사용하기 좋습니다.
 
 #### vscode-styled-components
 
-![Untitled](/images/posts/2022/11/emotion/emotion_11.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_11.png)
 
-![Untitled](/images/posts/2022/11/emotion/emotion_12.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_12.png)
 
-![Untitled](/images/posts/2022/11/emotion/emotion_13.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_13.png)
 
 `styled.tag`를 통해 스타일을 지정하면 css 프로퍼티가 단순 문자열로 인식되어 자동완성이 지원되지 않는데요, 이 확장을 사용하면 해당 부분이 css 프로퍼티로 인식되어 css 파일을 작성하듯 사용할 수 있습니다. 무지 좋죠?
 
 #### Color Highlight
 
-![Untitled](/images/posts/2022/11/emotion/emotion_14.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_14.png)
 
-![Untitled](/images/posts/2022/11/emotion/emotion_15.png)
+![Untitled](/archived-blog/images/posts/2022/11/emotion/emotion_15.png)
 
 IDE 차원에서 색상의 hex code에 대한 미리보기를 지원해 줍니다. 기본적으로 미리보기를 지원해주긴 하지만 조금 더 크게 보여주는 점이 마음에 들었습니다. 스크롤을 쭉 내리다가 발견하기가 쉽거든요.
 

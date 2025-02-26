@@ -8,7 +8,7 @@ categories: ["life"]
 
 ## 시작하게 된 계기
 
-![ui design](/images/posts/2023/04/numble-talk/01.png)
+![ui design](/archived-blog/images/posts/2023/04/numble-talk/01.png)
 
 3월에 정말 많은 일들이 있었다. 아직 뭔가 성과라고 내세울 결과물이 없긴 하지만 그래도 무의미하진 않았다(?)고 주장할 수 있는 그런 시간이었다. 점점 일이 정리가 되고 여유가 생기면서 번아웃이 온 사람처럼 푹 늘어지는 느낌이 있었는데, 그 와중에 누가 넘블을 소개해 주셨다.
 
@@ -35,7 +35,7 @@ categories: ["life"]
 
 ### OpenAI와 친해지자
 
-![결과물 사진](/images/posts/2023/04/numble-talk/02.png)
+![결과물 사진](/archived-blog/images/posts/2023/04/numble-talk/02.png)
 
 챗썜을 제대로 모시기 위해서는 [API 문서](https://platform.openai.com/docs/api-reference)를 읽어야 했다. 내가 직접 맨땅에서 문서를 정독하며 무언가 시작해 본 경험이 있던가? 아무튼 가뜩이나 미지의 영역인데 영어로 써있다는 점이 큰 걸림돌이 되었다.
 
@@ -56,7 +56,7 @@ You are chatbots in a chat room where one user and ${maxNumber} chatbots convers
 
 ### 좋은 팀!
 
-![bug issue](/images/posts/2023/04/numble-talk/03.png)
+![bug issue](/archived-blog/images/posts/2023/04/numble-talk/03.png)
 
 과정을 혼자보다는 여럿이서 겪으면 더 얻는 게 있을 거란 생각에 팀에도 참여했다. 나와 비슷한 신입 분들이셨고, 정말 운 좋게도 서로 성격이 잘 맞아서 즐겁게 스크럼을 할 수 있었다. 다른 프로젝트와 겹치면서 막바지에 거의 해커톤 마인드(?)로 하다가 어떻게 스크럼 때 1차 배포까지 마치고 결과물을 보여드렸는데, 한 분이 버그까지 발견해 주기도 했다. 재밌는 경험이었다 ㅋㅋ..  
 너무 활기차고 적극적으로 함께 해 주셔서 너무 감사드려요!

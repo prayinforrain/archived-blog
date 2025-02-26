@@ -20,7 +20,7 @@ tags: ["moheyum"]
 
 정말이지 어떻게 하면 좋을까요? 우선 제가 생각하는 가장 사용성이 좋은 마크다운은 깃허브의 그것이였습니다. [GFM(GitHub Flavored Markdown)](https://github.github.com/gfm/)이라고 부르는 스펙이 있는데, 처음에는 이걸 부르는 이름이 있는 것조차 모르고 막무가내로 리버스 엔지니어링 마인드로 작업을 시작했습니다. 아래 사진처럼 아무 이슈나 들어가서 댓글 창에 실험을 하면서요.
 
-![Untitled](/images/posts/2022/12/making-editor-markdown/md_editor_3_01.png)
+![Untitled](/archived-blog/images/posts/2022/12/making-editor-markdown/md_editor_3_01.png)
 
 원래대로라면 입력을 토큰으로 분해하고, `Parse tree`를 구성하여야 겠지만, 마크다운이 느슨한 언어이기 때문에 토큰으로 분해하는 과정이 지나치게 어려울 것이라 판단하여 쉬운 길을 선택하기로 했습니다. 그래서 `자주 쓸 법한 마크다운 몇 가지만 적용할 수 있게 하면 되겠지?` 하는 생각으로 깃허브를 열어서 아무 텍스트를 마구 입력해 보기 시작했습니다. 가벼운 마음으로요.
 
@@ -51,7 +51,7 @@ export default function doParse(str: string): string {
 }
 ```
 
-![Untitled](/images/posts/2022/12/making-editor-markdown/md_editor_3_02.png)
+![Untitled](/archived-blog/images/posts/2022/12/making-editor-markdown/md_editor_3_02.png)
 
 그렇게 만들어진 것이 저번 포스트의 마지막 사진입니다. 대충 이런 느낌으로 replace를 쌓아 나가면 되지 않을까요?
 
@@ -59,11 +59,11 @@ export default function doParse(str: string): string {
 
 하지만 마크다운의 세계는 그렇게 만만하지 않았습니다. `replace`를 쌓아 나간다는 생각에는 변함이 없었지만 여러 줄에 걸친 문법이나 같은 식별자를 사용하는 문법을 어떻게 구별할 것인지와 같은 각종 예외 상황들을 어떻게 피해서 설계할 수 있을지 머리가 아파오기 시작했습니다. 특히 인용문은 아래처럼 다양한 경우에 대한 처리가 필요했죠.
 
-![Untitled](/images/posts/2022/12/making-editor-markdown/md_editor_3_03.png)
+![Untitled](/archived-blog/images/posts/2022/12/making-editor-markdown/md_editor_3_03.png)
 
 이런 복잡한 경우에 대한 해답을 매 번 깃허브에 직접 입력해 보면서 결과를 맞춰 튜닝을 하느니, 차라리 처음부터 체계를 잡고 가자는 생각이 들어 [GFM 스펙 문서](https://github.github.com/gfm/)를 읽으며 문법들을 정리하기 시작했습니다.
 
-![Untitled](/images/posts/2022/12/making-editor-markdown/md_editor_3_04.png)
+![Untitled](/archived-blog/images/posts/2022/12/making-editor-markdown/md_editor_3_04.png)
 
 결과적으로 마크다운 문법은 크게 아래와 같이 분류할 수 있었습니다.
 
@@ -133,7 +133,7 @@ export function doParse(str: string): string {
 
 ## 🔥 마치며
 
-![dhkstjd.gif](/images/posts/2022/12/making-editor-markdown/md_editor_3_05.gif)
+![dhkstjd.gif](/archived-blog/images/posts/2022/12/making-editor-markdown/md_editor_3_05.gif)
 
 처음에 시작할 때에는 무척 거창하게 시작했는데, 생각보다 투박한 결과물이 나왔습니다. 그래도 뭔가 라이브러리의 힘을 빌리지 않고 이 정도를 구현했다는 데 의의를 두고 싶습니다. 특히 에디터같은 부분은 찾아 볼수록 더 많은 기능이 필요하다는 것을 알게 되어서 아쉬움이 더 많이 생겼습니다. 나중에 시간이 되면 undo 기능도 구현하고, 이것저것 더 개선해 보고 싶네요.
 

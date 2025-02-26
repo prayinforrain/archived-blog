@@ -72,7 +72,7 @@ yarn add -D @babel/core styled-jsx
 
 다시 실행해 보면 스토리북 화면이 나타난다. 하지만 무언가의 오류가 표시되며 스토리북 dev server가 꺼져 버린다.
 
-![css loader error](/images/posts/2023/04/nextjs-storybook-with-pnp/02.png)
+![css loader error](/archived-blog/images/posts/2023/04/nextjs-storybook-with-pnp/02.png)
 
 `@storybook/nextjs`의 번들러인 webpack에서 css-loader와 기타등등 플러그인을 불러오면서 오류가 생기는 모양이다. 특이하게도 이 오류는 PnP 환경에서만 발생하는 오류인데, 대충 이 빌더에서 [webpack의 css-loader 관련 설정을 만드는 부분](https://github.com/storybookjs/storybook/blob/next/code/frameworks/nextjs/src/css/webpack.ts#L71)을 살펴보면 이런 추측을 할 수 있다.
 
@@ -110,12 +110,12 @@ addons: [
 // ...
 ```
 
-![storybook launched](/images/posts/2023/04/nextjs-storybook-with-pnp/03.png)  
+![storybook launched](/archived-blog/images/posts/2023/04/nextjs-storybook-with-pnp/03.png)  
 이제 정상적으로 스토리북이 실행될 것이다.
 
 #### main.ts의 타입 오류
 
-![framework name type error](/images/posts/2023/04/nextjs-storybook-with-pnp/01.png)
+![framework name type error](/archived-blog/images/posts/2023/04/nextjs-storybook-with-pnp/01.png)
 
 처음 init 했을 때부터 계속 거슬렸는데, `@storybook/nextjs` 템플릿이 `.storybook/main.ts` 파일을 생성할 때 프레임워크명을 절대경로를 포함해서 생성하면서 타입 오류가 나는 문제가 있다. 모순적이게도 `@storybook/nextjs`의 `StorybookConfig` 객체 타입은 이 부분에 무조건 `@storybook/nextjs`라는 문자열만을 허용하고 있다. 물론 그냥 실행이 되긴 하는데, 계속 붉은 줄이 그어져 있으면 몹시 곤란하니 이것도 바꿔 주겠다.
 
@@ -131,7 +131,7 @@ addons: [
 
 ### 하지만 node_modules가 생기잖아요
 
-![node_modules folder](/images/posts/2023/04/nextjs-storybook-with-pnp/04.png)
+![node_modules folder](/archived-blog/images/posts/2023/04/nextjs-storybook-with-pnp/04.png)
 
 storybook 뿐 아니라 여러 패키지에서 발생하는 일인데, PnP모드에서도 스토리북을 실행하면 node_modules 디렉토리가 생성되는 것을 볼 수 있다. 이 안에는 대충... 스토리북 dev 서버 실행에 필요한 임시 파일들이 저장되어 있다. 나를 포함해서 많은 Yarn PnP 사용자들이 이 현상에 대해 불편함(?)을 겪고 있는데, Storybook의 기여자가 [이슈 댓글](https://github.com/storybookjs/storybook/issues/11113#issuecomment-642851848)에서 다음과 같은 근거를 이야기해 주었다.
 

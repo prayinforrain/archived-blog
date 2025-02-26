@@ -16,7 +16,7 @@ tags: ["project", "react"]
 웹 개발 공부를 하면서 가장 많이 들었던 말이다. 실제로 요즘은 유저 기기 성능이 많이 올라왔고, 어지간한 부분은 패키지나 브라우저가 알아서 해 주기 때문에 개발자는 당장 성능에 대한 고려를 할 필요는 없어졌다.  
 그런데 회사에서 개발을 하던 중 진짜로 성능 문제를 해결해야 하는 시간이 찾아왔다. 꽤 오래된 일인데, 회고 글을 몇 번 씩 썼다 지웠다 하다가 이제라도 정리해 본다.
 
-{{< figure src="/images/posts/2023/11/cell-refactoring/01.png" alt="레어데이터 소개" caption="너무 즐거운 경험과 인사이트를 줬던 내 첫 프로젝트" >}}
+{{< figure src="/archived-blog/images/posts/2023/11/cell-refactoring/01.png" alt="레어데이터 소개" caption="너무 즐거운 경험과 인사이트를 줬던 내 첫 프로젝트" >}}
 
 [내가 참여하던 프로젝트](https://raredata.kr/)는 일종의 스프레드시트와 비슷한 솔루션이다. 데이터베이스 스키마를 정의하듯 열에 타입을 정의하고, 각각의 셀은 해당 타입에 맞는 입력 UI를 팝오버로 보여주는 식이다. [Tanstack Table](https://tanstack.com/table/v7/)과 [Tanstack Virtual](https://tanstack.com/virtual/latest)을 사용하여 레이아웃 구성 및 가상화를 적용하였고, 각 셀은 타입별 입력 UI 컴포넌트를 prop으로 지정된 타입에 따라서 조건부로 렌더링해 주도록 되어 있었다.
 
@@ -28,15 +28,15 @@ tags: ["project", "react"]
 
 ### React Devtool
 
-{{< figure src="/images/posts/2023/11/cell-refactoring/02.png" alt="리액트 개발자 도구의 렌더링 하이라이트" caption="체크하면 렌더링되는 컴포넌트가 빛난다." >}}
+{{< figure src="/archived-blog/images/posts/2023/11/cell-refactoring/02.png" alt="리액트 개발자 도구의 렌더링 하이라이트" caption="체크하면 렌더링되는 컴포넌트가 빛난다." >}}
 
 리액트 개발자 도구의 옵션에는 리렌더링되는 컴포넌트의 테두리가 반짝이게 하는 옵션이 있다. 이 옵션을 켜고 성능 문제가 있는 시트를 탐색해 보았고, [Tanstack이 제공하는 예시](https://tanstack.com/virtual/latest/docs/framework/react/examples/table)와 비교해서 리렌더링에 어떤 차이가 있는지 살펴보았다. 우선 Tanstack 예시는 스크롤 될 때 마다 스크롤 영역의 Container 부분만이 리렌더링되는 반면, 우리 프로젝트는 매 스크롤마다 모든 셀이 각각 리렌더링되었다.
 
-![Tanstack Virtual 예시](/images/posts/2023/11/cell-refactoring/04.png)
+![Tanstack Virtual 예시](/archived-blog/images/posts/2023/11/cell-refactoring/04.png)
 
 ### 크롬 개발자 도구
 
-![크롬 개발자 도구 프로파일링](/images/posts/2023/11/cell-refactoring/03.png)
+![크롬 개발자 도구 프로파일링](/archived-blog/images/posts/2023/11/cell-refactoring/03.png)
 
 또 개발자 도구의 Performance 탭에서 성능 프로파일링도 진행하였다. 자바스크립트의 GC(가비지 컬렉팅)는 제어가 불가능하고 불규칙하게 이루어지기 때문에 아주 정확한 지표는 아니지만, 노드 개수, 메모리 크기 등의 추세를 확인하고 병목 지점을 확인하는 데에는 도움이 된다.  
 이 보고서에서 내가 얻은 인사이트는 **노드 개수와 이벤트 리스너 수가 지나치게 많다**는 점이었다. 메모리 크기도 매우 높았지만 당장 개발 모드에서는 React와 Emotion이 실제 배포 환경과 다르게 동작해서 더 심각하게 나타나는 것으로, 당장은 신경쓰지 않기로 했다.
@@ -87,11 +87,11 @@ const Component = () => {
 
 ## 진짜로 좋아졌나요?
 
-![리팩토링 후 크롬 개발자 도구 프로파일링](/images/posts/2023/11/cell-refactoring/05.png)
+![리팩토링 후 크롬 개발자 도구 프로파일링](/archived-blog/images/posts/2023/11/cell-refactoring/05.png)
 
 작업 후 다시 프로파일링을 진행했다. 대충 봐도 꽤 많이 줄어들었고, 내부 테스트에서도 반응이 좋았다. 우선 입력이 아예 불가능한 수준인 시트에서도 자유롭게 탐색과 입력이 가능했다. 하지만 얼마나 개선되었는지 정확히 측정할 수는 없을까?
 
-{{< figure src="/images/posts/2023/11/cell-refactoring/06.png" alt="Profiler API의 BaseDuration 비교" caption="어떻게 하면 더 이쁘게 찍을 수 있었을까.." >}}
+{{< figure src="/archived-blog/images/posts/2023/11/cell-refactoring/06.png" alt="Profiler API의 BaseDuration 비교" caption="어떻게 하면 더 이쁘게 찍을 수 있었을까.." >}}
 
 리액트의 [Profiler API](https://react.dev/reference/react/Profiler)를 사용하여 성능 측정을 진행하였다. 여러 성능 지표를 알 수 있는데, `actualDuration`과 `baseDuration`중 메모이제이션을 포함한 렌더링 시간이 전자, 제외한 시간이 후자이다. 우리는 새로 작업을 하면서 메모이제이션을 최대한 제거하였기 때문에 `BaseDuration`을 콘솔에 찍어 확인했다.
 사진의 왼쪽이 비포, 오른쪽이 애프터이다. 비교해 보니 리팩토링 후 렌더링 시간이 약 78%정도 줄어들었음을 확인할 수 있었다. 뻥 좀 보태서 5배 빨라졌다고 말할 수 있지 않을까!?

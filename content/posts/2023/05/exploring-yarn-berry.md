@@ -9,7 +9,7 @@ tags: ["yarn"]
 
 ## 내 레포의 위험한 녀석
 
-![cds issue](/images/posts/2023/05/exploring-yarn-berry/01.png)
+![cds issue](/archived-blog/images/posts/2023/05/exploring-yarn-berry/01.png)
 
 최근 [차가운 디자인 시스템(CDS)](https://github.com/c-h-w-h/cds)의 패키지 매니저를 **Yarn berry**로 마이그레이션 하는 작업을 하고 있다. 이유는 후술할 `node_modules` 자체의 단점도 있고, 내 데스크탑이 HDD를 사용하기 때문에 `node_modules`의 수십만 개의 파일들을 다루는 것이 너무 느려서 강력 추천했다.
 
@@ -48,7 +48,7 @@ $ node
 
 효율이야 어떻게 됐든 이런 식으로 패키지를 resolve한다고 치자. 그런데 문제가 또 있다.
 
-![dependency hoisting](/images/posts/2023/05/exploring-yarn-berry/02.png)
+![dependency hoisting](/archived-blog/images/posts/2023/05/exploring-yarn-berry/02.png)
 
 _출처: [node_modules로부터 우리를 구원해 줄 Yarn Berry - 토스 기술블로그](https://toss.tech/article/node-modules-and-yarn-berry)_
 
@@ -287,7 +287,7 @@ const INCLUDE_CANDIDATES = [
 
 ## 마치며..
 
-![cds issue](/images/posts/2023/05/exploring-yarn-berry/03.png)
+![cds issue](/archived-blog/images/posts/2023/05/exploring-yarn-berry/03.png)
 
 사실 조금 뜬금없이 준비한 발표 자료인데, 가볍게만 해야지.. 하고 시작했다가 어렴풋이 예상했던 내용이 틀리고 틀리고를 반복해서 검증을 반복하다가 글이 태산으로 가버렸다. 마지막에는 내가 왜 이걸 보고 있었는지를 까먹어서 손을 놓고 다시 컨텍스트를 따라가기도 했다. 그러니까 음.. 매끄러운 글은 아닌 것 같다. 내용 없이 주제만 정하고 시작한 글이라 그런가..
 
