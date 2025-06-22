@@ -4,7 +4,7 @@ date: 2023-11-07T16:43:32+09:00
 lastmod: 2024-04-15T16:43:32+09:00
 summary: "React로 성능 되찾기"
 description: "사내 React 프로젝트에서 발생한 성능 이슈 극복 과정을 공유합니다."
-draft: false
+draft: true
 categories: ["Web"]
 tags: ["project", "react"]
 ---

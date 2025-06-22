@@ -4,7 +4,7 @@ date: 2024-07-18T12:34:32+09:00
 lastmod: 2024-07-18T12:34:32+09:00
 summary: "최대한 가벼운 사이트를 만들어보자"
 description: "Next.js는 어떻게 해야 가벼워질까?"
-draft: false
+draft: true
 categories: ["Web"]
 tags: ["Nextjs"]
 ---

@@ -2,7 +2,7 @@
 title: "Tree Shaking"
 date: 2023-01-25T17:17:15+09:00
 lastmod: 2023-01-25T17:17:15+09:00
-draft: false
+draft: true
 categories: ["Web", "javascript"]
 tags: ["Web", "javascript", "tree-shaking"]
 thumbnail: "/archived-blog/images/posts/2023/01/tree-shaking/01.png"

@@ -2,7 +2,7 @@
 title: "ECMAScript"
 date: 2023-01-25T16:35:01+09:00
 lastmod: 2023-01-25T16:35:01+09:00
-draft: false
+draft: true
 categories: ["Web", "javascript"]
 tags: ["Web", "javascript", "ECMAScript"]
 thumbnail: "/archived-blog/images/posts/2023/01/ecmascript/01.png"
